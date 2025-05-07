@@ -1,0 +1,2 @@
+This system has 4 processors configured and 4 processors available.
+Data: ../Datasets/ERR240727_1_E2_30000Pairs.txt	Threads: 10	E: 10	Accepted: 14623	Rejected:15377	Time: 15 milliseconds

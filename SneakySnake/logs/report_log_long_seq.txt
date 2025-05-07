@@ -1,0 +1,2 @@
+This system has 4 processors configured and 4 processors available.
+Data: ../Datasets/LongSequences_100K_PBSIM_10Pairs.txt	Threads: 40	E: 20000	Accepted: 10	Rejected:0	Time: 4636 milliseconds
