@@ -1,0 +1,162 @@
+<ENTRY>
+{
+ "thisFile": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/SneakySnake_bit.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu May  8 18:30:50 2025",
+ "timestampMillis": "1746721850002",
+ "buildStep": {
+  "cmdId": "9910cdfd-2532-443e-8a7b-9a7c2c3e2419",
+  "name": "vitis-run",
+  "logFile": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/logs/SneakySnake_bit.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2024.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg --work_dir SneakySnake_bit ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg",
+   "--work_dir",
+   "SneakySnake_bit"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  8 18:30:50 2025",
+ "timestampMillis": "1746721850003",
+ "status": {
+  "cmdId": "9910cdfd-2532-443e-8a7b-9a7c2c3e2419",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu May  8 18:30:58 2025",
+ "timestampMillis": "1746721858547",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "SneakySnake_bit",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp",
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp",
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.h",
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.H",
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.h",
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu May  8 18:30:58 2025",
+ "timestampMillis": "1746721858549",
+ "buildStep": {
+  "cmdId": "39b1f8b5-dc34-426d-884b-f85c58b5d654",
+  "name": "",
+  "logFile": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  8 18:30:58 2025",
+ "timestampMillis": "1746721858549",
+ "status": {
+  "cmdId": "39b1f8b5-dc34-426d-884b-f85c58b5d654",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  8 18:31:03 2025",
+ "timestampMillis": "1746721863631",
+ "status": {
+  "cmdId": "39b1f8b5-dc34-426d-884b-f85c58b5d654",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu May  8 18:31:04 2025",
+ "timestampMillis": "1746721864261",
+ "status": {
+  "cmdId": "9910cdfd-2532-443e-8a7b-9a7c2c3e2419",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  8 18:31:04 2025",
+ "timestampMillis": "1746721864286",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu May  8 18:31:04 2025",
+ "timestampMillis": "1746721864288",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

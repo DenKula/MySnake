@@ -1,0 +1,65 @@
+[
+  {
+    "directory": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm",
+    "arguments": [
+      "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/tools/Xilinx/Vitis/2024.2/common/technology/autopilot",
+      "-fhlstoplevel=SneakySnake_bit",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include",
+      "-I/home/deniz/oc-accel/actions/include",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h",
+      "-c",
+      "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp"
+    ],
+    "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp"
+  },
+  {
+    "directory": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm",
+    "arguments": [
+      "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/tools/Xilinx/Vitis/2024.2/common/technology/autopilot",
+      "-fhlstoplevel=SneakySnake_bit",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include",
+      "-I/home/deniz/oc-accel/actions/include",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h",
+      "-c",
+      "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp"
+    ],
+    "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp"
+  },
+  {
+    "directory": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm",
+    "arguments": [
+      "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+      "-fhls",
+      "-hls-syn-headers-dir=/tools/Xilinx/Vitis/2024.2/common/technology/autopilot",
+      "-fhlstoplevel=SneakySnake_bit",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include",
+      "-I/home/deniz/oc-accel/actions/include",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h",
+      "-c",
+      "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+    ],
+    "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+  },
+  {
+    "directory": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm",
+    "arguments": [
+      "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang++",
+      "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+      "-fhls-tb",
+      "-hls-sim-headers-dir=/tools/Xilinx/Vitis/2024.2/include",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include",
+      "-I/home/deniz/oc-accel/actions/include",
+      "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h",
+      "-c",
+      "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp"
+    ],
+    "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp"
+  }
+]

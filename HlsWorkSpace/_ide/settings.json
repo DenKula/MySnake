@@ -1,0 +1,14 @@
+{
+    "clangd.fallbackFlags": [
+        "-I/tools/Xilinx/Vitis/2024.2/include",
+        "-I/tools/Xilinx/Vitis/2024.2/include/etc",
+        "-I/tools/Xilinx/Vitis/2024.2/include/ap_sysc",
+        "-I/tools/Xilinx/Vitis/2024.2/lnx64/tools/auto_cc/include",
+        "-I/tools/Xilinx/Vitis/2024.2/lnx64/tools/systemc/include",
+        "-I/home/deniz/oc-accel/actions/include",
+        "-I/home/deniz/oc-accel",
+        "-I/home/deniz/oc-accel/actions",
+        "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include",
+        "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h"
+    ]
+}

@@ -1,0 +1,12 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp in debug mode
+In file included from ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp:1:
+In file included from ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:8:
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h:35:10: fatal error: 'osnap_types.h' file not found
+#include <osnap_types.h>
+         ^~~~~~~~~~~~~~~
+1 error generated.
+make: *** [csim.mk:88: obj/wrapper.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************
