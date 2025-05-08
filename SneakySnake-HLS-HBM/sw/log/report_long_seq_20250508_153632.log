@@ -1,0 +1,14 @@
+Starting SNAP simulation + memcopy test
+err: failed to open card 0: No such file or directory
+
+==> Did you consider running this command using sudo? <==
+reading input data 6060000 bytes from /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt
+PARAMETERS:
+  input:       /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt
+  output:      unknown
+  type_in:     0: HOST_DRAM
+  addr_in:     0x00007b14dee38000
+  type_out:    10: HBM_P0
+  addr_out:    0x0000000000000000
+  size_in/out: 0x005c77e0
+  mode:        00000000
