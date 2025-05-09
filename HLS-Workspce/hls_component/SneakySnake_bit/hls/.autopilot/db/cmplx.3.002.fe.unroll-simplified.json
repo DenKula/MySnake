@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 3,
-    "calls": "1 4",
+    "calls": "4 1",
     "file": "pipeline.cpp",
     "fileloc": 679,
     "instructions": 58,
@@ -12,19 +12,19 @@
     "total_instructions": 750
   },
   "1": {
-    "basicblocks": 67,
-    "calls": "",
+    "basicblocks": 3,
+    "calls": "3 3 3 3 3 3 3 3 3 3 3 2",
     "file": "pipeline.cpp",
-    "fileloc": 359,
-    "instructions": 296,
+    "fileloc": 631,
+    "instructions": 123,
     "loads": {
-      "L": 13
-    },
-    "name": "NeighborhoodMap_bit",
-    "stores": {
       "L": 11
     },
-    "total_instructions": 296
+    "name": "after_neighbohood",
+    "stores": {
+      "L": 33
+    },
+    "total_instructions": 396
   },
   "2": {
     "basicblocks": 1,
@@ -51,18 +51,18 @@
     "total_instructions": 21
   },
   "4": {
-    "basicblocks": 3,
-    "calls": "3 3 3 3 3 3 3 3 3 3 3 2",
+    "basicblocks": 67,
+    "calls": "",
     "file": "pipeline.cpp",
-    "fileloc": 631,
-    "instructions": 123,
+    "fileloc": 359,
+    "instructions": 296,
     "loads": {
+      "L": 13
+    },
+    "name": "NeighborhoodMap_bit",
+    "stores": {
       "L": 11
     },
-    "name": "after_neighbohood",
-    "stores": {
-      "L": 33
-    },
-    "total_instructions": 396
+    "total_instructions": 296
   }
 }

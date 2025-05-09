@@ -20,6 +20,7 @@
       "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
       "-fhls-tb",
       "-hls-sim-headers-dir=/tools/Xilinx/Vitis/2024.2/include",
+      "-I/home/deniz/oc-accel/actions/include",
       "-c",
       "/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c"
     ],
@@ -32,6 +33,7 @@
       "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
       "-fhls-tb",
       "-hls-sim-headers-dir=/tools/Xilinx/Vitis/2024.2/include",
+      "-I/home/deniz/oc-accel/actions/include",
       "-c",
       "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp"
     ],

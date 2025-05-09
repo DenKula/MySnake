@@ -1,0 +1,80 @@
+<ENTRY>
+{
+ "thisFile": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/app.csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri May  9 17:15:10 2025",
+ "timestampMillis": "1746803710400",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri May  9 17:15:10 2025",
+ "timestampMillis": "1746803710401",
+ "buildStep": {
+  "cmdId": "66033d98-2ce8-11f0-b5f2-0800277e37a3",
+  "name": "vitis_c++",
+  "logFile": "",
+  "commandLine": "vitis_c++ code_analyzer",
+  "args": [
+   "code_analyzer"
+  ],
+  "iniFiles": [],
+  "cwd": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri May  9 17:15:10 2025",
+ "timestampMillis": "1746803710402",
+ "status": {
+  "cmdId": "66033d98-2ce8-11f0-b5f2-0800277e37a3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri May  9 17:19:59 2025",
+ "timestampMillis": "1746803999915",
+ "status": {
+  "cmdId": "66033d98-2ce8-11f0-b5f2-0800277e37a3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri May  9 17:19:59 2025",
+ "timestampMillis": "1746803999918",
+ "report": {
+  "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "VCXX_CODE_ANALYZER",
+  "cmdId": "66033d98-2ce8-11f0-b5f2-0800277e37a3"
+ }
+}
+</ENTRY>

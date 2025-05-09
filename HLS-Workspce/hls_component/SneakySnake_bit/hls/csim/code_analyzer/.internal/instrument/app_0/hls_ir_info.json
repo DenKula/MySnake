@@ -1,0 +1,223 @@
+{
+    "top_level_hw_fn_id": 538,
+    "functions": {
+        "200": {
+            "fn_id": 200,
+            "mangled_name": "_GLOBAL__sub_I_tb_wrapper.cpp",
+            "fully_qualified_name": "_GLOBAL__sub_I_tb_wrapper",
+            "is_sys": true,
+            "is_declaration": false,
+            "supports_dataflow": false,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp",
+                "line": 0,
+                "column": 0
+            }
+        },
+        "201": {
+            "fn_id": 201,
+            "mangled_name": "__cxx_global_var_init",
+            "fully_qualified_name": "__cxx_global_var_init",
+            "is_sys": true,
+            "is_declaration": false,
+            "supports_dataflow": false,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp",
+                "line": 0,
+                "column": 0
+            }
+        },
+        "286": {
+            "fn_id": 286,
+            "mangled_name": "_GLOBAL__sub_I_pipeline.cpp",
+            "fully_qualified_name": "_GLOBAL__sub_I_pipeline",
+            "is_sys": true,
+            "is_declaration": false,
+            "supports_dataflow": false,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 0,
+                "column": 0
+            }
+        },
+        "287": {
+            "fn_id": 287,
+            "mangled_name": "__cxx_global_var_init.4",
+            "fully_qualified_name": "__cxx_global_var_init",
+            "is_sys": true,
+            "is_declaration": false,
+            "supports_dataflow": false,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 0,
+                "column": 0
+            }
+        },
+        "534": {
+            "fn_id": 534,
+            "mangled_name": "_GLOBAL__sub_I_pipeline.cpp.9",
+            "fully_qualified_name": "_GLOBAL__sub_I_pipeline",
+            "is_sys": true,
+            "is_declaration": false,
+            "supports_dataflow": false,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 0,
+                "column": 0
+            }
+        },
+        "535": {
+            "fn_id": 535,
+            "mangled_name": "__cxx_global_var_init.10",
+            "fully_qualified_name": "__cxx_global_var_init",
+            "is_sys": true,
+            "is_declaration": false,
+            "supports_dataflow": false,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 0,
+                "column": 0
+            }
+        },
+        "536": {
+            "fn_id": 536,
+            "mangled_name": "__dtor__ZStL8__ioinit",
+            "fully_qualified_name": "__dtor__ZStL8__ioinit",
+            "is_sys": true,
+            "is_declaration": false,
+            "supports_dataflow": false,
+            "src_loc": {
+                "file": "/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/include/c++/8.3.0/iostream",
+                "line": 74,
+                "column": 0
+            }
+        },
+        "538": {
+            "fn_id": 538,
+            "mangled_name": "_Z15SneakySnake_bitiR7ap_uintILi256EES1_ii",
+            "fully_qualified_name": "SneakySnake_bit",
+            "is_sys": false,
+            "is_declaration": false,
+            "supports_dataflow": true,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 679,
+                "column": 1
+            }
+        },
+        "539": {
+            "fn_id": 539,
+            "mangled_name": "_Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_",
+            "fully_qualified_name": "NeighborhoodMap_bit",
+            "is_sys": false,
+            "is_declaration": false,
+            "supports_dataflow": true,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 359,
+                "column": 1
+            }
+        },
+        "540": {
+            "fn_id": 540,
+            "mangled_name": "_Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_",
+            "fully_qualified_name": "after_neighbohood",
+            "is_sys": false,
+            "is_declaration": false,
+            "supports_dataflow": true,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 631,
+                "column": 1
+            }
+        },
+        "541": {
+            "fn_id": 541,
+            "mangled_name": "_Z13count_one_bitR7ap_uintILi8EEj",
+            "fully_qualified_name": "count_one_bit",
+            "is_sys": false,
+            "is_declaration": false,
+            "supports_dataflow": true,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 326,
+                "column": 1
+            }
+        },
+        "542": {
+            "fn_id": 542,
+            "mangled_name": "_Z7largestPjj",
+            "fully_qualified_name": "largest",
+            "is_sys": false,
+            "is_declaration": false,
+            "supports_dataflow": true,
+            "src_loc": {
+                "file": "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "line": 307,
+                "column": 1
+            }
+        }
+    },
+    "loops": {
+        "92": {
+            "fn_id": 538,
+            "lp_id": 92
+        },
+        "93": {
+            "fn_id": 539,
+            "lp_id": 93
+        },
+        "94": {
+            "fn_id": 539,
+            "lp_id": 94
+        },
+        "95": {
+            "fn_id": 539,
+            "lp_id": 95
+        },
+        "96": {
+            "fn_id": 539,
+            "lp_id": 96
+        },
+        "97": {
+            "fn_id": 539,
+            "lp_id": 97
+        },
+        "98": {
+            "fn_id": 539,
+            "lp_id": 98
+        },
+        "99": {
+            "fn_id": 539,
+            "lp_id": 99
+        },
+        "100": {
+            "fn_id": 539,
+            "lp_id": 100
+        },
+        "101": {
+            "fn_id": 539,
+            "lp_id": 101
+        },
+        "102": {
+            "fn_id": 539,
+            "lp_id": 102
+        },
+        "103": {
+            "fn_id": 539,
+            "lp_id": 103
+        },
+        "104": {
+            "fn_id": 540,
+            "lp_id": 104
+        },
+        "105": {
+            "fn_id": 541,
+            "lp_id": 105
+        },
+        "106": {
+            "fn_id": 542,
+            "lp_id": 106
+        }
+    }
+}

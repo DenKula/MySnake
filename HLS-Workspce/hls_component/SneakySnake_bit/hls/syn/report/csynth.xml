@@ -1621,7 +1621,7 @@
     </ModuleInformation>
     <FIFOInformation/>
     <UserConfigCommands>
-        <config_csim argv="0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10"/>
+        <config_csim argv="0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10" code_analyzer="1"/>
         <config_export format="xo"/>
     </UserConfigCommands>
     <Args>
