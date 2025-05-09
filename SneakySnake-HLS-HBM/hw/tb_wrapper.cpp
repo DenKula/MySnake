@@ -152,9 +152,10 @@ int main(int argc, const char * const argv[]) {
                 }
                 printf("\n");
                 */
-
-				if (SneakySnake_bit(ReadLength, RefSeq, ReadSeq, EditThreshold, KmerSize, DebugMode, IterationNo))
-					Accepted++;
+               d_bit_in_type ref_packed = pack_seq(RefSeq, ReadLength);
+               d_bit_in_type read_packed = pack_seq(ReadSeq, ReadLength);
+               if (SneakySnake_bit(ReadLength, read_packed, ref_packed, EditThreshold, KmerSize))
+               
 				//printf("i: %d TID:%d Accepted: %d\n",i, tid, step->Accepted[i]);
                     
             }
