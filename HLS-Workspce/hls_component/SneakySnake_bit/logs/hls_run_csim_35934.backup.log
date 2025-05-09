@@ -1,0 +1,95 @@
+INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvu9p-flga2104-2-i' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1465] Applying ini 'csim.argv=1 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 10 10' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=1' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(5)
+INFO: [SIM 211-200] Executing Code Analyzer instead of classic HLS C simulation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as hardware code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp as test bench code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake/kthread.c as test bench code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as test bench code with instrumentation
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:661:62: warning: format specifies type 'int' but the argument has type 'd_final_out_type' (aka 'ap_uint<2>') [-Wformat]
+        printf("Current iteration=%d global_count=%d\n",iter,global_count);
+                                                  ~~         ^~~~~~~~~~~~
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:695:17: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+    #pragma HLS INLINE OFF
+                ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+2 warnings generated.
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:661:62: warning: format specifies type 'int' but the argument has type 'd_final_out_type' (aka 'ap_uint<2>') [-Wformat]
+        printf("Current iteration=%d global_count=%d\n",iter,global_count);
+                                                  ~~         ^~~~~~~~~~~~
+1 warning generated.
+INFO: [HLS 211-200] Linking hardware code
+INFO: [HLS 211-200] Transforming hardware bitcode
+INFO: [HLS 211-200] Linking executable
+ld.lld: ../llvm/lib/CodeGen/SelectionDAG/LegalizeIntegerTypes.cpp:4877: llvm::SDValue llvm::DAGTypeLegalizer::ExpandIntOp_UINT_TO_FP(llvm::SDNode *): Assertion `LC != RTLIB::UNKNOWN_LIBCALL && "Don't know how to expand this UINT_TO_FP!"' failed.
+PLEASE submit a bug report and include the crash backtrace.
+Stack dump:
+0.	Program arguments: /tools/Xilinx/Vitis/2024.2/vcxx/libexec/ld.lld -dynamic-list=/tools/Xilinx/Vitis/2024.2/vcxx/data/config/prof.syms --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/app.exe /lib/x86_64-linux-gnu/crt1.o /lib/x86_64-linux-gnu/crti.o /tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtbegin.o -L/tools/Xilinx/Vitis/2024.2/lnx64/tools/dds_v6_0 -L/tools/Xilinx/Vitis/2024.2/lnx64/tools/fft_v9_1 -L/tools/Xilinx/Vitis/2024.2/lnx64/tools/fir_v7_0 -L/tools/Xilinx/Vitis/2024.2/lnx64/tools/fpo_v7_1 -L/tools/Xilinx/Vitis/2024.2/lnx64/lib/csim -L/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0 -L/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib -plugin-opt=mcpu=x86-64 -plugin-opt=O0 /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/tb_wrapper.cpp.0.o /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/kthread.c.0.o /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.o /tmp/syn_srcs-f3f3d4.o --as-needed -lIp_dds_compiler_v6_0_bitacc_cmodel --disable-new-dtags -rpath=/tools/Xilinx/Vitis/2024.2/lnx64/tools/dds_v6_0 -lIp_xfft_v9_1_bitacc_cmodel -rpath=/tools/Xilinx/Vitis/2024.2/lnx64/tools/fft_v9_1 -lIp_fir_compiler_v7_2_bitacc_cmodel -rpath=/tools/Xilinx/Vitis/2024.2/lnx64/tools/fir_v7_0 -lIp_floating_point_v7_1_bitacc_cmodel -rpath=/tools/Xilinx/Vitis/2024.2/lnx64/tools/fpo_v7_1 -lm -lhlsm-GCC46 -rpath=/tools/Xilinx/Vitis/2024.2/lnx64/lib/csim -lhlsmc++-GCC46 -lgmp -lmpfr --no-as-needed --disable-new-dtags -rpath=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/lib64 -mllvm -profilerOutputDirectory=/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/profiler/0 -L/tools/Xilinx/Vitis/2024.2/vcxx/lib/x86_64 --whole-archive -lhls_wt_Pthreads --no-whole-archive -mllvm -instrumenterOutputDirectory=/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0 -mllvm -binaryUid=app_0 -mllvm -dumpCStmtBitcode=/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0/project.symbols.bc -slx-trace -save-names -mllvm -wrappers-config=/tools/Xilinx/Vitis/2024.2/vcxx/data/config/wrappers/wrappers_config_posix_threads64.cfg -mllvm -stubsBitcode=/tools/Xilinx/Vitis/2024.2/vcxx/lib/x86_64/libprofStub_wt_Pthreads.bc -L/tools/Xilinx/Vitis/2024.2/vcxx/lib/x86_64 --whole-archive -lprof_wt_Pthreads --no-whole-archive -lpthread /tools/Xilinx/Vitis/2024.2/vcxx/third-party/zlib-1.2.13/lib/libzz.a -ldl -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0/lib/gcc/x86_64-pc-linux-gnu/8.3.0/crtend.o /lib/x86_64-linux-gnu/crtn.o
+1.	Running pass 'Function Pass Manager' on module 'ld-temp.o'.
+2.	Running pass 'X86 DAG->DAG Instruction Selection' on function '@_Z19NeighborhoodMap_bitiR7ap_uintILi200EES1_RS_ILi100EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_.23'
+ #0 0x000077067326f213 llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/libLLVMSupport.so.14+0x26f213)
+ #1 0x000077067326cd9e llvm::sys::RunSignalHandlers() (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/libLLVMSupport.so.14+0x26cd9e)
+ #2 0x000077067326f6ef (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/libLLVMSupport.so.14+0x26f6ef)
+ #3 0x0000770672445330 (/lib/x86_64-linux-gnu/libc.so.6+0x45330)
+ #4 0x000077067249eb2c __pthread_kill_implementation ./nptl/./nptl/pthread_kill.c:44:76
+ #5 0x000077067249eb2c __pthread_kill_internal ./nptl/./nptl/pthread_kill.c:78:10
+ #6 0x000077067249eb2c pthread_kill ./nptl/./nptl/pthread_kill.c:89:10
+ #7 0x000077067244527e raise ./signal/../sysdeps/posix/raise.c:27:6
+ #8 0x00007706724288ff abort ./stdlib/./stdlib/abort.c:81:7
+ #9 0x000077067242881b _nl_load_domain ./intl/./intl/loadmsgcat.c:1177:9
+#10 0x000077067243b517 (/lib/x86_64-linux-gnu/libc.so.6+0x3b517)
+#11 0x000077066e649f2f (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/../lib/libLLVMSelectionDAG.so.14+0x249f2f)
+#12 0x000077066e647bad (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/../lib/libLLVMSelectionDAG.so.14+0x247bad)
+#13 0x000077066e64cb46 (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/../lib/libLLVMSelectionDAG.so.14+0x24cb46)
+#14 0x000077066e651e43 llvm::SelectionDAG::LegalizeTypes() (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/../lib/libLLVMSelectionDAG.so.14+0x251e43)
+#15 0x000077066e778b66 llvm::SelectionDAGISel::CodeGenAndEmitDAG() (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/../lib/libLLVMSelectionDAG.so.14+0x378b66)
+#16 0x000077066e7772c0 llvm::SelectionDAGISel::SelectAllBasicBlocks(llvm::Function const&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/../lib/libLLVMSelectionDAG.so.14+0x3772c0)
+#17 0x000077066e773613 llvm::SelectionDAGISel::runOnMachineFunction(llvm::MachineFunction&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/../lib/libLLVMSelectionDAG.so.14+0x373613)
+#18 0x0000770671d6eef9 (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMX86CodeGen.so.14+0x36eef9)
+#19 0x000077066ef6d833 llvm::MachineFunctionPass::runOnFunction(llvm::Function&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMCodeGen.so.14+0x56d833)
+#20 0x0000770670860eab llvm::FPPassManager::runOnFunction(llvm::Function&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMCore.so.14+0x460eab)
+#21 0x00007706708697e1 llvm::FPPassManager::runOnModule(llvm::Module&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMCore.so.14+0x4697e1)
+#22 0x00007706708619f8 llvm::legacy::PassManagerImpl::run(llvm::Module&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMCore.so.14+0x4619f8)
+#23 0x0000770672fd07b2 (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMLTO.so.14+0x5e7b2)
+#24 0x0000770672fcf84e llvm::lto::backend(llvm::lto::Config const&, std::function<llvm::Expected<std::unique_ptr<llvm::CachedFileStream, std::default_delete<llvm::CachedFileStream> > > (unsigned int)>, unsigned int, llvm::Module&, llvm::ModuleSummaryIndex&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMLTO.so.14+0x5d84e)
+#25 0x0000770672fba32a llvm::lto::LTO::runRegularLTO(std::function<llvm::Expected<std::unique_ptr<llvm::CachedFileStream, std::default_delete<llvm::CachedFileStream> > > (unsigned int)>) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMLTO.so.14+0x4832a)
+#26 0x0000770672fb9821 llvm::lto::LTO::run(std::function<llvm::Expected<std::unique_ptr<llvm::CachedFileStream, std::default_delete<llvm::CachedFileStream> > > (unsigned int)>, std::function<llvm::Expected<std::function<llvm::Expected<std::unique_ptr<llvm::CachedFileStream, std::default_delete<llvm::CachedFileStream> > > (unsigned int)> > (unsigned int, llvm::StringRef)>) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/../lib/libLLVMLTO.so.14+0x47821)
+#27 0x00007706737e188f lld::elf::BitcodeCompiler::compile() (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/liblldELF.so.14+0x1e188f)
+#28 0x0000770673748206 void lld::elf::LinkerDriver::compileBitcodeFiles<llvm::object::ELFType<(llvm::support::endianness)1, true> >(bool) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/liblldELF.so.14+0x148206)
+#29 0x0000770673744814 lld::elf::LinkerDriver::link(llvm::opt::InputArgList&) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/liblldELF.so.14+0x144814)
+#30 0x0000770673737ca6 lld::elf::LinkerDriver::linkerMain(llvm::ArrayRef<char const*>) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/liblldELF.so.14+0x137ca6)
+#31 0x0000770673736002 lld::elf::link(llvm::ArrayRef<char const*>, llvm::raw_ostream&, llvm::raw_ostream&, bool, bool) (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/../lib/liblldELF.so.14+0x136002)
+#32 0x0000000000206af2 lldMain(int, char const**, llvm::raw_ostream&, llvm::raw_ostream&, bool) lld.cpp:0:0
+#33 0x000000000020641c main (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/ld.lld+0x20641c)
+#34 0x000077067242a1ca __libc_start_call_main ./csu/../sysdeps/nptl/libc_start_call_main.h:74:3
+#35 0x000077067242a28b call_init ./csu/../csu/libc-start.c:128:20
+#36 0x000077067242a28b __libc_start_main ./csu/../csu/libc-start.c:347:5
+#37 0x0000000000206049 _start (/tools/Xilinx/Vitis/2024.2/vcxx/libexec/ld.lld+0x206049)
+clang-14: error: unable to execute command: Aborted (core dumped)
+clang-14: error: linker command failed due to signal (use -v to see invocation)
+slxcmd:0:0: warning: Non-zero exit code: 254 returned by 'INFO: [HLS 211-200] Linking executable'
+ERROR: [SIM 211-200] An unexpected internal error occured, please report this as a bug.
+ERROR: [SIM 211-200] Code Analyzer execution failed. Consider running the classic C simulation instead by disabling the hls.csim.code_analyzer option in the config file.
+ERROR: Problem running csim: child process exited abnormally
+INFO: [HLS 200-112] Total CPU user time: 20.04 seconds. Total CPU system time: 6.48 seconds. Total elapsed time: 29.81 seconds; peak allocated memory: 658.852 MB.

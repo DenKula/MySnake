@@ -1,0 +1,60 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "3 4",
+    "file": "pipeline.cpp",
+    "fileloc": 679,
+    "instructions": 50,
+    "loads": {
+      "L": 12,
+      "T": 2
+    },
+    "name": "SneakySnake_bit",
+    "total_instructions": 737
+  },
+  "1": {
+    "basicblocks": 4,
+    "calls": "2 2 2 2 2 2 2 2 2 2 2",
+    "file": "pipeline.cpp",
+    "fileloc": 631,
+    "instructions": 90,
+    "name": "after_neighbohood",
+    "total_instructions": 310
+  },
+  "2": {
+    "basicblocks": 10,
+    "calls": "",
+    "file": "pipeline.cpp",
+    "fileloc": 326,
+    "instructions": 20,
+    "name": "count_one_bit",
+    "total_instructions": 20
+  },
+  "3": {
+    "basicblocks": 78,
+    "calls": "",
+    "file": "pipeline.cpp",
+    "fileloc": 359,
+    "instructions": 338,
+    "loads": {
+      "L": 11
+    },
+    "name": "NeighborhoodMap_bit",
+    "stores": {
+      "L": 11
+    },
+    "total_instructions": 338
+  },
+  "4": {
+    "basicblocks": 4,
+    "calls": "1",
+    "file": "pipeline.cpp",
+    "fileloc": 0,
+    "instructions": 39,
+    "name": "_Z15SneakySnake_bitiR7ap_uintILi256EES1_ii_for.inc",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 349
+  }
+}

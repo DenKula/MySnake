@@ -1,0 +1,69 @@
+Usage: ./snap_hbm_memcopy [-h] [-v, --verbose] [-V, --version]
+  -C, --card <cardno>        can be (0...3)
+  -i, --input <file.bin>     input file.
+  -o, --output <file.bin>    output file.
+  -A, --type-in <HOST_DRAM, HBM_P0/P1, SNAP_ADDRTYPE_UNUSED, ...>.
+  -a, --addr-in <addr>       address e.g. in HOST_DRAM.
+  -D, --type-out <HOST_DRAM,HBM_P0/P1, SNAP_ADDRTYPE_UNUSED, ...>.
+  -d, --addr-out <addr>      address e.g. in HOST_DRAM.
+  -s, --size <size>          size of data (default is 1024).
+  -m, --mode <mode>          mode flags.
+  -t, --timeout              timeout in sec to wait for done. (10 sec default)
+  -X, --verify               verify result if possible
+  -V, --version              provides version of software
+  -v, --verbose              provides extra (debug) information if any
+  -h, --help                 provides help summary
+  -N, --no irq               disables Interrupts
+
+NOTES : 
+  - HOST_DRAM is the Host machine (Power cpu based) attached memory
+  - HBM_P0/P1 is the FPGA High Bandwidth memory (AD9H3 - AD9H7 cards only)
+  - When providing an input file, a corresponding memory allocation will be performed
+    in the HOST_DRAM at the reported adress
+    and then used for transfer, using its size, the same occurs with an output file,
+    this allows to ease control of input and output data
+
+Useful parameters(to be placed before the command)  :
+-----------------------------------------------------
+SNAP_TRACE=0x0    no debug trace  (default mode)
+SNAP_TRACE=0xF    full debug trace
+The easy way is to run the scripts under 'tests' directory
+
+Example on a real card :
+------------------------
+cd /home/snap && export ACTION_ROOT=/home/snap/actions/hls_hbm_memcopy
+source snap_path.sh
+oc_maint -vv
+echo create a 512MB file with random data ...wait...
+dd if=/dev/urandom of=t1 bs=1M count=512
+
+echo READ 512MB from Host - one direction
+snap_hbm_memcopy -C0 -i t1
+echo WRITE 512MB to Host - one direction - (t1!=t2 since buffer is 256KB)
+snap_hbm_memcopy -C0 -o t2 -s0x20000000
+
+echo READ 512MB from HBM_P0 - one direction
+snap_hbm_memcopy -C0 -A HBM_P0 -a0x0 -s0x20000000
+echo WRITE 512MB to HBM_P0 - one direction
+snap_hbm_memcopy -C0 -D HBM_P0 -d0x0 -s0x20000000
+
+echo MOVE 512MB from Host to HBM_P0 back to Host and compare
+snap_hbm_memcopy -C0 -i t1 -D HBM_P0 -d 0x0
+snap_hbm_memcopy -C0 -o t2 -A HBM_P0 -a 0x0 -s0x20000000
+diff t1 t2
+
+Example for a simulation
+------------------------
+oc_maint -vv
+echo create a 4KB file with random data 
+rm t2; dd if=/dev/urandom of=t1 bs=1K count=4
+echo READ file t1 from host memory THEN write it at @0x0 in HBM_P0
+snap_hbm_memcopy -i t1 -D HBM_P0 -d 0x0 -t70 
+echo READ 4KB from HBM_P0 at @0x0 THEN write it at @0x0 in HBM_P1
+snap_hbm_memcopy -A HBM_P0 -a 0x0 -D HBM_P1 -d 0x0 -t70 -s0x1000
+echo READ 4KB from HBM_P0 at @0x0 THEN write them to Host and file t2
+snap_hbm_memcopy -A HBM_P1 -a 0x0 -o t2 -t70 -s0x1000 
+diff t1 t2
+
+echo same test using polling instead of IRQ waiting for the result
+snap_hbm_memcopy -o t2 -A HBM_P1 -a 0x0 -s0x1000 -N

@@ -1,0 +1,100 @@
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:2939:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:2939:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:2953:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:2953:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:2967:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:2967:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:4601:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:4601:7: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6570:5: warning: Added loop label VITIS_LOOP_317_1:   [xilinx-label-all-loops]
+    for (i = 1; i < 11; i++)
+    ^~~
+    VITIS_LOOP_317_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6570:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6583:5: warning: Added loop label VITIS_LOOP_330_1:   [xilinx-label-all-loops]
+    for (index=0;index<8;index++)
+    ^~~
+    VITIS_LOOP_330_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6583:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6605:5: warning: Added loop label VITIS_LOOP_352_1:   [xilinx-label-all-loops]
+    for (i = 1; i < n; i++)
+    ^~~
+    VITIS_LOOP_352_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6605:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6633:5: warning: Added loop label VITIS_LOOP_380_1:   [xilinx-label-all-loops]
+    for (i = 0; i < 256 -2; i = i + 2)
+    ^~~
+    VITIS_LOOP_380_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6633:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6653:7: warning: Added loop label VITIS_LOOP_400_2:   [xilinx-label-all-loops]
+      for (i = 0; i < 256 -2; i = i + 2)
+      ^~~
+      VITIS_LOOP_400_2: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6653:7: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6672:5: warning: Added loop label VITIS_LOOP_419_3:   [xilinx-label-all-loops]
+    for (i = 0; i < 256 -2; i = i + 2)
+    ^~~
+    VITIS_LOOP_419_3: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6672:5: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6691:7: warning: Added loop label VITIS_LOOP_438_4:   [xilinx-label-all-loops]
+      for (i = 0; i < 256 -2; i = i + 2)
+      ^~~
+      VITIS_LOOP_438_4: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6691:7: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6706:7: warning: Added loop label VITIS_LOOP_462_5:   [xilinx-label-all-loops]
+      for (i = 0; i < 256 -2; i = i + 2)
+      ^~~
+      VITIS_LOOP_462_5: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6706:7: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6722:9: warning: Added loop label VITIS_LOOP_488_6:   [xilinx-label-all-loops]
+        for (i = 0; i < 256 -2; i = i + 2)
+        ^~~
+        VITIS_LOOP_488_6: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6722:9: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6739:10: warning: Added loop label VITIS_LOOP_516_7:   [xilinx-label-all-loops]
+         for (i = 0; i < 256 -2; i = i + 2)
+         ^~~
+         VITIS_LOOP_516_7: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6739:10: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6757:10: warning: Added loop label VITIS_LOOP_534_8:   [xilinx-label-all-loops]
+         for (i = 0; i < 256 -2; i = i + 2)
+         ^~~
+         VITIS_LOOP_534_8: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6757:10: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6771:10: warning: Added loop label VITIS_LOOP_556_9:   [xilinx-label-all-loops]
+         for (i = 0; i < 256 -2; i = i + 2)
+         ^~~
+         VITIS_LOOP_556_9: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6771:10: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6786:9: warning: Added loop label VITIS_LOOP_580_10:   [xilinx-label-all-loops]
+        for (i = 0; i < 256 -2; i = i + 2)
+        ^~~
+        VITIS_LOOP_580_10: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6786:9: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6803:10: warning: Added loop label VITIS_LOOP_607_11:   [xilinx-label-all-loops]
+         for (i = 0; i < 256 -2; i = i + 2)
+         ^~~
+         VITIS_LOOP_607_11: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6803:10: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6836:6: warning: Added loop label VITIS_LOOP_640_1:   [xilinx-label-all-loops]
+     for (int iter=0;iter<3;iter++)
+     ^~~
+     VITIS_LOOP_640_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6836:6: note: FIX-IT applied suggested code changes
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6895:9: warning: Added loop label VITIS_LOOP_707_1:   [xilinx-label-all-loops]
+        for(unsigned i=0; i<12;i++)
+        ^~~
+        VITIS_LOOP_707_1: 
+/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp:6895:9: note: FIX-IT applied suggested code changes

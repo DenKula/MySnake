@@ -1,0 +1,75 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvu9p-flga2104-2-i' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../SneakySnake-HLS-HBM/hw/tb_wrapper.cpp in debug mode
+   Compiling ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp in debug mode
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:347:26: error: use of undeclared identifier 'd_in_type'
+    int max = arr(sizeof(d_in_type)*(0)+1,sizeof(d_in_type)*(0)); 
+                         ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:347:50: error: use of undeclared identifier 'd_in_type'
+    int max = arr(sizeof(d_in_type)*(0)+1,sizeof(d_in_type)*(0)); 
+                                                 ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:353:24: error: use of undeclared identifier 'd_in_type'
+        if (arr(sizeof(d_in_type)*(i+1)-1,sizeof(d_in_type)*(i)) > max) 
+                       ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:353:50: error: use of undeclared identifier 'd_in_type'
+        if (arr(sizeof(d_in_type)*(i+1)-1,sizeof(d_in_type)*(i)) > max) 
+                                                 ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:635:5: error: unknown type name 'd_final_out_type'; did you mean 'd_bit_out_type'?
+    d_final_out_type global_count=0;
+    ^~~~~~~~~~~~~~~~
+    d_bit_out_type
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:11:28: note: 'd_bit_out_type' declared here
+typedef ap_uint<LENGTH/2>  d_bit_out_type;
+                           ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:706:5: error: unknown type name 'd_final_out_type'; did you mean 'd_bit_out_type'?
+    d_final_out_type global_count=0;
+    ^~~~~~~~~~~~~~~~
+    d_bit_out_type
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:11:28: note: 'd_bit_out_type' declared here
+typedef ap_uint<LENGTH/2>  d_bit_out_type;
+                           ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:719:141: error: unknown type name 'g_count_struct'
+void SneakySnake_stream(hls::stream<snap_membus_256_t> &ReadSeq_stream, hls::stream<snap_membus_256_t> &RefSeq_stream, int num_input_lines, g_count_struct &g_count)
+                                                                                                                                            ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:726:5: error: unknown type name 'g_count_struct'
+    g_count_struct *temp_ptr=&g_count;
+    ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:727:5: error: unknown type name 'd_final_out_type'; did you mean 'd_bit_out_type'?
+    d_final_out_type *temp_count=NULL;
+    ^~~~~~~~~~~~~~~~
+    d_bit_out_type
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:11:28: note: 'd_bit_out_type' declared here
+typedef ap_uint<LENGTH/2>  d_bit_out_type;
+                           ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:729:17: error: use of undeclared identifier 'd_final_out_type'
+    temp_count=(d_final_out_type *)&temp_ptr->global_count[0];
+                ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp:729:35: error: expected expression
+    temp_count=(d_final_out_type *)&temp_ptr->global_count[0];
+                                  ^
+11 errors generated.
+make: *** [csim.mk:94: obj/pipeline.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 10.84 seconds. Total CPU system time: 2.28 seconds. Total elapsed time: 13.89 seconds; peak allocated memory: 659.090 MB.

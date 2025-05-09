@@ -691,7 +691,7 @@ int SneakySnake_bit(int ReadLength, d_bit_in_type &ReadSeq, d_bit_in_type &RefSe
     // int KmerEnd=0;
     
     // int roundsNo=0;
-
+    #pragma HLS dataflow
     #pragma HLS INLINE OFF
     d_bit_out_type DNA_nsh, DNA_shl_one, DNA_shl_two, DNA_shl_three, DNA_shl_four, DNA_shl_five,
     DNA_shr_one, DNA_shr_two, DNA_shr_three, DNA_shr_four, DNA_shr_five;
@@ -716,26 +716,26 @@ int SneakySnake_bit(int ReadLength, d_bit_in_type &ReadSeq, d_bit_in_type &RefSe
     
     return global_count;
 }
-void SneakySnake_stream(hls::stream<snap_membus_256_t> &ReadSeq_stream, hls::stream<snap_membus_256_t> &RefSeq_stream, int num_input_lines, g_count_struct &g_count)
-{
-    #pragma HLS INLINE OFF
-    printf("Running sneaky snake for line=%d\n",num_input_lines/2 );
-    snap_membus_256_t RefSeq_256_t, ReadSeq_256_t;
-    d_bit_in_type ReadSeq,RefSeq;
+// void SneakySnake_stream(hls::stream<snap_membus_256_t> &ReadSeq_stream, hls::stream<snap_membus_256_t> &RefSeq_stream, int num_input_lines, g_count_struct &g_count)
+// {
+//     #pragma HLS INLINE OFF
+//     printf("Running sneaky snake for line=%d\n",num_input_lines/2 );
+//     snap_membus_256_t RefSeq_256_t, ReadSeq_256_t;
+//     d_bit_in_type ReadSeq,RefSeq;
 
-    g_count_struct *temp_ptr=&g_count;
-    d_final_out_type *temp_count=NULL;
+//     g_count_struct *temp_ptr=&g_count;
+//     d_final_out_type *temp_count=NULL;
 
-    temp_count=(d_final_out_type *)&temp_ptr->global_count[0];
+//     temp_count=(d_final_out_type *)&temp_ptr->global_count[0];
 
-    for (unsigned i = 0 ;i < num_input_lines/2; i ++)
-    {
-        printf("Running sequence: %d\n", i);
-        #pragma HLS PIPELINE
-        RefSeq_256_t= RefSeq_stream.read();
-        RefSeq=RefSeq_256_t.range(200,0);
-        ReadSeq_256_t= ReadSeq_stream.read();
-        ReadSeq=ReadSeq_256_t.range(200,0);
-        *(temp_count+ ( i ))=SneakySnake_bit( LENGTH, ReadSeq, RefSeq,  0,  0);
-    }
-}
+//     for (unsigned i = 0 ;i < num_input_lines/2; i ++)
+//     {
+//         printf("Running sequence: %d\n", i);
+//         #pragma HLS PIPELINE
+//         RefSeq_256_t= RefSeq_stream.read();
+//         RefSeq=RefSeq_256_t.range(200,0);
+//         ReadSeq_256_t= ReadSeq_stream.read();
+//         ReadSeq=ReadSeq_256_t.range(200,0);
+//         *(temp_count+ ( i ))=SneakySnake_bit( LENGTH, ReadSeq, RefSeq,  0,  0);
+//     }
+// }

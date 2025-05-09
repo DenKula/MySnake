@@ -1,0 +1,153 @@
+
+
+================================================================
+== Vitis HLS Report for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1'
+================================================================
+* Date:           Fri May  9 17:46:05 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        SneakySnake_bit
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  11.00 ns|  2.118 ns|     1.32 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      129|      129|  1.419 us|  1.419 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_380_1  |      127|      127|         1|          1|          1|   127|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.11>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%index = alloca i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 4 'alloca' 'index' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%DNA_nsh_out_0 = alloca i32 1"   --->   Operation 6 'alloca' 'DNA_nsh_out_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%DNA_1_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %DNA_1"   --->   Operation 7 'read' 'DNA_1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.38ns)   --->   "%store_ln371 = store i8 0, i8 %i" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 8 'store' 'store_ln371' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 9 [1/1] (0.38ns)   --->   "%store_ln371 = store i7 0, i7 %index" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 9 'store' 'store_ln371' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.body.i"   --->   Operation 10 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%index_16 = load i7 %index" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:389->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 11 'load' 'index_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.70ns)   --->   "%icmp_ln380 = icmp_eq  i7 %index_16, i7 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 12 'icmp' 'icmp_ln380' <Predicate = true> <Delay = 0.70> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.70ns)   --->   "%index_17 = add i7 %index_16, i7 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:389->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 13 'add' 'index_17' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%br_ln380 = br i1 %icmp_ln380, void %for.body.split.i_ifconv, void %for.end.i.exitStub" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 14 'br' 'br_ln380' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%i_load = load i8 %i" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 15 'load' 'i_load' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%DNA_nsh_out_0_load_1 = load i128 %DNA_nsh_out_0"   --->   Operation 16 'load' 'DNA_nsh_out_0_load_1' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln385)   --->   "%zext_ln380 = zext i8 %i_load" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 17 'zext' 'zext_ln380' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln384 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:384->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 18 'specpipeline' 'specpipeline_ln384' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln371 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 127, i64 127, i64 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln371' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln380 = specloopname void @_ssdm_op_SpecLoopName, void @empty_16" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 20 'specloopname' 'specloopname_ln380' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln385)   --->   "%tmp_i = partselect i2 @_ssdm_op_PartSelect.i2.i256.i32, i256 %DNA_1_read, i32 %zext_ln380" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 21 'partselect' 'tmp_i' <Predicate = (!icmp_ln380)> <Delay = 0.00> <CoreInst = "PartSelect">   --->   Core 165 'PartSelect' <Latency = 0> <II = 1> <Delay = 0.91> <FuncUnit> <Opcode : 'partselect'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln385)   --->   "%tmp_1 = partselect i7 @_ssdm_op_PartSelect.i7.i8.i32.i32, i8 %i_load, i32 1, i32 7" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 22 'partselect' 'tmp_1' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln385)   --->   "%or_ln = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i7.i1, i7 %tmp_1, i1 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 23 'bitconcatenate' 'or_ln' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln385)   --->   "%zext_ln385 = zext i8 %or_ln" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 24 'zext' 'zext_ln385' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln385)   --->   "%tmp_i_87 = partselect i2 @_ssdm_op_PartSelect.i2.i256.i32, i256 %DNA_1_read, i32 %zext_ln385" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 25 'partselect' 'tmp_i_87' <Predicate = (!icmp_ln380)> <Delay = 0.00> <CoreInst = "PartSelect">   --->   Core 165 'PartSelect' <Latency = 0> <II = 1> <Delay = 0.91> <FuncUnit> <Opcode : 'partselect'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln385)   --->   "%or_ln385 = or i2 %tmp_i, i2 %tmp_i_87" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 26 'or' 'or_ln385' <Predicate = (!icmp_ln380)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.91ns) (out node of the LUT)   --->   "%icmp_ln385 = icmp_eq  i2 %or_ln385, i2 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 27 'icmp' 'icmp_ln385' <Predicate = (!icmp_ln380)> <Delay = 0.91> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (0.27ns)   --->   "%p_cast = select i1 %icmp_ln385, i2 0, i2 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 28 'select' 'p_cast' <Predicate = (!icmp_ln380)> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%index_cast = zext i7 %index_16" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:389->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 29 'zext' 'index_cast' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.53ns)   --->   "%storemerge10_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %DNA_nsh_out_0_load_1, i2 %p_cast, i32 %index_cast" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 30 'partset' 'storemerge10_i' <Predicate = (!icmp_ln380)> <Delay = 0.53> <CoreInst = "PartSet">   --->   Core 166 'PartSet' <Latency = 0> <II = 1> <Delay = 0.53> <FuncUnit> <Opcode : 'partset'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (0.70ns)   --->   "%i_8 = add i8 %i_load, i8 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 31 'add' 'i_8' <Predicate = (!icmp_ln380)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%store_ln385 = store i128 %storemerge10_i, i128 %DNA_nsh_out_0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 32 'store' 'store_ln385' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.38ns)   --->   "%store_ln371 = store i8 %i_8, i8 %i" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 33 'store' 'store_ln371' <Predicate = (!icmp_ln380)> <Delay = 0.38>
+ST_1 : Operation 34 [1/1] (0.38ns)   --->   "%store_ln371 = store i7 %index_17, i7 %index" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 34 'store' 'store_ln371' <Predicate = (!icmp_ln380)> <Delay = 0.38>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%br_ln380 = br void %for.body.i" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 35 'br' 'br_ln380' <Predicate = (!icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%DNA_nsh_out_0_load = load i128 %DNA_nsh_out_0"   --->   Operation 36 'load' 'DNA_nsh_out_0_load' <Predicate = (icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i128P0A, i128 %DNA_nsh_out_0_out, i128 %DNA_nsh_out_0_load"   --->   Operation 37 'write' 'write_ln0' <Predicate = (icmp_ln380)> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.38ns)   --->   "%ret_ln0 = ret"   --->   Operation 38 'ret' 'ret_ln0' <Predicate = (icmp_ln380)> <Delay = 0.38>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 11.000ns, clock uncertainty: 1.320ns.
+
+ <State 1>: 2.118ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln371', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701) of constant 0 on local variable 'i', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701 [7]  (0.387 ns)
+	'load' operation 8 bit ('i_load', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701) on local variable 'i', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701 [16]  (0.000 ns)
+	'or' operation 2 bit ('or_ln385', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701) [27]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln385', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701) [28]  (0.919 ns)
+	'select' operation 2 bit ('p_cast', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701) [29]  (0.278 ns)
+	blocking operation 0.534 ns on control path)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

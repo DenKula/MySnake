@@ -32,7 +32,7 @@
  * limitations under the License.
  */
 
-#include <osnap_types.h>
+#include "osnap_types.h"
 
 #ifdef __cplusplus
 extern "C" {

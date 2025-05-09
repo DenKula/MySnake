@@ -1,0 +1,1 @@
+parallelismSelector::WARNG: WARNING: [HLS 211-200] /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:332:9: Ignoring pragma 'pipeline' because it conflicts with pragma 'pipeline' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:643:9). Reason: Inner loop cannot be pipelined because at least one outer loop has been pipelined

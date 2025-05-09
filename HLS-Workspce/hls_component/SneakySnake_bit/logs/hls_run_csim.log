@@ -1,0 +1,51 @@
+INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.cflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'syn.csimflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.cflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(17)
+INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvu9p-flga2104-2-i' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1465] Applying ini 'clock=11ns' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(15)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 11ns.
+INFO: [HLS 200-1465] Applying ini 'clock_uncertainty=12%' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(16)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.32ns.
+INFO: [HLS 200-1465] Applying ini 'csim.argv=0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=1' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(5)
+INFO: [SIM 211-200] Executing Code Analyzer instead of classic HLS C simulation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as hardware code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as test bench code with instrumentation
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:695:17: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+    #pragma HLS INLINE OFF
+                ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+1 warning generated.
+INFO: [HLS 211-200] Linking hardware code
+INFO: [HLS 211-200] Transforming hardware bitcode
+INFO: [HLS 211-200] Linking executable
+INFO: [HLS 211-200] Computing HLS IR Information
+INFO: [HLS 211-200] Determining source code dependencies
+INFO: [SIM 211-200] Running executable
+INFO: [SIM 211-200] Analyzing trace data
+INFO: [SIM 211-208] Running Code Analyzer
+WARNING: [HLS 211-200] /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:332:9: Ignoring pragma 'pipeline' because it conflicts with pragma 'pipeline' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:643:9). Reason: Inner loop cannot be pipelined because at least one outer loop has been pipelined
+INFO: [SIM 211-210] Code Analyzer finished
+INFO: [HLS 200-112] Total CPU user time: 246.26 seconds. Total CPU system time: 36.79 seconds. Total elapsed time: 286.51 seconds; peak allocated memory: 658.887 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 4m 51s

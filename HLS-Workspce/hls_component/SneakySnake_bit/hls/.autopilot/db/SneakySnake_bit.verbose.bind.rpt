@@ -1,0 +1,936 @@
+
+
+================================================================
+== Vitis HLS Report for 'SneakySnake_bit'
+================================================================
+* Date:           Fri May  9 17:46:10 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        SneakySnake_bit
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  11.00 ns|  8.806 ns|     1.32 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |      172|      172|  1.892 us|  1.892 us|  132|  132|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------+----------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
+        |                                      |                            |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+        |               Instance               |           Module           |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+        +--------------------------------------+----------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
+        |grp_NeighborhoodMap_bit_fu_52         |NeighborhoodMap_bit         |      131|      131|  1.441 us|  1.441 us|  131|  131|                                              no|
+        |grp_Loop_VITIS_LOOP_707_1_proc_fu_60  |Loop_VITIS_LOOP_707_1_proc  |       39|       39|  0.429 us|  0.429 us|   38|   38|  loop auto-rewind stp (delay=2 clock cycles(s))|
+        |tmp_Block_entry_proc_proc_fu_75       |Block_entry_proc_proc       |        0|        0|      0 ns|      0 ns|    0|    0|                                              no|
+        +--------------------------------------+----------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 3, States = { 1 2 3 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.02>
+ST_1 : Operation 4 [2/2] (2.02ns)   --->   "%call_ret = call i1408 @NeighborhoodMap_bit, i256 %ReadSeq, i256 %RefSeq" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 4 'call' 'call_ret' <Predicate = true> <Delay = 2.02> <CoreType = "Generic">   --->   Generic Core
+
+State 2 <SV = 1> <Delay = 2.83>
+ST_2 : Operation 5 [1/2] (0.00ns)   --->   "%call_ret = call i1408 @NeighborhoodMap_bit, i256 %ReadSeq, i256 %RefSeq" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 5 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%DNA_nsh = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 6 'extractvalue' 'DNA_nsh' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%DNA_shl_one = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 7 'extractvalue' 'DNA_shl_one' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%DNA_shl_two = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 8 'extractvalue' 'DNA_shl_two' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%DNA_shl_three = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 9 'extractvalue' 'DNA_shl_three' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%DNA_shl_four = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 10 'extractvalue' 'DNA_shl_four' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%DNA_shl_five = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 11 'extractvalue' 'DNA_shl_five' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%DNA_shr_one = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 12 'extractvalue' 'DNA_shr_one' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%DNA_shr_two = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 13 'extractvalue' 'DNA_shr_two' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%DNA_shr_three = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 14 'extractvalue' 'DNA_shr_three' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%DNA_shr_four = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 15 'extractvalue' 'DNA_shr_four' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%DNA_shr_five = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 16 'extractvalue' 'DNA_shr_five' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
+ST_2 : Operation 17 [2/2] (2.83ns)   --->   "%add_i_i2_loc_channel = call i2 @Loop_VITIS_LOOP_707_1_proc, i128 %DNA_nsh, i128 %DNA_shl_one, i128 %DNA_shl_two, i128 %DNA_shl_three, i128 %DNA_shl_four, i128 %DNA_shl_five, i128 %DNA_shr_one, i128 %DNA_shr_two, i128 %DNA_shr_three, i128 %DNA_shr_four, i128 %DNA_shr_five" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706]   --->   Operation 17 'call' 'add_i_i2_loc_channel' <Predicate = true> <Delay = 2.83> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 2> <Depth = 2> <FIFO>
+
+State 3 <SV = 2> <Delay = 5.15>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln694 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694]   --->   Operation 18 'specdataflowpipeline' 'specdataflowpipeline_ln694' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 19 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%spectopmodule_ln679 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_17" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679]   --->   Operation 20 'spectopmodule' 'spectopmodule_ln679' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln679 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_19, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679]   --->   Operation 21 'specinterface' 'specinterface_ln679' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %ReadLength"   --->   Operation 22 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ReadLength, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_4, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ReadLength, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i256 %ReadSeq"   --->   Operation 25 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ReadSeq, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_6, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ReadSeq, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i256 %RefSeq"   --->   Operation 28 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %RefSeq, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_8, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %RefSeq, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %EditThreshold"   --->   Operation 31 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %EditThreshold, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_14, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %EditThreshold, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %KmerSize"   --->   Operation 34 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %KmerSize, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_9, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %KmerSize, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/2] (5.15ns)   --->   "%add_i_i2_loc_channel = call i2 @Loop_VITIS_LOOP_707_1_proc, i128 %DNA_nsh, i128 %DNA_shl_one, i128 %DNA_shl_two, i128 %DNA_shl_three, i128 %DNA_shl_four, i128 %DNA_shl_five, i128 %DNA_shr_one, i128 %DNA_shr_two, i128 %DNA_shr_three, i128 %DNA_shr_four, i128 %DNA_shr_five" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706]   --->   Operation 38 'call' 'add_i_i2_loc_channel' <Predicate = true> <Delay = 5.15> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 2> <Depth = 2> <FIFO>
+ST_3 : Operation 39 [1/1] (1.42ns)   --->   "%tmp = call i2 @Block_entry_proc_proc, i2 %add_i_i2_loc_channel" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 39 'call' 'tmp' <Predicate = true> <Delay = 1.42> <CoreType = "Generic">   --->   Generic Core
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln717 = zext i2 %tmp" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 40 'zext' 'zext_ln717' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%ret_ln717 = ret i32 %zext_ln717" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 41 'ret' 'ret_ln717' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 1
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_chain:ce=0
+Port [ ReadLength]:  wired=1; compound=0; hidden=0; nouse=1; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ ReadSeq]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ RefSeq]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ EditThreshold]:  wired=1; compound=0; hidden=0; nouse=1; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ KmerSize]:  wired=1; compound=0; hidden=0; nouse=1; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+call_ret                   (call                ) [ 0000]
+DNA_nsh                    (extractvalue        ) [ 0001]
+DNA_shl_one                (extractvalue        ) [ 0001]
+DNA_shl_two                (extractvalue        ) [ 0001]
+DNA_shl_three              (extractvalue        ) [ 0001]
+DNA_shl_four               (extractvalue        ) [ 0001]
+DNA_shl_five               (extractvalue        ) [ 0001]
+DNA_shr_one                (extractvalue        ) [ 0001]
+DNA_shr_two                (extractvalue        ) [ 0001]
+DNA_shr_three              (extractvalue        ) [ 0001]
+DNA_shr_four               (extractvalue        ) [ 0001]
+DNA_shr_five               (extractvalue        ) [ 0001]
+specdataflowpipeline_ln694 (specdataflowpipeline) [ 0000]
+specbitsmap_ln0            (specbitsmap         ) [ 0000]
+spectopmodule_ln679        (spectopmodule       ) [ 0000]
+specinterface_ln679        (specinterface       ) [ 0000]
+specbitsmap_ln0            (specbitsmap         ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specbitsmap_ln0            (specbitsmap         ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specbitsmap_ln0            (specbitsmap         ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specbitsmap_ln0            (specbitsmap         ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specbitsmap_ln0            (specbitsmap         ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+specinterface_ln0          (specinterface       ) [ 0000]
+add_i_i2_loc_channel       (call                ) [ 0000]
+tmp                        (call                ) [ 0000]
+zext_ln717                 (zext                ) [ 0000]
+ret_ln717                  (ret                 ) [ 0000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="ReadLength">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ReadLength"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="ReadSeq">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="ReadSeq"/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="RefSeq">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="RefSeq"/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="EditThreshold">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="EditThreshold"/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="KmerSize">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="KmerSize"/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="NeighborhoodMap_bit"/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Loop_VITIS_LOOP_707_1_proc"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecDataflowPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_17"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_19"/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_6"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_8"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_14"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_9"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="Block_entry_proc_proc"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="grp_NeighborhoodMap_bit_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="54" dir="0" index="1" bw="256" slack="0"/>
+<pin id="55" dir="0" index="2" bw="256" slack="0"/>
+<pin id="56" dir="1" index="3" bw="1408" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ret/1 "/>
+</bind>
+</comp>
+
+<comp id="60" class="1004" name="grp_Loop_VITIS_LOOP_707_1_proc_fu_60">
+<pin_list>
+<pin id="61" dir="0" index="0" bw="2" slack="0"/>
+<pin id="62" dir="0" index="1" bw="128" slack="0"/>
+<pin id="63" dir="0" index="2" bw="128" slack="0"/>
+<pin id="64" dir="0" index="3" bw="128" slack="0"/>
+<pin id="65" dir="0" index="4" bw="128" slack="0"/>
+<pin id="66" dir="0" index="5" bw="128" slack="0"/>
+<pin id="67" dir="0" index="6" bw="128" slack="0"/>
+<pin id="68" dir="0" index="7" bw="128" slack="0"/>
+<pin id="69" dir="0" index="8" bw="128" slack="0"/>
+<pin id="70" dir="0" index="9" bw="128" slack="0"/>
+<pin id="71" dir="0" index="10" bw="128" slack="0"/>
+<pin id="72" dir="0" index="11" bw="128" slack="0"/>
+<pin id="73" dir="1" index="12" bw="2" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="add_i_i2_loc_channel/2 "/>
+</bind>
+</comp>
+
+<comp id="75" class="1004" name="tmp_Block_entry_proc_proc_fu_75">
+<pin_list>
+<pin id="76" dir="0" index="0" bw="2" slack="0"/>
+<pin id="77" dir="0" index="1" bw="2" slack="0"/>
+<pin id="78" dir="1" index="2" bw="2" slack="0"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="tmp/3 "/>
+</bind>
+</comp>
+
+<comp id="81" class="1004" name="DNA_nsh_fu_81">
+<pin_list>
+<pin id="82" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="83" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_nsh/2 "/>
+</bind>
+</comp>
+
+<comp id="86" class="1004" name="DNA_shl_one_fu_86">
+<pin_list>
+<pin id="87" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="88" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shl_one/2 "/>
+</bind>
+</comp>
+
+<comp id="91" class="1004" name="DNA_shl_two_fu_91">
+<pin_list>
+<pin id="92" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="93" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shl_two/2 "/>
+</bind>
+</comp>
+
+<comp id="96" class="1004" name="DNA_shl_three_fu_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="98" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shl_three/2 "/>
+</bind>
+</comp>
+
+<comp id="101" class="1004" name="DNA_shl_four_fu_101">
+<pin_list>
+<pin id="102" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="103" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shl_four/2 "/>
+</bind>
+</comp>
+
+<comp id="106" class="1004" name="DNA_shl_five_fu_106">
+<pin_list>
+<pin id="107" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="108" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shl_five/2 "/>
+</bind>
+</comp>
+
+<comp id="111" class="1004" name="DNA_shr_one_fu_111">
+<pin_list>
+<pin id="112" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="113" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shr_one/2 "/>
+</bind>
+</comp>
+
+<comp id="116" class="1004" name="DNA_shr_two_fu_116">
+<pin_list>
+<pin id="117" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="118" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shr_two/2 "/>
+</bind>
+</comp>
+
+<comp id="121" class="1004" name="DNA_shr_three_fu_121">
+<pin_list>
+<pin id="122" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="123" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shr_three/2 "/>
+</bind>
+</comp>
+
+<comp id="126" class="1004" name="DNA_shr_four_fu_126">
+<pin_list>
+<pin id="127" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="128" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shr_four/2 "/>
+</bind>
+</comp>
+
+<comp id="131" class="1004" name="DNA_shr_five_fu_131">
+<pin_list>
+<pin id="132" dir="0" index="0" bw="1408" slack="0"/>
+<pin id="133" dir="1" index="1" bw="128" slack="0"/>
+</pin_list>
+<bind>
+<opcode="extractvalue(56) " fcode="extractvalue"/>
+<opset="DNA_shr_five/2 "/>
+</bind>
+</comp>
+
+<comp id="136" class="1004" name="zext_ln717_fu_136">
+<pin_list>
+<pin id="137" dir="0" index="0" bw="2" slack="0"/>
+<pin id="138" dir="1" index="1" bw="32" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln717/3 "/>
+</bind>
+</comp>
+
+<comp id="140" class="1005" name="DNA_nsh_reg_140">
+<pin_list>
+<pin id="141" dir="0" index="0" bw="128" slack="1"/>
+<pin id="142" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_nsh "/>
+</bind>
+</comp>
+
+<comp id="145" class="1005" name="DNA_shl_one_reg_145">
+<pin_list>
+<pin id="146" dir="0" index="0" bw="128" slack="1"/>
+<pin id="147" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shl_one "/>
+</bind>
+</comp>
+
+<comp id="150" class="1005" name="DNA_shl_two_reg_150">
+<pin_list>
+<pin id="151" dir="0" index="0" bw="128" slack="1"/>
+<pin id="152" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shl_two "/>
+</bind>
+</comp>
+
+<comp id="155" class="1005" name="DNA_shl_three_reg_155">
+<pin_list>
+<pin id="156" dir="0" index="0" bw="128" slack="1"/>
+<pin id="157" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shl_three "/>
+</bind>
+</comp>
+
+<comp id="160" class="1005" name="DNA_shl_four_reg_160">
+<pin_list>
+<pin id="161" dir="0" index="0" bw="128" slack="1"/>
+<pin id="162" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shl_four "/>
+</bind>
+</comp>
+
+<comp id="165" class="1005" name="DNA_shl_five_reg_165">
+<pin_list>
+<pin id="166" dir="0" index="0" bw="128" slack="1"/>
+<pin id="167" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shl_five "/>
+</bind>
+</comp>
+
+<comp id="170" class="1005" name="DNA_shr_one_reg_170">
+<pin_list>
+<pin id="171" dir="0" index="0" bw="128" slack="1"/>
+<pin id="172" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shr_one "/>
+</bind>
+</comp>
+
+<comp id="175" class="1005" name="DNA_shr_two_reg_175">
+<pin_list>
+<pin id="176" dir="0" index="0" bw="128" slack="1"/>
+<pin id="177" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shr_two "/>
+</bind>
+</comp>
+
+<comp id="180" class="1005" name="DNA_shr_three_reg_180">
+<pin_list>
+<pin id="181" dir="0" index="0" bw="128" slack="1"/>
+<pin id="182" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shr_three "/>
+</bind>
+</comp>
+
+<comp id="185" class="1005" name="DNA_shr_four_reg_185">
+<pin_list>
+<pin id="186" dir="0" index="0" bw="128" slack="1"/>
+<pin id="187" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shr_four "/>
+</bind>
+</comp>
+
+<comp id="190" class="1005" name="DNA_shr_five_reg_190">
+<pin_list>
+<pin id="191" dir="0" index="0" bw="128" slack="1"/>
+<pin id="192" dir="1" index="1" bw="128" slack="1"/>
+</pin_list>
+<bind>
+<opset="DNA_shr_five "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="57"><net_src comp="10" pin="0"/><net_sink comp="52" pin=0"/></net>
+
+<net id="58"><net_src comp="2" pin="0"/><net_sink comp="52" pin=1"/></net>
+
+<net id="59"><net_src comp="4" pin="0"/><net_sink comp="52" pin=2"/></net>
+
+<net id="74"><net_src comp="12" pin="0"/><net_sink comp="60" pin=0"/></net>
+
+<net id="79"><net_src comp="50" pin="0"/><net_sink comp="75" pin=0"/></net>
+
+<net id="80"><net_src comp="60" pin="12"/><net_sink comp="75" pin=1"/></net>
+
+<net id="84"><net_src comp="52" pin="3"/><net_sink comp="81" pin=0"/></net>
+
+<net id="85"><net_src comp="81" pin="1"/><net_sink comp="60" pin=1"/></net>
+
+<net id="89"><net_src comp="52" pin="3"/><net_sink comp="86" pin=0"/></net>
+
+<net id="90"><net_src comp="86" pin="1"/><net_sink comp="60" pin=2"/></net>
+
+<net id="94"><net_src comp="52" pin="3"/><net_sink comp="91" pin=0"/></net>
+
+<net id="95"><net_src comp="91" pin="1"/><net_sink comp="60" pin=3"/></net>
+
+<net id="99"><net_src comp="52" pin="3"/><net_sink comp="96" pin=0"/></net>
+
+<net id="100"><net_src comp="96" pin="1"/><net_sink comp="60" pin=4"/></net>
+
+<net id="104"><net_src comp="52" pin="3"/><net_sink comp="101" pin=0"/></net>
+
+<net id="105"><net_src comp="101" pin="1"/><net_sink comp="60" pin=5"/></net>
+
+<net id="109"><net_src comp="52" pin="3"/><net_sink comp="106" pin=0"/></net>
+
+<net id="110"><net_src comp="106" pin="1"/><net_sink comp="60" pin=6"/></net>
+
+<net id="114"><net_src comp="52" pin="3"/><net_sink comp="111" pin=0"/></net>
+
+<net id="115"><net_src comp="111" pin="1"/><net_sink comp="60" pin=7"/></net>
+
+<net id="119"><net_src comp="52" pin="3"/><net_sink comp="116" pin=0"/></net>
+
+<net id="120"><net_src comp="116" pin="1"/><net_sink comp="60" pin=8"/></net>
+
+<net id="124"><net_src comp="52" pin="3"/><net_sink comp="121" pin=0"/></net>
+
+<net id="125"><net_src comp="121" pin="1"/><net_sink comp="60" pin=9"/></net>
+
+<net id="129"><net_src comp="52" pin="3"/><net_sink comp="126" pin=0"/></net>
+
+<net id="130"><net_src comp="126" pin="1"/><net_sink comp="60" pin=10"/></net>
+
+<net id="134"><net_src comp="52" pin="3"/><net_sink comp="131" pin=0"/></net>
+
+<net id="135"><net_src comp="131" pin="1"/><net_sink comp="60" pin=11"/></net>
+
+<net id="139"><net_src comp="75" pin="2"/><net_sink comp="136" pin=0"/></net>
+
+<net id="143"><net_src comp="81" pin="1"/><net_sink comp="140" pin=0"/></net>
+
+<net id="144"><net_src comp="140" pin="1"/><net_sink comp="60" pin=1"/></net>
+
+<net id="148"><net_src comp="86" pin="1"/><net_sink comp="145" pin=0"/></net>
+
+<net id="149"><net_src comp="145" pin="1"/><net_sink comp="60" pin=2"/></net>
+
+<net id="153"><net_src comp="91" pin="1"/><net_sink comp="150" pin=0"/></net>
+
+<net id="154"><net_src comp="150" pin="1"/><net_sink comp="60" pin=3"/></net>
+
+<net id="158"><net_src comp="96" pin="1"/><net_sink comp="155" pin=0"/></net>
+
+<net id="159"><net_src comp="155" pin="1"/><net_sink comp="60" pin=4"/></net>
+
+<net id="163"><net_src comp="101" pin="1"/><net_sink comp="160" pin=0"/></net>
+
+<net id="164"><net_src comp="160" pin="1"/><net_sink comp="60" pin=5"/></net>
+
+<net id="168"><net_src comp="106" pin="1"/><net_sink comp="165" pin=0"/></net>
+
+<net id="169"><net_src comp="165" pin="1"/><net_sink comp="60" pin=6"/></net>
+
+<net id="173"><net_src comp="111" pin="1"/><net_sink comp="170" pin=0"/></net>
+
+<net id="174"><net_src comp="170" pin="1"/><net_sink comp="60" pin=7"/></net>
+
+<net id="178"><net_src comp="116" pin="1"/><net_sink comp="175" pin=0"/></net>
+
+<net id="179"><net_src comp="175" pin="1"/><net_sink comp="60" pin=8"/></net>
+
+<net id="183"><net_src comp="121" pin="1"/><net_sink comp="180" pin=0"/></net>
+
+<net id="184"><net_src comp="180" pin="1"/><net_sink comp="60" pin=9"/></net>
+
+<net id="188"><net_src comp="126" pin="1"/><net_sink comp="185" pin=0"/></net>
+
+<net id="189"><net_src comp="185" pin="1"/><net_sink comp="60" pin=10"/></net>
+
+<net id="193"><net_src comp="131" pin="1"/><net_sink comp="190" pin=0"/></net>
+
+<net id="194"><net_src comp="190" pin="1"/><net_sink comp="60" pin=11"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: SneakySnake_bit : ReadSeq | {1 2 }
+	Port: SneakySnake_bit : RefSeq | {1 2 }
+  - Chain level:
+	State 1
+	State 2
+		DNA_nsh : 1
+		DNA_shl_one : 1
+		DNA_shl_two : 1
+		DNA_shl_three : 1
+		DNA_shl_four : 1
+		DNA_shl_five : 1
+		DNA_shr_one : 1
+		DNA_shr_two : 1
+		DNA_shr_three : 1
+		DNA_shr_four : 1
+		DNA_shr_five : 1
+		add_i_i2_loc_channel : 2
+	State 3
+		tmp : 1
+		zext_ln717 : 2
+		ret_ln717 : 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|--------------------------------------|---------|---------|---------|
+| Operation|            Functional Unit           |  Delay  |    FF   |   LUT   |
+|----------|--------------------------------------|---------|---------|---------|
+|          |     grp_NeighborhoodMap_bit_fu_52    |  4.257  |   5797  |   6611  |
+|   call   | grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |    0    |   271   |   7323  |
+|          |    tmp_Block_entry_proc_proc_fu_75   |    0    |    0    |    0    |
+|----------|--------------------------------------|---------|---------|---------|
+|          |             DNA_nsh_fu_81            |    0    |    0    |    0    |
+|          |           DNA_shl_one_fu_86          |    0    |    0    |    0    |
+|          |           DNA_shl_two_fu_91          |    0    |    0    |    0    |
+|          |          DNA_shl_three_fu_96         |    0    |    0    |    0    |
+|          |          DNA_shl_four_fu_101         |    0    |    0    |    0    |
+|extractvalue|          DNA_shl_five_fu_106         |    0    |    0    |    0    |
+|          |          DNA_shr_one_fu_111          |    0    |    0    |    0    |
+|          |          DNA_shr_two_fu_116          |    0    |    0    |    0    |
+|          |         DNA_shr_three_fu_121         |    0    |    0    |    0    |
+|          |          DNA_shr_four_fu_126         |    0    |    0    |    0    |
+|          |          DNA_shr_five_fu_131         |    0    |    0    |    0    |
+|----------|--------------------------------------|---------|---------|---------|
+|   zext   |           zext_ln717_fu_136          |    0    |    0    |    0    |
+|----------|--------------------------------------|---------|---------|---------|
+|   Total  |                                      |  4.257  |   6068  |  13934  |
+|----------|--------------------------------------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++---------------------+--------+
+|                     |   FF   |
++---------------------+--------+
+|   DNA_nsh_reg_140   |   128  |
+| DNA_shl_five_reg_165|   128  |
+| DNA_shl_four_reg_160|   128  |
+| DNA_shl_one_reg_145 |   128  |
+|DNA_shl_three_reg_155|   128  |
+| DNA_shl_two_reg_150 |   128  |
+| DNA_shr_five_reg_190|   128  |
+| DNA_shr_four_reg_185|   128  |
+| DNA_shr_one_reg_170 |   128  |
+|DNA_shr_three_reg_180|   128  |
+| DNA_shr_two_reg_175 |   128  |
++---------------------+--------+
+|        Total        |  1408  |
++---------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------------------------------------|------|------|------|--------||---------||---------||---------|
+|                 Comp                 |  Pin | Size |  BW  | S x BW ||  Delay  ||    FF   ||   LUT   |
+|--------------------------------------|------|------|------|--------||---------||---------||---------|
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p1  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p2  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p3  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p4  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p5  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p6  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p7  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p8  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p9  |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p10 |   2  |  128 |   256  ||    0    ||    9    |
+| grp_Loop_VITIS_LOOP_707_1_proc_fu_60 |  p11 |   2  |  128 |   256  ||    0    ||    9    |
+|--------------------------------------|------|------|------|--------||---------||---------||---------|
+|                 Total                |      |      |      |  2816  ||  4.257  ||    0    ||    99   |
+|--------------------------------------|------|------|------|--------||---------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    4   |  6068  |  13934 |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    4   |    0   |   99   |
+|  Register |    -   |  1408  |    -   |
++-----------+--------+--------+--------+
+|   Total   |    8   |  7476  |  14033 |
++-----------+--------+--------+--------+
