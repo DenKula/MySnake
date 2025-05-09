@@ -80,17 +80,6 @@ static void worker_for(void *_data, long i, int tid) // kt_for() callback
 	//printf("i: %d TID:%d Accepted: %d\n",i, tid, step->Accepted[i]);
 
 }
-d_bit_in_type pack_seq(const char* s, unsigned len)
-{
-    d_bit_in_type word = 0;
-    for (unsigned i = 0; i < len; ++i) {
-        ap_uint<2> code = (s[i] == 'C' || s[i] == 'c') ? 1 :
-                          (s[i] == 'G' || s[i] == 'g') ? 2 :
-                          (s[i] == 'T' || s[i] == 't') ? 3 : 0;
-        word |= (d_bit_in_type(code) << (2 * i));
-    }
-    return word;
-}
 
 
 int main(int argc, const char * const argv[]) {
