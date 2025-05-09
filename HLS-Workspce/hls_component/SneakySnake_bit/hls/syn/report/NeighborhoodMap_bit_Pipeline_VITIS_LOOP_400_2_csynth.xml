@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcvu9p-flga2104-2-i</Part>
 <TopModelName>NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>6.00</ClockUncertainty>
+<TargetClockPeriod>11.00</TargetClockPeriod>
+<ClockUncertainty>1.32</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
@@ -25,18 +25,18 @@
 <Best-caseLatency>129</Best-caseLatency>
 <Average-caseLatency>129</Average-caseLatency>
 <Worst-caseLatency>129</Worst-caseLatency>
-<Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>1.419 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.419 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.419 us</Worst-caseRealTimeLatency>
 <Interval-min>128</Interval-min>
 <Interval-max>128</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_400_2>
-<Slack>44.00</Slack>
+<Slack>9.68</Slack>
 <TripCount>127</TripCount>
 <Latency>127</Latency>
-<AbsoluteTimeLatency>6350</AbsoluteTimeLatency>
+<AbsoluteTimeLatency>1397</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>1</PipelineDepth>
 <InstanceList>

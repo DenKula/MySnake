@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'SneakySnake_bit'
 ================================================================
 + General Information: 
-    * Date:           Fri May  9 16:51:50 2025
+    * Date:           Fri May  9 17:06:13 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        SneakySnake_bit
     * Solution:       hls (Vitis Kernel Flow Target)
@@ -15,47 +15,47 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +----------------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
-    |                       Modules                      | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |            |     |
-    |                       & Loops                      | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT    | URAM|
-    +----------------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
-    |+ SneakySnake_bit                                   |     -|  28.12|      169|  8.450e+03|         -|      170|     -|        no|     -|   -|  7174 (~0%)|  16024 (1%)|    -|
-    | + NeighborhoodMap_bit                              |     -|  41.88|      131|  6.550e+03|         -|      131|     -|        no|     -|   -|  4425 (~0%)|  7029 (~0%)|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_380_1                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_400_2                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_419_3                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_438_4                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_462_5                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_488_6                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_516_7                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_534_8                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9   |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_556_9                               |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10  |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_580_10                              |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11  |     -|  41.88|      129|  6.450e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
-    |   o VITIS_LOOP_607_11                              |     -|  44.00|      127|  6.350e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
-    | o VITIS_LOOP_707_1_VITIS_LOOP_640_1                |     -|  44.00|       35|  1.750e+03|         1|        1|    36|       yes|     -|   -|           -|           -|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    |  + count_one_bit                                   |     -|  42.96|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
-    +----------------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+    +----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |                       Modules                      | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |            |     |
+    |                       & Loops                      | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT    | URAM|
+    +----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |+ SneakySnake_bit                                   |     -|  0.84|      171|  1.881e+03|         -|      172|     -|        no|     -|   -|  7337 (~0%)|  16068 (1%)|    -|
+    | + NeighborhoodMap_bit                              |     -|  7.56|      131|  1.441e+03|         -|      131|     -|        no|     -|   -|  4425 (~0%)|  7029 (~0%)|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_380_1                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_400_2                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_419_3                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_438_4                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_462_5                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_488_6                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_516_7                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_534_8                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9   |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_556_9                               |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10  |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_580_10                              |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11  |     -|  7.56|      129|  1.419e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_607_11                              |     -|  9.68|      127|  1.397e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    | o VITIS_LOOP_707_1_VITIS_LOOP_640_1                |     -|  9.68|       37|    407.000|         3|        1|    36|       yes|     -|   -|           -|           -|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  8.64|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    +----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
 
 
 ================================================================
@@ -158,85 +158,85 @@
 | Name                                               | DSP | Pragma | Variable        | Op         | Impl                   | Latency |
 +----------------------------------------------------+-----+--------+-----------------+------------+------------------------+---------+
 | + SneakySnake_bit                                  | 0   |        |                 |            |                        |         |
-|   or_ln706_fu_360_p2                               |     |        | or_ln706        | or         | auto                   | 0       |
-|   i_2_fu_366_p3                                    |     |        | i_2             | select     | auto_sel               | 0       |
-|   global_count_2_fu_374_p3                         |     |        | global_count_2  | select     | auto_sel               | 0       |
-|   icmp_ln710_fu_390_p2                             |     |        | icmp_ln710      | setne      | auto                   | 0       |
-|   xor_ln710_fu_405_p2                              |     |        | xor_ln710       | xor        | auto                   | 0       |
-|   select_ln710_fu_411_p3                           |     |        | select_ln710    | select     | auto_sel               | 0       |
-|   select_ln710_1_fu_418_p3                         |     |        | select_ln710_1  | select     | auto_sel               | 0       |
-|   lshr_ln710_fu_430_p2                             |     |        | lshr_ln710      | lshr       | auto_pipe              | 0       |
-|   select_ln710_2_fu_440_p3                         |     |        | select_ln710_2  | select     | auto_sel               | 0       |
-|   DNA_nsh_1_fu_448_p2                              |     |        | DNA_nsh_1       | and        | auto                   | 0       |
-|   select_ln711_fu_463_p3                           |     |        | select_ln711    | select     | auto_sel               | 0       |
-|   lshr_ln711_fu_470_p2                             |     |        | lshr_ln711      | lshr       | auto_pipe              | 0       |
-|   DNA_shl_one_1_fu_480_p2                          |     |        | DNA_shl_one_1   | and        | auto                   | 0       |
-|   select_ln711_1_fu_495_p3                         |     |        | select_ln711_1  | select     | auto_sel               | 0       |
-|   lshr_ln711_1_fu_502_p2                           |     |        | lshr_ln711_1    | lshr       | auto_pipe              | 0       |
-|   DNA_shl_two_1_fu_512_p2                          |     |        | DNA_shl_two_1   | and        | auto                   | 0       |
-|   select_ln711_2_fu_527_p3                         |     |        | select_ln711_2  | select     | auto_sel               | 0       |
-|   lshr_ln711_2_fu_534_p2                           |     |        | lshr_ln711_2    | lshr       | auto_pipe              | 0       |
-|   DNA_shl_three_1_fu_544_p2                        |     |        | DNA_shl_three_1 | and        | auto                   | 0       |
-|   select_ln711_3_fu_559_p3                         |     |        | select_ln711_3  | select     | auto_sel               | 0       |
-|   lshr_ln711_3_fu_566_p2                           |     |        | lshr_ln711_3    | lshr       | auto_pipe              | 0       |
-|   DNA_shl_four_1_fu_576_p2                         |     |        | DNA_shl_four_1  | and        | auto                   | 0       |
-|   select_ln711_4_fu_591_p3                         |     |        | select_ln711_4  | select     | auto_sel               | 0       |
-|   lshr_ln711_4_fu_598_p2                           |     |        | lshr_ln711_4    | lshr       | auto_pipe              | 0       |
-|   DNA_shl_five_1_fu_608_p2                         |     |        | DNA_shl_five_1  | and        | auto                   | 0       |
-|   select_ln712_fu_623_p3                           |     |        | select_ln712    | select     | auto_sel               | 0       |
-|   lshr_ln712_fu_630_p2                             |     |        | lshr_ln712      | lshr       | auto_pipe              | 0       |
-|   DNA_shr_one_1_fu_640_p2                          |     |        | DNA_shr_one_1   | and        | auto                   | 0       |
-|   select_ln712_1_fu_655_p3                         |     |        | select_ln712_1  | select     | auto_sel               | 0       |
-|   lshr_ln712_1_fu_662_p2                           |     |        | lshr_ln712_1    | lshr       | auto_pipe              | 0       |
-|   DNA_shr_two_1_fu_672_p2                          |     |        | DNA_shr_two_1   | and        | auto                   | 0       |
-|   select_ln712_2_fu_687_p3                         |     |        | select_ln712_2  | select     | auto_sel               | 0       |
-|   lshr_ln712_2_fu_694_p2                           |     |        | lshr_ln712_2    | lshr       | auto_pipe              | 0       |
-|   DNA_shr_three_1_fu_704_p2                        |     |        | DNA_shr_three_1 | and        | auto                   | 0       |
-|   select_ln712_3_fu_719_p3                         |     |        | select_ln712_3  | select     | auto_sel               | 0       |
-|   lshr_ln712_3_fu_726_p2                           |     |        | lshr_ln712_3    | lshr       | auto_pipe              | 0       |
-|   DNA_shr_four_1_fu_736_p2                         |     |        | DNA_shr_four_1  | and        | auto                   | 0       |
-|   select_ln712_4_fu_751_p3                         |     |        | select_ln712_4  | select     | auto_sel               | 0       |
-|   lshr_ln712_4_fu_758_p2                           |     |        | lshr_ln712_4    | lshr       | auto_pipe              | 0       |
-|   DNA_shr_five_1_fu_768_p2                         |     |        | DNA_shr_five_1  | and        | auto                   | 0       |
-|   add_ln707_fu_774_p2                              |     |        | add_ln707       | add        | fabric                 | 0       |
-|   icmp_ln318_fu_882_p2                             |     |        | icmp_ln318      | setgt      | auto                   | 0       |
-|   max_1_fu_888_p3                                  |     |        | max_1           | select     | auto_sel               | 0       |
-|   icmp_ln318_1_fu_896_p2                           |     |        | icmp_ln318_1    | setgt      | auto                   | 0       |
-|   max_3_fu_902_p3                                  |     |        | max_3           | select     | auto_sel               | 0       |
-|   icmp_ln318_2_fu_910_p2                           |     |        | icmp_ln318_2    | setgt      | auto                   | 0       |
-|   max_4_fu_916_p3                                  |     |        | max_4           | select     | auto_sel               | 0       |
-|   icmp_ln318_3_fu_924_p2                           |     |        | icmp_ln318_3    | setgt      | auto                   | 0       |
-|   max_6_fu_930_p3                                  |     |        | max_6           | select     | auto_sel               | 0       |
-|   icmp_ln318_4_fu_938_p2                           |     |        | icmp_ln318_4    | setgt      | auto                   | 0       |
-|   max_7_fu_944_p3                                  |     |        | max_7           | select     | auto_sel               | 0       |
-|   icmp_ln318_5_fu_952_p2                           |     |        | icmp_ln318_5    | setgt      | auto                   | 0       |
-|   max_9_fu_958_p3                                  |     |        | max_9           | select     | auto_sel               | 0       |
-|   icmp_ln318_6_fu_966_p2                           |     |        | icmp_ln318_6    | setgt      | auto                   | 0       |
-|   max_10_fu_972_p3                                 |     |        | max_10          | select     | auto_sel               | 0       |
-|   icmp_ln318_7_fu_980_p2                           |     |        | icmp_ln318_7    | setgt      | auto                   | 0       |
-|   max_13_fu_986_p3                                 |     |        | max_13          | select     | auto_sel               | 0       |
-|   icmp_ln318_8_fu_994_p2                           |     |        | icmp_ln318_8    | setgt      | auto                   | 0       |
-|   max_14_fu_1000_p3                                |     |        | max_14          | select     | auto_sel               | 0       |
-|   icmp_ln318_9_fu_1008_p2                          |     |        | icmp_ln318_9    | setgt      | auto                   | 0       |
-|   max_16_fu_1014_p3                                |     |        | max_16          | select     | auto_sel               | 0       |
-|   select_ln706_fu_1032_p3                          |     |        | select_ln706    | select     | auto_sel               | 0       |
-|   shl_ln663_fu_1050_p2                             |     |        | shl_ln663       | shl        | auto_pipe              | 0       |
-|   shl_ln664_fu_1060_p2                             |     |        | shl_ln664       | shl        | auto_pipe              | 0       |
-|   shl_ln665_fu_1070_p2                             |     |        | shl_ln665       | shl        | auto_pipe              | 0       |
-|   shl_ln666_fu_1080_p2                             |     |        | shl_ln666       | shl        | auto_pipe              | 0       |
-|   shl_ln667_fu_1090_p2                             |     |        | shl_ln667       | shl        | auto_pipe              | 0       |
-|   shl_ln668_fu_1100_p2                             |     |        | shl_ln668       | shl        | auto_pipe              | 0       |
-|   shl_ln669_fu_1110_p2                             |     |        | shl_ln669       | shl        | auto_pipe              | 0       |
-|   shl_ln670_fu_1120_p2                             |     |        | shl_ln670       | shl        | auto_pipe              | 0       |
-|   shl_ln671_fu_1130_p2                             |     |        | shl_ln671       | shl        | auto_pipe              | 0       |
-|   shl_ln672_fu_1140_p2                             |     |        | shl_ln672       | shl        | auto_pipe              | 0       |
-|   shl_ln673_fu_1150_p2                             |     |        | shl_ln673       | shl        | auto_pipe              | 0       |
-|   add_ln640_fu_1156_p2                             |     |        | add_ln640       | add        | fabric                 | 0       |
-|   iter_fu_1162_p3                                  |     |        | iter            | select     | auto_sel               | 0       |
-|   global_count_fu_1170_p2                          |     |        | global_count    | add        | fabric                 | 0       |
-|   icmp_ln640_fu_1176_p2                            |     |        | icmp_ln640      | seteq      | auto                   | 0       |
-|   i_fu_1182_p2                                     |     |        | i               | add        | fabric                 | 0       |
-|   icmp_ln707_fu_1188_p2                            |     |        | icmp_ln707      | seteq      | auto                   | 0       |
+|   or_ln706_fu_355_p2                               |     |        | or_ln706        | or         | auto                   | 0       |
+|   i_2_fu_361_p3                                    |     |        | i_2             | select     | auto_sel               | 0       |
+|   global_count_2_fu_999_p3                         |     |        | global_count_2  | select     | auto_sel               | 0       |
+|   icmp_ln710_fu_377_p2                             |     |        | icmp_ln710      | setne      | auto                   | 0       |
+|   xor_ln710_fu_392_p2                              |     |        | xor_ln710       | xor        | auto                   | 0       |
+|   select_ln710_fu_398_p3                           |     |        | select_ln710    | select     | auto_sel               | 0       |
+|   select_ln710_1_fu_405_p3                         |     |        | select_ln710_1  | select     | auto_sel               | 0       |
+|   lshr_ln710_fu_417_p2                             |     |        | lshr_ln710      | lshr       | auto_pipe              | 0       |
+|   select_ln710_2_fu_427_p3                         |     |        | select_ln710_2  | select     | auto_sel               | 0       |
+|   DNA_nsh_1_fu_435_p2                              |     |        | DNA_nsh_1       | and        | auto                   | 0       |
+|   select_ln711_fu_450_p3                           |     |        | select_ln711    | select     | auto_sel               | 0       |
+|   lshr_ln711_fu_457_p2                             |     |        | lshr_ln711      | lshr       | auto_pipe              | 0       |
+|   DNA_shl_one_1_fu_467_p2                          |     |        | DNA_shl_one_1   | and        | auto                   | 0       |
+|   select_ln711_1_fu_482_p3                         |     |        | select_ln711_1  | select     | auto_sel               | 0       |
+|   lshr_ln711_1_fu_489_p2                           |     |        | lshr_ln711_1    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_two_1_fu_499_p2                          |     |        | DNA_shl_two_1   | and        | auto                   | 0       |
+|   select_ln711_2_fu_514_p3                         |     |        | select_ln711_2  | select     | auto_sel               | 0       |
+|   lshr_ln711_2_fu_521_p2                           |     |        | lshr_ln711_2    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_three_1_fu_531_p2                        |     |        | DNA_shl_three_1 | and        | auto                   | 0       |
+|   select_ln711_3_fu_546_p3                         |     |        | select_ln711_3  | select     | auto_sel               | 0       |
+|   lshr_ln711_3_fu_553_p2                           |     |        | lshr_ln711_3    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_four_1_fu_563_p2                         |     |        | DNA_shl_four_1  | and        | auto                   | 0       |
+|   select_ln711_4_fu_578_p3                         |     |        | select_ln711_4  | select     | auto_sel               | 0       |
+|   lshr_ln711_4_fu_585_p2                           |     |        | lshr_ln711_4    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_five_1_fu_595_p2                         |     |        | DNA_shl_five_1  | and        | auto                   | 0       |
+|   select_ln712_fu_610_p3                           |     |        | select_ln712    | select     | auto_sel               | 0       |
+|   lshr_ln712_fu_617_p2                             |     |        | lshr_ln712      | lshr       | auto_pipe              | 0       |
+|   DNA_shr_one_1_fu_627_p2                          |     |        | DNA_shr_one_1   | and        | auto                   | 0       |
+|   select_ln712_1_fu_642_p3                         |     |        | select_ln712_1  | select     | auto_sel               | 0       |
+|   lshr_ln712_1_fu_649_p2                           |     |        | lshr_ln712_1    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_two_1_fu_659_p2                          |     |        | DNA_shr_two_1   | and        | auto                   | 0       |
+|   select_ln712_2_fu_674_p3                         |     |        | select_ln712_2  | select     | auto_sel               | 0       |
+|   lshr_ln712_2_fu_681_p2                           |     |        | lshr_ln712_2    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_three_1_fu_691_p2                        |     |        | DNA_shr_three_1 | and        | auto                   | 0       |
+|   select_ln712_3_fu_706_p3                         |     |        | select_ln712_3  | select     | auto_sel               | 0       |
+|   lshr_ln712_3_fu_713_p2                           |     |        | lshr_ln712_3    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_four_1_fu_723_p2                         |     |        | DNA_shr_four_1  | and        | auto                   | 0       |
+|   select_ln712_4_fu_738_p3                         |     |        | select_ln712_4  | select     | auto_sel               | 0       |
+|   lshr_ln712_4_fu_745_p2                           |     |        | lshr_ln712_4    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_five_1_fu_755_p2                         |     |        | DNA_shr_five_1  | and        | auto                   | 0       |
+|   add_ln707_fu_761_p2                              |     |        | add_ln707       | add        | fabric                 | 0       |
+|   icmp_ln318_fu_895_p2                             |     |        | icmp_ln318      | setgt      | auto                   | 0       |
+|   max_1_fu_901_p3                                  |     |        | max_1           | select     | auto_sel               | 0       |
+|   icmp_ln318_1_fu_909_p2                           |     |        | icmp_ln318_1    | setgt      | auto                   | 0       |
+|   max_3_fu_915_p3                                  |     |        | max_3           | select     | auto_sel               | 0       |
+|   icmp_ln318_2_fu_923_p2                           |     |        | icmp_ln318_2    | setgt      | auto                   | 0       |
+|   max_4_fu_929_p3                                  |     |        | max_4           | select     | auto_sel               | 0       |
+|   icmp_ln318_3_fu_937_p2                           |     |        | icmp_ln318_3    | setgt      | auto                   | 0       |
+|   max_6_fu_943_p3                                  |     |        | max_6           | select     | auto_sel               | 0       |
+|   icmp_ln318_4_fu_951_p2                           |     |        | icmp_ln318_4    | setgt      | auto                   | 0       |
+|   max_7_fu_957_p3                                  |     |        | max_7           | select     | auto_sel               | 0       |
+|   icmp_ln318_5_fu_965_p2                           |     |        | icmp_ln318_5    | setgt      | auto                   | 0       |
+|   max_9_fu_971_p3                                  |     |        | max_9           | select     | auto_sel               | 0       |
+|   icmp_ln318_6_fu_979_p2                           |     |        | icmp_ln318_6    | setgt      | auto                   | 0       |
+|   max_10_fu_985_p3                                 |     |        | max_10          | select     | auto_sel               | 0       |
+|   icmp_ln318_7_fu_1022_p2                          |     |        | icmp_ln318_7    | setgt      | auto                   | 0       |
+|   max_13_fu_1027_p3                                |     |        | max_13          | select     | auto_sel               | 0       |
+|   icmp_ln318_8_fu_1034_p2                          |     |        | icmp_ln318_8    | setgt      | auto                   | 0       |
+|   max_14_fu_1040_p3                                |     |        | max_14          | select     | auto_sel               | 0       |
+|   icmp_ln318_9_fu_1048_p2                          |     |        | icmp_ln318_9    | setgt      | auto                   | 0       |
+|   max_16_fu_1054_p3                                |     |        | max_16          | select     | auto_sel               | 0       |
+|   select_ln706_fu_1072_p3                          |     |        | select_ln706    | select     | auto_sel               | 0       |
+|   shl_ln663_fu_1090_p2                             |     |        | shl_ln663       | shl        | auto_pipe              | 0       |
+|   shl_ln664_fu_1099_p2                             |     |        | shl_ln664       | shl        | auto_pipe              | 0       |
+|   shl_ln665_fu_1108_p2                             |     |        | shl_ln665       | shl        | auto_pipe              | 0       |
+|   shl_ln666_fu_1117_p2                             |     |        | shl_ln666       | shl        | auto_pipe              | 0       |
+|   shl_ln667_fu_1126_p2                             |     |        | shl_ln667       | shl        | auto_pipe              | 0       |
+|   shl_ln668_fu_1135_p2                             |     |        | shl_ln668       | shl        | auto_pipe              | 0       |
+|   shl_ln669_fu_1144_p2                             |     |        | shl_ln669       | shl        | auto_pipe              | 0       |
+|   shl_ln670_fu_1153_p2                             |     |        | shl_ln670       | shl        | auto_pipe              | 0       |
+|   shl_ln671_fu_1162_p2                             |     |        | shl_ln671       | shl        | auto_pipe              | 0       |
+|   shl_ln672_fu_1172_p2                             |     |        | shl_ln672       | shl        | auto_pipe              | 0       |
+|   shl_ln673_fu_1182_p2                             |     |        | shl_ln673       | shl        | auto_pipe              | 0       |
+|   add_ln640_fu_767_p2                              |     |        | add_ln640       | add        | fabric                 | 0       |
+|   iter_fu_773_p3                                   |     |        | iter            | select     | auto_sel               | 0       |
+|   global_count_fu_1188_p2                          |     |        | global_count    | add        | fabric                 | 0       |
+|   icmp_ln640_fu_781_p2                             |     |        | icmp_ln640      | seteq      | auto                   | 0       |
+|   i_fu_787_p2                                      |     |        | i               | add        | fabric                 | 0       |
+|   icmp_ln707_fu_793_p2                             |     |        | icmp_ln707      | seteq      | auto                   | 0       |
 |  + NeighborhoodMap_bit                             | 0   |        |                 |            |                        |         |
 |    DNA_1_fu_224_p2                                 |     |        | DNA_1           | xor        | auto                   | 0       |
 |    DNA_2_fu_237_p2                                 |     |        | DNA_2           | xor        | auto                   | 0       |
@@ -359,7 +359,7 @@
 |     storemerge_fu_174_p2                           |     |        | p_cast          | select     | auto_sel               | 0       |
 |     partset_128ns_128ns_2ns_32ns_128_1_1_U55       |     |        | storemerge      | partset    | auto                   | 0       |
 |     i_3_fu_184_p2                                  |     |        | i_3             | add        | fabric                 | 0       |
-|  + count_one_bit (max_count_one_bit_fu_213)        | 0   |        |                 |            |                        |         |
+|  + count_one_bit (max_count_one_bit_fu_214)        | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -379,7 +379,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (tmp_8_i_count_one_bit_fu_218)    | 0   |        |                 |            |                        |         |
+|  + count_one_bit (tmp_8_i_count_one_bit_fu_219)    | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -399,7 +399,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (max_2_count_one_bit_fu_223)      | 0   |        |                 |            |                        |         |
+|  + count_one_bit (max_2_count_one_bit_fu_224)      | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -419,7 +419,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (tmp_i_count_one_bit_fu_228)      | 0   |        |                 |            |                        |         |
+|  + count_one_bit (tmp_i_count_one_bit_fu_229)      | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -439,7 +439,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (max_5_count_one_bit_fu_233)      | 0   |        |                 |            |                        |         |
+|  + count_one_bit (max_5_count_one_bit_fu_234)      | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -459,7 +459,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (tmp_1_i_count_one_bit_fu_238)    | 0   |        |                 |            |                        |         |
+|  + count_one_bit (tmp_1_i_count_one_bit_fu_239)    | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -479,7 +479,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (max_8_count_one_bit_fu_243)      | 0   |        |                 |            |                        |         |
+|  + count_one_bit (max_8_count_one_bit_fu_244)      | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -499,7 +499,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (tmp_2_i_count_one_bit_fu_248)    | 0   |        |                 |            |                        |         |
+|  + count_one_bit (tmp_2_i_count_one_bit_fu_249)    | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -519,7 +519,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (max_12_count_one_bit_fu_253)     | 0   |        |                 |            |                        |         |
+|  + count_one_bit (max_12_count_one_bit_fu_254)     | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -539,7 +539,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (tmp_3_i_count_one_bit_fu_258)    | 0   |        |                 |            |                        |         |
+|  + count_one_bit (tmp_3_i_count_one_bit_fu_259)    | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
@@ -559,7 +559,7 @@
 |    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
 |    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
 |    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
-|  + count_one_bit (max_11_count_one_bit_fu_263)     | 0   |        |                 |            |                        |         |
+|  + count_one_bit (max_11_count_one_bit_fu_264)     | 0   |        |                 |            |                        |         |
 |    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
 |    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
 |    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |

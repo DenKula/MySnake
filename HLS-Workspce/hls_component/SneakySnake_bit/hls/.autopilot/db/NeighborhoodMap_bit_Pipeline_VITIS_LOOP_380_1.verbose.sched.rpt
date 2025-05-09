@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1'
 ================================================================
-* Date:           Fri May  9 16:51:45 2025
+* Date:           Fri May  9 17:06:07 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  50.00 ns|  2.118 ns|     6.00 ns|
+    |ap_clk  |  11.00 ns|  2.118 ns|     1.32 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
     |   min   |   max   |    min   |    max   | min | max |                      Type                      |
     +---------+---------+----------+----------+-----+-----+------------------------------------------------+
-    |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    |      129|      129|  1.419 us|  1.419 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
     +---------+---------+----------+----------+-----+-----+------------------------------------------------+
 
     + Detail: 
@@ -124,7 +124,7 @@ ST_1 : Operation 38 [1/1] (0.38ns)   --->   "%ret_ln0 = ret"   --->   Operation 
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 50.000ns, clock uncertainty: 6.000ns.
+Target clock period: 11.000ns, clock uncertainty: 1.320ns.
 
  <State 1>: 2.118ns
 The critical path consists of the following:

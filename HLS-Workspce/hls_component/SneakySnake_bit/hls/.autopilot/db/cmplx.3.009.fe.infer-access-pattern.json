@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 3,
-    "calls": "3 2",
+    "calls": "1 3",
     "file": "pipeline.cpp",
     "fileloc": 679,
     "instructions": 72,
@@ -12,33 +12,6 @@
     "total_instructions": 730
   },
   "1": {
-    "basicblocks": 10,
-    "calls": "",
-    "file": "pipeline.cpp",
-    "fileloc": 326,
-    "instructions": 21,
-    "loads": {
-      "L": 1
-    },
-    "name": "count_one_bit",
-    "total_instructions": 21
-  },
-  "2": {
-    "basicblocks": 3,
-    "calls": "1 1 1 1 1 1 1 1 1 1 1",
-    "file": "pipeline.cpp",
-    "fileloc": 631,
-    "instructions": 120,
-    "loads": {
-      "L": 11
-    },
-    "name": "after_neighbohood",
-    "stores": {
-      "L": 22
-    },
-    "total_instructions": 351
-  },
-  "3": {
     "basicblocks": 67,
     "calls": "",
     "file": "pipeline.cpp",
@@ -52,5 +25,32 @@
       "L": 11
     },
     "total_instructions": 307
+  },
+  "2": {
+    "basicblocks": 10,
+    "calls": "",
+    "file": "pipeline.cpp",
+    "fileloc": 326,
+    "instructions": 21,
+    "loads": {
+      "L": 1
+    },
+    "name": "count_one_bit",
+    "total_instructions": 21
+  },
+  "3": {
+    "basicblocks": 3,
+    "calls": "2 2 2 2 2 2 2 2 2 2 2",
+    "file": "pipeline.cpp",
+    "fileloc": 631,
+    "instructions": 120,
+    "loads": {
+      "L": 11
+    },
+    "name": "after_neighbohood",
+    "stores": {
+      "L": 22
+    },
+    "total_instructions": 351
   }
 }

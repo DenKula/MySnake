@@ -42,6 +42,8 @@ typedef struct {
 	int *Accepted;
 } step_t;
 
+
+// as we are directly calling SneakySnake_bit and not stream this is needed
 d_bit_in_type pack_seq(const char* s, unsigned len)
 {
     d_bit_in_type word = 0;

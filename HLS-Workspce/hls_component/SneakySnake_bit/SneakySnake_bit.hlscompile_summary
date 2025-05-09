@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Fri May  9 16:51:21 2025",
- "timestampMillis": "1746802281015",
+ "dateTimestamp": "Fri May  9 17:05:42 2025",
+ "timestampMillis": "1746803142848",
  "buildStep": {
-  "cmdId": "5a95c824-da5e-430e-9d6e-f741da88528e",
+  "cmdId": "50d7faae-c1fc-4637-ac37-709422feb88a",
   "name": "v++",
   "logFile": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/logs/SneakySnake_bit.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2024.2/bin/unwrapped/lnx64.o/v++  -c --mode hls --config /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg --work_dir SneakySnake_bit ",
@@ -28,7 +28,7 @@
   "iniFiles": [
    {
     "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg",
-    "content": "part=xcvu9p-flga2104-2-i\n\n[hls]\nflow_target=vitis\npackage.output.format=xo\npackage.output.syn=false\nsyn.top=SneakySnake_bit\nsyn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp\ntb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp\ntb.file=/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c\ncsim.argv=0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10\ncsim.code_analyzer=0\nsyn.cflags=-I/home/deniz/oc-accel/actions/include\nsyn.csimflags=-I/home/deniz/oc-accel/actions/include\nclock=50ns\nclock_uncertainty=12%"
+    "content": "part=xcvu9p-flga2104-2-i\n\n[hls]\nflow_target=vitis\npackage.output.format=xo\npackage.output.syn=false\nsyn.top=SneakySnake_bit\nsyn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp\ntb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp\ntb.file=/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c\ncsim.argv=0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10\ncsim.code_analyzer=0\nsyn.cflags=-I/home/deniz/oc-accel/actions/include\nsyn.csimflags=-I/home/deniz/oc-accel/actions/include\nclock=11ns\nclock_uncertainty=12%"
    }
   ],
   "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
@@ -38,10 +38,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May  9 16:51:21 2025",
- "timestampMillis": "1746802281016",
+ "dateTimestamp": "Fri May  9 17:05:42 2025",
+ "timestampMillis": "1746803142849",
  "status": {
-  "cmdId": "5a95c824-da5e-430e-9d6e-f741da88528e",
+  "cmdId": "50d7faae-c1fc-4637-ac37-709422feb88a",
   "state": "CS_RUNNING"
  }
 }
@@ -49,8 +49,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Fri May  9 16:51:28 2025",
- "timestampMillis": "1746802288971",
+ "dateTimestamp": "Fri May  9 17:05:51 2025",
+ "timestampMillis": "1746803151655",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -85,10 +85,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Fri May  9 16:51:28 2025",
- "timestampMillis": "1746802288974",
+ "dateTimestamp": "Fri May  9 17:05:51 2025",
+ "timestampMillis": "1746803151656",
  "buildStep": {
-  "cmdId": "aa66b935-e33c-4be5-b900-583306375126",
+  "cmdId": "9872c44d-6f07-4859-a787-a4ffeefd65c2",
   "name": "",
   "logFile": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/hls.log",
   "commandLine": "",
@@ -101,10 +101,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May  9 16:51:28 2025",
- "timestampMillis": "1746802288975",
+ "dateTimestamp": "Fri May  9 17:05:51 2025",
+ "timestampMillis": "1746803151657",
  "status": {
-  "cmdId": "aa66b935-e33c-4be5-b900-583306375126",
+  "cmdId": "9872c44d-6f07-4859-a787-a4ffeefd65c2",
   "state": "CS_RUNNING"
  }
 }
@@ -112,8 +112,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:28 2025",
- "timestampMillis": "1746802288975",
+ "dateTimestamp": "Fri May  9 17:05:51 2025",
+ "timestampMillis": "1746803151657",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/hls_data.json",
   "name": "",
@@ -126,8 +126,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:28 2025",
- "timestampMillis": "1746802288975",
+ "dateTimestamp": "Fri May  9 17:05:51 2025",
+ "timestampMillis": "1746803151657",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth.rpt",
   "name": "",
@@ -140,8 +140,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:28 2025",
- "timestampMillis": "1746802288976",
+ "dateTimestamp": "Fri May  9 17:05:51 2025",
+ "timestampMillis": "1746803151658",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth.xml",
   "name": "",
@@ -154,8 +154,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:52 2025",
- "timestampMillis": "1746802312073",
+ "dateTimestamp": "Fri May  9 17:06:15 2025",
+ "timestampMillis": "1746803175164",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls",
   "name": "",
@@ -168,8 +168,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:52 2025",
- "timestampMillis": "1746802312076",
+ "dateTimestamp": "Fri May  9 17:06:15 2025",
+ "timestampMillis": "1746803175170",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls",
   "name": "",
@@ -182,8 +182,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:52 2025",
- "timestampMillis": "1746802312077",
+ "dateTimestamp": "Fri May  9 17:06:15 2025",
+ "timestampMillis": "1746803175174",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls",
   "name": "",
@@ -196,10 +196,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May  9 16:51:52 2025",
- "timestampMillis": "1746802312077",
+ "dateTimestamp": "Fri May  9 17:06:15 2025",
+ "timestampMillis": "1746803175175",
  "status": {
-  "cmdId": "aa66b935-e33c-4be5-b900-583306375126",
+  "cmdId": "9872c44d-6f07-4859-a787-a4ffeefd65c2",
   "state": "CS_PASSED"
  }
 }
@@ -207,10 +207,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Fri May  9 16:51:52 2025",
- "timestampMillis": "1746802312709",
+ "dateTimestamp": "Fri May  9 17:06:15 2025",
+ "timestampMillis": "1746803175888",
  "status": {
-  "cmdId": "5a95c824-da5e-430e-9d6e-f741da88528e",
+  "cmdId": "50d7faae-c1fc-4637-ac37-709422feb88a",
   "state": "CS_PASSED"
  }
 }
@@ -218,8 +218,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:52 2025",
- "timestampMillis": "1746802312821",
+ "dateTimestamp": "Fri May  9 17:06:15 2025",
+ "timestampMillis": "1746803175955",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/reports/v++_compile_SneakySnake_bit_guidance.html",
   "name": "",
@@ -232,8 +232,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Fri May  9 16:51:52 2025",
- "timestampMillis": "1746802312822",
+ "dateTimestamp": "Fri May  9 17:06:15 2025",
+ "timestampMillis": "1746803175958",
  "report": {
   "path": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/reports/.db/v++_compile_SneakySnake_bit_guidance.pb3",
   "name": "",

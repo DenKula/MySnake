@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcvu9p-flga2104-2-i</Part>
 <TopModelName>count_one_bit</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>6.00</ClockUncertainty>
+<TargetClockPeriod>11.00</TargetClockPeriod>
+<ClockUncertainty>1.32</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>

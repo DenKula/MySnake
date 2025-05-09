@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'count_one_bit'
 ================================================================
-* Date:           Fri May  9 16:51:47 2025
+* Date:           Fri May  9 17:06:10 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  50.00 ns|  1.039 ns|     6.00 ns|
+    |ap_clk  |  11.00 ns|  1.039 ns|     1.32 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -114,7 +114,7 @@ ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%ret_ln333 = ret i4 %UnifiedRetVal"
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 50.000ns, clock uncertainty: 6.000ns.
+Target clock period: 11.000ns, clock uncertainty: 1.320ns.
 
  <State 1>: 1.039ns
 The critical path consists of the following:

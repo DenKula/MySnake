@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcvu9p-flga2104-2-i</Part>
 <TopModelName>SneakySnake_bit</TopModelName>
-<TargetClockPeriod>50.00</TargetClockPeriod>
-<ClockUncertainty>6.00</ClockUncertainty>
+<TargetClockPeriod>11.00</TargetClockPeriod>
+<ClockUncertainty>1.32</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
@@ -18,27 +18,27 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>15.877</EstimatedClockPeriod>
+<EstimatedClockPeriod>8.839</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>169</Best-caseLatency>
-<Average-caseLatency>169</Average-caseLatency>
-<Worst-caseLatency>169</Worst-caseLatency>
-<Best-caseRealTimeLatency>8.450 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>8.450 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>8.450 us</Worst-caseRealTimeLatency>
-<Interval-min>170</Interval-min>
-<Interval-max>170</Interval-max>
+<Best-caseLatency>171</Best-caseLatency>
+<Average-caseLatency>171</Average-caseLatency>
+<Worst-caseLatency>171</Worst-caseLatency>
+<Best-caseRealTimeLatency>1.881 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>1.881 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>1.881 us</Worst-caseRealTimeLatency>
+<Interval-min>172</Interval-min>
+<Interval-max>172</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_707_1_VITIS_LOOP_640_1>
-<Slack>44.00</Slack>
+<Slack>9.68</Slack>
 <TripCount>36</TripCount>
-<Latency>35</Latency>
-<AbsoluteTimeLatency>1750</AbsoluteTimeLatency>
+<Latency>37</Latency>
+<AbsoluteTimeLatency>407</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>1</PipelineDepth>
+<PipelineDepth>3</PipelineDepth>
 <InstanceList>
 </InstanceList>
 </VITIS_LOOP_707_1_VITIS_LOOP_640_1>
@@ -61,8 +61,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>7174</FF>
-<LUT>16024</LUT>
+<FF>7337</FF>
+<LUT>16068</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>
