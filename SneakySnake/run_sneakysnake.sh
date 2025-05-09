@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # === Parameters ===
-DEBUG_MODE=0
+DEBUG_MODE=1
 KMER_SIZE=100
 READ_LENGTH=100
 ITERATIONS=100
