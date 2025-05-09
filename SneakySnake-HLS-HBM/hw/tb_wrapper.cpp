@@ -42,6 +42,17 @@ typedef struct {
 	int *Accepted;
 } step_t;
 
+d_bit_in_type pack_seq(const char* s, unsigned len)
+{
+    d_bit_in_type word = 0;
+    for (unsigned i = 0; i < len; ++i) {
+        ap_uint<2> code = (s[i] == 'C' || s[i] == 'c') ? 1 :
+                          (s[i] == 'G' || s[i] == 'g') ? 2 :
+                          (s[i] == 'T' || s[i] == 't') ? 3 : 0;
+        word |= (d_bit_in_type(code) << (2 * i));
+    }
+    return word;
+}
 
 static void worker_for(void *_data, long i, int tid) // kt_for() callback
 {
@@ -75,7 +86,8 @@ static void worker_for(void *_data, long i, int tid) // kt_for() callback
 		*/
 		
 
-	
+    d_bit_in_type ref_packed = pack_seq(RefSeq, ReadLength);
+    d_bit_in_type read_packed = pack_seq(ReadSeq, ReadLength);
     step->Accepted[i] = SneakySnake_bit(ReadLength, read_packed, ref_packed, EditThreshold, KmerSize);
 	//printf("i: %d TID:%d Accepted: %d\n",i, tid, step->Accepted[i]);
 
