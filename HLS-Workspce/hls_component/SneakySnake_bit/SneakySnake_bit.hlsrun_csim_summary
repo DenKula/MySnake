@@ -1,0 +1,156 @@
+<ENTRY>
+{
+ "thisFile": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/SneakySnake_bit.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri May  9 16:18:09 2025",
+ "timestampMillis": "1746800289837",
+ "buildStep": {
+  "cmdId": "955d6311-4f99-43a6-92b1-4ba7f43ffc40",
+  "name": "vitis-run",
+  "logFile": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/logs/SneakySnake_bit.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2024.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg --work_dir SneakySnake_bit ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg",
+   "--work_dir",
+   "SneakySnake_bit"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri May  9 16:18:09 2025",
+ "timestampMillis": "1746800289837",
+ "status": {
+  "cmdId": "955d6311-4f99-43a6-92b1-4ba7f43ffc40",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri May  9 16:18:17 2025",
+ "timestampMillis": "1746800297722",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "SneakySnake_bit",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri May  9 16:18:17 2025",
+ "timestampMillis": "1746800297723",
+ "buildStep": {
+  "cmdId": "20a32390-dbb8-4d1a-a8ce-e7af7f2ff671",
+  "name": "",
+  "logFile": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri May  9 16:18:17 2025",
+ "timestampMillis": "1746800297723",
+ "status": {
+  "cmdId": "20a32390-dbb8-4d1a-a8ce-e7af7f2ff671",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri May  9 16:19:27 2025",
+ "timestampMillis": "1746800367447",
+ "status": {
+  "cmdId": "20a32390-dbb8-4d1a-a8ce-e7af7f2ff671",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri May  9 16:19:28 2025",
+ "timestampMillis": "1746800368000",
+ "status": {
+  "cmdId": "955d6311-4f99-43a6-92b1-4ba7f43ffc40",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri May  9 16:19:28 2025",
+ "timestampMillis": "1746800368000",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri May  9 16:19:28 2025",
+ "timestampMillis": "1746800368001",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

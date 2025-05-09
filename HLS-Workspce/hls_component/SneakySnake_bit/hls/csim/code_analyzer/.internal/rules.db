@@ -1,0 +1,115 @@
+{
+    "rules": {
+        "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/kthread.c.0.o', '/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/kthread.c.0.o.d']": {
+            "command": [
+                "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang",
+                "-c",
+                "-MD",
+                "-MF",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/kthread.c.0.o.d",
+                "-fhls-tb",
+                "-hls-sim-headers-dir=/tools/Xilinx/Vitis/2024.2/vcxx/data/include",
+                "-vitis-hls=/tools/Xilinx/Vitis/2024.2",
+                "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+                "-fslxtrace",
+                "-fslx-compile-mode",
+                "-fslxskipfunctionbody",
+                "-fhlstoplevel=SneakySnake_bit",
+                "/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c",
+                "-o",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/kthread.c.0.o"
+            ],
+            "exectime": 0.6133773326873779,
+            "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+        },
+        "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.bc', '/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.bc.d']": {
+            "command": [
+                "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang",
+                "-c",
+                "-emit-llvm",
+                "-MD",
+                "-MF",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.bc.d",
+                "-fhls",
+                "-hls-syn-headers-dir=/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot",
+                "-vitis-hls=/tools/Xilinx/Vitis/2024.2",
+                "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+                "-hls-clock-period=10.0",
+                "-fslxtrace",
+                "-fslx-compile-mode",
+                "-fhlstoplevel=SneakySnake_bit",
+                "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "-o",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.bc"
+            ],
+            "exectime": 2.6053543090820312,
+            "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+        },
+        "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/tb_wrapper.cpp.0.o', '/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/tb_wrapper.cpp.0.o.d']": {
+            "command": [
+                "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang",
+                "-c",
+                "-MD",
+                "-MF",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/tb_wrapper.cpp.0.o.d",
+                "-fhls-tb",
+                "-hls-sim-headers-dir=/tools/Xilinx/Vitis/2024.2/vcxx/data/include",
+                "-vitis-hls=/tools/Xilinx/Vitis/2024.2",
+                "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+                "-fslxtrace",
+                "-fslx-compile-mode",
+                "-fslxskipfunctionbody",
+                "-fhlstoplevel=SneakySnake_bit",
+                "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp",
+                "-o",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/tb_wrapper.cpp.0.o"
+            ],
+            "exectime": 3.163095712661743,
+            "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+        },
+        "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.o', '/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.o.d']": {
+            "command": [
+                "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang",
+                "-c",
+                "-MD",
+                "-MF",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.o.d",
+                "-fhls-tb",
+                "-hls-sim-headers-dir=/tools/Xilinx/Vitis/2024.2/vcxx/data/include",
+                "-vitis-hls=/tools/Xilinx/Vitis/2024.2",
+                "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+                "-fslxtrace",
+                "-fslx-compile-mode",
+                "-fslxskipfunctionbody",
+                "-fhlstoplevel=SneakySnake_bit",
+                "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
+                "-o",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.o"
+            ],
+            "exectime": 3.3706166744232178,
+            "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+        },
+        "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.bc']": {
+            "command": [
+                "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/llvm-link",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.bc",
+                "-o",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.bc"
+            ],
+            "exectime": 0.19686102867126465,
+            "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+        },
+        "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.opt.bc']": {
+            "command": [
+                "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/opt",
+                "-check-single-toplevel",
+                "-make-non-toplevel-internal",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.bc",
+                "-o",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.opt.bc"
+            ],
+            "exectime": 0.3565537929534912,
+            "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
+        }
+    }
+}

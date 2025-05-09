@@ -1,0 +1,536 @@
+
+
+================================================================
+== Synthesis Summary Report of 'SneakySnake_bit'
+================================================================
++ General Information: 
+    * Date:           Fri May  9 16:36:00 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        SneakySnake_bit
+    * Solution:       hls (Vitis Kernel Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu9p-flga2104-2-i
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |                       Modules                      | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |    |            |            |     |
+    |                       & Loops                      | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF     |     LUT    | URAM|
+    +----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+    |+ SneakySnake_bit                                   |     -|  0.65|      207|  1.656e+03|         -|      208|     -|        no|     -|   -|  7317 (~0%)|  15711 (1%)|    -|
+    | + NeighborhoodMap_bit                              |     -|  4.92|      131|  1.048e+03|         -|      131|     -|        no|     -|   -|  4425 (~0%)|  7029 (~0%)|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_380_1                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_400_2                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_419_3                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_438_4                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_462_5                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_488_6                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_516_7                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_534_8                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9   |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_556_9                               |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10  |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_580_10                              |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    |  + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11  |     -|  4.92|      129|  1.032e+03|         -|      129|     -|        no|     -|   -|   145 (~0%)|   381 (~0%)|    -|
+    |   o VITIS_LOOP_607_11                              |     -|  7.04|      127|  1.016e+03|         1|        1|   127|       yes|     -|   -|           -|           -|    -|
+    | o VITIS_LOOP_707_1_VITIS_LOOP_640_1                |    II|  7.04|       73|    584.000|         4|        2|    36|       yes|     -|   -|           -|           -|    -|
+    |  + count_one_bit                                   |     -|  6.00|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  6.00|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  6.00|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  6.00|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  6.00|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  6.00|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    |  + count_one_bit                                   |     -|  6.00|        0|      0.000|         -|        1|     -|       yes|     -|   -|           -|    76 (~0%)|    -|
+    +----------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+----+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 24     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+---------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register      | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+---------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL          | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER          | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER        | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR        | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | ap_return     | 0x10   | 32    | R      | Data signal of ap_return         |                                                                                    |
+| s_axi_control | ReadLength    | 0x18   | 32    | W      | Data signal of ReadLength        |                                                                                    |
+| s_axi_control | ReadSeq_1     | 0x20   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | ReadSeq_2     | 0x24   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | ReadSeq_3     | 0x28   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | ReadSeq_4     | 0x2c   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | ReadSeq_5     | 0x30   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | ReadSeq_6     | 0x34   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | ReadSeq_7     | 0x38   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | ReadSeq_8     | 0x3c   | 32    | W      | Data signal of ReadSeq           |                                                                                    |
+| s_axi_control | RefSeq_1      | 0x44   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | RefSeq_2      | 0x48   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | RefSeq_3      | 0x4c   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | RefSeq_4      | 0x50   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | RefSeq_5      | 0x54   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | RefSeq_6      | 0x58   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | RefSeq_7      | 0x5c   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | RefSeq_8      | 0x60   | 32    | W      | Data signal of RefSeq            |                                                                                    |
+| s_axi_control | EditThreshold | 0x68   | 32    | W      | Data signal of EditThreshold     |                                                                                    |
+| s_axi_control | KmerSize      | 0x70   | 32    | W      | Data signal of KmerSize          |                                                                                    |
++---------------+---------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+---------------+
+| Argument      | Direction | Datatype      |
++---------------+-----------+---------------+
+| ReadLength    | in        | int           |
+| ReadSeq       | in        | ap_uint<256>& |
+| RefSeq        | in        | ap_uint<256>& |
+| EditThreshold | in        | int           |
+| KmerSize      | in        | int           |
+| return        | out       | int           |
++---------------+-----------+---------------+
+
+* SW-to-HW Mapping
++---------------+---------------+----------+-----------------------------------------+
+| Argument      | HW Interface  | HW Type  | HW Info                                 |
++---------------+---------------+----------+-----------------------------------------+
+| ReadLength    | s_axi_control | register | name=ReadLength offset=0x18 range=32    |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_1 offset=0x20 range=32     |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_2 offset=0x24 range=32     |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_3 offset=0x28 range=32     |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_4 offset=0x2c range=32     |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_5 offset=0x30 range=32     |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_6 offset=0x34 range=32     |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_7 offset=0x38 range=32     |
+| ReadSeq       | s_axi_control | register | name=ReadSeq_8 offset=0x3c range=32     |
+| RefSeq        | s_axi_control | register | name=RefSeq_1 offset=0x44 range=32      |
+| RefSeq        | s_axi_control | register | name=RefSeq_2 offset=0x48 range=32      |
+| RefSeq        | s_axi_control | register | name=RefSeq_3 offset=0x4c range=32      |
+| RefSeq        | s_axi_control | register | name=RefSeq_4 offset=0x50 range=32      |
+| RefSeq        | s_axi_control | register | name=RefSeq_5 offset=0x54 range=32      |
+| RefSeq        | s_axi_control | register | name=RefSeq_6 offset=0x58 range=32      |
+| RefSeq        | s_axi_control | register | name=RefSeq_7 offset=0x5c range=32      |
+| RefSeq        | s_axi_control | register | name=RefSeq_8 offset=0x60 range=32      |
+| EditThreshold | s_axi_control | register | name=EditThreshold offset=0x68 range=32 |
+| KmerSize      | s_axi_control | register | name=KmerSize offset=0x70 range=32      |
+| return        | s_axi_control | register | name=ap_return offset=0x10 range=32     |
++---------------+---------------+----------+-----------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------------+-----+--------+-----------------+------------+------------------------+---------+
+| Name                                               | DSP | Pragma | Variable        | Op         | Impl                   | Latency |
++----------------------------------------------------+-----+--------+-----------------+------------+------------------------+---------+
+| + SneakySnake_bit                                  | 0   |        |                 |            |                        |         |
+|   or_ln706_fu_332_p2                               |     |        | or_ln706        | or         | auto                   | 0       |
+|   i_2_fu_338_p3                                    |     |        | i_2             | select     | auto_sel               | 0       |
+|   global_count_2_fu_815_p3                         |     |        | global_count_2  | select     | auto_sel               | 0       |
+|   icmp_ln710_fu_354_p2                             |     |        | icmp_ln710      | setne      | auto                   | 0       |
+|   xor_ln710_fu_369_p2                              |     |        | xor_ln710       | xor        | auto                   | 0       |
+|   select_ln710_fu_375_p3                           |     |        | select_ln710    | select     | auto_sel               | 0       |
+|   select_ln710_1_fu_382_p3                         |     |        | select_ln710_1  | select     | auto_sel               | 0       |
+|   lshr_ln710_fu_394_p2                             |     |        | lshr_ln710      | lshr       | auto_pipe              | 0       |
+|   select_ln710_2_fu_404_p3                         |     |        | select_ln710_2  | select     | auto_sel               | 0       |
+|   DNA_nsh_1_fu_412_p2                              |     |        | DNA_nsh_1       | and        | auto                   | 0       |
+|   select_ln711_fu_427_p3                           |     |        | select_ln711    | select     | auto_sel               | 0       |
+|   lshr_ln711_fu_434_p2                             |     |        | lshr_ln711      | lshr       | auto_pipe              | 0       |
+|   DNA_shl_one_1_fu_444_p2                          |     |        | DNA_shl_one_1   | and        | auto                   | 0       |
+|   select_ln711_1_fu_459_p3                         |     |        | select_ln711_1  | select     | auto_sel               | 0       |
+|   lshr_ln711_1_fu_466_p2                           |     |        | lshr_ln711_1    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_two_1_fu_476_p2                          |     |        | DNA_shl_two_1   | and        | auto                   | 0       |
+|   select_ln711_2_fu_491_p3                         |     |        | select_ln711_2  | select     | auto_sel               | 0       |
+|   lshr_ln711_2_fu_498_p2                           |     |        | lshr_ln711_2    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_three_1_fu_508_p2                        |     |        | DNA_shl_three_1 | and        | auto                   | 0       |
+|   select_ln711_3_fu_523_p3                         |     |        | select_ln711_3  | select     | auto_sel               | 0       |
+|   lshr_ln711_3_fu_530_p2                           |     |        | lshr_ln711_3    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_four_1_fu_540_p2                         |     |        | DNA_shl_four_1  | and        | auto                   | 0       |
+|   select_ln711_4_fu_555_p3                         |     |        | select_ln711_4  | select     | auto_sel               | 0       |
+|   lshr_ln711_4_fu_562_p2                           |     |        | lshr_ln711_4    | lshr       | auto_pipe              | 0       |
+|   DNA_shl_five_1_fu_572_p2                         |     |        | DNA_shl_five_1  | and        | auto                   | 0       |
+|   select_ln712_fu_587_p3                           |     |        | select_ln712    | select     | auto_sel               | 0       |
+|   lshr_ln712_fu_594_p2                             |     |        | lshr_ln712      | lshr       | auto_pipe              | 0       |
+|   DNA_shr_one_1_fu_604_p2                          |     |        | DNA_shr_one_1   | and        | auto                   | 0       |
+|   select_ln712_1_fu_619_p3                         |     |        | select_ln712_1  | select     | auto_sel               | 0       |
+|   lshr_ln712_1_fu_626_p2                           |     |        | lshr_ln712_1    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_two_1_fu_636_p2                          |     |        | DNA_shr_two_1   | and        | auto                   | 0       |
+|   select_ln712_2_fu_651_p3                         |     |        | select_ln712_2  | select     | auto_sel               | 0       |
+|   lshr_ln712_2_fu_658_p2                           |     |        | lshr_ln712_2    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_three_1_fu_668_p2                        |     |        | DNA_shr_three_1 | and        | auto                   | 0       |
+|   select_ln712_3_fu_683_p3                         |     |        | select_ln712_3  | select     | auto_sel               | 0       |
+|   lshr_ln712_3_fu_690_p2                           |     |        | lshr_ln712_3    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_four_1_fu_700_p2                         |     |        | DNA_shr_four_1  | and        | auto                   | 0       |
+|   select_ln712_4_fu_715_p3                         |     |        | select_ln712_4  | select     | auto_sel               | 0       |
+|   lshr_ln712_4_fu_722_p2                           |     |        | lshr_ln712_4    | lshr       | auto_pipe              | 0       |
+|   DNA_shr_five_1_fu_732_p2                         |     |        | DNA_shr_five_1  | and        | auto                   | 0       |
+|   add_ln707_fu_738_p2                              |     |        | add_ln707       | add        | fabric                 | 0       |
+|   icmp_ln318_fu_870_p2                             |     |        | icmp_ln318      | setgt      | auto                   | 0       |
+|   max_1_fu_876_p3                                  |     |        | max_1           | select     | auto_sel               | 0       |
+|   icmp_ln318_1_fu_884_p2                           |     |        | icmp_ln318_1    | setgt      | auto                   | 0       |
+|   max_3_fu_890_p3                                  |     |        | max_3           | select     | auto_sel               | 0       |
+|   icmp_ln318_2_fu_898_p2                           |     |        | icmp_ln318_2    | setgt      | auto                   | 0       |
+|   max_4_fu_904_p3                                  |     |        | max_4           | select     | auto_sel               | 0       |
+|   icmp_ln318_3_fu_912_p2                           |     |        | icmp_ln318_3    | setgt      | auto                   | 0       |
+|   max_6_fu_918_p3                                  |     |        | max_6           | select     | auto_sel               | 0       |
+|   icmp_ln318_4_fu_926_p2                           |     |        | icmp_ln318_4    | setgt      | auto                   | 0       |
+|   max_7_fu_932_p3                                  |     |        | max_7           | select     | auto_sel               | 0       |
+|   icmp_ln318_5_fu_994_p2                           |     |        | icmp_ln318_5    | setgt      | auto                   | 0       |
+|   max_9_fu_998_p3                                  |     |        | max_9           | select     | auto_sel               | 0       |
+|   icmp_ln318_6_fu_1004_p2                          |     |        | icmp_ln318_6    | setgt      | auto                   | 0       |
+|   max_10_fu_1010_p3                                |     |        | max_10          | select     | auto_sel               | 0       |
+|   icmp_ln318_7_fu_1018_p2                          |     |        | icmp_ln318_7    | setgt      | auto                   | 0       |
+|   max_13_fu_1024_p3                                |     |        | max_13          | select     | auto_sel               | 0       |
+|   icmp_ln318_8_fu_1032_p2                          |     |        | icmp_ln318_8    | setgt      | auto                   | 0       |
+|   max_14_fu_1038_p3                                |     |        | max_14          | select     | auto_sel               | 0       |
+|   icmp_ln318_9_fu_1046_p2                          |     |        | icmp_ln318_9    | setgt      | auto                   | 0       |
+|   max_16_fu_1052_p3                                |     |        | max_16          | select     | auto_sel               | 0       |
+|   select_ln706_fu_940_p3                           |     |        | select_ln706    | select     | auto_sel               | 0       |
+|   shl_ln663_fu_1079_p2                             |     |        | shl_ln663       | shl        | auto_pipe              | 0       |
+|   shl_ln664_fu_1088_p2                             |     |        | shl_ln664       | shl        | auto_pipe              | 0       |
+|   shl_ln665_fu_1097_p2                             |     |        | shl_ln665       | shl        | auto_pipe              | 0       |
+|   shl_ln666_fu_1106_p2                             |     |        | shl_ln666       | shl        | auto_pipe              | 0       |
+|   shl_ln667_fu_1115_p2                             |     |        | shl_ln667       | shl        | auto_pipe              | 0       |
+|   shl_ln668_fu_1124_p2                             |     |        | shl_ln668       | shl        | auto_pipe              | 0       |
+|   shl_ln669_fu_1133_p2                             |     |        | shl_ln669       | shl        | auto_pipe              | 0       |
+|   shl_ln670_fu_1191_p2                             |     |        | shl_ln670       | shl        | auto_pipe              | 0       |
+|   shl_ln671_fu_1199_p2                             |     |        | shl_ln671       | shl        | auto_pipe              | 0       |
+|   shl_ln672_fu_1207_p2                             |     |        | shl_ln672       | shl        | auto_pipe              | 0       |
+|   shl_ln673_fu_1215_p2                             |     |        | shl_ln673       | shl        | auto_pipe              | 0       |
+|   add_ln640_fu_948_p2                              |     |        | add_ln640       | add        | fabric                 | 0       |
+|   iter_fu_954_p3                                   |     |        | iter            | select     | auto_sel               | 0       |
+|   global_count_fu_1138_p2                          |     |        | global_count    | add        | fabric                 | 0       |
+|   icmp_ln640_fu_962_p2                             |     |        | icmp_ln640      | seteq      | auto                   | 0       |
+|   i_fu_779_p2                                      |     |        | i               | add        | fabric                 | 0       |
+|   icmp_ln707_fu_785_p2                             |     |        | icmp_ln707      | seteq      | auto                   | 0       |
+|  + NeighborhoodMap_bit                             | 0   |        |                 |            |                        |         |
+|    DNA_1_fu_224_p2                                 |     |        | DNA_1           | xor        | auto                   | 0       |
+|    DNA_2_fu_237_p2                                 |     |        | DNA_2           | xor        | auto                   | 0       |
+|    DNA_3_fu_250_p2                                 |     |        | DNA_3           | xor        | auto                   | 0       |
+|    DNA_6_fu_263_p2                                 |     |        | DNA_6           | xor        | auto                   | 0       |
+|    DNA_7_fu_276_p2                                 |     |        | DNA_7           | xor        | auto                   | 0       |
+|    DNA_8_fu_289_p2                                 |     |        | DNA_8           | xor        | auto                   | 0       |
+|    DNA_4_fu_310_p2                                 |     |        | DNA_4           | xor        | auto                   | 0       |
+|    DNA_5_fu_331_p2                                 |     |        | DNA_5           | xor        | auto                   | 0       |
+|    DNA_9_fu_352_p2                                 |     |        | DNA_9           | xor        | auto                   | 0       |
+|    DNA_10_fu_373_p2                                |     |        | DNA_10          | xor        | auto                   | 0       |
+|    DNA_11_fu_394_p2                                |     |        | DNA_11          | xor        | auto                   | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1  | 0   |        |                 |            |                        |         |
+|     icmp_ln380_fu_90_p2                            |     |        | icmp_ln380      | seteq      | auto                   | 0       |
+|     index_17_fu_96_p2                              |     |        | index_17        | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U1             |     |        | tmp             | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U2             |     |        | tmp_s           | partselect | auto                   | 0       |
+|     or_ln385_fu_150_p2                             |     |        | or_ln385        | or         | auto                   | 0       |
+|     icmp_ln385_fu_156_p2                           |     |        | icmp_ln385      | seteq      | auto                   | 0       |
+|     storemerge_fu_174_p2                           |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U3        |     |        | storemerge      | partset    | auto                   | 0       |
+|     i_9_fu_184_p2                                  |     |        | i_9             | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2  | 0   |        |                 |            |                        |         |
+|     icmp_ln400_fu_90_p2                            |     |        | icmp_ln400      | seteq      | auto                   | 0       |
+|     index_15_fu_96_p2                              |     |        | index_15        | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U8             |     |        | tmp_2           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U9             |     |        | tmp_4           | partselect | auto                   | 0       |
+|     or_ln403_fu_150_p2                             |     |        | or_ln403        | or         | auto                   | 0       |
+|     icmp_ln403_fu_156_p2                           |     |        | icmp_ln403      | seteq      | auto                   | 0       |
+|     storemerge9_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U10       |     |        | storemerge9     | partset    | auto                   | 0       |
+|     i_fu_184_p2                                    |     |        | i               | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3  | 0   |        |                 |            |                        |         |
+|     icmp_ln419_fu_90_p2                            |     |        | icmp_ln419      | seteq      | auto                   | 0       |
+|     index_14_fu_96_p2                              |     |        | index_14        | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U13            |     |        | tmp_6           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U14            |     |        | tmp_8           | partselect | auto                   | 0       |
+|     or_ln422_fu_150_p2                             |     |        | or_ln422        | or         | auto                   | 0       |
+|     icmp_ln422_fu_156_p2                           |     |        | icmp_ln422      | seteq      | auto                   | 0       |
+|     storemerge8_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U15       |     |        | storemerge8     | partset    | auto                   | 0       |
+|     i_fu_184_p2                                    |     |        | i               | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4  | 0   |        |                 |            |                        |         |
+|     icmp_ln438_fu_90_p2                            |     |        | icmp_ln438      | seteq      | auto                   | 0       |
+|     index_13_fu_96_p2                              |     |        | index_13        | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U18            |     |        | tmp_10          | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U19            |     |        | tmp_12          | partselect | auto                   | 0       |
+|     or_ln441_fu_150_p2                             |     |        | or_ln441        | or         | auto                   | 0       |
+|     icmp_ln441_fu_156_p2                           |     |        | icmp_ln441      | seteq      | auto                   | 0       |
+|     storemerge7_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U20       |     |        | storemerge7     | partset    | auto                   | 0       |
+|     i_fu_184_p2                                    |     |        | i               | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5  | 0   |        |                 |            |                        |         |
+|     icmp_ln462_fu_90_p2                            |     |        | icmp_ln462      | seteq      | auto                   | 0       |
+|     index_12_fu_96_p2                              |     |        | index_12        | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U23            |     |        | tmp_s           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U24            |     |        | tmp_14          | partselect | auto                   | 0       |
+|     or_ln465_fu_150_p2                             |     |        | or_ln465        | or         | auto                   | 0       |
+|     icmp_ln465_fu_156_p2                           |     |        | icmp_ln465      | seteq      | auto                   | 0       |
+|     storemerge6_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U25       |     |        | storemerge6     | partset    | auto                   | 0       |
+|     i_fu_184_p2                                    |     |        | i               | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6  | 0   |        |                 |            |                        |         |
+|     icmp_ln488_fu_90_p2                            |     |        | icmp_ln488      | seteq      | auto                   | 0       |
+|     index_11_fu_96_p2                              |     |        | index_11        | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U28            |     |        | tmp_s           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U29            |     |        | tmp_12          | partselect | auto                   | 0       |
+|     or_ln491_fu_150_p2                             |     |        | or_ln491        | or         | auto                   | 0       |
+|     icmp_ln491_fu_156_p2                           |     |        | icmp_ln491      | seteq      | auto                   | 0       |
+|     storemerge5_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U30       |     |        | storemerge5     | partset    | auto                   | 0       |
+|     i_8_fu_184_p2                                  |     |        | i_8             | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7  | 0   |        |                 |            |                        |         |
+|     icmp_ln516_fu_90_p2                            |     |        | icmp_ln516      | seteq      | auto                   | 0       |
+|     index_10_fu_96_p2                              |     |        | index_10        | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U33            |     |        | tmp_s           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U34            |     |        | tmp_10          | partselect | auto                   | 0       |
+|     or_ln519_fu_150_p2                             |     |        | or_ln519        | or         | auto                   | 0       |
+|     icmp_ln519_fu_156_p2                           |     |        | icmp_ln519      | seteq      | auto                   | 0       |
+|     storemerge4_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U35       |     |        | storemerge4     | partset    | auto                   | 0       |
+|     i_7_fu_184_p2                                  |     |        | i_7             | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8  | 0   |        |                 |            |                        |         |
+|     icmp_ln534_fu_90_p2                            |     |        | icmp_ln534      | seteq      | auto                   | 0       |
+|     index_8_fu_96_p2                               |     |        | index_8         | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U38            |     |        | tmp_s           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U39            |     |        | tmp_8           | partselect | auto                   | 0       |
+|     or_ln537_fu_150_p2                             |     |        | or_ln537        | or         | auto                   | 0       |
+|     icmp_ln537_fu_156_p2                           |     |        | icmp_ln537      | seteq      | auto                   | 0       |
+|     storemerge3_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U40       |     |        | storemerge3     | partset    | auto                   | 0       |
+|     i_6_fu_184_p2                                  |     |        | i_6             | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9  | 0   |        |                 |            |                        |         |
+|     icmp_ln556_fu_90_p2                            |     |        | icmp_ln556      | seteq      | auto                   | 0       |
+|     index_6_fu_96_p2                               |     |        | index_6         | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U43            |     |        | tmp_s           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U44            |     |        | tmp_6           | partselect | auto                   | 0       |
+|     or_ln559_fu_150_p2                             |     |        | or_ln559        | or         | auto                   | 0       |
+|     icmp_ln559_fu_156_p2                           |     |        | icmp_ln559      | seteq      | auto                   | 0       |
+|     storemerge2_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U45       |     |        | storemerge2     | partset    | auto                   | 0       |
+|     i_5_fu_184_p2                                  |     |        | i_5             | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10 | 0   |        |                 |            |                        |         |
+|     icmp_ln580_fu_90_p2                            |     |        | icmp_ln580      | seteq      | auto                   | 0       |
+|     index_4_fu_96_p2                               |     |        | index_4         | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U48            |     |        | tmp_s           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U49            |     |        | tmp_4           | partselect | auto                   | 0       |
+|     or_ln583_fu_150_p2                             |     |        | or_ln583        | or         | auto                   | 0       |
+|     icmp_ln583_fu_156_p2                           |     |        | icmp_ln583      | seteq      | auto                   | 0       |
+|     storemerge1_fu_174_p2                          |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U50       |     |        | storemerge1     | partset    | auto                   | 0       |
+|     i_4_fu_184_p2                                  |     |        | i_4             | add        | fabric                 | 0       |
+|   + NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11 | 0   |        |                 |            |                        |         |
+|     icmp_ln607_fu_90_p2                            |     |        | icmp_ln607      | seteq      | auto                   | 0       |
+|     index_2_fu_96_p2                               |     |        | index_2         | add        | fabric                 | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U53            |     |        | tmp_s           | partselect | auto                   | 0       |
+|     partselect_2ns_256ns_32ns_2_1_1_U54            |     |        | tmp_2           | partselect | auto                   | 0       |
+|     or_ln610_fu_150_p2                             |     |        | or_ln610        | or         | auto                   | 0       |
+|     icmp_ln610_fu_156_p2                           |     |        | icmp_ln610      | seteq      | auto                   | 0       |
+|     storemerge_fu_174_p2                           |     |        | p_cast          | select     | auto_sel               | 0       |
+|     partset_128ns_128ns_2ns_32ns_128_1_1_U55       |     |        | storemerge      | partset    | auto                   | 0       |
+|     i_3_fu_184_p2                                  |     |        | i_3             | add        | fabric                 | 0       |
+|  + count_one_bit (grp_count_one_bit_fu_214)        | 0   |        |                 |            |                        |         |
+|    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
+|    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
+|    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
+|    or_ln333_fu_148_p2                              |     |        | or_ln333        | or         | auto                   | 0       |
+|    xor_ln333_1_fu_154_p2                           |     |        | xor_ln333_1     | xor        | auto                   | 0       |
+|    and_ln333_1_fu_160_p2                           |     |        | and_ln333_1     | and        | auto                   | 0       |
+|    or_ln333_1_fu_166_p2                            |     |        | or_ln333_1      | or         | auto                   | 0       |
+|    xor_ln333_2_fu_172_p2                           |     |        | xor_ln333_2     | xor        | auto                   | 0       |
+|    and_ln333_2_fu_178_p2                           |     |        | and_ln333_2     | and        | auto                   | 0       |
+|    or_ln333_2_fu_184_p2                            |     |        | or_ln333_2      | or         | auto                   | 0       |
+|    xor_ln333_3_fu_190_p2                           |     |        | xor_ln333_3     | xor        | auto                   | 0       |
+|    and_ln333_3_fu_196_p2                           |     |        | and_ln333_3     | and        | auto                   | 0       |
+|    or_ln333_3_fu_202_p2                            |     |        | or_ln333_3      | or         | auto                   | 0       |
+|    xor_ln333_4_fu_208_p2                           |     |        | xor_ln333_4     | xor        | auto                   | 0       |
+|    and_ln333_4_fu_214_p2                           |     |        | and_ln333_4     | and        | auto                   | 0       |
+|    or_ln333_4_fu_220_p2                            |     |        | or_ln333_4      | or         | auto                   | 0       |
+|    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
+|    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
+|    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
+|  + count_one_bit (grp_count_one_bit_fu_219)        | 0   |        |                 |            |                        |         |
+|    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
+|    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
+|    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
+|    or_ln333_fu_148_p2                              |     |        | or_ln333        | or         | auto                   | 0       |
+|    xor_ln333_1_fu_154_p2                           |     |        | xor_ln333_1     | xor        | auto                   | 0       |
+|    and_ln333_1_fu_160_p2                           |     |        | and_ln333_1     | and        | auto                   | 0       |
+|    or_ln333_1_fu_166_p2                            |     |        | or_ln333_1      | or         | auto                   | 0       |
+|    xor_ln333_2_fu_172_p2                           |     |        | xor_ln333_2     | xor        | auto                   | 0       |
+|    and_ln333_2_fu_178_p2                           |     |        | and_ln333_2     | and        | auto                   | 0       |
+|    or_ln333_2_fu_184_p2                            |     |        | or_ln333_2      | or         | auto                   | 0       |
+|    xor_ln333_3_fu_190_p2                           |     |        | xor_ln333_3     | xor        | auto                   | 0       |
+|    and_ln333_3_fu_196_p2                           |     |        | and_ln333_3     | and        | auto                   | 0       |
+|    or_ln333_3_fu_202_p2                            |     |        | or_ln333_3      | or         | auto                   | 0       |
+|    xor_ln333_4_fu_208_p2                           |     |        | xor_ln333_4     | xor        | auto                   | 0       |
+|    and_ln333_4_fu_214_p2                           |     |        | and_ln333_4     | and        | auto                   | 0       |
+|    or_ln333_4_fu_220_p2                            |     |        | or_ln333_4      | or         | auto                   | 0       |
+|    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
+|    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
+|    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
+|  + count_one_bit (grp_count_one_bit_fu_224)        | 0   |        |                 |            |                        |         |
+|    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
+|    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
+|    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
+|    or_ln333_fu_148_p2                              |     |        | or_ln333        | or         | auto                   | 0       |
+|    xor_ln333_1_fu_154_p2                           |     |        | xor_ln333_1     | xor        | auto                   | 0       |
+|    and_ln333_1_fu_160_p2                           |     |        | and_ln333_1     | and        | auto                   | 0       |
+|    or_ln333_1_fu_166_p2                            |     |        | or_ln333_1      | or         | auto                   | 0       |
+|    xor_ln333_2_fu_172_p2                           |     |        | xor_ln333_2     | xor        | auto                   | 0       |
+|    and_ln333_2_fu_178_p2                           |     |        | and_ln333_2     | and        | auto                   | 0       |
+|    or_ln333_2_fu_184_p2                            |     |        | or_ln333_2      | or         | auto                   | 0       |
+|    xor_ln333_3_fu_190_p2                           |     |        | xor_ln333_3     | xor        | auto                   | 0       |
+|    and_ln333_3_fu_196_p2                           |     |        | and_ln333_3     | and        | auto                   | 0       |
+|    or_ln333_3_fu_202_p2                            |     |        | or_ln333_3      | or         | auto                   | 0       |
+|    xor_ln333_4_fu_208_p2                           |     |        | xor_ln333_4     | xor        | auto                   | 0       |
+|    and_ln333_4_fu_214_p2                           |     |        | and_ln333_4     | and        | auto                   | 0       |
+|    or_ln333_4_fu_220_p2                            |     |        | or_ln333_4      | or         | auto                   | 0       |
+|    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
+|    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
+|    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
+|  + count_one_bit (grp_count_one_bit_fu_229)        | 0   |        |                 |            |                        |         |
+|    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
+|    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
+|    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
+|    or_ln333_fu_148_p2                              |     |        | or_ln333        | or         | auto                   | 0       |
+|    xor_ln333_1_fu_154_p2                           |     |        | xor_ln333_1     | xor        | auto                   | 0       |
+|    and_ln333_1_fu_160_p2                           |     |        | and_ln333_1     | and        | auto                   | 0       |
+|    or_ln333_1_fu_166_p2                            |     |        | or_ln333_1      | or         | auto                   | 0       |
+|    xor_ln333_2_fu_172_p2                           |     |        | xor_ln333_2     | xor        | auto                   | 0       |
+|    and_ln333_2_fu_178_p2                           |     |        | and_ln333_2     | and        | auto                   | 0       |
+|    or_ln333_2_fu_184_p2                            |     |        | or_ln333_2      | or         | auto                   | 0       |
+|    xor_ln333_3_fu_190_p2                           |     |        | xor_ln333_3     | xor        | auto                   | 0       |
+|    and_ln333_3_fu_196_p2                           |     |        | and_ln333_3     | and        | auto                   | 0       |
+|    or_ln333_3_fu_202_p2                            |     |        | or_ln333_3      | or         | auto                   | 0       |
+|    xor_ln333_4_fu_208_p2                           |     |        | xor_ln333_4     | xor        | auto                   | 0       |
+|    and_ln333_4_fu_214_p2                           |     |        | and_ln333_4     | and        | auto                   | 0       |
+|    or_ln333_4_fu_220_p2                            |     |        | or_ln333_4      | or         | auto                   | 0       |
+|    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
+|    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
+|    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
+|  + count_one_bit (max_5_count_one_bit_fu_234)      | 0   |        |                 |            |                        |         |
+|    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
+|    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
+|    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
+|    or_ln333_fu_148_p2                              |     |        | or_ln333        | or         | auto                   | 0       |
+|    xor_ln333_1_fu_154_p2                           |     |        | xor_ln333_1     | xor        | auto                   | 0       |
+|    and_ln333_1_fu_160_p2                           |     |        | and_ln333_1     | and        | auto                   | 0       |
+|    or_ln333_1_fu_166_p2                            |     |        | or_ln333_1      | or         | auto                   | 0       |
+|    xor_ln333_2_fu_172_p2                           |     |        | xor_ln333_2     | xor        | auto                   | 0       |
+|    and_ln333_2_fu_178_p2                           |     |        | and_ln333_2     | and        | auto                   | 0       |
+|    or_ln333_2_fu_184_p2                            |     |        | or_ln333_2      | or         | auto                   | 0       |
+|    xor_ln333_3_fu_190_p2                           |     |        | xor_ln333_3     | xor        | auto                   | 0       |
+|    and_ln333_3_fu_196_p2                           |     |        | and_ln333_3     | and        | auto                   | 0       |
+|    or_ln333_3_fu_202_p2                            |     |        | or_ln333_3      | or         | auto                   | 0       |
+|    xor_ln333_4_fu_208_p2                           |     |        | xor_ln333_4     | xor        | auto                   | 0       |
+|    and_ln333_4_fu_214_p2                           |     |        | and_ln333_4     | and        | auto                   | 0       |
+|    or_ln333_4_fu_220_p2                            |     |        | or_ln333_4      | or         | auto                   | 0       |
+|    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
+|    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
+|    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
+|  + count_one_bit (tmp_1_i_count_one_bit_fu_239)    | 0   |        |                 |            |                        |         |
+|    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
+|    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
+|    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
+|    or_ln333_fu_148_p2                              |     |        | or_ln333        | or         | auto                   | 0       |
+|    xor_ln333_1_fu_154_p2                           |     |        | xor_ln333_1     | xor        | auto                   | 0       |
+|    and_ln333_1_fu_160_p2                           |     |        | and_ln333_1     | and        | auto                   | 0       |
+|    or_ln333_1_fu_166_p2                            |     |        | or_ln333_1      | or         | auto                   | 0       |
+|    xor_ln333_2_fu_172_p2                           |     |        | xor_ln333_2     | xor        | auto                   | 0       |
+|    and_ln333_2_fu_178_p2                           |     |        | and_ln333_2     | and        | auto                   | 0       |
+|    or_ln333_2_fu_184_p2                            |     |        | or_ln333_2      | or         | auto                   | 0       |
+|    xor_ln333_3_fu_190_p2                           |     |        | xor_ln333_3     | xor        | auto                   | 0       |
+|    and_ln333_3_fu_196_p2                           |     |        | and_ln333_3     | and        | auto                   | 0       |
+|    or_ln333_3_fu_202_p2                            |     |        | or_ln333_3      | or         | auto                   | 0       |
+|    xor_ln333_4_fu_208_p2                           |     |        | xor_ln333_4     | xor        | auto                   | 0       |
+|    and_ln333_4_fu_214_p2                           |     |        | and_ln333_4     | and        | auto                   | 0       |
+|    or_ln333_4_fu_220_p2                            |     |        | or_ln333_4      | or         | auto                   | 0       |
+|    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
+|    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
+|    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
+|  + count_one_bit (max_8_count_one_bit_fu_244)      | 0   |        |                 |            |                        |         |
+|    UnifiedRetVal_fu_256_p16                        |     |        | select_ln333    | select     | auto_sel               | 0       |
+|    xor_ln333_fu_136_p2                             |     |        | xor_ln333       | xor        | auto                   | 0       |
+|    and_ln333_fu_142_p2                             |     |        | and_ln333       | and        | auto                   | 0       |
+|    or_ln333_fu_148_p2                              |     |        | or_ln333        | or         | auto                   | 0       |
+|    xor_ln333_1_fu_154_p2                           |     |        | xor_ln333_1     | xor        | auto                   | 0       |
+|    and_ln333_1_fu_160_p2                           |     |        | and_ln333_1     | and        | auto                   | 0       |
+|    or_ln333_1_fu_166_p2                            |     |        | or_ln333_1      | or         | auto                   | 0       |
+|    xor_ln333_2_fu_172_p2                           |     |        | xor_ln333_2     | xor        | auto                   | 0       |
+|    and_ln333_2_fu_178_p2                           |     |        | and_ln333_2     | and        | auto                   | 0       |
+|    or_ln333_2_fu_184_p2                            |     |        | or_ln333_2      | or         | auto                   | 0       |
+|    xor_ln333_3_fu_190_p2                           |     |        | xor_ln333_3     | xor        | auto                   | 0       |
+|    and_ln333_3_fu_196_p2                           |     |        | and_ln333_3     | and        | auto                   | 0       |
+|    or_ln333_3_fu_202_p2                            |     |        | or_ln333_3      | or         | auto                   | 0       |
+|    xor_ln333_4_fu_208_p2                           |     |        | xor_ln333_4     | xor        | auto                   | 0       |
+|    and_ln333_4_fu_214_p2                           |     |        | and_ln333_4     | and        | auto                   | 0       |
+|    or_ln333_4_fu_220_p2                            |     |        | or_ln333_4      | or         | auto                   | 0       |
+|    xor_ln333_5_fu_226_p2                           |     |        | xor_ln333_5     | xor        | auto                   | 0       |
+|    and_ln333_5_fu_232_p2                           |     |        | and_ln333_5     | and        | auto                   | 0       |
+|    sparsemux_17_7_4_1_1_U60                        |     |        | UnifiedRetVal   | sparsemux  | onehotencoding_realdef | 0       |
++----------------------------------------------------+-----+--------+-----------------+------------+------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| Name              | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
+|                   |           |           |      |      |        |          |      |         | Banks            |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+| + SneakySnake_bit |           |           | 0    | 0    |        |          |      |         |                  |
+|   control_s_axi_U | interface | s_axilite |      |      |        |          |      |         |                  |
++-------------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------+---------+----------------------------------------------------------------------+
+| Type     | Options | Location                                                             |
++----------+---------+----------------------------------------------------------------------+
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:332 in count_one_bit       |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:384 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:402 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:421 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:440 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:464 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:490 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:518 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:536 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:558 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:582 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:609 in neighborhoodmap_bit |
+| pipeline |         | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:643 in after_neighbohood   |
+| inline   | OFF     | ../../SneakySnake-HLS-HBM/hw/pipeline.cpp:695 in sneakysnake_bit     |
++----------+---------+----------------------------------------------------------------------+
+
+

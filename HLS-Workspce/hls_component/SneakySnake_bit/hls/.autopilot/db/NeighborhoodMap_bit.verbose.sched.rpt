@@ -1,0 +1,225 @@
+
+
+================================================================
+== Vitis HLS Report for 'NeighborhoodMap_bit'
+================================================================
+* Date:           Fri May  9 16:35:55 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        SneakySnake_bit
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu9p-flga2104-2-i
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  8.00 ns|  2.118 ns|     0.96 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      131|      131|  1.048 us|  1.048 us|  131|  131|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.02>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%DNA_ref_val_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %DNA_ref_val"   --->   Operation 4 'read' 'DNA_ref_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%DNA_read_val_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %DNA_read_val"   --->   Operation 5 'read' 'DNA_read_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%storemerge44_loc = alloca i64 1"   --->   Operation 6 'alloca' 'storemerge44_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%storemerge145_loc = alloca i64 1"   --->   Operation 7 'alloca' 'storemerge145_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%storemerge246_loc = alloca i64 1"   --->   Operation 8 'alloca' 'storemerge246_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%storemerge347_loc = alloca i64 1"   --->   Operation 9 'alloca' 'storemerge347_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%storemerge448_loc = alloca i64 1"   --->   Operation 10 'alloca' 'storemerge448_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%storemerge549_loc = alloca i64 1"   --->   Operation 11 'alloca' 'storemerge549_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%storemerge650_loc = alloca i64 1"   --->   Operation 12 'alloca' 'storemerge650_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%storemerge751_loc = alloca i64 1"   --->   Operation 13 'alloca' 'storemerge751_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%storemerge852_loc = alloca i64 1"   --->   Operation 14 'alloca' 'storemerge852_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%storemerge953_loc = alloca i64 1"   --->   Operation 15 'alloca' 'storemerge953_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%DNA_nsh_write_assign_loc = alloca i64 1"   --->   Operation 16 'alloca' 'DNA_nsh_write_assign_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.29ns)   --->   "%DNA_1 = xor i256 %DNA_ref_val_read, i256 %DNA_read_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373]   --->   Operation 17 'xor' 'DNA_1' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [2/2] (1.73ns)   --->   "%call_ln373 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1, i256 %DNA_1, i128 %DNA_nsh_write_assign_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373]   --->   Operation 18 'call' 'call_ln373' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node DNA_2)   --->   "%shl_ln398 = shl i256 %DNA_read_val_read, i256 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 19 'shl' 'shl_ln398' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_2 = xor i256 %shl_ln398, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 20 'xor' 'DNA_2' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [2/2] (1.73ns)   --->   "%call_ln398 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2, i256 %DNA_2, i128 %storemerge953_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 21 'call' 'call_ln398' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 22 [1/1] (0.00ns) (grouped into LUT with out node DNA_3)   --->   "%shl_ln417 = shl i256 %DNA_read_val_read, i256 4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 22 'shl' 'shl_ln417' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_3 = xor i256 %shl_ln417, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 23 'xor' 'DNA_3' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [2/2] (1.73ns)   --->   "%call_ln417 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3, i256 %DNA_3, i128 %storemerge852_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 24 'call' 'call_ln417' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node DNA_6)   --->   "%shl_ln436 = shl i256 %DNA_read_val_read, i256 6" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 25 'shl' 'shl_ln436' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_6 = xor i256 %shl_ln436, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 26 'xor' 'DNA_6' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [2/2] (1.73ns)   --->   "%call_ln436 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4, i256 %DNA_6, i128 %storemerge751_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 27 'call' 'call_ln436' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 28 [1/1] (0.00ns) (grouped into LUT with out node DNA_7)   --->   "%shl_ln460 = shl i256 %DNA_read_val_read, i256 8" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 28 'shl' 'shl_ln460' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_7 = xor i256 %shl_ln460, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 29 'xor' 'DNA_7' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [2/2] (1.73ns)   --->   "%call_ln460 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, i256 %DNA_7, i128 %storemerge650_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 30 'call' 'call_ln460' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node DNA_8)   --->   "%shl_ln486 = shl i256 %DNA_read_val_read, i256 10" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 31 'shl' 'shl_ln486' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_8 = xor i256 %shl_ln486, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 32 'xor' 'DNA_8' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [2/2] (1.73ns)   --->   "%call_ln486 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6, i256 %DNA_8, i128 %storemerge549_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 33 'call' 'call_ln486' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i254 @_ssdm_op_PartSelect.i254.i256.i32.i32, i256 %DNA_read_val_read, i32 2, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 34 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln514 = zext i254 %lshr_ln" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 35 'zext' 'zext_ln514' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.29ns)   --->   "%DNA_4 = xor i256 %zext_ln514, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 36 'xor' 'DNA_4' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 37 [2/2] (1.73ns)   --->   "%call_ln514 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7, i256 %DNA_4, i128 %storemerge448_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 37 'call' 'call_ln514' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%lshr_ln1 = partselect i252 @_ssdm_op_PartSelect.i252.i256.i32.i32, i256 %DNA_read_val_read, i32 4, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 38 'partselect' 'lshr_ln1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln532 = zext i252 %lshr_ln1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 39 'zext' 'zext_ln532' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.29ns)   --->   "%DNA_5 = xor i256 %zext_ln532, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 40 'xor' 'DNA_5' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 41 [2/2] (1.73ns)   --->   "%call_ln532 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8, i256 %DNA_5, i128 %storemerge347_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 41 'call' 'call_ln532' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%lshr_ln2 = partselect i250 @_ssdm_op_PartSelect.i250.i256.i32.i32, i256 %DNA_read_val_read, i32 6, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 42 'partselect' 'lshr_ln2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln554 = zext i250 %lshr_ln2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 43 'zext' 'zext_ln554' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.29ns)   --->   "%DNA_9 = xor i256 %zext_ln554, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 44 'xor' 'DNA_9' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 45 [2/2] (1.73ns)   --->   "%call_ln554 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9, i256 %DNA_9, i128 %storemerge246_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 45 'call' 'call_ln554' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%lshr_ln3 = partselect i248 @_ssdm_op_PartSelect.i248.i256.i32.i32, i256 %DNA_read_val_read, i32 8, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 46 'partselect' 'lshr_ln3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln578 = zext i248 %lshr_ln3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 47 'zext' 'zext_ln578' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.29ns)   --->   "%DNA_10 = xor i256 %zext_ln578, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 48 'xor' 'DNA_10' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 49 [2/2] (1.73ns)   --->   "%call_ln578 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10, i256 %DNA_10, i128 %storemerge145_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 49 'call' 'call_ln578' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%lshr_ln4 = partselect i246 @_ssdm_op_PartSelect.i246.i256.i32.i32, i256 %DNA_read_val_read, i32 10, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 50 'partselect' 'lshr_ln4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%zext_ln605 = zext i246 %lshr_ln4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 51 'zext' 'zext_ln605' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.29ns)   --->   "%DNA_11 = xor i256 %zext_ln605, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 52 'xor' 'DNA_11' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [2/2] (1.73ns)   --->   "%call_ln605 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11, i256 %DNA_11, i128 %storemerge44_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 53 'call' 'call_ln605' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+
+State 2 <SV = 1> <Delay = 1.47>
+ST_2 : Operation 54 [1/2] (1.47ns)   --->   "%call_ln373 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1, i256 %DNA_1, i128 %DNA_nsh_write_assign_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373]   --->   Operation 54 'call' 'call_ln373' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 55 [1/2] (1.47ns)   --->   "%call_ln398 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2, i256 %DNA_2, i128 %storemerge953_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 55 'call' 'call_ln398' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 56 [1/2] (1.47ns)   --->   "%call_ln417 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3, i256 %DNA_3, i128 %storemerge852_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 56 'call' 'call_ln417' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 57 [1/2] (1.47ns)   --->   "%call_ln436 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4, i256 %DNA_6, i128 %storemerge751_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 57 'call' 'call_ln436' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 58 [1/2] (1.47ns)   --->   "%call_ln460 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, i256 %DNA_7, i128 %storemerge650_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 58 'call' 'call_ln460' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 59 [1/2] (1.47ns)   --->   "%call_ln486 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6, i256 %DNA_8, i128 %storemerge549_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 59 'call' 'call_ln486' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 60 [1/2] (1.47ns)   --->   "%call_ln514 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7, i256 %DNA_4, i128 %storemerge448_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 60 'call' 'call_ln514' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 61 [1/2] (1.47ns)   --->   "%call_ln532 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8, i256 %DNA_5, i128 %storemerge347_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 61 'call' 'call_ln532' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 62 [1/2] (1.47ns)   --->   "%call_ln554 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9, i256 %DNA_9, i128 %storemerge246_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 62 'call' 'call_ln554' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 63 [1/2] (1.47ns)   --->   "%call_ln578 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10, i256 %DNA_10, i128 %storemerge145_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 63 'call' 'call_ln578' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 64 [1/2] (1.47ns)   --->   "%call_ln605 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11, i256 %DNA_11, i128 %storemerge44_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 64 'call' 'call_ln605' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%DNA_nsh_write_assign_loc_load = load i128 %DNA_nsh_write_assign_loc"   --->   Operation 65 'load' 'DNA_nsh_write_assign_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%storemerge953_loc_load = load i128 %storemerge953_loc"   --->   Operation 66 'load' 'storemerge953_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%DNA_shl_one_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge953_loc_load, i2 1, i32 126" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:410]   --->   Operation 67 'partset' 'DNA_shl_one_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%storemerge852_loc_load = load i128 %storemerge852_loc"   --->   Operation 68 'load' 'storemerge852_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%DNA_shl_two_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i4.i32.i32, i128 %storemerge852_loc_load, i4 5, i32 124, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:429]   --->   Operation 69 'partset' 'DNA_shl_two_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%storemerge751_loc_load = load i128 %storemerge751_loc"   --->   Operation 70 'load' 'storemerge751_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%DNA_shl_three_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i6.i32.i32, i128 %storemerge751_loc_load, i6 21, i32 122, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:449]   --->   Operation 71 'partset' 'DNA_shl_three_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%storemerge650_loc_load = load i128 %storemerge650_loc"   --->   Operation 72 'load' 'storemerge650_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%DNA_shl_four_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i8.i32.i32, i128 %storemerge650_loc_load, i8 85, i32 120, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:474]   --->   Operation 73 'partset' 'DNA_shl_four_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%storemerge549_loc_load = load i128 %storemerge549_loc"   --->   Operation 74 'load' 'storemerge549_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%DNA_shl_five_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i10.i32.i32, i128 %storemerge549_loc_load, i10 341, i32 118, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:501]   --->   Operation 75 'partset' 'DNA_shl_five_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%storemerge448_loc_load = load i128 %storemerge448_loc"   --->   Operation 76 'load' 'storemerge448_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%DNA_shr_one_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge448_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:525]   --->   Operation 77 'partset' 'DNA_shr_one_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%storemerge347_loc_load = load i128 %storemerge347_loc"   --->   Operation 78 'load' 'storemerge347_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_s = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge347_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:543]   --->   Operation 79 'partset' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%DNA_shr_two_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_s, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:544]   --->   Operation 80 'partset' 'DNA_shr_two_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%storemerge246_loc_load = load i128 %storemerge246_loc"   --->   Operation 81 'load' 'storemerge246_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_15 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge246_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:565]   --->   Operation 82 'partset' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_16 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_15, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:566]   --->   Operation 83 'partset' 'tmp_16' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%DNA_shr_three_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_16, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:567]   --->   Operation 84 'partset' 'DNA_shr_three_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%storemerge145_loc_load = load i128 %storemerge145_loc"   --->   Operation 85 'load' 'storemerge145_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_17 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge145_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:590]   --->   Operation 86 'partset' 'tmp_17' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_18 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_17, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:591]   --->   Operation 87 'partset' 'tmp_18' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_19 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_18, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:592]   --->   Operation 88 'partset' 'tmp_19' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%DNA_shr_four_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_19, i2 1, i32 3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:593]   --->   Operation 89 'partset' 'DNA_shr_four_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%storemerge44_loc_load = load i128 %storemerge44_loc"   --->   Operation 90 'load' 'storemerge44_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_20 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge44_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:617]   --->   Operation 91 'partset' 'tmp_20' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_21 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_20, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:618]   --->   Operation 92 'partset' 'tmp_21' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_22 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_21, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:619]   --->   Operation 93 'partset' 'tmp_22' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_23 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_22, i2 1, i32 3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:620]   --->   Operation 94 'partset' 'tmp_23' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns)   --->   "%DNA_shr_five_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_23, i2 1, i32 4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:621]   --->   Operation 95 'partset' 'DNA_shr_five_write_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%mrv = insertvalue i1408 <undef>, i128 %DNA_nsh_write_assign_loc_load" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 96 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i1408 %mrv, i128 %DNA_shl_one_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 97 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i1408 %mrv_1, i128 %DNA_shl_two_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 98 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i1408 %mrv_2, i128 %DNA_shl_three_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 99 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i1408 %mrv_3, i128 %DNA_shl_four_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 100 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i1408 %mrv_4, i128 %DNA_shl_five_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 101 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i1408 %mrv_5, i128 %DNA_shr_one_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 102 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i1408 %mrv_6, i128 %DNA_shr_two_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 103 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i1408 %mrv_7, i128 %DNA_shr_three_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 104 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i1408 %mrv_8, i128 %DNA_shr_four_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 105 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue i1408 %mrv_9, i128 %DNA_shr_five_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 106 'insertvalue' 'mrv_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%ret_ln629 = ret i1408 %mrv_s" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 107 'ret' 'ret_ln629' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 8.000ns, clock uncertainty: 0.960ns.
+
+ <State 1>: 2.025ns
+The critical path consists of the following:
+	wire read operation ('DNA_ref_val_read') on port 'DNA_ref_val' [3]  (0.000 ns)
+	'xor' operation 256 bit ('DNA_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373) [16]  (0.294 ns)
+	'call' operation 0 bit ('call_ln373', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373) to 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1' [17]  (1.731 ns)
+
+ <State 2>: 1.480ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln373', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373) to 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1' [17]  (1.480 ns)
+
+ <State 3>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

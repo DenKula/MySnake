@@ -1,0 +1,49 @@
+set ModuleHierarchy {[{
+"Name" : "SneakySnake_bit","ID" : "0","Type" : "sequential",
+"SubInsts" : [
+	{"Name" : "grp_NeighborhoodMap_bit_fu_206","ID" : "1","Type" : "sequential",
+		"SubInsts" : [
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158","ID" : "2","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_380_1","ID" : "3","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164","ID" : "4","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_400_2","ID" : "5","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170","ID" : "6","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_419_3","ID" : "7","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176","ID" : "8","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_438_4","ID" : "9","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182","ID" : "10","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_462_5","ID" : "11","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188","ID" : "12","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_488_6","ID" : "13","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194","ID" : "14","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_516_7","ID" : "15","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200","ID" : "16","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_534_8","ID" : "17","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206","ID" : "18","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_556_9","ID" : "19","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212","ID" : "20","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_580_10","ID" : "21","Type" : "pipeline"},]},
+		{"Name" : "grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218","ID" : "22","Type" : "sequential",
+			"SubLoops" : [
+			{"Name" : "VITIS_LOOP_607_11","ID" : "23","Type" : "pipeline"},]},]},],
+"SubLoops" : [
+	{"Name" : "VITIS_LOOP_707_1_VITIS_LOOP_640_1","ID" : "24","Type" : "pipeline",
+	"SubInsts" : [
+	{"Name" : "grp_count_one_bit_fu_214","ID" : "25","Type" : "pipeline"},
+	{"Name" : "grp_count_one_bit_fu_219","ID" : "26","Type" : "pipeline"},
+	{"Name" : "grp_count_one_bit_fu_224","ID" : "27","Type" : "pipeline"},
+	{"Name" : "grp_count_one_bit_fu_229","ID" : "28","Type" : "pipeline"},
+	{"Name" : "max_5_count_one_bit_fu_234","ID" : "29","Type" : "pipeline"},
+	{"Name" : "tmp_1_i_count_one_bit_fu_239","ID" : "30","Type" : "pipeline"},
+	{"Name" : "max_8_count_one_bit_fu_244","ID" : "31","Type" : "pipeline"},]},]
+}]}
