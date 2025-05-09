@@ -22,9 +22,9 @@ OR: use the following to check the memory leaks
 valgrind --leak-check=yes --show-leak-kinds=all ./main
 */
 
-
-void kt_for(int n_threads, void (*func)(void*,long,int), void *data, long n);
-//void kt_for(int n_threads, int n_items, void (*func)(void*,int,int), void *data);
+extern "C" {
+    void kt_for(int n_threads, void (*func)(void*, long, int), void *data, long n);
+}
 
 //void kt_pipeline(int n_threads, void *(*func)(void*, int, void*), void *shared_data, int n_steps);
 
@@ -162,9 +162,10 @@ int main(int argc, const char * const argv[]) {
              printf("Data: %s\tThreads: %d\tE: %d\tAccepted: %d\tRejected:%d\n", argv[5], threads, EditThreshold, Accepted, atoi(argv[6])-Accepted);
         } else { //when threads >1
             step_t *s;
-            s = calloc(1, sizeof(step_t));
-            s->lines = calloc(atoi(argv[6]), sizeof(char*));
-            s->Accepted = calloc(atoi(argv[6]), sizeof(int));
+            s = (step_t *)calloc(1, sizeof(step_t)); // changed these due to having code in cpp
+            s->lines = (char **)calloc(atoi(argv[6]), sizeof(char *));
+            s->Accepted = (int *)calloc(atoi(argv[6]), sizeof(int));
+
             s->DebugMode = atoi(argv[1]);
             s->KmerSize = atoi(argv[2]);
             s->ReadLength  = atoi(argv[3]);
