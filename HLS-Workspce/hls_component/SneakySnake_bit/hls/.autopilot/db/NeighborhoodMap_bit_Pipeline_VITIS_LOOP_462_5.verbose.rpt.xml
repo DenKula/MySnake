@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5'" level="0">
-<item name = "Date">Fri May  9 17:21:08 2025
+<item name = "Date">Fri May  9 17:46:13 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">SneakySnake_bit</item>
@@ -83,20 +83,20 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_184_p2">+, 0, 0, 15, 8, 2</column>
+<column name="i_7_fu_184_p2">+, 0, 0, 15, 8, 2</column>
 <column name="index_12_fu_96_p2">+, 0, 0, 14, 7, 1</column>
 <column name="icmp_ln462_fu_90_p2">icmp, 0, 0, 14, 7, 2</column>
 <column name="icmp_ln465_fu_156_p2">icmp, 0, 0, 9, 2, 1</column>
 <column name="or_ln465_fu_150_p2">or, 0, 0, 2, 2, 2</column>
-<column name="storemerge6_fu_174_p2">select, 0, 0, 2, 1, 1</column>
+<column name="storemerge6_i_fu_174_p2">select, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_done_int">9, 2, 1, 2</column>
-<column name="ap_sig_allocacmp_i_8_load">9, 2, 8, 16</column>
+<column name="ap_sig_allocacmp_i_load">9, 2, 8, 16</column>
 <column name="ap_sig_allocacmp_index">9, 2, 7, 14</column>
-<column name="i_8_fu_56">9, 2, 8, 16</column>
+<column name="i_fu_56">9, 2, 8, 16</column>
 <column name="index_7_fu_52">9, 2, 7, 14</column>
 </table>
 </item>
@@ -104,9 +104,9 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">1, 0, 1, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="i_8_fu_56">8, 0, 8, 0</column>
+<column name="i_fu_56">8, 0, 8, 0</column>
 <column name="index_7_fu_52">7, 0, 7, 0</column>
-<column name="storemerge650_fu_60">128, 0, 128, 0</column>
+<column name="storemerge650_i_fu_60">128, 0, 128, 0</column>
 </table>
 </item>
 </section>
@@ -123,8 +123,8 @@
 <column name="ap_idle">out, 1, ap_ctrl_hs, NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, return value</column>
 <column name="DNA_7">in, 256, ap_none, DNA_7, scalar</column>
-<column name="storemerge650_out">out, 128, ap_vld, storemerge650_out, pointer</column>
-<column name="storemerge650_out_ap_vld">out, 1, ap_vld, storemerge650_out, pointer</column>
+<column name="storemerge650_i_out">out, 128, ap_vld, storemerge650_i_out, pointer</column>
+<column name="storemerge650_i_out_ap_vld">out, 1, ap_vld, storemerge650_i_out, pointer</column>
 </table>
 </item>
 </section>

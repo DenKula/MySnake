@@ -227,6 +227,21 @@ Args:
                        Line: 634, Column: 0 }
   - String:          ''''
 ...
+--- !Passed
+Pass:            reflow-extract-cfg-in-dataflow
+Name:            LoopExtractionForDataflow
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 707, Column: 27 }
+Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
+Args:            
+  - String:          'Changing loop '''
+  - LoopName:        Loop_VITIS_LOOP_707_1_proc
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27'
+  - String:          ') to a process function for dataflow in function '''
+  - Name:            SneakySnake_bit
+  - String:          ''''
+...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
@@ -241,6 +256,22 @@ Args:
   - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
                        Line: 634, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 710, Column: 24 }
+Function:        Loop_VITIS_LOOP_707_1_proc
+Args:            
+  - Callee:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
+    DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                       Line: 634, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          Loop_VITIS_LOOP_707_1_proc
+    DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                       Line: 0, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -263,12 +294,12 @@ Args:
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 710, Column: 24 }
+                   Line: 706, Column: 22 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
-  - Callee:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
+  - Callee:          Loop_VITIS_LOOP_707_1_proc
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 0, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 

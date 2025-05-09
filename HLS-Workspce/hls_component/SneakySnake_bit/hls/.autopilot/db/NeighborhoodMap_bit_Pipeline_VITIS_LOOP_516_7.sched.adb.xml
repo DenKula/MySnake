@@ -49,10 +49,10 @@ newFuncRoot:1 %i = alloca i32 1
 
 <Node id="5" bw="128" op_0_bw="32">
 <![CDATA[
-newFuncRoot:2 %storemerge448 = alloca i32 1
+newFuncRoot:2 %storemerge448_i = alloca i32 1
 
 ]]></Node>
-<StgValue><ssdm name="storemerge448"/></StgValue>
+<StgValue><ssdm name="storemerge448_i"/></StgValue>
 </operation>
 
 <operation id="7" st_id="1" stage="1" lat="1">
@@ -109,7 +109,7 @@ newFuncRoot:5 %store_ln371 = store i7 0, i7 %index
 
 <Node id="9" bw="0" op_0_bw="0">
 <![CDATA[
-newFuncRoot:6 %br_ln0 = br void %for.body188
+newFuncRoot:6 %br_ln0 = br void %for.body188.i
 
 ]]></Node>
 <StgValue><ssdm name="br_ln0"/></StgValue>
@@ -124,7 +124,7 @@ newFuncRoot:6 %br_ln0 = br void %for.body188
 
 <Node id="11" bw="7" op_0_bw="7" op_1_bw="0">
 <![CDATA[
-for.body188:0 %index_9 = load i7 %index
+for.body188.i:0 %index_9 = load i7 %index
 
 ]]></Node>
 <StgValue><ssdm name="index_9"/></StgValue>
@@ -139,7 +139,7 @@ for.body188:0 %index_9 = load i7 %index
 
 <Node id="12" bw="1" op_0_bw="7" op_1_bw="7">
 <![CDATA[
-for.body188:1 %icmp_ln516 = icmp_eq  i7 %index_9, i7 127
+for.body188.i:1 %icmp_ln516 = icmp_eq  i7 %index_9, i7 127
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln516"/></StgValue>
@@ -154,7 +154,7 @@ for.body188:1 %icmp_ln516 = icmp_eq  i7 %index_9, i7 127
 
 <Node id="13" bw="7" op_0_bw="7" op_1_bw="7">
 <![CDATA[
-for.body188:2 %index_10 = add i7 %index_9, i7 1
+for.body188.i:2 %index_10 = add i7 %index_9, i7 1
 
 ]]></Node>
 <StgValue><ssdm name="index_10"/></StgValue>
@@ -169,7 +169,7 @@ for.body188:2 %index_10 = add i7 %index_9, i7 1
 
 <Node id="14" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-for.body188:3 %br_ln516 = br i1 %icmp_ln516, void %for.body188.split_ifconv, void %for.end211.exitStub
+for.body188.i:3 %br_ln516 = br i1 %icmp_ln516, void %for.body188.split.i_ifconv, void %for.end211.i.exitStub
 
 ]]></Node>
 <StgValue><ssdm name="br_ln516"/></StgValue>
@@ -185,7 +185,7 @@ for.body188:3 %br_ln516 = br i1 %icmp_ln516, void %for.body188.split_ifconv, voi
 
 <Node id="16" bw="8" op_0_bw="8" op_1_bw="0">
 <![CDATA[
-for.body188.split_ifconv:0 %i_load = load i8 %i
+for.body188.split.i_ifconv:0 %i_load = load i8 %i
 
 ]]></Node>
 <StgValue><ssdm name="i_load"/></StgValue>
@@ -201,10 +201,10 @@ for.body188.split_ifconv:0 %i_load = load i8 %i
 
 <Node id="17" bw="128" op_0_bw="128">
 <![CDATA[
-for.body188.split_ifconv:1 %storemerge448_load_1 = load i128 %storemerge448
+for.body188.split.i_ifconv:1 %storemerge448_i_load_1 = load i128 %storemerge448_i
 
 ]]></Node>
-<StgValue><ssdm name="storemerge448_load_1"/></StgValue>
+<StgValue><ssdm name="storemerge448_i_load_1"/></StgValue>
 </operation>
 
 <operation id="17" st_id="1" stage="1" lat="1">
@@ -217,7 +217,7 @@ for.body188.split_ifconv:1 %storemerge448_load_1 = load i128 %storemerge448
 
 <Node id="18" bw="32" op_0_bw="8">
 <![CDATA[
-for.body188.split_ifconv:2 %zext_ln516 = zext i8 %i_load
+for.body188.split.i_ifconv:2 %zext_ln516 = zext i8 %i_load
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln516"/></StgValue>
@@ -233,7 +233,7 @@ for.body188.split_ifconv:2 %zext_ln516 = zext i8 %i_load
 
 <Node id="19" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32" op_3_bw="32" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-for.body188.split_ifconv:3 %specpipeline_ln518 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_2
+for.body188.split.i_ifconv:3 %specpipeline_ln518 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_2
 
 ]]></Node>
 <StgValue><ssdm name="specpipeline_ln518"/></StgValue>
@@ -249,7 +249,7 @@ for.body188.split_ifconv:3 %specpipeline_ln518 = specpipeline void @_ssdm_op_Spe
 
 <Node id="20" bw="0" op_0_bw="0" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-for.body188.split_ifconv:4 %speclooptripcount_ln371 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 127, i64 127, i64 127
+for.body188.split.i_ifconv:4 %speclooptripcount_ln371 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 127, i64 127, i64 127
 
 ]]></Node>
 <StgValue><ssdm name="speclooptripcount_ln371"/></StgValue>
@@ -265,7 +265,7 @@ for.body188.split_ifconv:4 %speclooptripcount_ln371 = speclooptripcount void @_s
 
 <Node id="21" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-for.body188.split_ifconv:5 %specloopname_ln516 = specloopname void @_ssdm_op_SpecLoopName, void @empty_10
+for.body188.split.i_ifconv:5 %specloopname_ln516 = specloopname void @_ssdm_op_SpecLoopName, void @empty_10
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln516"/></StgValue>
@@ -281,10 +281,10 @@ for.body188.split_ifconv:5 %specloopname_ln516 = specloopname void @_ssdm_op_Spe
 
 <Node id="22" bw="2" op_0_bw="2" op_1_bw="256" op_2_bw="32">
 <![CDATA[
-for.body188.split_ifconv:6 %tmp_s = partselect i2 @_ssdm_op_PartSelect.i2.i256.i32, i256 %DNA_4_read, i32 %zext_ln516
+for.body188.split.i_ifconv:6 %tmp_28_i = partselect i2 @_ssdm_op_PartSelect.i2.i256.i32, i256 %DNA_4_read, i32 %zext_ln516
 
 ]]></Node>
-<StgValue><ssdm name="tmp_s"/></StgValue>
+<StgValue><ssdm name="tmp_28_i"/></StgValue>
 </operation>
 
 <operation id="22" st_id="1" stage="1" lat="1">
@@ -297,10 +297,10 @@ for.body188.split_ifconv:6 %tmp_s = partselect i2 @_ssdm_op_PartSelect.i2.i256.i
 
 <Node id="23" bw="7" op_0_bw="7" op_1_bw="8" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-for.body188.split_ifconv:7 %tmp_9 = partselect i7 @_ssdm_op_PartSelect.i7.i8.i32.i32, i8 %i_load, i32 1, i32 7
+for.body188.split.i_ifconv:7 %tmp_s = partselect i7 @_ssdm_op_PartSelect.i7.i8.i32.i32, i8 %i_load, i32 1, i32 7
 
 ]]></Node>
-<StgValue><ssdm name="tmp_9"/></StgValue>
+<StgValue><ssdm name="tmp_s"/></StgValue>
 </operation>
 
 <operation id="23" st_id="1" stage="1" lat="1">
@@ -313,7 +313,7 @@ for.body188.split_ifconv:7 %tmp_9 = partselect i7 @_ssdm_op_PartSelect.i7.i8.i32
 
 <Node id="24" bw="8" op_0_bw="8" op_1_bw="7" op_2_bw="1">
 <![CDATA[
-for.body188.split_ifconv:8 %or_ln6 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i7.i1, i7 %tmp_9, i1 1
+for.body188.split.i_ifconv:8 %or_ln6 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i7.i1, i7 %tmp_s, i1 1
 
 ]]></Node>
 <StgValue><ssdm name="or_ln6"/></StgValue>
@@ -329,7 +329,7 @@ for.body188.split_ifconv:8 %or_ln6 = bitconcatenate i8 @_ssdm_op_BitConcatenate.
 
 <Node id="25" bw="32" op_0_bw="8">
 <![CDATA[
-for.body188.split_ifconv:9 %zext_ln519 = zext i8 %or_ln6
+for.body188.split.i_ifconv:9 %zext_ln519 = zext i8 %or_ln6
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln519"/></StgValue>
@@ -345,10 +345,10 @@ for.body188.split_ifconv:9 %zext_ln519 = zext i8 %or_ln6
 
 <Node id="26" bw="2" op_0_bw="2" op_1_bw="256" op_2_bw="32">
 <![CDATA[
-for.body188.split_ifconv:10 %tmp_10 = partselect i2 @_ssdm_op_PartSelect.i2.i256.i32, i256 %DNA_4_read, i32 %zext_ln519
+for.body188.split.i_ifconv:10 %tmp_30_i = partselect i2 @_ssdm_op_PartSelect.i2.i256.i32, i256 %DNA_4_read, i32 %zext_ln519
 
 ]]></Node>
-<StgValue><ssdm name="tmp_10"/></StgValue>
+<StgValue><ssdm name="tmp_30_i"/></StgValue>
 </operation>
 
 <operation id="26" st_id="1" stage="1" lat="1">
@@ -361,7 +361,7 @@ for.body188.split_ifconv:10 %tmp_10 = partselect i2 @_ssdm_op_PartSelect.i2.i256
 
 <Node id="27" bw="2" op_0_bw="2" op_1_bw="2">
 <![CDATA[
-for.body188.split_ifconv:11 %or_ln519 = or i2 %tmp_s, i2 %tmp_10
+for.body188.split.i_ifconv:11 %or_ln519 = or i2 %tmp_28_i, i2 %tmp_30_i
 
 ]]></Node>
 <StgValue><ssdm name="or_ln519"/></StgValue>
@@ -377,7 +377,7 @@ for.body188.split_ifconv:11 %or_ln519 = or i2 %tmp_s, i2 %tmp_10
 
 <Node id="28" bw="1" op_0_bw="2" op_1_bw="2">
 <![CDATA[
-for.body188.split_ifconv:12 %icmp_ln519 = icmp_eq  i2 %or_ln519, i2 0
+for.body188.split.i_ifconv:12 %icmp_ln519 = icmp_eq  i2 %or_ln519, i2 0
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln519"/></StgValue>
@@ -393,7 +393,7 @@ for.body188.split_ifconv:12 %icmp_ln519 = icmp_eq  i2 %or_ln519, i2 0
 
 <Node id="29" bw="2" op_0_bw="1" op_1_bw="2" op_2_bw="2">
 <![CDATA[
-for.body188.split_ifconv:13 %p_cast = select i1 %icmp_ln519, i2 0, i2 1
+for.body188.split.i_ifconv:13 %p_cast = select i1 %icmp_ln519, i2 0, i2 1
 
 ]]></Node>
 <StgValue><ssdm name="p_cast"/></StgValue>
@@ -409,7 +409,7 @@ for.body188.split_ifconv:13 %p_cast = select i1 %icmp_ln519, i2 0, i2 1
 
 <Node id="30" bw="32" op_0_bw="7">
 <![CDATA[
-for.body188.split_ifconv:14 %index_11_cast = zext i7 %index_9
+for.body188.split.i_ifconv:14 %index_11_cast = zext i7 %index_9
 
 ]]></Node>
 <StgValue><ssdm name="index_11_cast"/></StgValue>
@@ -425,10 +425,10 @@ for.body188.split_ifconv:14 %index_11_cast = zext i7 %index_9
 
 <Node id="31" bw="128" op_0_bw="128" op_1_bw="128" op_2_bw="2" op_3_bw="32">
 <![CDATA[
-for.body188.split_ifconv:15 %storemerge4 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge448_load_1, i2 %p_cast, i32 %index_11_cast
+for.body188.split.i_ifconv:15 %storemerge4_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge448_i_load_1, i2 %p_cast, i32 %index_11_cast
 
 ]]></Node>
-<StgValue><ssdm name="storemerge4"/></StgValue>
+<StgValue><ssdm name="storemerge4_i"/></StgValue>
 </operation>
 
 <operation id="31" st_id="1" stage="1" lat="1">
@@ -441,10 +441,10 @@ for.body188.split_ifconv:15 %storemerge4 = partset i128 @_ssdm_op_PartSet.i128.i
 
 <Node id="32" bw="8" op_0_bw="8" op_1_bw="8">
 <![CDATA[
-for.body188.split_ifconv:16 %i_7 = add i8 %i_load, i8 2
+for.body188.split.i_ifconv:16 %i_5 = add i8 %i_load, i8 2
 
 ]]></Node>
-<StgValue><ssdm name="i_7"/></StgValue>
+<StgValue><ssdm name="i_5"/></StgValue>
 </operation>
 
 <operation id="32" st_id="1" stage="1" lat="1">
@@ -457,7 +457,7 @@ for.body188.split_ifconv:16 %i_7 = add i8 %i_load, i8 2
 
 <Node id="33" bw="0" op_0_bw="128" op_1_bw="128" op_2_bw="0">
 <![CDATA[
-for.body188.split_ifconv:17 %store_ln519 = store i128 %storemerge4, i128 %storemerge448
+for.body188.split.i_ifconv:17 %store_ln519 = store i128 %storemerge4_i, i128 %storemerge448_i
 
 ]]></Node>
 <StgValue><ssdm name="store_ln519"/></StgValue>
@@ -473,7 +473,7 @@ for.body188.split_ifconv:17 %store_ln519 = store i128 %storemerge4, i128 %storem
 
 <Node id="34" bw="0" op_0_bw="8" op_1_bw="8" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.body188.split_ifconv:18 %store_ln371 = store i8 %i_7, i8 %i
+for.body188.split.i_ifconv:18 %store_ln371 = store i8 %i_5, i8 %i
 
 ]]></Node>
 <StgValue><ssdm name="store_ln371"/></StgValue>
@@ -489,7 +489,7 @@ for.body188.split_ifconv:18 %store_ln371 = store i8 %i_7, i8 %i
 
 <Node id="35" bw="0" op_0_bw="7" op_1_bw="7" op_2_bw="0" op_3_bw="0">
 <![CDATA[
-for.body188.split_ifconv:19 %store_ln371 = store i7 %index_10, i7 %index
+for.body188.split.i_ifconv:19 %store_ln371 = store i7 %index_10, i7 %index
 
 ]]></Node>
 <StgValue><ssdm name="store_ln371"/></StgValue>
@@ -505,7 +505,7 @@ for.body188.split_ifconv:19 %store_ln371 = store i7 %index_10, i7 %index
 
 <Node id="36" bw="0" op_0_bw="0">
 <![CDATA[
-for.body188.split_ifconv:20 %br_ln516 = br void %for.body188
+for.body188.split.i_ifconv:20 %br_ln516 = br void %for.body188.i
 
 ]]></Node>
 <StgValue><ssdm name="br_ln516"/></StgValue>
@@ -521,10 +521,10 @@ for.body188.split_ifconv:20 %br_ln516 = br void %for.body188
 
 <Node id="38" bw="128" op_0_bw="128">
 <![CDATA[
-for.end211.exitStub:0 %storemerge448_load = load i128 %storemerge448
+for.end211.i.exitStub:0 %storemerge448_i_load = load i128 %storemerge448_i
 
 ]]></Node>
-<StgValue><ssdm name="storemerge448_load"/></StgValue>
+<StgValue><ssdm name="storemerge448_i_load"/></StgValue>
 </operation>
 
 <operation id="37" st_id="1" stage="1" lat="1">
@@ -537,7 +537,7 @@ for.end211.exitStub:0 %storemerge448_load = load i128 %storemerge448
 
 <Node id="39" bw="0" op_0_bw="0" op_1_bw="128" op_2_bw="128">
 <![CDATA[
-for.end211.exitStub:1 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i128P0A, i128 %storemerge448_out, i128 %storemerge448_load
+for.end211.i.exitStub:1 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i128P0A, i128 %storemerge448_i_out, i128 %storemerge448_i_load
 
 ]]></Node>
 <StgValue><ssdm name="write_ln0"/></StgValue>
@@ -553,7 +553,7 @@ for.end211.exitStub:1 %write_ln0 = write void @_ssdm_op_Write.ap_auto.i128P0A, i
 
 <Node id="40" bw="0">
 <![CDATA[
-for.end211.exitStub:2 %ret_ln0 = ret
+for.end211.i.exitStub:2 %ret_ln0 = ret
 
 ]]></Node>
 <StgValue><ssdm name="ret_ln0"/></StgValue>

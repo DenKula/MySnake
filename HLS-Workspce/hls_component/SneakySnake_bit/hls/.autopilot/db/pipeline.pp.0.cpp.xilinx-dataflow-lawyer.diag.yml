@@ -1,0 +1,8 @@
+---
+MainSourceFile:  /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
+    FileOffset:      '694:9'
+    FilePath:        /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp
+...

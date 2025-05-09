@@ -19,138 +19,134 @@ input  [7:0] input_seq_val;
 output  [3:0] ap_return;
 input   ap_rst;
 
-wire   [0:0] tmp_6_fu_120_p3;
-wire   [0:0] trunc_ln333_fu_68_p1;
-wire   [0:0] tmp_fu_72_p3;
-wire   [0:0] xor_ln333_fu_136_p2;
-wire   [0:0] or_ln333_fu_148_p2;
-wire   [0:0] tmp_1_fu_80_p3;
-wire   [0:0] xor_ln333_1_fu_154_p2;
-wire   [0:0] or_ln333_1_fu_166_p2;
-wire   [0:0] tmp_2_fu_88_p3;
-wire   [0:0] xor_ln333_2_fu_172_p2;
-wire   [0:0] or_ln333_2_fu_184_p2;
-wire   [0:0] tmp_3_fu_96_p3;
-wire   [0:0] xor_ln333_3_fu_190_p2;
-wire   [0:0] or_ln333_3_fu_202_p2;
-wire   [0:0] tmp_4_fu_104_p3;
-wire   [0:0] xor_ln333_4_fu_208_p2;
-wire   [0:0] or_ln333_4_fu_220_p2;
-wire   [0:0] tmp_5_fu_112_p3;
-wire   [0:0] xor_ln333_5_fu_226_p2;
-wire   [0:0] and_ln333_fu_142_p2;
-wire   [0:0] and_ln333_1_fu_160_p2;
-wire   [0:0] and_ln333_2_fu_178_p2;
-wire   [0:0] and_ln333_3_fu_196_p2;
-wire   [0:0] and_ln333_4_fu_214_p2;
-wire   [0:0] and_ln333_5_fu_232_p2;
-wire   [3:0] UnifiedRetVal_fu_256_p16;
-wire   [3:0] UnifiedRetVal_fu_256_p17;
-wire   [6:0] UnifiedRetVal_fu_256_p18;
-wire   [3:0] UnifiedRetVal_fu_256_p19;
-wire  signed [6:0] UnifiedRetVal_fu_256_p1;
-wire   [6:0] UnifiedRetVal_fu_256_p3;
-wire   [6:0] UnifiedRetVal_fu_256_p5;
-wire   [6:0] UnifiedRetVal_fu_256_p7;
-wire   [6:0] UnifiedRetVal_fu_256_p9;
-wire   [6:0] UnifiedRetVal_fu_256_p11;
-wire   [6:0] UnifiedRetVal_fu_256_p13;
-wire   [6:0] UnifiedRetVal_fu_256_p15;
+wire   [0:0] trunc_ln333_fu_66_p1;
+wire   [0:0] tmp_fu_70_p3;
+wire   [0:0] xor_ln333_fu_118_p2;
+wire   [0:0] or_ln333_fu_130_p2;
+wire   [0:0] tmp_1_fu_78_p3;
+wire   [0:0] xor_ln333_1_fu_136_p2;
+wire   [0:0] or_ln333_1_fu_148_p2;
+wire   [0:0] tmp_2_fu_86_p3;
+wire   [0:0] xor_ln333_2_fu_154_p2;
+wire   [0:0] or_ln333_2_fu_166_p2;
+wire   [0:0] tmp_3_fu_94_p3;
+wire   [0:0] xor_ln333_3_fu_172_p2;
+wire   [0:0] or_ln333_3_fu_184_p2;
+wire   [0:0] tmp_4_fu_102_p3;
+wire   [0:0] xor_ln333_4_fu_190_p2;
+wire   [0:0] and_ln333_fu_124_p2;
+wire   [0:0] and_ln333_1_fu_142_p2;
+wire   [0:0] and_ln333_2_fu_160_p2;
+wire   [0:0] and_ln333_3_fu_178_p2;
+wire   [0:0] and_ln333_4_fu_196_p2;
+wire   [2:0] zext_ln333_cast_fu_218_p15;
+wire   [5:0] zext_ln333_cast_fu_218_p16;
+wire   [2:0] zext_ln333_cast_fu_218_p17;
+wire   [0:0] tmp_6_fu_258_p3;
+wire   [0:0] tmp_5_fu_110_p3;
+wire   [0:0] or_ln333_4_fu_274_p2;
+wire   [0:0] or_ln333_5_fu_280_p2;
+wire   [3:0] zext_ln333_fu_254_p1;
+wire   [3:0] select_ln333_fu_266_p3;
+wire  signed [5:0] zext_ln333_cast_fu_218_p1;
+wire   [5:0] zext_ln333_cast_fu_218_p3;
+wire   [5:0] zext_ln333_cast_fu_218_p5;
+wire   [5:0] zext_ln333_cast_fu_218_p7;
+wire   [5:0] zext_ln333_cast_fu_218_p9;
+wire   [5:0] zext_ln333_cast_fu_218_p11;
+wire   [5:0] zext_ln333_cast_fu_218_p13;
 
-(* dissolve_hierarchy = "yes" *) SneakySnake_bit_sparsemux_17_7_4_1_1 #(
+(* dissolve_hierarchy = "yes" *) SneakySnake_bit_sparsemux_15_6_3_1_1 #(
     .ID( 1 ),
     .NUM_STAGE( 1 ),
-    .CASE0( 7'h40 ),
-    .din0_WIDTH( 4 ),
-    .CASE1( 7'h20 ),
-    .din1_WIDTH( 4 ),
-    .CASE2( 7'h10 ),
-    .din2_WIDTH( 4 ),
-    .CASE3( 7'h8 ),
-    .din3_WIDTH( 4 ),
-    .CASE4( 7'h4 ),
-    .din4_WIDTH( 4 ),
-    .CASE5( 7'h2 ),
-    .din5_WIDTH( 4 ),
-    .CASE6( 7'h1 ),
-    .din6_WIDTH( 4 ),
-    .CASE7( 7'h0 ),
-    .din7_WIDTH( 4 ),
-    .def_WIDTH( 4 ),
-    .sel_WIDTH( 7 ),
-    .dout_WIDTH( 4 ))
-sparsemux_17_7_4_1_1_U60(
-    .din0(4'd0),
-    .din1(4'd1),
-    .din2(4'd2),
-    .din3(4'd3),
-    .din4(4'd4),
-    .din5(4'd5),
-    .din6(4'd6),
-    .din7(UnifiedRetVal_fu_256_p16),
-    .def(UnifiedRetVal_fu_256_p17),
-    .sel(UnifiedRetVal_fu_256_p18),
-    .dout(UnifiedRetVal_fu_256_p19)
+    .CASE0( 6'h20 ),
+    .din0_WIDTH( 3 ),
+    .CASE1( 6'h10 ),
+    .din1_WIDTH( 3 ),
+    .CASE2( 6'h8 ),
+    .din2_WIDTH( 3 ),
+    .CASE3( 6'h4 ),
+    .din3_WIDTH( 3 ),
+    .CASE4( 6'h2 ),
+    .din4_WIDTH( 3 ),
+    .CASE5( 6'h1 ),
+    .din5_WIDTH( 3 ),
+    .CASE6( 6'h0 ),
+    .din6_WIDTH( 3 ),
+    .def_WIDTH( 3 ),
+    .sel_WIDTH( 6 ),
+    .dout_WIDTH( 3 ))
+sparsemux_15_6_3_1_1_U60(
+    .din0(3'd0),
+    .din1(3'd1),
+    .din2(3'd2),
+    .din3(3'd3),
+    .din4(3'd4),
+    .din5(3'd5),
+    .din6(3'd6),
+    .def(zext_ln333_cast_fu_218_p15),
+    .sel(zext_ln333_cast_fu_218_p16),
+    .dout(zext_ln333_cast_fu_218_p17)
 );
 
-assign and_ln333_1_fu_160_p2 = (xor_ln333_1_fu_154_p2 & tmp_1_fu_80_p3);
+assign and_ln333_1_fu_142_p2 = (xor_ln333_1_fu_136_p2 & tmp_1_fu_78_p3);
 
-assign and_ln333_2_fu_178_p2 = (xor_ln333_2_fu_172_p2 & tmp_2_fu_88_p3);
+assign and_ln333_2_fu_160_p2 = (xor_ln333_2_fu_154_p2 & tmp_2_fu_86_p3);
 
-assign and_ln333_3_fu_196_p2 = (xor_ln333_3_fu_190_p2 & tmp_3_fu_96_p3);
+assign and_ln333_3_fu_178_p2 = (xor_ln333_3_fu_172_p2 & tmp_3_fu_94_p3);
 
-assign and_ln333_4_fu_214_p2 = (xor_ln333_4_fu_208_p2 & tmp_4_fu_104_p3);
+assign and_ln333_4_fu_196_p2 = (xor_ln333_4_fu_190_p2 & tmp_4_fu_102_p3);
 
-assign and_ln333_5_fu_232_p2 = (xor_ln333_5_fu_226_p2 & tmp_5_fu_112_p3);
-
-assign and_ln333_fu_142_p2 = (xor_ln333_fu_136_p2 & tmp_fu_72_p3);
+assign and_ln333_fu_124_p2 = (xor_ln333_fu_118_p2 & tmp_fu_70_p3);
 
 assign ap_ready = 1'b1;
 
-assign or_ln333_1_fu_166_p2 = (tmp_1_fu_80_p3 | or_ln333_fu_148_p2);
+assign or_ln333_1_fu_148_p2 = (tmp_1_fu_78_p3 | or_ln333_fu_130_p2);
 
-assign or_ln333_2_fu_184_p2 = (tmp_2_fu_88_p3 | or_ln333_1_fu_166_p2);
+assign or_ln333_2_fu_166_p2 = (tmp_2_fu_86_p3 | or_ln333_1_fu_148_p2);
 
-assign or_ln333_3_fu_202_p2 = (tmp_3_fu_96_p3 | or_ln333_2_fu_184_p2);
+assign or_ln333_3_fu_184_p2 = (tmp_3_fu_94_p3 | or_ln333_2_fu_166_p2);
 
-assign or_ln333_4_fu_220_p2 = (tmp_4_fu_104_p3 | or_ln333_3_fu_202_p2);
+assign or_ln333_4_fu_274_p2 = (tmp_5_fu_110_p3 | tmp_4_fu_102_p3);
 
-assign or_ln333_fu_148_p2 = (trunc_ln333_fu_68_p1 | tmp_fu_72_p3);
+assign or_ln333_5_fu_280_p2 = (or_ln333_4_fu_274_p2 | or_ln333_3_fu_184_p2);
 
-assign tmp_1_fu_80_p3 = input_seq_val[32'd2];
+assign or_ln333_fu_130_p2 = (trunc_ln333_fu_66_p1 | tmp_fu_70_p3);
 
-assign tmp_2_fu_88_p3 = input_seq_val[32'd3];
+assign select_ln333_fu_266_p3 = ((tmp_6_fu_258_p3[0:0] == 1'b1) ? 4'd7 : 4'd8);
 
-assign tmp_3_fu_96_p3 = input_seq_val[32'd4];
+assign tmp_1_fu_78_p3 = input_seq_val[32'd2];
 
-assign tmp_4_fu_104_p3 = input_seq_val[32'd5];
+assign tmp_2_fu_86_p3 = input_seq_val[32'd3];
 
-assign tmp_5_fu_112_p3 = input_seq_val[32'd6];
+assign tmp_3_fu_94_p3 = input_seq_val[32'd4];
 
-assign tmp_6_fu_120_p3 = input_seq_val[32'd7];
+assign tmp_4_fu_102_p3 = input_seq_val[32'd5];
 
-assign tmp_fu_72_p3 = input_seq_val[32'd1];
+assign tmp_5_fu_110_p3 = input_seq_val[32'd6];
 
-assign trunc_ln333_fu_68_p1 = input_seq_val[0:0];
+assign tmp_6_fu_258_p3 = input_seq_val[32'd7];
 
-assign xor_ln333_1_fu_154_p2 = (or_ln333_fu_148_p2 ^ 1'd1);
+assign tmp_fu_70_p3 = input_seq_val[32'd1];
 
-assign xor_ln333_2_fu_172_p2 = (or_ln333_1_fu_166_p2 ^ 1'd1);
+assign trunc_ln333_fu_66_p1 = input_seq_val[0:0];
 
-assign xor_ln333_3_fu_190_p2 = (or_ln333_2_fu_184_p2 ^ 1'd1);
+assign xor_ln333_1_fu_136_p2 = (or_ln333_fu_130_p2 ^ 1'd1);
 
-assign xor_ln333_4_fu_208_p2 = (or_ln333_3_fu_202_p2 ^ 1'd1);
+assign xor_ln333_2_fu_154_p2 = (or_ln333_1_fu_148_p2 ^ 1'd1);
 
-assign xor_ln333_5_fu_226_p2 = (or_ln333_4_fu_220_p2 ^ 1'd1);
+assign xor_ln333_3_fu_172_p2 = (or_ln333_2_fu_166_p2 ^ 1'd1);
 
-assign xor_ln333_fu_136_p2 = (trunc_ln333_fu_68_p1 ^ 1'd1);
+assign xor_ln333_4_fu_190_p2 = (or_ln333_3_fu_184_p2 ^ 1'd1);
 
-assign UnifiedRetVal_fu_256_p16 = ((tmp_6_fu_120_p3[0:0] == 1'b1) ? 4'd7 : 4'd8);
+assign xor_ln333_fu_118_p2 = (trunc_ln333_fu_66_p1 ^ 1'd1);
 
-assign UnifiedRetVal_fu_256_p17 = 'bx;
+assign zext_ln333_fu_254_p1 = zext_ln333_cast_fu_218_p17;
 
-assign UnifiedRetVal_fu_256_p18 = {{{{{{{trunc_ln333_fu_68_p1}, {and_ln333_fu_142_p2}}, {and_ln333_1_fu_160_p2}}, {and_ln333_2_fu_178_p2}}, {and_ln333_3_fu_196_p2}}, {and_ln333_4_fu_214_p2}}, {and_ln333_5_fu_232_p2}};
+assign ap_return = ((or_ln333_5_fu_280_p2[0:0] == 1'b1) ? zext_ln333_fu_254_p1 : select_ln333_fu_266_p3);
 
-assign ap_return = UnifiedRetVal_fu_256_p19;
+assign zext_ln333_cast_fu_218_p15 = 'bx;
+
+assign zext_ln333_cast_fu_218_p16 = {{{{{{trunc_ln333_fu_66_p1}, {and_ln333_fu_124_p2}}, {and_ln333_1_fu_142_p2}}, {and_ln333_2_fu_160_p2}}, {and_ln333_3_fu_178_p2}}, {and_ln333_4_fu_196_p2}};
 
 endmodule //SneakySnake_bit_count_one_bit

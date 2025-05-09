@@ -46,13 +46,13 @@
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371</SourceLocation>
+<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:371~/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701</SourceLocation>
 <SummaryOfLoopViolations>
 <VITIS_LOOP_516_7>
 <Name>VITIS_LOOP_516_7</Name>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:523</SourceLocation>
+<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:523~/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701</SourceLocation>
 </VITIS_LOOP_516_7>
 </SummaryOfLoopViolations>
 </SummaryOfViolations>
@@ -154,8 +154,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>storemerge448_out</name>
-<Object>storemerge448_out</Object>
+<name>storemerge448_i_out</name>
+<Object>storemerge448_i_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>
@@ -165,8 +165,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>storemerge448_out_ap_vld</name>
-<Object>storemerge448_out</Object>
+<name>storemerge448_i_out_ap_vld</name>
+<Object>storemerge448_i_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_vld</IOProtocol>

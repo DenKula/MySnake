@@ -25,18 +25,18 @@
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
             <column name="">(1) lowering,   677, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations,   730, high level synthesis optimizations</column>
+            <column name="">(2) optimizations,   737, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="SneakySnake_bit" col1="pipeline.cpp:679" col2="7209" col3="717" col4="730" col5="673" col6="730">
-                    <row id="1" col0="NeighborhoodMap_bit" col1="pipeline.cpp:359" col2="4936" col3="296" col4="307" col5="294" col6="338"/>
-                    <row id="3" col0="after_neighbohood" col1="pipeline.cpp:631" col2="1562" col3="350" col4="351" col5="306" col6="310">
-                        <row id="4" col0="count_one_bit" col1="pipeline.cpp:326" col2="946" col2_disp=" 946 (11 calls)" col3="231" col3_disp="231 (11 calls)" col4="231" col4_disp="231 (11 calls)" col5="220" col5_disp="220 (11 calls)" col6="220" col6_disp="220 (11 calls)"/>
-                        <row id="2" col0="largest" col1="pipeline.cpp:307" col2="22" col3="" col4="" col5="" col6=""/>
+                <row id="0" col0="SneakySnake_bit" col1="pipeline.cpp:679" col2="7209" col3="717" col4="730" col5="673" col6="737">
+                    <row id="2" col0="NeighborhoodMap_bit" col1="pipeline.cpp:359" col2="4936" col3="296" col4="307" col5="294" col6="338"/>
+                    <row id="3" col0="after_neighbohood" col1="pipeline.cpp:631" col2="1562" col3="350" col4="351" col5="306" col6="">
+                        <row id="4" col0="count_one_bit" col1="pipeline.cpp:326" col2="946" col2_disp=" 946 (11 calls)" col3="231" col3_disp="231 (11 calls)" col4="231" col4_disp="231 (11 calls)" col5="220" col5_disp="220 (11 calls)" col6=""/>
+                        <row id="1" col0="largest" col1="pipeline.cpp:307" col2="22" col3="" col4="" col5="" col6=""/>
                     </row>
                 </row>
             </rows>

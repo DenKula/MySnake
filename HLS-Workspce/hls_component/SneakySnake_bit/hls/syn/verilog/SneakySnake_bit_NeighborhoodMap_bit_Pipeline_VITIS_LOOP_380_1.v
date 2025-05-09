@@ -14,8 +14,8 @@ module SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1 (
         ap_idle,
         ap_ready,
         DNA_1,
-        DNA_nsh_write_assign_out,
-        DNA_nsh_write_assign_out_ap_vld
+        DNA_nsh_out_0_out,
+        DNA_nsh_out_0_out_ap_vld
 );
 
 parameter    ap_ST_fsm_state1 = 1'd1;
@@ -27,11 +27,11 @@ output   ap_done;
 output   ap_idle;
 output   ap_ready;
 input  [255:0] DNA_1;
-output  [127:0] DNA_nsh_write_assign_out;
-output   DNA_nsh_write_assign_out_ap_vld;
+output  [127:0] DNA_nsh_out_0_out;
+output   DNA_nsh_out_0_out_ap_vld;
 
 reg ap_idle;
-reg DNA_nsh_write_assign_out_ap_vld;
+reg DNA_nsh_out_0_out_ap_vld;
 
 (* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
@@ -45,20 +45,20 @@ wire   [6:0] index_17_fu_96_p2;
 wire    ap_loop_init;
 reg   [6:0] ap_sig_allocacmp_index_16;
 reg   [7:0] i_fu_56;
-wire   [7:0] i_9_fu_184_p2;
+wire   [7:0] i_8_fu_184_p2;
 reg   [7:0] ap_sig_allocacmp_i_load;
-reg   [127:0] DNA_nsh_write_assign_fu_60;
-wire   [127:0] storemerge_fu_174_p4;
-wire   [31:0] tmp_fu_112_p2;
-wire   [6:0] tmp_3_fu_120_p4;
+reg   [127:0] DNA_nsh_out_0_fu_60;
+wire   [127:0] storemerge10_i_fu_174_p4;
+wire   [31:0] tmp_i_fu_112_p2;
+wire   [6:0] tmp_1_fu_120_p4;
 wire   [7:0] or_ln_fu_130_p3;
-wire   [31:0] tmp_s_fu_142_p2;
-wire   [1:0] tmp_fu_112_p3;
-wire   [1:0] tmp_s_fu_142_p3;
+wire   [31:0] tmp_i_87_fu_142_p2;
+wire   [1:0] tmp_i_fu_112_p3;
+wire   [1:0] tmp_i_87_fu_142_p3;
 wire   [1:0] or_ln385_fu_150_p2;
 wire   [0:0] icmp_ln385_fu_156_p2;
-wire   [1:0] storemerge_fu_174_p2;
-wire   [31:0] storemerge_fu_174_p3;
+wire   [1:0] storemerge10_i_fu_174_p2;
+wire   [31:0] storemerge10_i_fu_174_p3;
 reg    ap_done_reg;
 wire    ap_continue_int;
 reg    ap_done_int;
@@ -67,9 +67,9 @@ reg    ap_ST_fsm_state1_blk;
 wire    ap_start_int;
 wire    ap_ready_sig;
 wire    ap_done_sig;
-wire   [1:0] tmp_fu_112_p0;
-wire   [1:0] tmp_s_fu_142_p0;
-wire   [127:0] storemerge_fu_174_p0;
+wire   [1:0] tmp_i_fu_112_p0;
+wire   [1:0] tmp_i_87_fu_142_p0;
+wire   [127:0] storemerge10_i_fu_174_p0;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -77,7 +77,7 @@ initial begin
 #0 ap_CS_fsm = 1'd1;
 #0 index_fu_52 = 7'd0;
 #0 i_fu_56 = 8'd0;
-#0 DNA_nsh_write_assign_fu_60 = 128'd0;
+#0 DNA_nsh_out_0_fu_60 = 128'd0;
 #0 ap_done_reg = 1'b0;
 end
 
@@ -87,8 +87,8 @@ SneakySnake_bit_partselect_2ns_256ns_32ns_2_1_1 #(
     .DATA1WIDTH( 2 ))
 partselect_2ns_256ns_32ns_2_1_1_U1(
     .din(DNA_1),
-    .sel(tmp_fu_112_p2),
-    .dout(tmp_fu_112_p3)
+    .sel(tmp_i_fu_112_p2),
+    .dout(tmp_i_fu_112_p3)
 );
 
 SneakySnake_bit_partselect_2ns_256ns_32ns_2_1_1 #(
@@ -97,8 +97,8 @@ SneakySnake_bit_partselect_2ns_256ns_32ns_2_1_1 #(
     .DATA1WIDTH( 2 ))
 partselect_2ns_256ns_32ns_2_1_1_U2(
     .din(DNA_1),
-    .sel(tmp_s_fu_142_p2),
-    .dout(tmp_s_fu_142_p3)
+    .sel(tmp_i_87_fu_142_p2),
+    .dout(tmp_i_87_fu_142_p3)
 );
 
 SneakySnake_bit_partset_128ns_128ns_2ns_32ns_128_1_1 #(
@@ -106,10 +106,10 @@ SneakySnake_bit_partset_128ns_128ns_2ns_32ns_128_1_1 #(
     .DATA1WIDTH( 2 ),
     .ADDRWIDTH( 32 ))
 partset_128ns_128ns_2ns_32ns_128_1_1_U3(
-    .din(DNA_nsh_write_assign_fu_60),
-    .value(storemerge_fu_174_p2),
-    .sel(storemerge_fu_174_p3),
-    .dout(storemerge_fu_174_p4)
+    .din(DNA_nsh_out_0_fu_60),
+    .value(storemerge10_i_fu_174_p2),
+    .sel(storemerge10_i_fu_174_p3),
+    .dout(storemerge10_i_fu_174_p4)
 );
 
 SneakySnake_bit_flow_control_loop_pipe_sequential_init flow_control_loop_pipe_sequential_init_U(
@@ -150,7 +150,7 @@ end
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
         if ((icmp_ln380_fu_90_p2 == 1'd0)) begin
-            i_fu_56 <= i_9_fu_184_p2;
+            i_fu_56 <= i_8_fu_184_p2;
         end else if ((ap_loop_init == 1'b1)) begin
             i_fu_56 <= 8'd0;
         end
@@ -169,15 +169,15 @@ end
 
 always @ (posedge ap_clk) begin
     if (((icmp_ln380_fu_90_p2 == 1'd0) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
-        DNA_nsh_write_assign_fu_60 <= storemerge_fu_174_p4;
+        DNA_nsh_out_0_fu_60 <= storemerge10_i_fu_174_p4;
     end
 end
 
 always @ (*) begin
     if (((ap_loop_exit_ready == 1'b1) & (icmp_ln380_fu_90_p2 == 1'd1) & (1'b0 == ap_block_state1_pp0_stage0_iter0) & (1'b1 == ap_CS_fsm_state1))) begin
-        DNA_nsh_write_assign_out_ap_vld = 1'b1;
+        DNA_nsh_out_0_out_ap_vld = 1'b1;
     end else begin
-        DNA_nsh_write_assign_out_ap_vld = 1'b0;
+        DNA_nsh_out_0_out_ap_vld = 1'b0;
     end
 end
 
@@ -248,7 +248,7 @@ always @ (*) begin
     endcase
 end
 
-assign DNA_nsh_write_assign_out = DNA_nsh_write_assign_fu_60;
+assign DNA_nsh_out_0_out = DNA_nsh_out_0_fu_60;
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -262,7 +262,7 @@ assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
 
 assign ap_ready = ap_ready_sig;
 
-assign i_9_fu_184_p2 = (ap_sig_allocacmp_i_load + 8'd2);
+assign i_8_fu_184_p2 = (ap_sig_allocacmp_i_load + 8'd2);
 
 assign icmp_ln380_fu_90_p2 = ((ap_sig_allocacmp_index_16 == 7'd127) ? 1'b1 : 1'b0);
 
@@ -270,18 +270,18 @@ assign icmp_ln385_fu_156_p2 = ((or_ln385_fu_150_p2 == 2'd0) ? 1'b1 : 1'b0);
 
 assign index_17_fu_96_p2 = (ap_sig_allocacmp_index_16 + 7'd1);
 
-assign or_ln385_fu_150_p2 = (tmp_s_fu_142_p3 | tmp_fu_112_p3);
+assign or_ln385_fu_150_p2 = (tmp_i_fu_112_p3 | tmp_i_87_fu_142_p3);
 
-assign or_ln_fu_130_p3 = {{tmp_3_fu_120_p4}, {1'd1}};
+assign or_ln_fu_130_p3 = {{tmp_1_fu_120_p4}, {1'd1}};
 
-assign storemerge_fu_174_p2 = ((icmp_ln385_fu_156_p2[0:0] == 1'b1) ? 2'd0 : 2'd1);
+assign storemerge10_i_fu_174_p2 = ((icmp_ln385_fu_156_p2[0:0] == 1'b1) ? 2'd0 : 2'd1);
 
-assign storemerge_fu_174_p3 = ap_sig_allocacmp_index_16;
+assign storemerge10_i_fu_174_p3 = ap_sig_allocacmp_index_16;
 
-assign tmp_3_fu_120_p4 = {{ap_sig_allocacmp_i_load[7:1]}};
+assign tmp_1_fu_120_p4 = {{ap_sig_allocacmp_i_load[7:1]}};
 
-assign tmp_fu_112_p2 = ap_sig_allocacmp_i_load;
+assign tmp_i_87_fu_142_p2 = or_ln_fu_130_p3;
 
-assign tmp_s_fu_142_p2 = or_ln_fu_130_p3;
+assign tmp_i_fu_112_p2 = ap_sig_allocacmp_i_load;
 
 endmodule //SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1

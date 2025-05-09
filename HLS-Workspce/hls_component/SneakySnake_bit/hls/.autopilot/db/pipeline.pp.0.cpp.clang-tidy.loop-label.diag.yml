@@ -178,7 +178,7 @@ Diagnostics:
     FilePath:        /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp
     Replacements:    
       - FilePath:        /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/.autopilot/db/pipeline.pp.0.cpp
-        Offset:          967884
+        Offset:          967905
         Length:          0
         ReplacementText: 'VITIS_LOOP_707_1: '
 ...

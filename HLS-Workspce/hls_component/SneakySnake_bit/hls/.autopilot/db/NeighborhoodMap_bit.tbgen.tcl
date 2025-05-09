@@ -13,32 +13,33 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 16
+set cdfgNum 18
 set C_modelName {NeighborhoodMap_bit}
 set C_modelType { int 1408 }
 set ap_memory_interface_dict [dict create]
 set C_modelArgList {
-	{ DNA_read_val int 256 regular  }
-	{ DNA_ref_val int 256 regular  }
+	{ ReadSeq int 256 regular {pointer 0}  }
+	{ RefSeq int 256 regular {pointer 0}  }
 }
 set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "DNA_read_val", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
- 	{ "Name" : "DNA_ref_val", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
+	{ "Name" : "ReadSeq", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
+ 	{ "Name" : "RefSeq", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 1408} ]}
 # RTL Port declarations: 
-set portNum 19
+set portNum 20
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
 	{ ap_start sc_in sc_logic 1 start -1 } 
 	{ ap_done sc_out sc_logic 1 predone -1 } 
+	{ ap_continue sc_in sc_logic 1 continue -1 } 
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
-	{ DNA_read_val sc_in sc_lv 256 signal 0 } 
-	{ DNA_ref_val sc_in sc_lv 256 signal 1 } 
+	{ ReadSeq sc_in sc_lv 256 signal 0 } 
+	{ RefSeq sc_in sc_lv 256 signal 1 } 
 	{ ap_return_0 sc_out sc_lv 128 signal -1 } 
 	{ ap_return_1 sc_out sc_lv 128 signal -1 } 
 	{ ap_return_2 sc_out sc_lv 128 signal -1 } 
@@ -56,10 +57,11 @@ set NewPortList {[
  	{ "name": "ap_rst", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst", "role": "default" }} , 
  	{ "name": "ap_start", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "start", "bundle":{"name": "ap_start", "role": "default" }} , 
  	{ "name": "ap_done", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "predone", "bundle":{"name": "ap_done", "role": "default" }} , 
+ 	{ "name": "ap_continue", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "continue", "bundle":{"name": "ap_continue", "role": "default" }} , 
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
- 	{ "name": "DNA_read_val", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "DNA_read_val", "role": "default" }} , 
- 	{ "name": "DNA_ref_val", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "DNA_ref_val", "role": "default" }} , 
+ 	{ "name": "ReadSeq", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "ReadSeq", "role": "default" }} , 
+ 	{ "name": "RefSeq", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "RefSeq", "role": "default" }} , 
  	{ "name": "ap_return_0", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "ap_return_0", "role": "default" }} , 
  	{ "name": "ap_return_1", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "ap_return_1", "role": "default" }} , 
  	{ "name": "ap_return_2", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "ap_return_2", "role": "default" }} , 
@@ -76,7 +78,7 @@ set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "6", "11", "16", "21", "26", "31", "36", "41", "46", "51"],
 		"CDFG" : "NeighborhoodMap_bit",
 		"Protocol" : "ap_ctrl_hs",
-		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
 		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "131", "EstimateLatencyMax" : "131",
@@ -84,12 +86,12 @@ set RtlHierarchyInfo {[
 		"Datapath" : "0",
 		"ClockEnable" : "0",
 		"HasSubDataflow" : "0",
-		"InDataflowNetwork" : "0",
+		"InDataflowNetwork" : "1",
 		"HasNonBlockingOperation" : "0",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "DNA_read_val", "Type" : "None", "Direction" : "I"},
-			{"Name" : "DNA_ref_val", "Type" : "None", "Direction" : "I"}]},
+			{"Name" : "ReadSeq", "Type" : "None", "Direction" : "I"},
+			{"Name" : "RefSeq", "Type" : "None", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158", "Parent" : "0", "Child" : ["2", "3", "4", "5"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1",
 		"Protocol" : "ap_ctrl_hs",
@@ -106,7 +108,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_1", "Type" : "None", "Direction" : "I"},
-			{"Name" : "DNA_nsh_write_assign_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "DNA_nsh_out_0_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_380_1", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -130,7 +132,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_2", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge953_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge953_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_400_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -154,7 +156,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_3", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge852_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge852_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_419_3", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -178,7 +180,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_6", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge751_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge751_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_438_4", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -202,7 +204,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_7", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge650_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge650_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_462_5", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -226,7 +228,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_8", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge549_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge549_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_488_6", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -250,7 +252,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_4", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge448_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge448_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_516_7", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -274,7 +276,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_5", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge347_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge347_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_534_8", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -298,7 +300,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_9", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge246_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge246_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_556_9", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -322,7 +324,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_10", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge145_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge145_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_580_10", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -346,7 +348,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_11", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge44_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge44_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_607_11", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -358,41 +360,41 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	NeighborhoodMap_bit {
-		DNA_read_val {Type I LastRead 0 FirstWrite -1}
-		DNA_ref_val {Type I LastRead 0 FirstWrite -1}}
+		ReadSeq {Type I LastRead 0 FirstWrite -1}
+		RefSeq {Type I LastRead 0 FirstWrite -1}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1 {
 		DNA_1 {Type I LastRead 0 FirstWrite -1}
-		DNA_nsh_write_assign_out {Type O LastRead -1 FirstWrite 0}}
+		DNA_nsh_out_0_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2 {
 		DNA_2 {Type I LastRead 0 FirstWrite -1}
-		storemerge953_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge953_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3 {
 		DNA_3 {Type I LastRead 0 FirstWrite -1}
-		storemerge852_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge852_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4 {
 		DNA_6 {Type I LastRead 0 FirstWrite -1}
-		storemerge751_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge751_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5 {
 		DNA_7 {Type I LastRead 0 FirstWrite -1}
-		storemerge650_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge650_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6 {
 		DNA_8 {Type I LastRead 0 FirstWrite -1}
-		storemerge549_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge549_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7 {
 		DNA_4 {Type I LastRead 0 FirstWrite -1}
-		storemerge448_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge448_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8 {
 		DNA_5 {Type I LastRead 0 FirstWrite -1}
-		storemerge347_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge347_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9 {
 		DNA_9 {Type I LastRead 0 FirstWrite -1}
-		storemerge246_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge246_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10 {
 		DNA_10 {Type I LastRead 0 FirstWrite -1}
-		storemerge145_out {Type O LastRead -1 FirstWrite 0}}
+		storemerge145_i_out {Type O LastRead -1 FirstWrite 0}}
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11 {
 		DNA_11 {Type I LastRead 0 FirstWrite -1}
-		storemerge44_out {Type O LastRead -1 FirstWrite 0}}}
+		storemerge44_i_out {Type O LastRead -1 FirstWrite 0}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -405,6 +407,6 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	DNA_read_val { ap_none {  { DNA_read_val in_data 0 256 } } }
-	DNA_ref_val { ap_none {  { DNA_ref_val in_data 0 256 } } }
+	ReadSeq { ap_none {  { ReadSeq in_data 0 256 } } }
+	RefSeq { ap_none {  { RefSeq in_data 0 256 } } }
 }

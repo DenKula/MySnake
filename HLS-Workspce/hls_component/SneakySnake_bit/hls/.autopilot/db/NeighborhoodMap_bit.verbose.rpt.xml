@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'NeighborhoodMap_bit'" level="0">
-<item name = "Date">Fri May  9 17:21:09 2025
+<item name = "Date">Fri May  9 17:46:15 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">SneakySnake_bit</item>
@@ -58,12 +58,12 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 2818, -</column>
+<column name="Expression">-, -, 0, 2820, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, 1595, 4191, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, 0, 20, -</column>
-<column name="Register">-, -, 2830, -, -</column>
+<column name="Multiplexer">-, -, 0, 29, -</column>
+<column name="Register">-, -, 2831, -, -</column>
 <specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
 <specialColumn name="Utilization SLR (%)">0, 0, ~0, 1, 0</specialColumn>
 <specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
@@ -101,6 +101,7 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state2_on_subcall_done">or, 0, 0, 2, 1, 1</column>
 <column name="DNA_10_fu_373_p2">xor, 0, 0, 256, 256, 256</column>
 <column name="DNA_11_fu_394_p2">xor, 0, 0, 256, 256, 256</column>
@@ -118,6 +119,7 @@
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">20, 4, 1, 4</column>
+<column name="ap_done">9, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
@@ -134,6 +136,7 @@
 <column name="DNA_8_reg_799">256, 0, 256, 0</column>
 <column name="DNA_9_reg_814">256, 0, 256, 0</column>
 <column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_start_reg">1, 0, 1, 0</column>
@@ -158,6 +161,7 @@
 <column name="ap_rst">in, 1, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
 <column name="ap_done">out, 1, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
 <column name="ap_return_0">out, 128, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
@@ -171,8 +175,8 @@
 <column name="ap_return_8">out, 128, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
 <column name="ap_return_9">out, 128, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
 <column name="ap_return_10">out, 128, ap_ctrl_hs, NeighborhoodMap_bit, return value</column>
-<column name="DNA_read_val">in, 256, ap_none, DNA_read_val, scalar</column>
-<column name="DNA_ref_val">in, 256, ap_none, DNA_ref_val, scalar</column>
+<column name="ReadSeq">in, 256, ap_none, ReadSeq, pointer</column>
+<column name="RefSeq">in, 256, ap_none, RefSeq, pointer</column>
 </table>
 </item>
 </section>

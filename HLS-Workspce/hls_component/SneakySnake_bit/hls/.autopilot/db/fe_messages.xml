@@ -1,4 +1,5 @@
 <xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
     <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:307:43" msg_body="unused parameter 'n'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
@@ -56,6 +57,9 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="SneakySnake_bit" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=SneakySnake_bit" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="SneakySnake_bit" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:695:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="SneakySnake_bit" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -76,6 +80,9 @@
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:634:0" msg_body="Inlining function 'largest(unsigned int*, unsigned int)' into 'after_neighbohood(ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;)'">
         <args Callee="largest(unsigned int*, unsigned int)" Callee-DebugLoc="File /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp Line 308 Column 0" Caller="after_neighbohood(ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;)" Caller-DebugLoc="File /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp Line 634 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-455" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27" msg_body="Changing loop 'Loop_VITIS_LOOP_707_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27) to a process function for dataflow in function 'SneakySnake_bit'">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27" LoopName="Loop_VITIS_LOOP_707_1_proc" Name="SneakySnake_bit"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

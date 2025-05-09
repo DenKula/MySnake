@@ -26,14 +26,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 47 \
-    name storemerge246_out \
+    name storemerge246_i_out \
     type other \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_storemerge246_out \
+    corename dc_storemerge246_i_out \
     op interface \
-    ports { storemerge246_out { O 128 vector } storemerge246_out_ap_vld { O 1 bit } } \
+    ports { storemerge246_i_out { O 128 vector } storemerge246_i_out_ap_vld { O 1 bit } } \
 } "
 }
 

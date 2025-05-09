@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 7,
-    "calls": "1 3",
+    "calls": "2 3",
     "file": "pipeline.cpp",
     "fileloc": 679,
     "instructions": 210,
@@ -9,6 +9,18 @@
     "total_instructions": 7209
   },
   "1": {
+    "basicblocks": 8,
+    "calls": "",
+    "file": "pipeline.cpp",
+    "fileloc": 307,
+    "instructions": 22,
+    "loads": {
+      "L": 3
+    },
+    "name": "largest",
+    "total_instructions": 22
+  },
+  "2": {
     "basicblocks": 100,
     "calls": "",
     "file": "pipeline.cpp",
@@ -23,21 +35,9 @@
     },
     "total_instructions": 4936
   },
-  "2": {
-    "basicblocks": 8,
-    "calls": "",
-    "file": "pipeline.cpp",
-    "fileloc": 307,
-    "instructions": 22,
-    "loads": {
-      "L": 3
-    },
-    "name": "largest",
-    "total_instructions": 22
-  },
   "3": {
     "basicblocks": 10,
-    "calls": "4 4 4 4 4 4 4 4 4 4 4 2",
+    "calls": "4 4 4 4 4 4 4 4 4 4 4 1",
     "file": "pipeline.cpp",
     "fileloc": 631,
     "instructions": 166,

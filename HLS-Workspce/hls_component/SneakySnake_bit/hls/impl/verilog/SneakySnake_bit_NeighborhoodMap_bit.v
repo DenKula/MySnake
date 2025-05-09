@@ -11,10 +11,11 @@ module SneakySnake_bit_NeighborhoodMap_bit (
         ap_rst,
         ap_start,
         ap_done,
+        ap_continue,
         ap_idle,
         ap_ready,
-        DNA_read_val,
-        DNA_ref_val,
+        ReadSeq,
+        RefSeq,
         ap_return_0,
         ap_return_1,
         ap_return_2,
@@ -36,10 +37,11 @@ input   ap_clk;
 input   ap_rst;
 input   ap_start;
 output   ap_done;
+input   ap_continue;
 output   ap_idle;
 output   ap_ready;
-input  [255:0] DNA_read_val;
-input  [255:0] DNA_ref_val;
+input  [255:0] ReadSeq;
+input  [255:0] RefSeq;
 output  [127:0] ap_return_0;
 output  [127:0] ap_return_1;
 output  [127:0] ap_return_2;
@@ -56,10 +58,12 @@ reg ap_done;
 reg ap_idle;
 reg ap_ready;
 
+reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [2:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
 wire   [255:0] DNA_1_fu_224_p2;
 reg   [255:0] DNA_1_reg_774;
+reg    ap_block_state1;
 wire   [255:0] DNA_2_fu_237_p2;
 reg   [255:0] DNA_2_reg_779;
 wire   [255:0] DNA_3_fu_250_p2;
@@ -84,80 +88,91 @@ wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_write_assign_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_write_assign_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_out_0_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_out_0_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_i_out_ap_vld;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_done;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_idle;
 wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_ready;
-wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_out;
-wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_out_ap_vld;
+wire   [127:0] grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_i_out;
+wire    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_i_out_ap_vld;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg;
+reg    ap_block_state1_ignore_call14;
 wire    ap_CS_fsm_state2;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start_reg;
+reg    ap_block_state1_ignore_call18;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_start_reg;
+reg    ap_block_state1_ignore_call23;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_start_reg;
+reg    ap_block_state1_ignore_call28;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_start_reg;
+reg    ap_block_state1_ignore_call33;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_start_reg;
+reg    ap_block_state1_ignore_call38;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_start_reg;
+reg    ap_block_state1_ignore_call44;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_start_reg;
+reg    ap_block_state1_ignore_call50;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_start_reg;
+reg    ap_block_state1_ignore_call57;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_start_reg;
+reg    ap_block_state1_ignore_call65;
 reg    grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start_reg;
+reg    ap_block_state1_ignore_call74;
 wire    ap_CS_fsm_state3;
 wire   [255:0] shl_ln398_fu_231_p2;
 wire   [255:0] shl_ln417_fu_244_p2;
@@ -174,26 +189,26 @@ wire   [247:0] lshr_ln3_fu_359_p4;
 wire   [255:0] zext_ln578_fu_369_p1;
 wire   [245:0] lshr_ln4_fu_380_p4;
 wire   [255:0] zext_ln605_fu_390_p1;
-wire   [127:0] tmp_s_fu_493_p4;
-wire   [127:0] tmp_15_fu_516_p4;
-wire   [127:0] tmp_16_fu_526_p4;
-wire   [127:0] tmp_17_fu_549_p4;
-wire   [127:0] tmp_18_fu_559_p4;
-wire   [127:0] tmp_19_fu_569_p4;
-wire   [127:0] tmp_20_fu_592_p4;
-wire   [127:0] tmp_21_fu_602_p4;
-wire   [127:0] tmp_22_fu_612_p4;
-wire   [127:0] tmp_23_fu_622_p4;
-wire   [127:0] DNA_shl_one_write_assign_fu_407_p4;
-wire   [127:0] DNA_shl_two_write_assign_fu_420_p5;
-wire   [127:0] DNA_shl_three_write_assign_fu_435_p5;
-wire   [127:0] DNA_shl_four_write_assign_fu_450_p5;
-wire   [127:0] DNA_shl_five_write_assign_fu_465_p5;
-wire   [127:0] DNA_shr_one_write_assign_fu_480_p4;
-wire   [127:0] DNA_shr_two_write_assign_fu_503_p4;
-wire   [127:0] DNA_shr_three_write_assign_fu_536_p4;
-wire   [127:0] DNA_shr_four_write_assign_fu_579_p4;
-wire   [127:0] DNA_shr_five_write_assign_fu_632_p4;
+wire   [127:0] tmp_32_i_fu_493_p4;
+wire   [127:0] tmp_38_i_fu_516_p4;
+wire   [127:0] tmp_39_i_fu_526_p4;
+wire   [127:0] tmp_45_i_fu_549_p4;
+wire   [127:0] tmp_46_i_fu_559_p4;
+wire   [127:0] tmp_47_i_fu_569_p4;
+wire   [127:0] tmp_53_i_fu_592_p4;
+wire   [127:0] tmp_54_i_fu_602_p4;
+wire   [127:0] tmp_55_i_fu_612_p4;
+wire   [127:0] tmp_56_i_fu_622_p4;
+wire   [127:0] DNA_shl_one_out_fu_407_p4;
+wire   [127:0] DNA_shl_two_out_fu_420_p5;
+wire   [127:0] DNA_shl_three_out_fu_435_p5;
+wire   [127:0] DNA_shl_four_out_fu_450_p5;
+wire   [127:0] DNA_shl_five_out_fu_465_p5;
+wire   [127:0] DNA_shr_one_out_fu_480_p4;
+wire   [127:0] DNA_shr_two_out_fu_503_p4;
+wire   [127:0] DNA_shr_three_out_fu_536_p4;
+wire   [127:0] DNA_shr_four_out_fu_579_p4;
+wire   [127:0] DNA_shr_five_out_fu_632_p4;
 reg   [2:0] ap_NS_fsm;
 reg    ap_ST_fsm_state1_blk;
 reg    ap_block_state2_on_subcall_done;
@@ -203,6 +218,7 @@ wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
+#0 ap_done_reg = 1'b0;
 #0 ap_CS_fsm = 3'd1;
 #0 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg = 1'b0;
 #0 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start_reg = 1'b0;
@@ -225,8 +241,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_ready),
     .DNA_1(DNA_1_reg_774),
-    .DNA_nsh_write_assign_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_write_assign_out),
-    .DNA_nsh_write_assign_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_write_assign_out_ap_vld)
+    .DNA_nsh_out_0_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_out_0_out),
+    .DNA_nsh_out_0_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_out_0_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164(
@@ -237,8 +253,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_ready),
     .DNA_2(DNA_2_reg_779),
-    .storemerge953_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_out),
-    .storemerge953_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_out_ap_vld)
+    .storemerge953_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_i_out),
+    .storemerge953_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170(
@@ -249,8 +265,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_ready),
     .DNA_3(DNA_3_reg_784),
-    .storemerge852_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_out),
-    .storemerge852_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_out_ap_vld)
+    .storemerge852_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_i_out),
+    .storemerge852_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176(
@@ -261,8 +277,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_ready),
     .DNA_6(DNA_6_reg_789),
-    .storemerge751_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_out),
-    .storemerge751_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_out_ap_vld)
+    .storemerge751_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_i_out),
+    .storemerge751_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182(
@@ -273,8 +289,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_ready),
     .DNA_7(DNA_7_reg_794),
-    .storemerge650_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_out),
-    .storemerge650_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_out_ap_vld)
+    .storemerge650_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_i_out),
+    .storemerge650_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188(
@@ -285,8 +301,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_ready),
     .DNA_8(DNA_8_reg_799),
-    .storemerge549_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_out),
-    .storemerge549_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_out_ap_vld)
+    .storemerge549_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_i_out),
+    .storemerge549_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194(
@@ -297,8 +313,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_ready),
     .DNA_4(DNA_4_reg_804),
-    .storemerge448_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_out),
-    .storemerge448_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_out_ap_vld)
+    .storemerge448_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_i_out),
+    .storemerge448_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200(
@@ -309,8 +325,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_ready),
     .DNA_5(DNA_5_reg_809),
-    .storemerge347_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_out),
-    .storemerge347_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_out_ap_vld)
+    .storemerge347_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_i_out),
+    .storemerge347_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206(
@@ -321,8 +337,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9 grp_NeighborhoodMa
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_ready),
     .DNA_9(DNA_9_reg_814),
-    .storemerge246_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_out),
-    .storemerge246_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_out_ap_vld)
+    .storemerge246_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_i_out),
+    .storemerge246_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212(
@@ -333,8 +349,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10 grp_NeighborhoodM
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_ready),
     .DNA_10(DNA_10_reg_819),
-    .storemerge145_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_out),
-    .storemerge145_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_out_ap_vld)
+    .storemerge145_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_i_out),
+    .storemerge145_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_i_out_ap_vld)
 );
 
 SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11 grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218(
@@ -345,8 +361,8 @@ SneakySnake_bit_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11 grp_NeighborhoodM
     .ap_idle(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_idle),
     .ap_ready(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_ready),
     .DNA_11(DNA_11_reg_824),
-    .storemerge44_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_out),
-    .storemerge44_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_out_ap_vld)
+    .storemerge44_i_out(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_i_out),
+    .storemerge44_i_out_ap_vld(grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_i_out_ap_vld)
 );
 
 always @ (posedge ap_clk) begin
@@ -359,9 +375,21 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
+        ap_done_reg <= 1'b0;
+    end else begin
+        if ((ap_continue == 1'b1)) begin
+            ap_done_reg <= 1'b0;
+        end else if ((1'b1 == ap_CS_fsm_state3)) begin
+            ap_done_reg <= 1'b1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call14) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg <= 1'b0;
@@ -373,7 +401,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call18) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start_reg <= 1'b0;
@@ -385,7 +413,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call23) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_start_reg <= 1'b0;
@@ -397,7 +425,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call28) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_start_reg <= 1'b0;
@@ -409,7 +437,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call33) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_start_reg <= 1'b0;
@@ -421,7 +449,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call38) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_start_reg <= 1'b0;
@@ -433,7 +461,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call44) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_start_reg <= 1'b0;
@@ -445,7 +473,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call50) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_start_reg <= 1'b0;
@@ -457,7 +485,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call57) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_start_reg <= 1'b0;
@@ -469,7 +497,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call65) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_start_reg <= 1'b0;
@@ -481,7 +509,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start_reg <= 1'b0;
     end else begin
-        if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+        if (((1'b0 == ap_block_state1_ignore_call74) & (1'b1 == ap_CS_fsm_state1))) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start_reg <= 1'b1;
         end else if ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_ready == 1'b1)) begin
             grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start_reg <= 1'b0;
@@ -490,7 +518,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_CS_fsm_state1)) begin
+    if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
         DNA_10_reg_819 <= DNA_10_fu_373_p2;
         DNA_11_reg_824 <= DNA_11_fu_394_p2;
         DNA_1_reg_774 <= DNA_1_fu_224_p2;
@@ -506,7 +534,7 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (*) begin
-    if ((ap_start == 1'b0)) begin
+    if ((1'b1 == ap_block_state1)) begin
         ap_ST_fsm_state1_blk = 1'b1;
     end else begin
         ap_ST_fsm_state1_blk = 1'b0;
@@ -524,10 +552,10 @@ end
 assign ap_ST_fsm_state3_blk = 1'b0;
 
 always @ (*) begin
-    if (((1'b1 == ap_CS_fsm_state3) | ((ap_start == 1'b0) & (1'b1 == ap_CS_fsm_state1)))) begin
+    if ((1'b1 == ap_CS_fsm_state3)) begin
         ap_done = 1'b1;
     end else begin
-        ap_done = 1'b0;
+        ap_done = ap_done_reg;
     end
 end
 
@@ -550,7 +578,7 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_state1 : begin
-            if (((ap_start == 1'b1) & (1'b1 == ap_CS_fsm_state1))) begin
+            if (((1'b0 == ap_block_state1) & (1'b1 == ap_CS_fsm_state1))) begin
                 ap_NS_fsm = ap_ST_fsm_state2;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state1;
@@ -572,47 +600,47 @@ always @ (*) begin
     endcase
 end
 
-assign DNA_10_fu_373_p2 = (zext_ln578_fu_369_p1 ^ DNA_ref_val);
+assign DNA_10_fu_373_p2 = (zext_ln578_fu_369_p1 ^ RefSeq);
 
-assign DNA_11_fu_394_p2 = (zext_ln605_fu_390_p1 ^ DNA_ref_val);
+assign DNA_11_fu_394_p2 = (zext_ln605_fu_390_p1 ^ RefSeq);
 
-assign DNA_1_fu_224_p2 = (DNA_ref_val ^ DNA_read_val);
+assign DNA_1_fu_224_p2 = (RefSeq ^ ReadSeq);
 
-assign DNA_2_fu_237_p2 = (shl_ln398_fu_231_p2 ^ DNA_ref_val);
+assign DNA_2_fu_237_p2 = (shl_ln398_fu_231_p2 ^ RefSeq);
 
-assign DNA_3_fu_250_p2 = (shl_ln417_fu_244_p2 ^ DNA_ref_val);
+assign DNA_3_fu_250_p2 = (shl_ln417_fu_244_p2 ^ RefSeq);
 
-assign DNA_4_fu_310_p2 = (zext_ln514_fu_306_p1 ^ DNA_ref_val);
+assign DNA_4_fu_310_p2 = (zext_ln514_fu_306_p1 ^ RefSeq);
 
-assign DNA_5_fu_331_p2 = (zext_ln532_fu_327_p1 ^ DNA_ref_val);
+assign DNA_5_fu_331_p2 = (zext_ln532_fu_327_p1 ^ RefSeq);
 
-assign DNA_6_fu_263_p2 = (shl_ln436_fu_257_p2 ^ DNA_ref_val);
+assign DNA_6_fu_263_p2 = (shl_ln436_fu_257_p2 ^ RefSeq);
 
-assign DNA_7_fu_276_p2 = (shl_ln460_fu_270_p2 ^ DNA_ref_val);
+assign DNA_7_fu_276_p2 = (shl_ln460_fu_270_p2 ^ RefSeq);
 
-assign DNA_8_fu_289_p2 = (shl_ln486_fu_283_p2 ^ DNA_ref_val);
+assign DNA_8_fu_289_p2 = (shl_ln486_fu_283_p2 ^ RefSeq);
 
-assign DNA_9_fu_352_p2 = (zext_ln554_fu_348_p1 ^ DNA_ref_val);
+assign DNA_9_fu_352_p2 = (zext_ln554_fu_348_p1 ^ RefSeq);
 
-assign DNA_shl_five_write_assign_fu_465_p5 = {{10'd341}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_out[117:0]}};
+assign DNA_shl_five_out_fu_465_p5 = {{10'd341}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_storemerge549_i_out[117:0]}};
 
-assign DNA_shl_four_write_assign_fu_450_p5 = {{8'd85}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_out[119:0]}};
+assign DNA_shl_four_out_fu_450_p5 = {{8'd85}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_storemerge650_i_out[119:0]}};
 
-assign DNA_shl_one_write_assign_fu_407_p4 = {{2'd1}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_out[125:0]}};
+assign DNA_shl_one_out_fu_407_p4 = {{2'd1}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_storemerge953_i_out[125:0]}};
 
-assign DNA_shl_three_write_assign_fu_435_p5 = {{6'd21}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_out[121:0]}};
+assign DNA_shl_three_out_fu_435_p5 = {{6'd21}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_storemerge751_i_out[121:0]}};
 
-assign DNA_shl_two_write_assign_fu_420_p5 = {{4'd5}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_out[123:0]}};
+assign DNA_shl_two_out_fu_420_p5 = {{4'd5}, {grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_storemerge852_i_out[123:0]}};
 
-assign DNA_shr_five_write_assign_fu_632_p4 = {{tmp_23_fu_622_p4[127:6]}, {2'd1}, {tmp_23_fu_622_p4[3:0]}};
+assign DNA_shr_five_out_fu_632_p4 = {{tmp_56_i_fu_622_p4[127:6]}, {2'd1}, {tmp_56_i_fu_622_p4[3:0]}};
 
-assign DNA_shr_four_write_assign_fu_579_p4 = {{tmp_19_fu_569_p4[127:5]}, {2'd1}, {tmp_19_fu_569_p4[2:0]}};
+assign DNA_shr_four_out_fu_579_p4 = {{tmp_47_i_fu_569_p4[127:5]}, {2'd1}, {tmp_47_i_fu_569_p4[2:0]}};
 
-assign DNA_shr_one_write_assign_fu_480_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_out[127:2]}, {2'd1}};
+assign DNA_shr_one_out_fu_480_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_storemerge448_i_out[127:2]}, {2'd1}};
 
-assign DNA_shr_three_write_assign_fu_536_p4 = {{tmp_16_fu_526_p4[127:4]}, {2'd1}, {tmp_16_fu_526_p4[1:0]}};
+assign DNA_shr_three_out_fu_536_p4 = {{tmp_39_i_fu_526_p4[127:4]}, {2'd1}, {tmp_39_i_fu_526_p4[1:0]}};
 
-assign DNA_shr_two_write_assign_fu_503_p4 = {{tmp_s_fu_493_p4[127:3]}, {2'd1}, {tmp_s_fu_493_p4[0:0]}};
+assign DNA_shr_two_out_fu_503_p4 = {{tmp_32_i_fu_493_p4[127:3]}, {2'd1}, {tmp_32_i_fu_493_p4[0:0]}};
 
 assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
@@ -621,30 +649,78 @@ assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
 always @ (*) begin
-    ap_block_state2_on_subcall_done = ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_done == 1'b0));
+    ap_block_state1 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
 end
 
-assign ap_return_0 = grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_write_assign_out;
+always @ (*) begin
+    ap_block_state1_ignore_call14 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_1 = DNA_shl_one_write_assign_fu_407_p4;
+always @ (*) begin
+    ap_block_state1_ignore_call18 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_10 = DNA_shr_five_write_assign_fu_632_p4;
+always @ (*) begin
+    ap_block_state1_ignore_call23 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_2 = DNA_shl_two_write_assign_fu_420_p5;
+always @ (*) begin
+    ap_block_state1_ignore_call28 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_3 = DNA_shl_three_write_assign_fu_435_p5;
+always @ (*) begin
+    ap_block_state1_ignore_call33 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_4 = DNA_shl_four_write_assign_fu_450_p5;
+always @ (*) begin
+    ap_block_state1_ignore_call38 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_5 = DNA_shl_five_write_assign_fu_465_p5;
+always @ (*) begin
+    ap_block_state1_ignore_call44 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_6 = DNA_shr_one_write_assign_fu_480_p4;
+always @ (*) begin
+    ap_block_state1_ignore_call50 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_7 = DNA_shr_two_write_assign_fu_503_p4;
+always @ (*) begin
+    ap_block_state1_ignore_call57 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_8 = DNA_shr_three_write_assign_fu_536_p4;
+always @ (*) begin
+    ap_block_state1_ignore_call65 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
 
-assign ap_return_9 = DNA_shr_four_write_assign_fu_579_p4;
+always @ (*) begin
+    ap_block_state1_ignore_call74 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
+end
+
+always @ (*) begin
+    ap_block_state2_on_subcall_done = ((grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188_ap_done == 1'b0) | (grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182_ap_done == 1'b0));
+end
+
+assign ap_return_0 = grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_DNA_nsh_out_0_out;
+
+assign ap_return_1 = DNA_shl_one_out_fu_407_p4;
+
+assign ap_return_10 = DNA_shr_five_out_fu_632_p4;
+
+assign ap_return_2 = DNA_shl_two_out_fu_420_p5;
+
+assign ap_return_3 = DNA_shl_three_out_fu_435_p5;
+
+assign ap_return_4 = DNA_shl_four_out_fu_450_p5;
+
+assign ap_return_5 = DNA_shl_five_out_fu_465_p5;
+
+assign ap_return_6 = DNA_shr_one_out_fu_480_p4;
+
+assign ap_return_7 = DNA_shr_two_out_fu_503_p4;
+
+assign ap_return_8 = DNA_shr_three_out_fu_536_p4;
+
+assign ap_return_9 = DNA_shr_four_out_fu_579_p4;
 
 assign grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start = grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg;
 
@@ -668,45 +744,45 @@ assign grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_start = grp_
 
 assign grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start = grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start_reg;
 
-assign lshr_ln1_fu_317_p4 = {{DNA_read_val[255:4]}};
+assign lshr_ln1_fu_317_p4 = {{ReadSeq[255:4]}};
 
-assign lshr_ln2_fu_338_p4 = {{DNA_read_val[255:6]}};
+assign lshr_ln2_fu_338_p4 = {{ReadSeq[255:6]}};
 
-assign lshr_ln3_fu_359_p4 = {{DNA_read_val[255:8]}};
+assign lshr_ln3_fu_359_p4 = {{ReadSeq[255:8]}};
 
-assign lshr_ln4_fu_380_p4 = {{DNA_read_val[255:10]}};
+assign lshr_ln4_fu_380_p4 = {{ReadSeq[255:10]}};
 
-assign lshr_ln_fu_296_p4 = {{DNA_read_val[255:2]}};
+assign lshr_ln_fu_296_p4 = {{ReadSeq[255:2]}};
 
-assign shl_ln398_fu_231_p2 = DNA_read_val << 256'd2;
+assign shl_ln398_fu_231_p2 = ReadSeq << 256'd2;
 
-assign shl_ln417_fu_244_p2 = DNA_read_val << 256'd4;
+assign shl_ln417_fu_244_p2 = ReadSeq << 256'd4;
 
-assign shl_ln436_fu_257_p2 = DNA_read_val << 256'd6;
+assign shl_ln436_fu_257_p2 = ReadSeq << 256'd6;
 
-assign shl_ln460_fu_270_p2 = DNA_read_val << 256'd8;
+assign shl_ln460_fu_270_p2 = ReadSeq << 256'd8;
 
-assign shl_ln486_fu_283_p2 = DNA_read_val << 256'd10;
+assign shl_ln486_fu_283_p2 = ReadSeq << 256'd10;
 
-assign tmp_15_fu_516_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_out[127:2]}, {2'd1}};
+assign tmp_32_i_fu_493_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_i_out[127:2]}, {2'd1}};
 
-assign tmp_16_fu_526_p4 = {{tmp_15_fu_516_p4[127:3]}, {2'd1}, {tmp_15_fu_516_p4[0:0]}};
+assign tmp_38_i_fu_516_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206_storemerge246_i_out[127:2]}, {2'd1}};
 
-assign tmp_17_fu_549_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_out[127:2]}, {2'd1}};
+assign tmp_39_i_fu_526_p4 = {{tmp_38_i_fu_516_p4[127:3]}, {2'd1}, {tmp_38_i_fu_516_p4[0:0]}};
 
-assign tmp_18_fu_559_p4 = {{tmp_17_fu_549_p4[127:3]}, {2'd1}, {tmp_17_fu_549_p4[0:0]}};
+assign tmp_45_i_fu_549_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_storemerge145_i_out[127:2]}, {2'd1}};
 
-assign tmp_19_fu_569_p4 = {{tmp_18_fu_559_p4[127:4]}, {2'd1}, {tmp_18_fu_559_p4[1:0]}};
+assign tmp_46_i_fu_559_p4 = {{tmp_45_i_fu_549_p4[127:3]}, {2'd1}, {tmp_45_i_fu_549_p4[0:0]}};
 
-assign tmp_20_fu_592_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_out[127:2]}, {2'd1}};
+assign tmp_47_i_fu_569_p4 = {{tmp_46_i_fu_559_p4[127:4]}, {2'd1}, {tmp_46_i_fu_559_p4[1:0]}};
 
-assign tmp_21_fu_602_p4 = {{tmp_20_fu_592_p4[127:3]}, {2'd1}, {tmp_20_fu_592_p4[0:0]}};
+assign tmp_53_i_fu_592_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_storemerge44_i_out[127:2]}, {2'd1}};
 
-assign tmp_22_fu_612_p4 = {{tmp_21_fu_602_p4[127:4]}, {2'd1}, {tmp_21_fu_602_p4[1:0]}};
+assign tmp_54_i_fu_602_p4 = {{tmp_53_i_fu_592_p4[127:3]}, {2'd1}, {tmp_53_i_fu_592_p4[0:0]}};
 
-assign tmp_23_fu_622_p4 = {{tmp_22_fu_612_p4[127:5]}, {2'd1}, {tmp_22_fu_612_p4[2:0]}};
+assign tmp_55_i_fu_612_p4 = {{tmp_54_i_fu_602_p4[127:4]}, {2'd1}, {tmp_54_i_fu_602_p4[1:0]}};
 
-assign tmp_s_fu_493_p4 = {{grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200_storemerge347_out[127:2]}, {2'd1}};
+assign tmp_56_i_fu_622_p4 = {{tmp_55_i_fu_612_p4[127:5]}, {2'd1}, {tmp_55_i_fu_612_p4[2:0]}};
 
 assign zext_ln514_fu_306_p1 = lshr_ln_fu_296_p4;
 

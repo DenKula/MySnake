@@ -44,7 +44,7 @@
                 "-o",
                 "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.bc"
             ],
-            "exectime": 5.805868864059448,
+            "exectime": 2.395885467529297,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/tb_wrapper.cpp.0.o', '/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/tb_wrapper.cpp.0.o.d']": {
@@ -90,7 +90,7 @@
                 "-o",
                 "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/pipeline.cpp.0.o"
             ],
-            "exectime": 2.881047248840332,
+            "exectime": 2.8836989402770996,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.bc']": {
@@ -100,7 +100,7 @@
                 "-o",
                 "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.bc"
             ],
-            "exectime": 0.10561561584472656,
+            "exectime": 0.10142374038696289,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.opt.bc']": {
@@ -112,7 +112,7 @@
                 "-o",
                 "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/syn_srcs.opt.bc"
             ],
-            "exectime": 0.11673831939697266,
+            "exectime": 0.0914602279663086,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/app.exe']": {
@@ -156,7 +156,7 @@
                 "-Wl,-mllvm,-profilerOutputDirectory=/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/profiler/0",
                 "-fslxpthreads"
             ],
-            "exectime": 3.621495246887207,
+            "exectime": 2.3483941555023193,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0/hls_ir_info.json']": {
@@ -169,7 +169,7 @@
                 "--hw-function",
                 "SneakySnake_bit"
             ],
-            "exectime": 0.22205042839050293,
+            "exectime": 0.2533388137817383,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0/binary_dependencies.json']": {
@@ -180,7 +180,7 @@
                 "--reuse-filemanager=false",
                 "--output=/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0/binary_dependencies.json"
             ],
-            "exectime": 0.24546027183532715,
+            "exectime": 0.18107867240905762,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/bin/.tracing_stdout.txt', '/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/bin/.tracing_stderr.txt']": {
@@ -196,7 +196,7 @@
                 "1",
                 "10"
             ],
-            "exectime": 73.27458310127258,
+            "exectime": 73.99980521202087,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/tracing/csim/build"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0/annotated.bc']": {
@@ -211,11 +211,11 @@
                 "-staticFile",
                 "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0/static.xml",
                 "-traceFile",
-                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/profiler/0/app_0_0/thread0000-trace.txt",
+                "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/profiler/0/app_0_1/thread0000-trace.txt",
                 "-o",
                 "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/instrument/app_0/annotated.bc"
             ],
-            "exectime": 206.6313169002533,
+            "exectime": 195.34668278694153,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         },
         "['/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/csim/code_analyzer/.internal/dataflow/0/taskgraph.json']": {
@@ -262,7 +262,7 @@
                 "--df-target",
                 "%F538"
             ],
-            "exectime": 1.6854796409606934,
+            "exectime": 1.4502415657043457,
             "cwd": "/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component"
         }
     }

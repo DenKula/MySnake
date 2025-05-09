@@ -691,7 +691,7 @@ int SneakySnake_bit(int ReadLength, d_bit_in_type &ReadSeq, d_bit_in_type &RefSe
     // int KmerEnd=0;
     
     // int roundsNo=0;
-
+    #pragma HLS dataflow
     #pragma HLS INLINE OFF
     d_bit_out_type DNA_nsh, DNA_shl_one, DNA_shl_two, DNA_shl_three, DNA_shl_four, DNA_shl_five,
     DNA_shr_one, DNA_shr_two, DNA_shr_three, DNA_shr_four, DNA_shr_five;

@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 58 \
-    name DNA_read_val \
+    name ReadSeq \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_DNA_read_val \
+    corename dc_ReadSeq \
     op interface \
-    ports { DNA_read_val { I 256 vector } } \
+    ports { ReadSeq { I 256 vector } } \
 } "
 }
 
@@ -26,14 +26,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 59 \
-    name DNA_ref_val \
+    name RefSeq \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_DNA_ref_val \
+    corename dc_RefSeq \
     op interface \
-    ports { DNA_ref_val { I 256 vector } } \
+    ports { RefSeq { I 256 vector } } \
 } "
 }
 
@@ -47,7 +47,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } } \
+    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
 } "
 }
 

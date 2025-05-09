@@ -17,8 +17,8 @@ port (
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     DNA_2 : IN STD_LOGIC_VECTOR (255 downto 0);
-    storemerge953_out : OUT STD_LOGIC_VECTOR (127 downto 0);
-    storemerge953_out_ap_vld : OUT STD_LOGIC );
+    storemerge953_i_out : OUT STD_LOGIC_VECTOR (127 downto 0);
+    storemerge953_i_out_ap_vld : OUT STD_LOGIC );
 end;
 
 
@@ -56,21 +56,21 @@ attribute shreg_extract : string;
     signal index_15_fu_96_p2 : STD_LOGIC_VECTOR (6 downto 0);
     signal ap_loop_init : STD_LOGIC;
     signal ap_sig_allocacmp_index : STD_LOGIC_VECTOR (6 downto 0);
-    signal i_2_fu_56 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
+    signal i_1_fu_56 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
     signal i_fu_184_p2 : STD_LOGIC_VECTOR (7 downto 0);
-    signal ap_sig_allocacmp_i_2_load : STD_LOGIC_VECTOR (7 downto 0);
-    signal storemerge953_fu_60 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-    signal storemerge9_fu_174_p4 : STD_LOGIC_VECTOR (127 downto 0);
-    signal tmp_2_fu_112_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_7_fu_120_p4 : STD_LOGIC_VECTOR (6 downto 0);
+    signal ap_sig_allocacmp_i_1_load : STD_LOGIC_VECTOR (7 downto 0);
+    signal storemerge953_i_fu_60 : STD_LOGIC_VECTOR (127 downto 0) := "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+    signal storemerge9_i_fu_174_p4 : STD_LOGIC_VECTOR (127 downto 0);
+    signal tmp_6_i_fu_112_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_3_fu_120_p4 : STD_LOGIC_VECTOR (6 downto 0);
     signal or_ln1_fu_130_p3 : STD_LOGIC_VECTOR (7 downto 0);
-    signal tmp_4_fu_142_p2 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_2_fu_112_p3 : STD_LOGIC_VECTOR (1 downto 0);
-    signal tmp_4_fu_142_p3 : STD_LOGIC_VECTOR (1 downto 0);
+    signal tmp_8_i_fu_142_p2 : STD_LOGIC_VECTOR (31 downto 0);
+    signal tmp_6_i_fu_112_p3 : STD_LOGIC_VECTOR (1 downto 0);
+    signal tmp_8_i_fu_142_p3 : STD_LOGIC_VECTOR (1 downto 0);
     signal or_ln403_fu_150_p2 : STD_LOGIC_VECTOR (1 downto 0);
     signal icmp_ln403_fu_156_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal storemerge9_fu_174_p2 : STD_LOGIC_VECTOR (1 downto 0);
-    signal storemerge9_fu_174_p3 : STD_LOGIC_VECTOR (31 downto 0);
+    signal storemerge9_i_fu_174_p2 : STD_LOGIC_VECTOR (1 downto 0);
+    signal storemerge9_i_fu_174_p3 : STD_LOGIC_VECTOR (31 downto 0);
     signal ap_done_reg : STD_LOGIC := '0';
     signal ap_continue_int : STD_LOGIC;
     signal ap_done_int : STD_LOGIC;
@@ -79,9 +79,9 @@ attribute shreg_extract : string;
     signal ap_start_int : STD_LOGIC;
     signal ap_ready_sig : STD_LOGIC;
     signal ap_done_sig : STD_LOGIC;
-    signal tmp_2_fu_112_p0 : STD_LOGIC_VECTOR (1 downto 0);
-    signal tmp_4_fu_142_p0 : STD_LOGIC_VECTOR (1 downto 0);
-    signal storemerge9_fu_174_p0 : STD_LOGIC_VECTOR (127 downto 0);
+    signal tmp_6_i_fu_112_p0 : STD_LOGIC_VECTOR (1 downto 0);
+    signal tmp_8_i_fu_142_p0 : STD_LOGIC_VECTOR (1 downto 0);
+    signal storemerge9_i_fu_174_p0 : STD_LOGIC_VECTOR (127 downto 0);
     signal ap_ce_reg : STD_LOGIC;
 
     component SneakySnake_bit_partselect_2ns_256ns_32ns_2_1_1 IS
@@ -135,8 +135,8 @@ begin
         DATA1WIDTH => 2)
     port map (
         din => DNA_2,
-        sel => tmp_2_fu_112_p2,
-        dout => tmp_2_fu_112_p3);
+        sel => tmp_6_i_fu_112_p2,
+        dout => tmp_6_i_fu_112_p3);
 
     partselect_2ns_256ns_32ns_2_1_1_U9 : component SneakySnake_bit_partselect_2ns_256ns_32ns_2_1_1
     generic map (
@@ -145,8 +145,8 @@ begin
         DATA1WIDTH => 2)
     port map (
         din => DNA_2,
-        sel => tmp_4_fu_142_p2,
-        dout => tmp_4_fu_142_p3);
+        sel => tmp_8_i_fu_142_p2,
+        dout => tmp_8_i_fu_142_p3);
 
     partset_128ns_128ns_2ns_32ns_128_1_1_U10 : component SneakySnake_bit_partset_128ns_128ns_2ns_32ns_128_1_1
     generic map (
@@ -154,10 +154,10 @@ begin
         DATA1WIDTH => 2,
         ADDRWIDTH => 32)
     port map (
-        din => storemerge953_fu_60,
-        value => storemerge9_fu_174_p2,
-        sel => storemerge9_fu_174_p3,
-        dout => storemerge9_fu_174_p4);
+        din => storemerge953_i_fu_60,
+        value => storemerge9_i_fu_174_p2,
+        sel => storemerge9_i_fu_174_p3,
+        dout => storemerge9_i_fu_174_p4);
 
     flow_control_loop_pipe_sequential_init_U : component SneakySnake_bit_flow_control_loop_pipe_sequential_init
     port map (
@@ -206,14 +206,14 @@ begin
     end process;
 
 
-    i_2_fu_56_assign_proc : process (ap_clk)
+    i_1_fu_56_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((ap_const_boolean_0 = ap_block_state1_pp0_stage0_iter0) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
                 if ((icmp_ln400_fu_90_p2 = ap_const_lv1_0)) then 
-                    i_2_fu_56 <= i_fu_184_p2;
+                    i_1_fu_56 <= i_fu_184_p2;
                 elsif ((ap_loop_init = ap_const_logic_1)) then 
-                    i_2_fu_56 <= ap_const_lv8_0;
+                    i_1_fu_56 <= ap_const_lv8_0;
                 end if;
             end if; 
         end if;
@@ -235,7 +235,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((icmp_ln400_fu_90_p2 = ap_const_lv1_0) and (ap_const_boolean_0 = ap_block_state1_pp0_stage0_iter0) and (ap_const_logic_1 = ap_CS_fsm_state1))) then
-                storemerge953_fu_60 <= storemerge9_fu_174_p4;
+                storemerge953_i_fu_60 <= storemerge9_i_fu_174_p4;
             end if;
         end if;
     end process;
@@ -310,12 +310,12 @@ begin
     end process;
 
 
-    ap_sig_allocacmp_i_2_load_assign_proc : process(ap_CS_fsm_state1, ap_loop_init, i_2_fu_56)
+    ap_sig_allocacmp_i_1_load_assign_proc : process(ap_CS_fsm_state1, ap_loop_init, i_1_fu_56)
     begin
         if (((ap_loop_init = ap_const_logic_1) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-            ap_sig_allocacmp_i_2_load <= ap_const_lv8_0;
+            ap_sig_allocacmp_i_1_load <= ap_const_lv8_0;
         else 
-            ap_sig_allocacmp_i_2_load <= i_2_fu_56;
+            ap_sig_allocacmp_i_1_load <= i_1_fu_56;
         end if; 
     end process;
 
@@ -329,28 +329,28 @@ begin
         end if; 
     end process;
 
-    i_fu_184_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_i_2_load) + unsigned(ap_const_lv8_2));
+    i_fu_184_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_i_1_load) + unsigned(ap_const_lv8_2));
     icmp_ln400_fu_90_p2 <= "1" when (ap_sig_allocacmp_index = ap_const_lv7_7F) else "0";
     icmp_ln403_fu_156_p2 <= "1" when (or_ln403_fu_150_p2 = ap_const_lv2_0) else "0";
     index_15_fu_96_p2 <= std_logic_vector(unsigned(ap_sig_allocacmp_index) + unsigned(ap_const_lv7_1));
-    or_ln1_fu_130_p3 <= (tmp_7_fu_120_p4 & ap_const_lv1_1);
-    or_ln403_fu_150_p2 <= (tmp_4_fu_142_p3 or tmp_2_fu_112_p3);
-    storemerge953_out <= storemerge953_fu_60;
+    or_ln1_fu_130_p3 <= (tmp_3_fu_120_p4 & ap_const_lv1_1);
+    or_ln403_fu_150_p2 <= (tmp_8_i_fu_142_p3 or tmp_6_i_fu_112_p3);
+    storemerge953_i_out <= storemerge953_i_fu_60;
 
-    storemerge953_out_ap_vld_assign_proc : process(ap_CS_fsm_state1, ap_block_state1_pp0_stage0_iter0, icmp_ln400_fu_90_p2, ap_loop_exit_ready)
+    storemerge953_i_out_ap_vld_assign_proc : process(ap_CS_fsm_state1, ap_block_state1_pp0_stage0_iter0, icmp_ln400_fu_90_p2, ap_loop_exit_ready)
     begin
         if (((ap_loop_exit_ready = ap_const_logic_1) and (icmp_ln400_fu_90_p2 = ap_const_lv1_1) and (ap_const_boolean_0 = ap_block_state1_pp0_stage0_iter0) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-            storemerge953_out_ap_vld <= ap_const_logic_1;
+            storemerge953_i_out_ap_vld <= ap_const_logic_1;
         else 
-            storemerge953_out_ap_vld <= ap_const_logic_0;
+            storemerge953_i_out_ap_vld <= ap_const_logic_0;
         end if; 
     end process;
 
-    storemerge9_fu_174_p2 <= 
+    storemerge9_i_fu_174_p2 <= 
         ap_const_lv2_0 when (icmp_ln403_fu_156_p2(0) = '1') else 
         ap_const_lv2_1;
-    storemerge9_fu_174_p3 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(ap_sig_allocacmp_index),32));
-    tmp_2_fu_112_p2 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(ap_sig_allocacmp_i_2_load),32));
-    tmp_4_fu_142_p2 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln1_fu_130_p3),32));
-    tmp_7_fu_120_p4 <= ap_sig_allocacmp_i_2_load(7 downto 1);
+    storemerge9_i_fu_174_p3 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(ap_sig_allocacmp_index),32));
+    tmp_3_fu_120_p4 <= ap_sig_allocacmp_i_1_load(7 downto 1);
+    tmp_6_i_fu_112_p2 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(ap_sig_allocacmp_i_1_load),32));
+    tmp_8_i_fu_142_p2 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(or_ln1_fu_130_p3),32));
 end behav;

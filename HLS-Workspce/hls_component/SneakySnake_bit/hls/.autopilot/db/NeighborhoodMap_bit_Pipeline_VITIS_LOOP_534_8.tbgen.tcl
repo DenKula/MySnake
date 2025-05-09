@@ -13,20 +13,20 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 16
+set cdfgNum 18
 set C_modelName {NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
 set C_modelArgList {
 	{ DNA_5 int 256 regular  }
-	{ storemerge347_out int 128 regular {pointer 1}  }
+	{ storemerge347_i_out int 128 regular {pointer 1}  }
 }
 set hasAXIMCache 0
 set l_AXIML2Cache [list]
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
 	{ "Name" : "DNA_5", "interface" : "wire", "bitwidth" : 256, "direction" : "READONLY"} , 
- 	{ "Name" : "storemerge347_out", "interface" : "wire", "bitwidth" : 128, "direction" : "WRITEONLY"} ]}
+ 	{ "Name" : "storemerge347_i_out", "interface" : "wire", "bitwidth" : 128, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
 set portNum 9
 set portList { 
@@ -37,8 +37,8 @@ set portList {
 	{ ap_idle sc_out sc_logic 1 done -1 } 
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ DNA_5 sc_in sc_lv 256 signal 0 } 
-	{ storemerge347_out sc_out sc_lv 128 signal 1 } 
-	{ storemerge347_out_ap_vld sc_out sc_logic 1 outvld 1 } 
+	{ storemerge347_i_out sc_out sc_lv 128 signal 1 } 
+	{ storemerge347_i_out_ap_vld sc_out sc_logic 1 outvld 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -48,8 +48,8 @@ set NewPortList {[
  	{ "name": "ap_idle", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "done", "bundle":{"name": "ap_idle", "role": "default" }} , 
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "DNA_5", "direction": "in", "datatype": "sc_lv", "bitwidth":256, "type": "signal", "bundle":{"name": "DNA_5", "role": "default" }} , 
- 	{ "name": "storemerge347_out", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "storemerge347_out", "role": "default" }} , 
- 	{ "name": "storemerge347_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "storemerge347_out", "role": "ap_vld" }}  ]}
+ 	{ "name": "storemerge347_i_out", "direction": "out", "datatype": "sc_lv", "bitwidth":128, "type": "signal", "bundle":{"name": "storemerge347_i_out", "role": "default" }} , 
+ 	{ "name": "storemerge347_i_out_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "storemerge347_i_out", "role": "ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4"],
@@ -68,7 +68,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "DNA_5", "Type" : "None", "Direction" : "I"},
-			{"Name" : "storemerge347_out", "Type" : "Vld", "Direction" : "O"}],
+			{"Name" : "storemerge347_i_out", "Type" : "Vld", "Direction" : "O"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_534_8", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
@@ -81,7 +81,7 @@ set RtlHierarchyInfo {[
 set ArgLastReadFirstWriteLatency {
 	NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8 {
 		DNA_5 {Type I LastRead 0 FirstWrite -1}
-		storemerge347_out {Type O LastRead -1 FirstWrite 0}}}
+		storemerge347_i_out {Type O LastRead -1 FirstWrite 0}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -95,5 +95,5 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	DNA_5 { ap_none {  { DNA_5 in_data 0 256 } } }
-	storemerge347_out { ap_vld {  { storemerge347_out out_data 1 128 }  { storemerge347_out_ap_vld out_vld 1 1 } } }
+	storemerge347_i_out { ap_vld {  { storemerge347_i_out out_data 1 128 }  { storemerge347_i_out_ap_vld out_vld 1 1 } } }
 }

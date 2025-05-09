@@ -6878,7 +6878,8 @@ __attribute__((sdx_kernel("SneakySnake_bit", 0))) int SneakySnake_bit(int ReadLe
 #pragma HLSDIRECTIVE TOP name=SneakySnake_bit
 # 680 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
 
-# 695 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 694 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+#pragma HLS dataflow
 #pragma HLS INLINE OFF
  d_bit_out_type DNA_nsh, DNA_shl_one, DNA_shl_two, DNA_shl_three, DNA_shl_four, DNA_shl_five,
     DNA_shr_one, DNA_shr_two, DNA_shr_three, DNA_shr_four, DNA_shr_five;

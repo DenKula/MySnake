@@ -29,19 +29,19 @@
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
 |               | (1) lowering                |   677        | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           |   730        | high level synthesis optimizations                                                     |
+|               | (2) optimizations           |   737        | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
-+------------------------+------------------+-----------------+----------------+----------------+----------------+----------------+
-| Function               | Location         | Compile/Link    | Unroll/Inline  | Array/Struct   | Performance    | HW Transforms  |
-+------------------------+------------------+-----------------+----------------+----------------+----------------+----------------+
-| + SneakySnake_bit      | pipeline.cpp:679 | 7,209           | 717            | 730            | 673            | 730            |
-|    NeighborhoodMap_bit | pipeline.cpp:359 | 4,936           | 296            | 307            | 294            | 338            |
-|  + after_neighbohood   | pipeline.cpp:631 | 1,562           | 350            | 351            | 306            | 310            |
-|     count_one_bit      | pipeline.cpp:326 |  946 (11 calls) | 231 (11 calls) | 231 (11 calls) | 220 (11 calls) | 220 (11 calls) |
-|     largest            | pipeline.cpp:307 |   22            |                |                |                |                |
-+------------------------+------------------+-----------------+----------------+----------------+----------------+----------------+
++------------------------+------------------+-----------------+----------------+----------------+----------------+---------------+
+| Function               | Location         | Compile/Link    | Unroll/Inline  | Array/Struct   | Performance    | HW Transforms |
++------------------------+------------------+-----------------+----------------+----------------+----------------+---------------+
+| + SneakySnake_bit      | pipeline.cpp:679 | 7,209           | 717            | 730            | 673            | 737           |
+|    NeighborhoodMap_bit | pipeline.cpp:359 | 4,936           | 296            | 307            | 294            | 338           |
+|  + after_neighbohood   | pipeline.cpp:631 | 1,562           | 350            | 351            | 306            |               |
+|     count_one_bit      | pipeline.cpp:326 |  946 (11 calls) | 231 (11 calls) | 231 (11 calls) | 220 (11 calls) |               |
+|     largest            | pipeline.cpp:307 |   22            |                |                |                |               |
++------------------------+------------------+-----------------+----------------+----------------+----------------+---------------+
 
 * Design Size Message Settings
 +---------------------------------------------+--------+------------------------------------------------------------------+

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'NeighborhoodMap_bit'
 ================================================================
-* Date:           Fri May  9 17:21:09 2025
+* Date:           Fri May  9 17:46:15 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -64,14 +64,14 @@
 |         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
 +---------------------+---------+------+---------+---------+-----+
 |DSP                  |        -|     -|        -|        -|    -|
-|Expression           |        -|     -|        0|     2818|    -|
+|Expression           |        -|     -|        0|     2820|    -|
 |FIFO                 |        -|     -|        -|        -|    -|
 |Instance             |        -|     -|     1595|     4191|    -|
 |Memory               |        -|     -|        -|        -|    -|
-|Multiplexer          |        -|     -|        0|       20|    -|
-|Register             |        -|     -|     2830|        -|    -|
+|Multiplexer          |        -|     -|        0|       29|    -|
+|Register             |        -|     -|     2831|        -|    -|
 +---------------------+---------+------+---------+---------+-----+
-|Total                |        0|     0|     4425|     7029|    0|
+|Total                |        0|     0|     4426|     7040|    0|
 +---------------------+---------+------+---------+---------+-----+
 |Available SLR        |     1440|  2280|   788160|   394080|  320|
 +---------------------+---------+------+---------+---------+-----+
@@ -115,6 +115,7 @@
     +---------------------------------+----------+----+---+-----+------------+------------+
     |          Variable Name          | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
     +---------------------------------+----------+----+---+-----+------------+------------+
+    |ap_block_state1                  |        or|   0|  0|    2|           1|           1|
     |ap_block_state2_on_subcall_done  |        or|   0|  0|    2|           1|           1|
     |DNA_10_fu_373_p2                 |       xor|   0|  0|  256|         256|         256|
     |DNA_11_fu_394_p2                 |       xor|   0|  0|  256|         256|         256|
@@ -128,7 +129,7 @@
     |DNA_8_fu_289_p2                  |       xor|   0|  0|  256|         256|         256|
     |DNA_9_fu_352_p2                  |       xor|   0|  0|  256|         256|         256|
     +---------------------------------+----------+----+---+-----+------------+------------+
-    |Total                            |          |   0|  0| 2818|        2817|        2817|
+    |Total                            |          |   0|  0| 2820|        2818|        2818|
     +---------------------------------+----------+----+---+-----+------------+------------+
 
     * Multiplexer: 
@@ -136,8 +137,9 @@
     |    Name   | LUT| Input Size| Bits| Total Bits|
     +-----------+----+-----------+-----+-----------+
     |ap_NS_fsm  |  20|          4|    1|          4|
+    |ap_done    |   9|          2|    1|          2|
     +-----------+----+-----------+-----+-----------+
-    |Total      |  20|          4|    1|          4|
+    |Total      |  29|          6|    2|          6|
     +-----------+----+-----------+-----+-----------+
 
     * Register: 
@@ -156,6 +158,7 @@
     |DNA_8_reg_799                                                           |  256|   0|  256|          0|
     |DNA_9_reg_814                                                           |  256|   0|  256|          0|
     |ap_CS_fsm                                                               |    3|   0|    3|          0|
+    |ap_done_reg                                                             |    1|   0|    1|          0|
     |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158_ap_start_reg   |    1|   0|    1|          0|
     |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164_ap_start_reg   |    1|   0|    1|          0|
     |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170_ap_start_reg   |    1|   0|    1|          0|
@@ -168,7 +171,7 @@
     |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212_ap_start_reg  |    1|   0|    1|          0|
     |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218_ap_start_reg  |    1|   0|    1|          0|
     +------------------------------------------------------------------------+-----+----+-----+-----------+
-    |Total                                                                   | 2830|   0| 2830|          0|
+    |Total                                                                   | 2831|   0| 2831|          0|
     +------------------------------------------------------------------------+-----+----+-----+-----------+
 
 
@@ -184,6 +187,7 @@
 |ap_rst        |   in|    1|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
 |ap_start      |   in|    1|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
 |ap_done       |  out|    1|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
+|ap_continue   |   in|    1|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
 |ap_idle       |  out|    1|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
 |ap_ready      |  out|    1|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
 |ap_return_0   |  out|  128|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
@@ -197,8 +201,8 @@
 |ap_return_8   |  out|  128|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
 |ap_return_9   |  out|  128|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
 |ap_return_10  |  out|  128|  ap_ctrl_hs|  NeighborhoodMap_bit|  return value|
-|DNA_read_val  |   in|  256|     ap_none|         DNA_read_val|        scalar|
-|DNA_ref_val   |   in|  256|     ap_none|          DNA_ref_val|        scalar|
+|ReadSeq       |   in|  256|     ap_none|              ReadSeq|       pointer|
+|RefSeq        |   in|  256|     ap_none|               RefSeq|       pointer|
 +--------------+-----+-----+------------+---------------------+--------------+
 
 ============================================================
@@ -212,7 +216,7 @@ ExposeGlobal: 0
 IsTopModel: 0
 ResetActiveHigh: 1
 IsCombinational: 2
-IsDatapathOnly: 2
+IsDatapathOnly: 0
 HasWiredReturn: 1
 HasMFsm: 0
 HasVarLatency: 1
@@ -239,114 +243,114 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 2.02>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%DNA_ref_val_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %DNA_ref_val"   --->   Operation 4 'read' 'DNA_ref_val_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%DNA_read_val_read = read i256 @_ssdm_op_Read.ap_auto.i256, i256 %DNA_read_val"   --->   Operation 5 'read' 'DNA_read_val_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%storemerge44_loc = alloca i64 1"   --->   Operation 6 'alloca' 'storemerge44_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%storemerge145_loc = alloca i64 1"   --->   Operation 7 'alloca' 'storemerge145_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%storemerge246_loc = alloca i64 1"   --->   Operation 8 'alloca' 'storemerge246_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%storemerge347_loc = alloca i64 1"   --->   Operation 9 'alloca' 'storemerge347_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%storemerge448_loc = alloca i64 1"   --->   Operation 10 'alloca' 'storemerge448_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%storemerge549_loc = alloca i64 1"   --->   Operation 11 'alloca' 'storemerge549_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%storemerge650_loc = alloca i64 1"   --->   Operation 12 'alloca' 'storemerge650_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%storemerge751_loc = alloca i64 1"   --->   Operation 13 'alloca' 'storemerge751_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%storemerge852_loc = alloca i64 1"   --->   Operation 14 'alloca' 'storemerge852_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%storemerge953_loc = alloca i64 1"   --->   Operation 15 'alloca' 'storemerge953_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%DNA_nsh_write_assign_loc = alloca i64 1"   --->   Operation 16 'alloca' 'DNA_nsh_write_assign_loc' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.29ns)   --->   "%DNA_1 = xor i256 %DNA_ref_val_read, i256 %DNA_read_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373]   --->   Operation 17 'xor' 'DNA_1' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 18 [2/2] (1.73ns)   --->   "%call_ln373 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1, i256 %DNA_1, i128 %DNA_nsh_write_assign_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373]   --->   Operation 18 'call' 'call_ln373' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node DNA_2)   --->   "%shl_ln398 = shl i256 %DNA_read_val_read, i256 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 19 'shl' 'shl_ln398' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 20 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_2 = xor i256 %shl_ln398, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 20 'xor' 'DNA_2' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 21 [2/2] (1.73ns)   --->   "%call_ln398 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2, i256 %DNA_2, i128 %storemerge953_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 21 'call' 'call_ln398' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 22 [1/1] (0.00ns) (grouped into LUT with out node DNA_3)   --->   "%shl_ln417 = shl i256 %DNA_read_val_read, i256 4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 22 'shl' 'shl_ln417' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 23 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_3 = xor i256 %shl_ln417, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 23 'xor' 'DNA_3' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 24 [2/2] (1.73ns)   --->   "%call_ln417 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3, i256 %DNA_3, i128 %storemerge852_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 24 'call' 'call_ln417' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node DNA_6)   --->   "%shl_ln436 = shl i256 %DNA_read_val_read, i256 6" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 25 'shl' 'shl_ln436' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 26 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_6 = xor i256 %shl_ln436, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 26 'xor' 'DNA_6' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 27 [2/2] (1.73ns)   --->   "%call_ln436 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4, i256 %DNA_6, i128 %storemerge751_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 27 'call' 'call_ln436' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 28 [1/1] (0.00ns) (grouped into LUT with out node DNA_7)   --->   "%shl_ln460 = shl i256 %DNA_read_val_read, i256 8" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 28 'shl' 'shl_ln460' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 29 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_7 = xor i256 %shl_ln460, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 29 'xor' 'DNA_7' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 30 [2/2] (1.73ns)   --->   "%call_ln460 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, i256 %DNA_7, i128 %storemerge650_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 30 'call' 'call_ln460' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node DNA_8)   --->   "%shl_ln486 = shl i256 %DNA_read_val_read, i256 10" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 31 'shl' 'shl_ln486' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 32 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_8 = xor i256 %shl_ln486, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 32 'xor' 'DNA_8' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 33 [2/2] (1.73ns)   --->   "%call_ln486 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6, i256 %DNA_8, i128 %storemerge549_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 33 'call' 'call_ln486' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i254 @_ssdm_op_PartSelect.i254.i256.i32.i32, i256 %DNA_read_val_read, i32 2, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 34 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln514 = zext i254 %lshr_ln" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 35 'zext' 'zext_ln514' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 36 [1/1] (0.29ns)   --->   "%DNA_4 = xor i256 %zext_ln514, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 36 'xor' 'DNA_4' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 37 [2/2] (1.73ns)   --->   "%call_ln514 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7, i256 %DNA_4, i128 %storemerge448_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 37 'call' 'call_ln514' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%lshr_ln1 = partselect i252 @_ssdm_op_PartSelect.i252.i256.i32.i32, i256 %DNA_read_val_read, i32 4, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 38 'partselect' 'lshr_ln1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln532 = zext i252 %lshr_ln1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 39 'zext' 'zext_ln532' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 40 [1/1] (0.29ns)   --->   "%DNA_5 = xor i256 %zext_ln532, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 40 'xor' 'DNA_5' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 41 [2/2] (1.73ns)   --->   "%call_ln532 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8, i256 %DNA_5, i128 %storemerge347_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 41 'call' 'call_ln532' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%lshr_ln2 = partselect i250 @_ssdm_op_PartSelect.i250.i256.i32.i32, i256 %DNA_read_val_read, i32 6, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 42 'partselect' 'lshr_ln2' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln554 = zext i250 %lshr_ln2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 43 'zext' 'zext_ln554' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 44 [1/1] (0.29ns)   --->   "%DNA_9 = xor i256 %zext_ln554, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 44 'xor' 'DNA_9' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 45 [2/2] (1.73ns)   --->   "%call_ln554 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9, i256 %DNA_9, i128 %storemerge246_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 45 'call' 'call_ln554' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%lshr_ln3 = partselect i248 @_ssdm_op_PartSelect.i248.i256.i32.i32, i256 %DNA_read_val_read, i32 8, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 46 'partselect' 'lshr_ln3' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln578 = zext i248 %lshr_ln3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 47 'zext' 'zext_ln578' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 48 [1/1] (0.29ns)   --->   "%DNA_10 = xor i256 %zext_ln578, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 48 'xor' 'DNA_10' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 49 [2/2] (1.73ns)   --->   "%call_ln578 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10, i256 %DNA_10, i128 %storemerge145_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 49 'call' 'call_ln578' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%lshr_ln4 = partselect i246 @_ssdm_op_PartSelect.i246.i256.i32.i32, i256 %DNA_read_val_read, i32 10, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 50 'partselect' 'lshr_ln4' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%zext_ln605 = zext i246 %lshr_ln4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 51 'zext' 'zext_ln605' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 52 [1/1] (0.29ns)   --->   "%DNA_11 = xor i256 %zext_ln605, i256 %DNA_ref_val_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 52 'xor' 'DNA_11' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 53 [2/2] (1.73ns)   --->   "%call_ln605 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11, i256 %DNA_11, i128 %storemerge44_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 53 'call' 'call_ln605' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%storemerge44_i_loc = alloca i64 1"   --->   Operation 4 'alloca' 'storemerge44_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%storemerge145_i_loc = alloca i64 1"   --->   Operation 5 'alloca' 'storemerge145_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%storemerge246_i_loc = alloca i64 1"   --->   Operation 6 'alloca' 'storemerge246_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%storemerge347_i_loc = alloca i64 1"   --->   Operation 7 'alloca' 'storemerge347_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%storemerge448_i_loc = alloca i64 1"   --->   Operation 8 'alloca' 'storemerge448_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%storemerge549_i_loc = alloca i64 1"   --->   Operation 9 'alloca' 'storemerge549_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%storemerge650_i_loc = alloca i64 1"   --->   Operation 10 'alloca' 'storemerge650_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%storemerge751_i_loc = alloca i64 1"   --->   Operation 11 'alloca' 'storemerge751_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%storemerge852_i_loc = alloca i64 1"   --->   Operation 12 'alloca' 'storemerge852_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%storemerge953_i_loc = alloca i64 1"   --->   Operation 13 'alloca' 'storemerge953_i_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%DNA_nsh_out_0_loc = alloca i64 1"   --->   Operation 14 'alloca' 'DNA_nsh_out_0_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%ReadSeq_read = read i256 @_ssdm_op_Read.ap_auto.i256P0A, i256 %ReadSeq"   --->   Operation 15 'read' 'ReadSeq_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%RefSeq_read = read i256 @_ssdm_op_Read.ap_auto.i256P0A, i256 %RefSeq"   --->   Operation 16 'read' 'RefSeq_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.29ns)   --->   "%DNA_1 = xor i256 %RefSeq_read, i256 %ReadSeq_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 17 'xor' 'DNA_1' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 18 [2/2] (1.73ns)   --->   "%call_ln373 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1, i256 %DNA_1, i128 %DNA_nsh_out_0_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 18 'call' 'call_ln373' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node DNA_2)   --->   "%shl_ln398 = shl i256 %ReadSeq_read, i256 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 19 'shl' 'shl_ln398' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_2 = xor i256 %RefSeq_read, i256 %shl_ln398" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 20 'xor' 'DNA_2' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [2/2] (1.73ns)   --->   "%call_ln398 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2, i256 %DNA_2, i128 %storemerge953_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 21 'call' 'call_ln398' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 22 [1/1] (0.00ns) (grouped into LUT with out node DNA_3)   --->   "%shl_ln417 = shl i256 %ReadSeq_read, i256 4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 22 'shl' 'shl_ln417' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_3 = xor i256 %RefSeq_read, i256 %shl_ln417" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 23 'xor' 'DNA_3' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [2/2] (1.73ns)   --->   "%call_ln417 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3, i256 %DNA_3, i128 %storemerge852_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 24 'call' 'call_ln417' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node DNA_6)   --->   "%shl_ln436 = shl i256 %ReadSeq_read, i256 6" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 25 'shl' 'shl_ln436' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_6 = xor i256 %RefSeq_read, i256 %shl_ln436" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 26 'xor' 'DNA_6' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [2/2] (1.73ns)   --->   "%call_ln436 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4, i256 %DNA_6, i128 %storemerge751_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 27 'call' 'call_ln436' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 28 [1/1] (0.00ns) (grouped into LUT with out node DNA_7)   --->   "%shl_ln460 = shl i256 %ReadSeq_read, i256 8" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 28 'shl' 'shl_ln460' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_7 = xor i256 %RefSeq_read, i256 %shl_ln460" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 29 'xor' 'DNA_7' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [2/2] (1.73ns)   --->   "%call_ln460 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, i256 %DNA_7, i128 %storemerge650_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 30 'call' 'call_ln460' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node DNA_8)   --->   "%shl_ln486 = shl i256 %ReadSeq_read, i256 10" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 31 'shl' 'shl_ln486' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.29ns) (out node of the LUT)   --->   "%DNA_8 = xor i256 %RefSeq_read, i256 %shl_ln486" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 32 'xor' 'DNA_8' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [2/2] (1.73ns)   --->   "%call_ln486 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6, i256 %DNA_8, i128 %storemerge549_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 33 'call' 'call_ln486' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%lshr_ln = partselect i254 @_ssdm_op_PartSelect.i254.i256.i32.i32, i256 %ReadSeq_read, i32 2, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 34 'partselect' 'lshr_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln514 = zext i254 %lshr_ln" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 35 'zext' 'zext_ln514' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.29ns)   --->   "%DNA_4 = xor i256 %RefSeq_read, i256 %zext_ln514" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 36 'xor' 'DNA_4' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 37 [2/2] (1.73ns)   --->   "%call_ln514 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7, i256 %DNA_4, i128 %storemerge448_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 37 'call' 'call_ln514' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%lshr_ln1 = partselect i252 @_ssdm_op_PartSelect.i252.i256.i32.i32, i256 %ReadSeq_read, i32 4, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 38 'partselect' 'lshr_ln1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%zext_ln532 = zext i252 %lshr_ln1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 39 'zext' 'zext_ln532' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.29ns)   --->   "%DNA_5 = xor i256 %RefSeq_read, i256 %zext_ln532" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 40 'xor' 'DNA_5' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 41 [2/2] (1.73ns)   --->   "%call_ln532 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8, i256 %DNA_5, i128 %storemerge347_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 41 'call' 'call_ln532' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%lshr_ln2 = partselect i250 @_ssdm_op_PartSelect.i250.i256.i32.i32, i256 %ReadSeq_read, i32 6, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 42 'partselect' 'lshr_ln2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%zext_ln554 = zext i250 %lshr_ln2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 43 'zext' 'zext_ln554' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.29ns)   --->   "%DNA_9 = xor i256 %RefSeq_read, i256 %zext_ln554" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 44 'xor' 'DNA_9' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 45 [2/2] (1.73ns)   --->   "%call_ln554 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9, i256 %DNA_9, i128 %storemerge246_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 45 'call' 'call_ln554' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%lshr_ln3 = partselect i248 @_ssdm_op_PartSelect.i248.i256.i32.i32, i256 %ReadSeq_read, i32 8, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 46 'partselect' 'lshr_ln3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%zext_ln578 = zext i248 %lshr_ln3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 47 'zext' 'zext_ln578' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.29ns)   --->   "%DNA_10 = xor i256 %RefSeq_read, i256 %zext_ln578" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 48 'xor' 'DNA_10' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 49 [2/2] (1.73ns)   --->   "%call_ln578 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10, i256 %DNA_10, i128 %storemerge145_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 49 'call' 'call_ln578' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%lshr_ln4 = partselect i246 @_ssdm_op_PartSelect.i246.i256.i32.i32, i256 %ReadSeq_read, i32 10, i32 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 50 'partselect' 'lshr_ln4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%zext_ln605 = zext i246 %lshr_ln4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 51 'zext' 'zext_ln605' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.29ns)   --->   "%DNA_11 = xor i256 %RefSeq_read, i256 %zext_ln605" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 52 'xor' 'DNA_11' <Predicate = true> <Delay = 0.29> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.29> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [2/2] (1.73ns)   --->   "%call_ln605 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11, i256 %DNA_11, i128 %storemerge44_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 53 'call' 'call_ln605' <Predicate = true> <Delay = 1.73> <CoreType = "Generic">   --->   Generic Core
 
 State 2 <SV = 1> <Delay = 1.47>
-ST_2 : Operation 54 [1/2] (1.47ns)   --->   "%call_ln373 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1, i256 %DNA_1, i128 %DNA_nsh_write_assign_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373]   --->   Operation 54 'call' 'call_ln373' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 55 [1/2] (1.47ns)   --->   "%call_ln398 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2, i256 %DNA_2, i128 %storemerge953_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398]   --->   Operation 55 'call' 'call_ln398' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 56 [1/2] (1.47ns)   --->   "%call_ln417 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3, i256 %DNA_3, i128 %storemerge852_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417]   --->   Operation 56 'call' 'call_ln417' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 57 [1/2] (1.47ns)   --->   "%call_ln436 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4, i256 %DNA_6, i128 %storemerge751_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436]   --->   Operation 57 'call' 'call_ln436' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 58 [1/2] (1.47ns)   --->   "%call_ln460 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, i256 %DNA_7, i128 %storemerge650_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460]   --->   Operation 58 'call' 'call_ln460' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 59 [1/2] (1.47ns)   --->   "%call_ln486 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6, i256 %DNA_8, i128 %storemerge549_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486]   --->   Operation 59 'call' 'call_ln486' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 60 [1/2] (1.47ns)   --->   "%call_ln514 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7, i256 %DNA_4, i128 %storemerge448_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514]   --->   Operation 60 'call' 'call_ln514' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 61 [1/2] (1.47ns)   --->   "%call_ln532 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8, i256 %DNA_5, i128 %storemerge347_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532]   --->   Operation 61 'call' 'call_ln532' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 62 [1/2] (1.47ns)   --->   "%call_ln554 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9, i256 %DNA_9, i128 %storemerge246_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554]   --->   Operation 62 'call' 'call_ln554' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 63 [1/2] (1.47ns)   --->   "%call_ln578 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10, i256 %DNA_10, i128 %storemerge145_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578]   --->   Operation 63 'call' 'call_ln578' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 64 [1/2] (1.47ns)   --->   "%call_ln605 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11, i256 %DNA_11, i128 %storemerge44_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605]   --->   Operation 64 'call' 'call_ln605' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 54 [1/2] (1.47ns)   --->   "%call_ln373 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1, i256 %DNA_1, i128 %DNA_nsh_out_0_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 54 'call' 'call_ln373' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 55 [1/2] (1.47ns)   --->   "%call_ln398 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2, i256 %DNA_2, i128 %storemerge953_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:398->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 55 'call' 'call_ln398' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 56 [1/2] (1.47ns)   --->   "%call_ln417 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3, i256 %DNA_3, i128 %storemerge852_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:417->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 56 'call' 'call_ln417' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 57 [1/2] (1.47ns)   --->   "%call_ln436 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4, i256 %DNA_6, i128 %storemerge751_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:436->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 57 'call' 'call_ln436' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 58 [1/2] (1.47ns)   --->   "%call_ln460 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5, i256 %DNA_7, i128 %storemerge650_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:460->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 58 'call' 'call_ln460' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 59 [1/2] (1.47ns)   --->   "%call_ln486 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6, i256 %DNA_8, i128 %storemerge549_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:486->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 59 'call' 'call_ln486' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 60 [1/2] (1.47ns)   --->   "%call_ln514 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7, i256 %DNA_4, i128 %storemerge448_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:514->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 60 'call' 'call_ln514' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 61 [1/2] (1.47ns)   --->   "%call_ln532 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8, i256 %DNA_5, i128 %storemerge347_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:532->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 61 'call' 'call_ln532' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 62 [1/2] (1.47ns)   --->   "%call_ln554 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9, i256 %DNA_9, i128 %storemerge246_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:554->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 62 'call' 'call_ln554' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 63 [1/2] (1.47ns)   --->   "%call_ln578 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10, i256 %DNA_10, i128 %storemerge145_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:578->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 63 'call' 'call_ln578' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 64 [1/2] (1.47ns)   --->   "%call_ln605 = call void @NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11, i256 %DNA_11, i128 %storemerge44_i_loc" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:605->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 64 'call' 'call_ln605' <Predicate = true> <Delay = 1.47> <CoreType = "Generic">   --->   Generic Core
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%DNA_nsh_write_assign_loc_load = load i128 %DNA_nsh_write_assign_loc"   --->   Operation 65 'load' 'DNA_nsh_write_assign_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%storemerge953_loc_load = load i128 %storemerge953_loc"   --->   Operation 66 'load' 'storemerge953_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%DNA_shl_one_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge953_loc_load, i2 1, i32 126" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:410]   --->   Operation 67 'partset' 'DNA_shl_one_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%storemerge852_loc_load = load i128 %storemerge852_loc"   --->   Operation 68 'load' 'storemerge852_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%DNA_shl_two_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i4.i32.i32, i128 %storemerge852_loc_load, i4 5, i32 124, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:429]   --->   Operation 69 'partset' 'DNA_shl_two_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%storemerge751_loc_load = load i128 %storemerge751_loc"   --->   Operation 70 'load' 'storemerge751_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%DNA_shl_three_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i6.i32.i32, i128 %storemerge751_loc_load, i6 21, i32 122, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:449]   --->   Operation 71 'partset' 'DNA_shl_three_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%storemerge650_loc_load = load i128 %storemerge650_loc"   --->   Operation 72 'load' 'storemerge650_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%DNA_shl_four_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i8.i32.i32, i128 %storemerge650_loc_load, i8 85, i32 120, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:474]   --->   Operation 73 'partset' 'DNA_shl_four_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%storemerge549_loc_load = load i128 %storemerge549_loc"   --->   Operation 74 'load' 'storemerge549_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%DNA_shl_five_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i10.i32.i32, i128 %storemerge549_loc_load, i10 341, i32 118, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:501]   --->   Operation 75 'partset' 'DNA_shl_five_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%storemerge448_loc_load = load i128 %storemerge448_loc"   --->   Operation 76 'load' 'storemerge448_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%DNA_shr_one_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge448_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:525]   --->   Operation 77 'partset' 'DNA_shr_one_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%storemerge347_loc_load = load i128 %storemerge347_loc"   --->   Operation 78 'load' 'storemerge347_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_s = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge347_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:543]   --->   Operation 79 'partset' 'tmp_s' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%DNA_shr_two_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_s, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:544]   --->   Operation 80 'partset' 'DNA_shr_two_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%storemerge246_loc_load = load i128 %storemerge246_loc"   --->   Operation 81 'load' 'storemerge246_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_15 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge246_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:565]   --->   Operation 82 'partset' 'tmp_15' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_16 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_15, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:566]   --->   Operation 83 'partset' 'tmp_16' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%DNA_shr_three_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_16, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:567]   --->   Operation 84 'partset' 'DNA_shr_three_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%storemerge145_loc_load = load i128 %storemerge145_loc"   --->   Operation 85 'load' 'storemerge145_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_17 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge145_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:590]   --->   Operation 86 'partset' 'tmp_17' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_18 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_17, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:591]   --->   Operation 87 'partset' 'tmp_18' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_19 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_18, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:592]   --->   Operation 88 'partset' 'tmp_19' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%DNA_shr_four_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_19, i2 1, i32 3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:593]   --->   Operation 89 'partset' 'DNA_shr_four_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%storemerge44_loc_load = load i128 %storemerge44_loc"   --->   Operation 90 'load' 'storemerge44_loc_load' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_20 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge44_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:617]   --->   Operation 91 'partset' 'tmp_20' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_21 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_20, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:618]   --->   Operation 92 'partset' 'tmp_21' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_22 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_21, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:619]   --->   Operation 93 'partset' 'tmp_22' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_23 = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_22, i2 1, i32 3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:620]   --->   Operation 94 'partset' 'tmp_23' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 95 [1/1] (0.00ns)   --->   "%DNA_shr_five_write_assign = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_23, i2 1, i32 4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:621]   --->   Operation 95 'partset' 'DNA_shr_five_write_assign' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%mrv = insertvalue i1408 <undef>, i128 %DNA_nsh_write_assign_loc_load" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 96 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i1408 %mrv, i128 %DNA_shl_one_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 97 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i1408 %mrv_1, i128 %DNA_shl_two_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 98 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 99 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i1408 %mrv_2, i128 %DNA_shl_three_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 99 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i1408 %mrv_3, i128 %DNA_shl_four_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 100 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i1408 %mrv_4, i128 %DNA_shl_five_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 101 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i1408 %mrv_5, i128 %DNA_shr_one_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 102 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i1408 %mrv_6, i128 %DNA_shr_two_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 103 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i1408 %mrv_7, i128 %DNA_shr_three_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 104 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i1408 %mrv_8, i128 %DNA_shr_four_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 105 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue i1408 %mrv_9, i128 %DNA_shr_five_write_assign" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 106 'insertvalue' 'mrv_s' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%ret_ln629 = ret i1408 %mrv_s" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:629]   --->   Operation 107 'ret' 'ret_ln629' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 65 [1/1] (0.00ns)   --->   "%DNA_nsh_out_0_loc_load = load i128 %DNA_nsh_out_0_loc"   --->   Operation 65 'load' 'DNA_nsh_out_0_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%storemerge953_i_loc_load = load i128 %storemerge953_i_loc"   --->   Operation 66 'load' 'storemerge953_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%DNA_shl_one_out = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge953_i_loc_load, i2 1, i32 126" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:410->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 67 'partset' 'DNA_shl_one_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (0.00ns)   --->   "%storemerge852_i_loc_load = load i128 %storemerge852_i_loc"   --->   Operation 68 'load' 'storemerge852_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%DNA_shl_two_out = partset i128 @_ssdm_op_PartSet.i128.i128.i4.i32.i32, i128 %storemerge852_i_loc_load, i4 5, i32 124, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:429->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 69 'partset' 'DNA_shl_two_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%storemerge751_i_loc_load = load i128 %storemerge751_i_loc"   --->   Operation 70 'load' 'storemerge751_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%DNA_shl_three_out = partset i128 @_ssdm_op_PartSet.i128.i128.i6.i32.i32, i128 %storemerge751_i_loc_load, i6 21, i32 122, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:449->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 71 'partset' 'DNA_shl_three_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (0.00ns)   --->   "%storemerge650_i_loc_load = load i128 %storemerge650_i_loc"   --->   Operation 72 'load' 'storemerge650_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%DNA_shl_four_out = partset i128 @_ssdm_op_PartSet.i128.i128.i8.i32.i32, i128 %storemerge650_i_loc_load, i8 85, i32 120, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:474->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 73 'partset' 'DNA_shl_four_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%storemerge549_i_loc_load = load i128 %storemerge549_i_loc"   --->   Operation 74 'load' 'storemerge549_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%DNA_shl_five_out = partset i128 @_ssdm_op_PartSet.i128.i128.i10.i32.i32, i128 %storemerge549_i_loc_load, i10 341, i32 118, i32 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:501->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 75 'partset' 'DNA_shl_five_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%storemerge448_i_loc_load = load i128 %storemerge448_i_loc"   --->   Operation 76 'load' 'storemerge448_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%DNA_shr_one_out = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge448_i_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:525->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 77 'partset' 'DNA_shr_one_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%storemerge347_i_loc_load = load i128 %storemerge347_i_loc"   --->   Operation 78 'load' 'storemerge347_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%tmp_32_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge347_i_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:543->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 79 'partset' 'tmp_32_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%DNA_shr_two_out = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_32_i, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:544->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 80 'partset' 'DNA_shr_two_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%storemerge246_i_loc_load = load i128 %storemerge246_i_loc"   --->   Operation 81 'load' 'storemerge246_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_38_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge246_i_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:565->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 82 'partset' 'tmp_38_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_39_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_38_i, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:566->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 83 'partset' 'tmp_39_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%DNA_shr_three_out = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_39_i, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:567->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 84 'partset' 'DNA_shr_three_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%storemerge145_i_loc_load = load i128 %storemerge145_i_loc"   --->   Operation 85 'load' 'storemerge145_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%tmp_45_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge145_i_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:590->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 86 'partset' 'tmp_45_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_46_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_45_i, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:591->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 87 'partset' 'tmp_46_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%tmp_47_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_46_i, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:592->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 88 'partset' 'tmp_47_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%DNA_shr_four_out = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_47_i, i2 1, i32 3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:593->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 89 'partset' 'DNA_shr_four_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 90 [1/1] (0.00ns)   --->   "%storemerge44_i_loc_load = load i128 %storemerge44_i_loc"   --->   Operation 90 'load' 'storemerge44_i_loc_load' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_53_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %storemerge44_i_loc_load, i2 1, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:617->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 91 'partset' 'tmp_53_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_54_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_53_i, i2 1, i32 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:618->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 92 'partset' 'tmp_54_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 93 [1/1] (0.00ns)   --->   "%tmp_55_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_54_i, i2 1, i32 2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:619->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 93 'partset' 'tmp_55_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_56_i = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_55_i, i2 1, i32 3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:620->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 94 'partset' 'tmp_56_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 95 [1/1] (0.00ns)   --->   "%DNA_shr_five_out = partset i128 @_ssdm_op_PartSet.i128.i128.i2.i32, i128 %tmp_56_i, i2 1, i32 4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:621->/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 95 'partset' 'DNA_shr_five_out' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 96 [1/1] (0.00ns)   --->   "%mrv = insertvalue i1408 <undef>, i128 %DNA_nsh_out_0_loc_load" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 96 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 97 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i1408 %mrv, i128 %DNA_shl_one_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 97 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 98 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i1408 %mrv_1, i128 %DNA_shl_two_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 98 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 99 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i1408 %mrv_2, i128 %DNA_shl_three_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 99 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 100 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i1408 %mrv_3, i128 %DNA_shl_four_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 100 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 101 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i1408 %mrv_4, i128 %DNA_shl_five_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 101 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 102 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i1408 %mrv_5, i128 %DNA_shr_one_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 102 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 103 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i1408 %mrv_6, i128 %DNA_shr_two_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 103 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 104 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i1408 %mrv_7, i128 %DNA_shr_three_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 104 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 105 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i1408 %mrv_8, i128 %DNA_shr_four_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 105 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 106 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue i1408 %mrv_9, i128 %DNA_shr_five_out" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 106 'insertvalue' 'mrv_s' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%ret_ln701 = ret i1408 %mrv_s" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 107 'ret' 'ret_ln701' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -360,127 +364,127 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ DNA_read_val]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ DNA_ref_val]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ ReadSeq]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
+Port [ RefSeq]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
 
 <LifeTime>
 <method=bitvector/>
-DNA_ref_val_read              (read       ) [ 0000]
-DNA_read_val_read             (read       ) [ 0000]
-storemerge44_loc              (alloca     ) [ 0111]
-storemerge145_loc             (alloca     ) [ 0111]
-storemerge246_loc             (alloca     ) [ 0111]
-storemerge347_loc             (alloca     ) [ 0111]
-storemerge448_loc             (alloca     ) [ 0111]
-storemerge549_loc             (alloca     ) [ 0111]
-storemerge650_loc             (alloca     ) [ 0111]
-storemerge751_loc             (alloca     ) [ 0111]
-storemerge852_loc             (alloca     ) [ 0111]
-storemerge953_loc             (alloca     ) [ 0111]
-DNA_nsh_write_assign_loc      (alloca     ) [ 0111]
-DNA_1                         (xor        ) [ 0010]
-shl_ln398                     (shl        ) [ 0000]
-DNA_2                         (xor        ) [ 0010]
-shl_ln417                     (shl        ) [ 0000]
-DNA_3                         (xor        ) [ 0010]
-shl_ln436                     (shl        ) [ 0000]
-DNA_6                         (xor        ) [ 0010]
-shl_ln460                     (shl        ) [ 0000]
-DNA_7                         (xor        ) [ 0010]
-shl_ln486                     (shl        ) [ 0000]
-DNA_8                         (xor        ) [ 0010]
-lshr_ln                       (partselect ) [ 0000]
-zext_ln514                    (zext       ) [ 0000]
-DNA_4                         (xor        ) [ 0010]
-lshr_ln1                      (partselect ) [ 0000]
-zext_ln532                    (zext       ) [ 0000]
-DNA_5                         (xor        ) [ 0010]
-lshr_ln2                      (partselect ) [ 0000]
-zext_ln554                    (zext       ) [ 0000]
-DNA_9                         (xor        ) [ 0010]
-lshr_ln3                      (partselect ) [ 0000]
-zext_ln578                    (zext       ) [ 0000]
-DNA_10                        (xor        ) [ 0010]
-lshr_ln4                      (partselect ) [ 0000]
-zext_ln605                    (zext       ) [ 0000]
-DNA_11                        (xor        ) [ 0010]
-call_ln373                    (call       ) [ 0000]
-call_ln398                    (call       ) [ 0000]
-call_ln417                    (call       ) [ 0000]
-call_ln436                    (call       ) [ 0000]
-call_ln460                    (call       ) [ 0000]
-call_ln486                    (call       ) [ 0000]
-call_ln514                    (call       ) [ 0000]
-call_ln532                    (call       ) [ 0000]
-call_ln554                    (call       ) [ 0000]
-call_ln578                    (call       ) [ 0000]
-call_ln605                    (call       ) [ 0000]
-DNA_nsh_write_assign_loc_load (load       ) [ 0000]
-storemerge953_loc_load        (load       ) [ 0000]
-DNA_shl_one_write_assign      (partset    ) [ 0000]
-storemerge852_loc_load        (load       ) [ 0000]
-DNA_shl_two_write_assign      (partset    ) [ 0000]
-storemerge751_loc_load        (load       ) [ 0000]
-DNA_shl_three_write_assign    (partset    ) [ 0000]
-storemerge650_loc_load        (load       ) [ 0000]
-DNA_shl_four_write_assign     (partset    ) [ 0000]
-storemerge549_loc_load        (load       ) [ 0000]
-DNA_shl_five_write_assign     (partset    ) [ 0000]
-storemerge448_loc_load        (load       ) [ 0000]
-DNA_shr_one_write_assign      (partset    ) [ 0000]
-storemerge347_loc_load        (load       ) [ 0000]
-tmp_s                         (partset    ) [ 0000]
-DNA_shr_two_write_assign      (partset    ) [ 0000]
-storemerge246_loc_load        (load       ) [ 0000]
-tmp_15                        (partset    ) [ 0000]
-tmp_16                        (partset    ) [ 0000]
-DNA_shr_three_write_assign    (partset    ) [ 0000]
-storemerge145_loc_load        (load       ) [ 0000]
-tmp_17                        (partset    ) [ 0000]
-tmp_18                        (partset    ) [ 0000]
-tmp_19                        (partset    ) [ 0000]
-DNA_shr_four_write_assign     (partset    ) [ 0000]
-storemerge44_loc_load         (load       ) [ 0000]
-tmp_20                        (partset    ) [ 0000]
-tmp_21                        (partset    ) [ 0000]
-tmp_22                        (partset    ) [ 0000]
-tmp_23                        (partset    ) [ 0000]
-DNA_shr_five_write_assign     (partset    ) [ 0000]
-mrv                           (insertvalue) [ 0000]
-mrv_1                         (insertvalue) [ 0000]
-mrv_2                         (insertvalue) [ 0000]
-mrv_3                         (insertvalue) [ 0000]
-mrv_4                         (insertvalue) [ 0000]
-mrv_5                         (insertvalue) [ 0000]
-mrv_6                         (insertvalue) [ 0000]
-mrv_7                         (insertvalue) [ 0000]
-mrv_8                         (insertvalue) [ 0000]
-mrv_9                         (insertvalue) [ 0000]
-mrv_s                         (insertvalue) [ 0000]
-ret_ln629                     (ret        ) [ 0000]
+storemerge44_i_loc       (alloca     ) [ 0111]
+storemerge145_i_loc      (alloca     ) [ 0111]
+storemerge246_i_loc      (alloca     ) [ 0111]
+storemerge347_i_loc      (alloca     ) [ 0111]
+storemerge448_i_loc      (alloca     ) [ 0111]
+storemerge549_i_loc      (alloca     ) [ 0111]
+storemerge650_i_loc      (alloca     ) [ 0111]
+storemerge751_i_loc      (alloca     ) [ 0111]
+storemerge852_i_loc      (alloca     ) [ 0111]
+storemerge953_i_loc      (alloca     ) [ 0111]
+DNA_nsh_out_0_loc        (alloca     ) [ 0111]
+ReadSeq_read             (read       ) [ 0000]
+RefSeq_read              (read       ) [ 0000]
+DNA_1                    (xor        ) [ 0010]
+shl_ln398                (shl        ) [ 0000]
+DNA_2                    (xor        ) [ 0010]
+shl_ln417                (shl        ) [ 0000]
+DNA_3                    (xor        ) [ 0010]
+shl_ln436                (shl        ) [ 0000]
+DNA_6                    (xor        ) [ 0010]
+shl_ln460                (shl        ) [ 0000]
+DNA_7                    (xor        ) [ 0010]
+shl_ln486                (shl        ) [ 0000]
+DNA_8                    (xor        ) [ 0010]
+lshr_ln                  (partselect ) [ 0000]
+zext_ln514               (zext       ) [ 0000]
+DNA_4                    (xor        ) [ 0010]
+lshr_ln1                 (partselect ) [ 0000]
+zext_ln532               (zext       ) [ 0000]
+DNA_5                    (xor        ) [ 0010]
+lshr_ln2                 (partselect ) [ 0000]
+zext_ln554               (zext       ) [ 0000]
+DNA_9                    (xor        ) [ 0010]
+lshr_ln3                 (partselect ) [ 0000]
+zext_ln578               (zext       ) [ 0000]
+DNA_10                   (xor        ) [ 0010]
+lshr_ln4                 (partselect ) [ 0000]
+zext_ln605               (zext       ) [ 0000]
+DNA_11                   (xor        ) [ 0010]
+call_ln373               (call       ) [ 0000]
+call_ln398               (call       ) [ 0000]
+call_ln417               (call       ) [ 0000]
+call_ln436               (call       ) [ 0000]
+call_ln460               (call       ) [ 0000]
+call_ln486               (call       ) [ 0000]
+call_ln514               (call       ) [ 0000]
+call_ln532               (call       ) [ 0000]
+call_ln554               (call       ) [ 0000]
+call_ln578               (call       ) [ 0000]
+call_ln605               (call       ) [ 0000]
+DNA_nsh_out_0_loc_load   (load       ) [ 0000]
+storemerge953_i_loc_load (load       ) [ 0000]
+DNA_shl_one_out          (partset    ) [ 0000]
+storemerge852_i_loc_load (load       ) [ 0000]
+DNA_shl_two_out          (partset    ) [ 0000]
+storemerge751_i_loc_load (load       ) [ 0000]
+DNA_shl_three_out        (partset    ) [ 0000]
+storemerge650_i_loc_load (load       ) [ 0000]
+DNA_shl_four_out         (partset    ) [ 0000]
+storemerge549_i_loc_load (load       ) [ 0000]
+DNA_shl_five_out         (partset    ) [ 0000]
+storemerge448_i_loc_load (load       ) [ 0000]
+DNA_shr_one_out          (partset    ) [ 0000]
+storemerge347_i_loc_load (load       ) [ 0000]
+tmp_32_i                 (partset    ) [ 0000]
+DNA_shr_two_out          (partset    ) [ 0000]
+storemerge246_i_loc_load (load       ) [ 0000]
+tmp_38_i                 (partset    ) [ 0000]
+tmp_39_i                 (partset    ) [ 0000]
+DNA_shr_three_out        (partset    ) [ 0000]
+storemerge145_i_loc_load (load       ) [ 0000]
+tmp_45_i                 (partset    ) [ 0000]
+tmp_46_i                 (partset    ) [ 0000]
+tmp_47_i                 (partset    ) [ 0000]
+DNA_shr_four_out         (partset    ) [ 0000]
+storemerge44_i_loc_load  (load       ) [ 0000]
+tmp_53_i                 (partset    ) [ 0000]
+tmp_54_i                 (partset    ) [ 0000]
+tmp_55_i                 (partset    ) [ 0000]
+tmp_56_i                 (partset    ) [ 0000]
+DNA_shr_five_out         (partset    ) [ 0000]
+mrv                      (insertvalue) [ 0000]
+mrv_1                    (insertvalue) [ 0000]
+mrv_2                    (insertvalue) [ 0000]
+mrv_3                    (insertvalue) [ 0000]
+mrv_4                    (insertvalue) [ 0000]
+mrv_5                    (insertvalue) [ 0000]
+mrv_6                    (insertvalue) [ 0000]
+mrv_7                    (insertvalue) [ 0000]
+mrv_8                    (insertvalue) [ 0000]
+mrv_9                    (insertvalue) [ 0000]
+mrv_s                    (insertvalue) [ 0000]
+ret_ln701                (ret        ) [ 0000]
 </LifeTime>
 
 <model>
 
 <comp_list>
-<comp id="0" class="1000" name="DNA_read_val">
+<comp id="0" class="1000" name="ReadSeq">
 <pin_list>
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="DNA_read_val"/></StgValue>
+<StgValue><ssdm name="ReadSeq"/></StgValue>
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="DNA_ref_val">
+<comp id="2" class="1000" name="RefSeq">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="DNA_ref_val"/></StgValue>
+<StgValue><ssdm name="RefSeq"/></StgValue>
 </bind>
 </comp>
 
@@ -489,7 +493,7 @@ ret_ln629                     (ret        ) [ 0000]
 <pin id="5" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i256"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -498,7 +502,7 @@ ret_ln629                     (ret        ) [ 0000]
 <pin id="7" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i256P0A"/></StgValue>
 </bind>
 </comp>
 
@@ -925,128 +929,128 @@ ret_ln629                     (ret        ) [ 0000]
 </bind>
 </comp>
 
-<comp id="102" class="1004" name="storemerge44_loc_fu_102">
+<comp id="102" class="1004" name="storemerge44_i_loc_fu_102">
 <pin_list>
 <pin id="103" dir="0" index="0" bw="1" slack="0"/>
 <pin id="104" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge44_loc/1 "/>
+<opset="storemerge44_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="106" class="1004" name="storemerge145_loc_fu_106">
+<comp id="106" class="1004" name="storemerge145_i_loc_fu_106">
 <pin_list>
 <pin id="107" dir="0" index="0" bw="1" slack="0"/>
 <pin id="108" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge145_loc/1 "/>
+<opset="storemerge145_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="110" class="1004" name="storemerge246_loc_fu_110">
+<comp id="110" class="1004" name="storemerge246_i_loc_fu_110">
 <pin_list>
 <pin id="111" dir="0" index="0" bw="1" slack="0"/>
 <pin id="112" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge246_loc/1 "/>
+<opset="storemerge246_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="114" class="1004" name="storemerge347_loc_fu_114">
+<comp id="114" class="1004" name="storemerge347_i_loc_fu_114">
 <pin_list>
 <pin id="115" dir="0" index="0" bw="1" slack="0"/>
 <pin id="116" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge347_loc/1 "/>
+<opset="storemerge347_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="118" class="1004" name="storemerge448_loc_fu_118">
+<comp id="118" class="1004" name="storemerge448_i_loc_fu_118">
 <pin_list>
 <pin id="119" dir="0" index="0" bw="1" slack="0"/>
 <pin id="120" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge448_loc/1 "/>
+<opset="storemerge448_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="122" class="1004" name="storemerge549_loc_fu_122">
+<comp id="122" class="1004" name="storemerge549_i_loc_fu_122">
 <pin_list>
 <pin id="123" dir="0" index="0" bw="1" slack="0"/>
 <pin id="124" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge549_loc/1 "/>
+<opset="storemerge549_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="126" class="1004" name="storemerge650_loc_fu_126">
+<comp id="126" class="1004" name="storemerge650_i_loc_fu_126">
 <pin_list>
 <pin id="127" dir="0" index="0" bw="1" slack="0"/>
 <pin id="128" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge650_loc/1 "/>
+<opset="storemerge650_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="130" class="1004" name="storemerge751_loc_fu_130">
+<comp id="130" class="1004" name="storemerge751_i_loc_fu_130">
 <pin_list>
 <pin id="131" dir="0" index="0" bw="1" slack="0"/>
 <pin id="132" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge751_loc/1 "/>
+<opset="storemerge751_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="134" class="1004" name="storemerge852_loc_fu_134">
+<comp id="134" class="1004" name="storemerge852_i_loc_fu_134">
 <pin_list>
 <pin id="135" dir="0" index="0" bw="1" slack="0"/>
 <pin id="136" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge852_loc/1 "/>
+<opset="storemerge852_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="138" class="1004" name="storemerge953_loc_fu_138">
+<comp id="138" class="1004" name="storemerge953_i_loc_fu_138">
 <pin_list>
 <pin id="139" dir="0" index="0" bw="1" slack="0"/>
 <pin id="140" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="storemerge953_loc/1 "/>
+<opset="storemerge953_i_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="142" class="1004" name="DNA_nsh_write_assign_loc_fu_142">
+<comp id="142" class="1004" name="DNA_nsh_out_0_loc_fu_142">
 <pin_list>
 <pin id="143" dir="0" index="0" bw="1" slack="0"/>
 <pin id="144" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="alloca(26) " fcode="alloca"/>
-<opset="DNA_nsh_write_assign_loc/1 "/>
+<opset="DNA_nsh_out_0_loc/1 "/>
 </bind>
 </comp>
 
-<comp id="146" class="1004" name="DNA_ref_val_read_read_fu_146">
+<comp id="146" class="1004" name="ReadSeq_read_read_fu_146">
 <pin_list>
 <pin id="147" dir="0" index="0" bw="256" slack="0"/>
 <pin id="148" dir="0" index="1" bw="256" slack="0"/>
@@ -1054,11 +1058,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="DNA_ref_val_read/1 "/>
+<opset="ReadSeq_read/1 "/>
 </bind>
 </comp>
 
-<comp id="152" class="1004" name="DNA_read_val_read_read_fu_152">
+<comp id="152" class="1004" name="RefSeq_read_read_fu_152">
 <pin_list>
 <pin id="153" dir="0" index="0" bw="256" slack="0"/>
 <pin id="154" dir="0" index="1" bw="256" slack="0"/>
@@ -1066,7 +1070,7 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="DNA_read_val_read/1 "/>
+<opset="RefSeq_read/1 "/>
 </bind>
 </comp>
 
@@ -1530,29 +1534,29 @@ ret_ln629                     (ret        ) [ 0000]
 </bind>
 </comp>
 
-<comp id="401" class="1004" name="DNA_nsh_write_assign_loc_load_load_fu_401">
+<comp id="401" class="1004" name="DNA_nsh_out_0_loc_load_load_fu_401">
 <pin_list>
 <pin id="402" dir="0" index="0" bw="128" slack="2"/>
 <pin id="403" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="DNA_nsh_write_assign_loc_load/3 "/>
+<opset="DNA_nsh_out_0_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="404" class="1004" name="storemerge953_loc_load_load_fu_404">
+<comp id="404" class="1004" name="storemerge953_i_loc_load_load_fu_404">
 <pin_list>
 <pin id="405" dir="0" index="0" bw="128" slack="2"/>
 <pin id="406" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge953_loc_load/3 "/>
+<opset="storemerge953_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="407" class="1004" name="DNA_shl_one_write_assign_fu_407">
+<comp id="407" class="1004" name="DNA_shl_one_out_fu_407">
 <pin_list>
 <pin id="408" dir="0" index="0" bw="128" slack="0"/>
 <pin id="409" dir="0" index="1" bw="128" slack="0"/>
@@ -1562,22 +1566,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shl_one_write_assign/3 "/>
+<opset="DNA_shl_one_out/3 "/>
 </bind>
 </comp>
 
-<comp id="417" class="1004" name="storemerge852_loc_load_load_fu_417">
+<comp id="417" class="1004" name="storemerge852_i_loc_load_load_fu_417">
 <pin_list>
 <pin id="418" dir="0" index="0" bw="128" slack="2"/>
 <pin id="419" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge852_loc_load/3 "/>
+<opset="storemerge852_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="420" class="1004" name="DNA_shl_two_write_assign_fu_420">
+<comp id="420" class="1004" name="DNA_shl_two_out_fu_420">
 <pin_list>
 <pin id="421" dir="0" index="0" bw="128" slack="0"/>
 <pin id="422" dir="0" index="1" bw="128" slack="0"/>
@@ -1588,22 +1592,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shl_two_write_assign/3 "/>
+<opset="DNA_shl_two_out/3 "/>
 </bind>
 </comp>
 
-<comp id="432" class="1004" name="storemerge751_loc_load_load_fu_432">
+<comp id="432" class="1004" name="storemerge751_i_loc_load_load_fu_432">
 <pin_list>
 <pin id="433" dir="0" index="0" bw="128" slack="2"/>
 <pin id="434" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge751_loc_load/3 "/>
+<opset="storemerge751_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="435" class="1004" name="DNA_shl_three_write_assign_fu_435">
+<comp id="435" class="1004" name="DNA_shl_three_out_fu_435">
 <pin_list>
 <pin id="436" dir="0" index="0" bw="128" slack="0"/>
 <pin id="437" dir="0" index="1" bw="128" slack="0"/>
@@ -1614,22 +1618,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shl_three_write_assign/3 "/>
+<opset="DNA_shl_three_out/3 "/>
 </bind>
 </comp>
 
-<comp id="447" class="1004" name="storemerge650_loc_load_load_fu_447">
+<comp id="447" class="1004" name="storemerge650_i_loc_load_load_fu_447">
 <pin_list>
 <pin id="448" dir="0" index="0" bw="128" slack="2"/>
 <pin id="449" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge650_loc_load/3 "/>
+<opset="storemerge650_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="450" class="1004" name="DNA_shl_four_write_assign_fu_450">
+<comp id="450" class="1004" name="DNA_shl_four_out_fu_450">
 <pin_list>
 <pin id="451" dir="0" index="0" bw="128" slack="0"/>
 <pin id="452" dir="0" index="1" bw="128" slack="0"/>
@@ -1640,22 +1644,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shl_four_write_assign/3 "/>
+<opset="DNA_shl_four_out/3 "/>
 </bind>
 </comp>
 
-<comp id="462" class="1004" name="storemerge549_loc_load_load_fu_462">
+<comp id="462" class="1004" name="storemerge549_i_loc_load_load_fu_462">
 <pin_list>
 <pin id="463" dir="0" index="0" bw="128" slack="2"/>
 <pin id="464" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge549_loc_load/3 "/>
+<opset="storemerge549_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="465" class="1004" name="DNA_shl_five_write_assign_fu_465">
+<comp id="465" class="1004" name="DNA_shl_five_out_fu_465">
 <pin_list>
 <pin id="466" dir="0" index="0" bw="128" slack="0"/>
 <pin id="467" dir="0" index="1" bw="128" slack="0"/>
@@ -1666,22 +1670,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shl_five_write_assign/3 "/>
+<opset="DNA_shl_five_out/3 "/>
 </bind>
 </comp>
 
-<comp id="477" class="1004" name="storemerge448_loc_load_load_fu_477">
+<comp id="477" class="1004" name="storemerge448_i_loc_load_load_fu_477">
 <pin_list>
 <pin id="478" dir="0" index="0" bw="128" slack="2"/>
 <pin id="479" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge448_loc_load/3 "/>
+<opset="storemerge448_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="480" class="1004" name="DNA_shr_one_write_assign_fu_480">
+<comp id="480" class="1004" name="DNA_shr_one_out_fu_480">
 <pin_list>
 <pin id="481" dir="0" index="0" bw="128" slack="0"/>
 <pin id="482" dir="0" index="1" bw="128" slack="0"/>
@@ -1691,22 +1695,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shr_one_write_assign/3 "/>
+<opset="DNA_shr_one_out/3 "/>
 </bind>
 </comp>
 
-<comp id="490" class="1004" name="storemerge347_loc_load_load_fu_490">
+<comp id="490" class="1004" name="storemerge347_i_loc_load_load_fu_490">
 <pin_list>
 <pin id="491" dir="0" index="0" bw="128" slack="2"/>
 <pin id="492" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge347_loc_load/3 "/>
+<opset="storemerge347_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="493" class="1004" name="tmp_s_fu_493">
+<comp id="493" class="1004" name="tmp_32_i_fu_493">
 <pin_list>
 <pin id="494" dir="0" index="0" bw="128" slack="0"/>
 <pin id="495" dir="0" index="1" bw="128" slack="0"/>
@@ -1716,11 +1720,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_s/3 "/>
+<opset="tmp_32_i/3 "/>
 </bind>
 </comp>
 
-<comp id="503" class="1004" name="DNA_shr_two_write_assign_fu_503">
+<comp id="503" class="1004" name="DNA_shr_two_out_fu_503">
 <pin_list>
 <pin id="504" dir="0" index="0" bw="128" slack="0"/>
 <pin id="505" dir="0" index="1" bw="128" slack="0"/>
@@ -1730,22 +1734,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shr_two_write_assign/3 "/>
+<opset="DNA_shr_two_out/3 "/>
 </bind>
 </comp>
 
-<comp id="513" class="1004" name="storemerge246_loc_load_load_fu_513">
+<comp id="513" class="1004" name="storemerge246_i_loc_load_load_fu_513">
 <pin_list>
 <pin id="514" dir="0" index="0" bw="128" slack="2"/>
 <pin id="515" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge246_loc_load/3 "/>
+<opset="storemerge246_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="516" class="1004" name="tmp_15_fu_516">
+<comp id="516" class="1004" name="tmp_38_i_fu_516">
 <pin_list>
 <pin id="517" dir="0" index="0" bw="128" slack="0"/>
 <pin id="518" dir="0" index="1" bw="128" slack="0"/>
@@ -1755,11 +1759,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_15/3 "/>
+<opset="tmp_38_i/3 "/>
 </bind>
 </comp>
 
-<comp id="526" class="1004" name="tmp_16_fu_526">
+<comp id="526" class="1004" name="tmp_39_i_fu_526">
 <pin_list>
 <pin id="527" dir="0" index="0" bw="128" slack="0"/>
 <pin id="528" dir="0" index="1" bw="128" slack="0"/>
@@ -1769,11 +1773,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_16/3 "/>
+<opset="tmp_39_i/3 "/>
 </bind>
 </comp>
 
-<comp id="536" class="1004" name="DNA_shr_three_write_assign_fu_536">
+<comp id="536" class="1004" name="DNA_shr_three_out_fu_536">
 <pin_list>
 <pin id="537" dir="0" index="0" bw="128" slack="0"/>
 <pin id="538" dir="0" index="1" bw="128" slack="0"/>
@@ -1783,22 +1787,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shr_three_write_assign/3 "/>
+<opset="DNA_shr_three_out/3 "/>
 </bind>
 </comp>
 
-<comp id="546" class="1004" name="storemerge145_loc_load_load_fu_546">
+<comp id="546" class="1004" name="storemerge145_i_loc_load_load_fu_546">
 <pin_list>
 <pin id="547" dir="0" index="0" bw="128" slack="2"/>
 <pin id="548" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge145_loc_load/3 "/>
+<opset="storemerge145_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="549" class="1004" name="tmp_17_fu_549">
+<comp id="549" class="1004" name="tmp_45_i_fu_549">
 <pin_list>
 <pin id="550" dir="0" index="0" bw="128" slack="0"/>
 <pin id="551" dir="0" index="1" bw="128" slack="0"/>
@@ -1808,11 +1812,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_17/3 "/>
+<opset="tmp_45_i/3 "/>
 </bind>
 </comp>
 
-<comp id="559" class="1004" name="tmp_18_fu_559">
+<comp id="559" class="1004" name="tmp_46_i_fu_559">
 <pin_list>
 <pin id="560" dir="0" index="0" bw="128" slack="0"/>
 <pin id="561" dir="0" index="1" bw="128" slack="0"/>
@@ -1822,11 +1826,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_18/3 "/>
+<opset="tmp_46_i/3 "/>
 </bind>
 </comp>
 
-<comp id="569" class="1004" name="tmp_19_fu_569">
+<comp id="569" class="1004" name="tmp_47_i_fu_569">
 <pin_list>
 <pin id="570" dir="0" index="0" bw="128" slack="0"/>
 <pin id="571" dir="0" index="1" bw="128" slack="0"/>
@@ -1836,11 +1840,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_19/3 "/>
+<opset="tmp_47_i/3 "/>
 </bind>
 </comp>
 
-<comp id="579" class="1004" name="DNA_shr_four_write_assign_fu_579">
+<comp id="579" class="1004" name="DNA_shr_four_out_fu_579">
 <pin_list>
 <pin id="580" dir="0" index="0" bw="128" slack="0"/>
 <pin id="581" dir="0" index="1" bw="128" slack="0"/>
@@ -1850,22 +1854,22 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shr_four_write_assign/3 "/>
+<opset="DNA_shr_four_out/3 "/>
 </bind>
 </comp>
 
-<comp id="589" class="1004" name="storemerge44_loc_load_load_fu_589">
+<comp id="589" class="1004" name="storemerge44_i_loc_load_load_fu_589">
 <pin_list>
 <pin id="590" dir="0" index="0" bw="128" slack="2"/>
 <pin id="591" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
-<opset="storemerge44_loc_load/3 "/>
+<opset="storemerge44_i_loc_load/3 "/>
 </bind>
 </comp>
 
-<comp id="592" class="1004" name="tmp_20_fu_592">
+<comp id="592" class="1004" name="tmp_53_i_fu_592">
 <pin_list>
 <pin id="593" dir="0" index="0" bw="128" slack="0"/>
 <pin id="594" dir="0" index="1" bw="128" slack="0"/>
@@ -1875,11 +1879,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_20/3 "/>
+<opset="tmp_53_i/3 "/>
 </bind>
 </comp>
 
-<comp id="602" class="1004" name="tmp_21_fu_602">
+<comp id="602" class="1004" name="tmp_54_i_fu_602">
 <pin_list>
 <pin id="603" dir="0" index="0" bw="128" slack="0"/>
 <pin id="604" dir="0" index="1" bw="128" slack="0"/>
@@ -1889,11 +1893,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_21/3 "/>
+<opset="tmp_54_i/3 "/>
 </bind>
 </comp>
 
-<comp id="612" class="1004" name="tmp_22_fu_612">
+<comp id="612" class="1004" name="tmp_55_i_fu_612">
 <pin_list>
 <pin id="613" dir="0" index="0" bw="128" slack="0"/>
 <pin id="614" dir="0" index="1" bw="128" slack="0"/>
@@ -1903,11 +1907,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_22/3 "/>
+<opset="tmp_55_i/3 "/>
 </bind>
 </comp>
 
-<comp id="622" class="1004" name="tmp_23_fu_622">
+<comp id="622" class="1004" name="tmp_56_i_fu_622">
 <pin_list>
 <pin id="623" dir="0" index="0" bw="128" slack="0"/>
 <pin id="624" dir="0" index="1" bw="128" slack="0"/>
@@ -1917,11 +1921,11 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="tmp_23/3 "/>
+<opset="tmp_56_i/3 "/>
 </bind>
 </comp>
 
-<comp id="632" class="1004" name="DNA_shr_five_write_assign_fu_632">
+<comp id="632" class="1004" name="DNA_shr_five_out_fu_632">
 <pin_list>
 <pin id="633" dir="0" index="0" bw="128" slack="0"/>
 <pin id="634" dir="0" index="1" bw="128" slack="0"/>
@@ -1931,7 +1935,7 @@ ret_ln629                     (ret        ) [ 0000]
 </pin_list>
 <bind>
 <opcode="partset(1003) " fcode="partset"/>
-<opset="DNA_shr_five_write_assign/3 "/>
+<opset="DNA_shr_five_out/3 "/>
 </bind>
 </comp>
 
@@ -2067,113 +2071,113 @@ ret_ln629                     (ret        ) [ 0000]
 </bind>
 </comp>
 
-<comp id="708" class="1005" name="storemerge44_loc_reg_708">
+<comp id="708" class="1005" name="storemerge44_i_loc_reg_708">
 <pin_list>
 <pin id="709" dir="0" index="0" bw="128" slack="0"/>
 <pin id="710" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge44_loc "/>
+<opset="storemerge44_i_loc "/>
 </bind>
 </comp>
 
-<comp id="714" class="1005" name="storemerge145_loc_reg_714">
+<comp id="714" class="1005" name="storemerge145_i_loc_reg_714">
 <pin_list>
 <pin id="715" dir="0" index="0" bw="128" slack="0"/>
 <pin id="716" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge145_loc "/>
+<opset="storemerge145_i_loc "/>
 </bind>
 </comp>
 
-<comp id="720" class="1005" name="storemerge246_loc_reg_720">
+<comp id="720" class="1005" name="storemerge246_i_loc_reg_720">
 <pin_list>
 <pin id="721" dir="0" index="0" bw="128" slack="0"/>
 <pin id="722" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge246_loc "/>
+<opset="storemerge246_i_loc "/>
 </bind>
 </comp>
 
-<comp id="726" class="1005" name="storemerge347_loc_reg_726">
+<comp id="726" class="1005" name="storemerge347_i_loc_reg_726">
 <pin_list>
 <pin id="727" dir="0" index="0" bw="128" slack="0"/>
 <pin id="728" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge347_loc "/>
+<opset="storemerge347_i_loc "/>
 </bind>
 </comp>
 
-<comp id="732" class="1005" name="storemerge448_loc_reg_732">
+<comp id="732" class="1005" name="storemerge448_i_loc_reg_732">
 <pin_list>
 <pin id="733" dir="0" index="0" bw="128" slack="0"/>
 <pin id="734" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge448_loc "/>
+<opset="storemerge448_i_loc "/>
 </bind>
 </comp>
 
-<comp id="738" class="1005" name="storemerge549_loc_reg_738">
+<comp id="738" class="1005" name="storemerge549_i_loc_reg_738">
 <pin_list>
 <pin id="739" dir="0" index="0" bw="128" slack="0"/>
 <pin id="740" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge549_loc "/>
+<opset="storemerge549_i_loc "/>
 </bind>
 </comp>
 
-<comp id="744" class="1005" name="storemerge650_loc_reg_744">
+<comp id="744" class="1005" name="storemerge650_i_loc_reg_744">
 <pin_list>
 <pin id="745" dir="0" index="0" bw="128" slack="0"/>
 <pin id="746" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge650_loc "/>
+<opset="storemerge650_i_loc "/>
 </bind>
 </comp>
 
-<comp id="750" class="1005" name="storemerge751_loc_reg_750">
+<comp id="750" class="1005" name="storemerge751_i_loc_reg_750">
 <pin_list>
 <pin id="751" dir="0" index="0" bw="128" slack="0"/>
 <pin id="752" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge751_loc "/>
+<opset="storemerge751_i_loc "/>
 </bind>
 </comp>
 
-<comp id="756" class="1005" name="storemerge852_loc_reg_756">
+<comp id="756" class="1005" name="storemerge852_i_loc_reg_756">
 <pin_list>
 <pin id="757" dir="0" index="0" bw="128" slack="0"/>
 <pin id="758" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge852_loc "/>
+<opset="storemerge852_i_loc "/>
 </bind>
 </comp>
 
-<comp id="762" class="1005" name="storemerge953_loc_reg_762">
+<comp id="762" class="1005" name="storemerge953_i_loc_reg_762">
 <pin_list>
 <pin id="763" dir="0" index="0" bw="128" slack="0"/>
 <pin id="764" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="storemerge953_loc "/>
+<opset="storemerge953_i_loc "/>
 </bind>
 </comp>
 
-<comp id="768" class="1005" name="DNA_nsh_write_assign_loc_reg_768">
+<comp id="768" class="1005" name="DNA_nsh_out_0_loc_reg_768">
 <pin_list>
 <pin id="769" dir="0" index="0" bw="128" slack="0"/>
 <pin id="770" dir="1" index="1" bw="128" slack="0"/>
 </pin_list>
 <bind>
-<opset="DNA_nsh_write_assign_loc "/>
+<opset="DNA_nsh_out_0_loc "/>
 </bind>
 </comp>
 
@@ -2290,35 +2294,35 @@ ret_ln629                     (ret        ) [ 0000]
 </comp_list>
 
 <net_list>
-<net id="105"><net_src comp="6" pin="0"/><net_sink comp="102" pin=0"/></net>
+<net id="105"><net_src comp="4" pin="0"/><net_sink comp="102" pin=0"/></net>
 
-<net id="109"><net_src comp="6" pin="0"/><net_sink comp="106" pin=0"/></net>
+<net id="109"><net_src comp="4" pin="0"/><net_sink comp="106" pin=0"/></net>
 
-<net id="113"><net_src comp="6" pin="0"/><net_sink comp="110" pin=0"/></net>
+<net id="113"><net_src comp="4" pin="0"/><net_sink comp="110" pin=0"/></net>
 
-<net id="117"><net_src comp="6" pin="0"/><net_sink comp="114" pin=0"/></net>
+<net id="117"><net_src comp="4" pin="0"/><net_sink comp="114" pin=0"/></net>
 
-<net id="121"><net_src comp="6" pin="0"/><net_sink comp="118" pin=0"/></net>
+<net id="121"><net_src comp="4" pin="0"/><net_sink comp="118" pin=0"/></net>
 
-<net id="125"><net_src comp="6" pin="0"/><net_sink comp="122" pin=0"/></net>
+<net id="125"><net_src comp="4" pin="0"/><net_sink comp="122" pin=0"/></net>
 
-<net id="129"><net_src comp="6" pin="0"/><net_sink comp="126" pin=0"/></net>
+<net id="129"><net_src comp="4" pin="0"/><net_sink comp="126" pin=0"/></net>
 
-<net id="133"><net_src comp="6" pin="0"/><net_sink comp="130" pin=0"/></net>
+<net id="133"><net_src comp="4" pin="0"/><net_sink comp="130" pin=0"/></net>
 
-<net id="137"><net_src comp="6" pin="0"/><net_sink comp="134" pin=0"/></net>
+<net id="137"><net_src comp="4" pin="0"/><net_sink comp="134" pin=0"/></net>
 
-<net id="141"><net_src comp="6" pin="0"/><net_sink comp="138" pin=0"/></net>
+<net id="141"><net_src comp="4" pin="0"/><net_sink comp="138" pin=0"/></net>
 
-<net id="145"><net_src comp="6" pin="0"/><net_sink comp="142" pin=0"/></net>
+<net id="145"><net_src comp="4" pin="0"/><net_sink comp="142" pin=0"/></net>
 
-<net id="150"><net_src comp="4" pin="0"/><net_sink comp="146" pin=0"/></net>
+<net id="150"><net_src comp="6" pin="0"/><net_sink comp="146" pin=0"/></net>
 
-<net id="151"><net_src comp="2" pin="0"/><net_sink comp="146" pin=1"/></net>
+<net id="151"><net_src comp="0" pin="0"/><net_sink comp="146" pin=1"/></net>
 
-<net id="156"><net_src comp="4" pin="0"/><net_sink comp="152" pin=0"/></net>
+<net id="156"><net_src comp="6" pin="0"/><net_sink comp="152" pin=0"/></net>
 
-<net id="157"><net_src comp="0" pin="0"/><net_sink comp="152" pin=1"/></net>
+<net id="157"><net_src comp="2" pin="0"/><net_sink comp="152" pin=1"/></net>
 
 <net id="163"><net_src comp="8" pin="0"/><net_sink comp="158" pin=0"/></net>
 
@@ -2342,65 +2346,65 @@ ret_ln629                     (ret        ) [ 0000]
 
 <net id="223"><net_src comp="60" pin="0"/><net_sink comp="218" pin=0"/></net>
 
-<net id="228"><net_src comp="146" pin="2"/><net_sink comp="224" pin=0"/></net>
+<net id="228"><net_src comp="152" pin="2"/><net_sink comp="224" pin=0"/></net>
 
-<net id="229"><net_src comp="152" pin="2"/><net_sink comp="224" pin=1"/></net>
+<net id="229"><net_src comp="146" pin="2"/><net_sink comp="224" pin=1"/></net>
 
 <net id="230"><net_src comp="224" pin="2"/><net_sink comp="158" pin=1"/></net>
 
-<net id="235"><net_src comp="152" pin="2"/><net_sink comp="231" pin=0"/></net>
+<net id="235"><net_src comp="146" pin="2"/><net_sink comp="231" pin=0"/></net>
 
 <net id="236"><net_src comp="10" pin="0"/><net_sink comp="231" pin=1"/></net>
 
-<net id="241"><net_src comp="231" pin="2"/><net_sink comp="237" pin=0"/></net>
+<net id="241"><net_src comp="152" pin="2"/><net_sink comp="237" pin=0"/></net>
 
-<net id="242"><net_src comp="146" pin="2"/><net_sink comp="237" pin=1"/></net>
+<net id="242"><net_src comp="231" pin="2"/><net_sink comp="237" pin=1"/></net>
 
 <net id="243"><net_src comp="237" pin="2"/><net_sink comp="164" pin=1"/></net>
 
-<net id="248"><net_src comp="152" pin="2"/><net_sink comp="244" pin=0"/></net>
+<net id="248"><net_src comp="146" pin="2"/><net_sink comp="244" pin=0"/></net>
 
 <net id="249"><net_src comp="14" pin="0"/><net_sink comp="244" pin=1"/></net>
 
-<net id="254"><net_src comp="244" pin="2"/><net_sink comp="250" pin=0"/></net>
+<net id="254"><net_src comp="152" pin="2"/><net_sink comp="250" pin=0"/></net>
 
-<net id="255"><net_src comp="146" pin="2"/><net_sink comp="250" pin=1"/></net>
+<net id="255"><net_src comp="244" pin="2"/><net_sink comp="250" pin=1"/></net>
 
 <net id="256"><net_src comp="250" pin="2"/><net_sink comp="170" pin=1"/></net>
 
-<net id="261"><net_src comp="152" pin="2"/><net_sink comp="257" pin=0"/></net>
+<net id="261"><net_src comp="146" pin="2"/><net_sink comp="257" pin=0"/></net>
 
 <net id="262"><net_src comp="18" pin="0"/><net_sink comp="257" pin=1"/></net>
 
-<net id="267"><net_src comp="257" pin="2"/><net_sink comp="263" pin=0"/></net>
+<net id="267"><net_src comp="152" pin="2"/><net_sink comp="263" pin=0"/></net>
 
-<net id="268"><net_src comp="146" pin="2"/><net_sink comp="263" pin=1"/></net>
+<net id="268"><net_src comp="257" pin="2"/><net_sink comp="263" pin=1"/></net>
 
 <net id="269"><net_src comp="263" pin="2"/><net_sink comp="176" pin=1"/></net>
 
-<net id="274"><net_src comp="152" pin="2"/><net_sink comp="270" pin=0"/></net>
+<net id="274"><net_src comp="146" pin="2"/><net_sink comp="270" pin=0"/></net>
 
 <net id="275"><net_src comp="22" pin="0"/><net_sink comp="270" pin=1"/></net>
 
-<net id="280"><net_src comp="270" pin="2"/><net_sink comp="276" pin=0"/></net>
+<net id="280"><net_src comp="152" pin="2"/><net_sink comp="276" pin=0"/></net>
 
-<net id="281"><net_src comp="146" pin="2"/><net_sink comp="276" pin=1"/></net>
+<net id="281"><net_src comp="270" pin="2"/><net_sink comp="276" pin=1"/></net>
 
 <net id="282"><net_src comp="276" pin="2"/><net_sink comp="182" pin=1"/></net>
 
-<net id="287"><net_src comp="152" pin="2"/><net_sink comp="283" pin=0"/></net>
+<net id="287"><net_src comp="146" pin="2"/><net_sink comp="283" pin=0"/></net>
 
 <net id="288"><net_src comp="26" pin="0"/><net_sink comp="283" pin=1"/></net>
 
-<net id="293"><net_src comp="283" pin="2"/><net_sink comp="289" pin=0"/></net>
+<net id="293"><net_src comp="152" pin="2"/><net_sink comp="289" pin=0"/></net>
 
-<net id="294"><net_src comp="146" pin="2"/><net_sink comp="289" pin=1"/></net>
+<net id="294"><net_src comp="283" pin="2"/><net_sink comp="289" pin=1"/></net>
 
 <net id="295"><net_src comp="289" pin="2"/><net_sink comp="188" pin=1"/></net>
 
 <net id="302"><net_src comp="30" pin="0"/><net_sink comp="296" pin=0"/></net>
 
-<net id="303"><net_src comp="152" pin="2"/><net_sink comp="296" pin=1"/></net>
+<net id="303"><net_src comp="146" pin="2"/><net_sink comp="296" pin=1"/></net>
 
 <net id="304"><net_src comp="32" pin="0"/><net_sink comp="296" pin=2"/></net>
 
@@ -2408,15 +2412,15 @@ ret_ln629                     (ret        ) [ 0000]
 
 <net id="309"><net_src comp="296" pin="4"/><net_sink comp="306" pin=0"/></net>
 
-<net id="314"><net_src comp="306" pin="1"/><net_sink comp="310" pin=0"/></net>
+<net id="314"><net_src comp="152" pin="2"/><net_sink comp="310" pin=0"/></net>
 
-<net id="315"><net_src comp="146" pin="2"/><net_sink comp="310" pin=1"/></net>
+<net id="315"><net_src comp="306" pin="1"/><net_sink comp="310" pin=1"/></net>
 
 <net id="316"><net_src comp="310" pin="2"/><net_sink comp="194" pin=1"/></net>
 
 <net id="323"><net_src comp="38" pin="0"/><net_sink comp="317" pin=0"/></net>
 
-<net id="324"><net_src comp="152" pin="2"/><net_sink comp="317" pin=1"/></net>
+<net id="324"><net_src comp="146" pin="2"/><net_sink comp="317" pin=1"/></net>
 
 <net id="325"><net_src comp="40" pin="0"/><net_sink comp="317" pin=2"/></net>
 
@@ -2424,15 +2428,15 @@ ret_ln629                     (ret        ) [ 0000]
 
 <net id="330"><net_src comp="317" pin="4"/><net_sink comp="327" pin=0"/></net>
 
-<net id="335"><net_src comp="327" pin="1"/><net_sink comp="331" pin=0"/></net>
+<net id="335"><net_src comp="152" pin="2"/><net_sink comp="331" pin=0"/></net>
 
-<net id="336"><net_src comp="146" pin="2"/><net_sink comp="331" pin=1"/></net>
+<net id="336"><net_src comp="327" pin="1"/><net_sink comp="331" pin=1"/></net>
 
 <net id="337"><net_src comp="331" pin="2"/><net_sink comp="200" pin=1"/></net>
 
 <net id="344"><net_src comp="44" pin="0"/><net_sink comp="338" pin=0"/></net>
 
-<net id="345"><net_src comp="152" pin="2"/><net_sink comp="338" pin=1"/></net>
+<net id="345"><net_src comp="146" pin="2"/><net_sink comp="338" pin=1"/></net>
 
 <net id="346"><net_src comp="46" pin="0"/><net_sink comp="338" pin=2"/></net>
 
@@ -2440,15 +2444,15 @@ ret_ln629                     (ret        ) [ 0000]
 
 <net id="351"><net_src comp="338" pin="4"/><net_sink comp="348" pin=0"/></net>
 
-<net id="356"><net_src comp="348" pin="1"/><net_sink comp="352" pin=0"/></net>
+<net id="356"><net_src comp="152" pin="2"/><net_sink comp="352" pin=0"/></net>
 
-<net id="357"><net_src comp="146" pin="2"/><net_sink comp="352" pin=1"/></net>
+<net id="357"><net_src comp="348" pin="1"/><net_sink comp="352" pin=1"/></net>
 
 <net id="358"><net_src comp="352" pin="2"/><net_sink comp="206" pin=1"/></net>
 
 <net id="365"><net_src comp="50" pin="0"/><net_sink comp="359" pin=0"/></net>
 
-<net id="366"><net_src comp="152" pin="2"/><net_sink comp="359" pin=1"/></net>
+<net id="366"><net_src comp="146" pin="2"/><net_sink comp="359" pin=1"/></net>
 
 <net id="367"><net_src comp="52" pin="0"/><net_sink comp="359" pin=2"/></net>
 
@@ -2456,15 +2460,15 @@ ret_ln629                     (ret        ) [ 0000]
 
 <net id="372"><net_src comp="359" pin="4"/><net_sink comp="369" pin=0"/></net>
 
-<net id="377"><net_src comp="369" pin="1"/><net_sink comp="373" pin=0"/></net>
+<net id="377"><net_src comp="152" pin="2"/><net_sink comp="373" pin=0"/></net>
 
-<net id="378"><net_src comp="146" pin="2"/><net_sink comp="373" pin=1"/></net>
+<net id="378"><net_src comp="369" pin="1"/><net_sink comp="373" pin=1"/></net>
 
 <net id="379"><net_src comp="373" pin="2"/><net_sink comp="212" pin=1"/></net>
 
 <net id="386"><net_src comp="56" pin="0"/><net_sink comp="380" pin=0"/></net>
 
-<net id="387"><net_src comp="152" pin="2"/><net_sink comp="380" pin=1"/></net>
+<net id="387"><net_src comp="146" pin="2"/><net_sink comp="380" pin=1"/></net>
 
 <net id="388"><net_src comp="58" pin="0"/><net_sink comp="380" pin=2"/></net>
 
@@ -2472,9 +2476,9 @@ ret_ln629                     (ret        ) [ 0000]
 
 <net id="393"><net_src comp="380" pin="4"/><net_sink comp="390" pin=0"/></net>
 
-<net id="398"><net_src comp="390" pin="1"/><net_sink comp="394" pin=0"/></net>
+<net id="398"><net_src comp="152" pin="2"/><net_sink comp="394" pin=0"/></net>
 
-<net id="399"><net_src comp="146" pin="2"/><net_sink comp="394" pin=1"/></net>
+<net id="399"><net_src comp="390" pin="1"/><net_sink comp="394" pin=1"/></net>
 
 <net id="400"><net_src comp="394" pin="2"/><net_sink comp="218" pin=1"/></net>
 
@@ -2807,9 +2811,11 @@ ret_ln629                     (ret        ) [ 0000]
 
 * FSMD analyzer results:
   - Output states:
+	Port: ReadSeq | {}
+	Port: RefSeq | {}
  - Input state : 
-	Port: NeighborhoodMap_bit : DNA_read_val | {1 }
-	Port: NeighborhoodMap_bit : DNA_ref_val | {1 }
+	Port: NeighborhoodMap_bit : ReadSeq | {1 }
+	Port: NeighborhoodMap_bit : RefSeq | {1 }
   - Chain level:
 	State 1
 		zext_ln514 : 1
@@ -2829,26 +2835,26 @@ ret_ln629                     (ret        ) [ 0000]
 		call_ln605 : 2
 	State 2
 	State 3
-		DNA_shl_one_write_assign : 1
-		DNA_shl_two_write_assign : 1
-		DNA_shl_three_write_assign : 1
-		DNA_shl_four_write_assign : 1
-		DNA_shl_five_write_assign : 1
-		DNA_shr_one_write_assign : 1
-		tmp_s : 1
-		DNA_shr_two_write_assign : 2
-		tmp_15 : 1
-		tmp_16 : 2
-		DNA_shr_three_write_assign : 3
-		tmp_17 : 1
-		tmp_18 : 2
-		tmp_19 : 3
-		DNA_shr_four_write_assign : 4
-		tmp_20 : 1
-		tmp_21 : 2
-		tmp_22 : 3
-		tmp_23 : 4
-		DNA_shr_five_write_assign : 5
+		DNA_shl_one_out : 1
+		DNA_shl_two_out : 1
+		DNA_shl_three_out : 1
+		DNA_shl_four_out : 1
+		DNA_shl_five_out : 1
+		DNA_shr_one_out : 1
+		tmp_32_i : 1
+		DNA_shr_two_out : 2
+		tmp_38_i : 1
+		tmp_39_i : 2
+		DNA_shr_three_out : 3
+		tmp_45_i : 1
+		tmp_46_i : 2
+		tmp_47_i : 3
+		DNA_shr_four_out : 4
+		tmp_53_i : 1
+		tmp_54_i : 2
+		tmp_55_i : 3
+		tmp_56_i : 4
+		DNA_shr_five_out : 5
 		mrv : 1
 		mrv_1 : 2
 		mrv_2 : 3
@@ -2860,7 +2866,7 @@ ret_ln629                     (ret        ) [ 0000]
 		mrv_8 : 9
 		mrv_9 : 10
 		mrv_s : 11
-		ret_ln629 : 12
+		ret_ln701 : 12
 
 
 ============================================================
@@ -2895,8 +2901,8 @@ ret_ln629                     (ret        ) [ 0000]
 |          |                       DNA_10_fu_373                       |    0    |   256   |
 |          |                       DNA_11_fu_394                       |    0    |   256   |
 |----------|-----------------------------------------------------------|---------|---------|
-|   read   |                DNA_ref_val_read_read_fu_146               |    0    |    0    |
-|          |               DNA_read_val_read_read_fu_152               |    0    |    0    |
+|   read   |                  ReadSeq_read_read_fu_146                 |    0    |    0    |
+|          |                  RefSeq_read_read_fu_152                  |    0    |    0    |
 |----------|-----------------------------------------------------------|---------|---------|
 |          |                      shl_ln398_fu_231                     |    0    |    0    |
 |          |                      shl_ln417_fu_244                     |    0    |    0    |
@@ -2916,26 +2922,26 @@ ret_ln629                     (ret        ) [ 0000]
 |          |                     zext_ln578_fu_369                     |    0    |    0    |
 |          |                     zext_ln605_fu_390                     |    0    |    0    |
 |----------|-----------------------------------------------------------|---------|---------|
-|          |              DNA_shl_one_write_assign_fu_407              |    0    |    0    |
-|          |              DNA_shl_two_write_assign_fu_420              |    0    |    0    |
-|          |             DNA_shl_three_write_assign_fu_435             |    0    |    0    |
-|          |              DNA_shl_four_write_assign_fu_450             |    0    |    0    |
-|          |              DNA_shl_five_write_assign_fu_465             |    0    |    0    |
-|          |              DNA_shr_one_write_assign_fu_480              |    0    |    0    |
-|          |                        tmp_s_fu_493                       |    0    |    0    |
-|          |              DNA_shr_two_write_assign_fu_503              |    0    |    0    |
-|          |                       tmp_15_fu_516                       |    0    |    0    |
-|  partset |                       tmp_16_fu_526                       |    0    |    0    |
-|          |             DNA_shr_three_write_assign_fu_536             |    0    |    0    |
-|          |                       tmp_17_fu_549                       |    0    |    0    |
-|          |                       tmp_18_fu_559                       |    0    |    0    |
-|          |                       tmp_19_fu_569                       |    0    |    0    |
-|          |              DNA_shr_four_write_assign_fu_579             |    0    |    0    |
-|          |                       tmp_20_fu_592                       |    0    |    0    |
-|          |                       tmp_21_fu_602                       |    0    |    0    |
-|          |                       tmp_22_fu_612                       |    0    |    0    |
-|          |                       tmp_23_fu_622                       |    0    |    0    |
-|          |              DNA_shr_five_write_assign_fu_632             |    0    |    0    |
+|          |                   DNA_shl_one_out_fu_407                  |    0    |    0    |
+|          |                   DNA_shl_two_out_fu_420                  |    0    |    0    |
+|          |                  DNA_shl_three_out_fu_435                 |    0    |    0    |
+|          |                  DNA_shl_four_out_fu_450                  |    0    |    0    |
+|          |                  DNA_shl_five_out_fu_465                  |    0    |    0    |
+|          |                   DNA_shr_one_out_fu_480                  |    0    |    0    |
+|          |                      tmp_32_i_fu_493                      |    0    |    0    |
+|          |                   DNA_shr_two_out_fu_503                  |    0    |    0    |
+|          |                      tmp_38_i_fu_516                      |    0    |    0    |
+|  partset |                      tmp_39_i_fu_526                      |    0    |    0    |
+|          |                  DNA_shr_three_out_fu_536                 |    0    |    0    |
+|          |                      tmp_45_i_fu_549                      |    0    |    0    |
+|          |                      tmp_46_i_fu_559                      |    0    |    0    |
+|          |                      tmp_47_i_fu_569                      |    0    |    0    |
+|          |                  DNA_shr_four_out_fu_579                  |    0    |    0    |
+|          |                      tmp_53_i_fu_592                      |    0    |    0    |
+|          |                      tmp_54_i_fu_602                      |    0    |    0    |
+|          |                      tmp_55_i_fu_612                      |    0    |    0    |
+|          |                      tmp_56_i_fu_622                      |    0    |    0    |
+|          |                  DNA_shr_five_out_fu_632                  |    0    |    0    |
 |----------|-----------------------------------------------------------|---------|---------|
 |          |                         mrv_fu_642                        |    0    |    0    |
 |          |                        mrv_1_fu_648                       |    0    |    0    |
@@ -2956,34 +2962,34 @@ Memories:
 N/A
 
 * Register list:
-+--------------------------------+--------+
-|                                |   FF   |
-+--------------------------------+--------+
-|         DNA_10_reg_819         |   256  |
-|         DNA_11_reg_824         |   256  |
-|          DNA_1_reg_774         |   256  |
-|          DNA_2_reg_779         |   256  |
-|          DNA_3_reg_784         |   256  |
-|          DNA_4_reg_804         |   256  |
-|          DNA_5_reg_809         |   256  |
-|          DNA_6_reg_789         |   256  |
-|          DNA_7_reg_794         |   256  |
-|          DNA_8_reg_799         |   256  |
-|          DNA_9_reg_814         |   256  |
-|DNA_nsh_write_assign_loc_reg_768|   128  |
-|    storemerge145_loc_reg_714   |   128  |
-|    storemerge246_loc_reg_720   |   128  |
-|    storemerge347_loc_reg_726   |   128  |
-|    storemerge448_loc_reg_732   |   128  |
-|    storemerge44_loc_reg_708    |   128  |
-|    storemerge549_loc_reg_738   |   128  |
-|    storemerge650_loc_reg_744   |   128  |
-|    storemerge751_loc_reg_750   |   128  |
-|    storemerge852_loc_reg_756   |   128  |
-|    storemerge953_loc_reg_762   |   128  |
-+--------------------------------+--------+
-|              Total             |  4224  |
-+--------------------------------+--------+
++---------------------------+--------+
+|                           |   FF   |
++---------------------------+--------+
+|       DNA_10_reg_819      |   256  |
+|       DNA_11_reg_824      |   256  |
+|       DNA_1_reg_774       |   256  |
+|       DNA_2_reg_779       |   256  |
+|       DNA_3_reg_784       |   256  |
+|       DNA_4_reg_804       |   256  |
+|       DNA_5_reg_809       |   256  |
+|       DNA_6_reg_789       |   256  |
+|       DNA_7_reg_794       |   256  |
+|       DNA_8_reg_799       |   256  |
+|       DNA_9_reg_814       |   256  |
+| DNA_nsh_out_0_loc_reg_768 |   128  |
+|storemerge145_i_loc_reg_714|   128  |
+|storemerge246_i_loc_reg_720|   128  |
+|storemerge347_i_loc_reg_726|   128  |
+|storemerge448_i_loc_reg_732|   128  |
+| storemerge44_i_loc_reg_708|   128  |
+|storemerge549_i_loc_reg_738|   128  |
+|storemerge650_i_loc_reg_744|   128  |
+|storemerge751_i_loc_reg_750|   128  |
+|storemerge852_i_loc_reg_756|   128  |
+|storemerge953_i_loc_reg_762|   128  |
++---------------------------+--------+
+|           Total           |  4224  |
++---------------------------+--------+
 
 * Multiplexer (MUX) list: 
 |-----------------------------------------------------------|------|------|------|--------||---------||---------||---------|

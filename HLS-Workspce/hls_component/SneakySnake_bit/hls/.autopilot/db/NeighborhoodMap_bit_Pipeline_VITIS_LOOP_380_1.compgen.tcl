@@ -36,14 +36,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 7 \
-    name DNA_nsh_write_assign_out \
+    name DNA_nsh_out_0_out \
     type other \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_DNA_nsh_write_assign_out \
+    corename dc_DNA_nsh_out_0_out \
     op interface \
-    ports { DNA_nsh_write_assign_out { O 128 vector } DNA_nsh_write_assign_out_ap_vld { O 1 bit } } \
+    ports { DNA_nsh_out_0_out { O 128 vector } DNA_nsh_out_0_out_ap_vld { O 1 bit } } \
 } "
 }
 

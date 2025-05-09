@@ -4365,8 +4365,8 @@
   <Name>../../../../../../usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h</Name>
 </File>
 <GlobalVariable File="8" IsConstant="false" IsThreadLocal="false" IsZeroInit="false" Line="0" Name="__dso_handle" NameAsWritten="__dso_handle" Size="1" Type="6" global_id="3" isDeclaration="true"/>
-<GlobalVariable File="11" IsConstant="false" IsThreadLocal="false" IsZeroInit="true" Line="74" Name="_ZStL8__ioinit.11" NameAsWritten="__ioinit" Size="1" Type="2" global_id="5" isDeclaration="false"/>
 <GlobalVariable File="11" IsConstant="false" IsThreadLocal="false" IsZeroInit="true" Line="74" Name="_ZStL8__ioinit" NameAsWritten="__ioinit" Size="1" Type="2" global_id="1" isDeclaration="false"/>
+<GlobalVariable File="11" IsConstant="false" IsThreadLocal="false" IsZeroInit="true" Line="74" Name="_ZStL8__ioinit.11" NameAsWritten="__ioinit" Size="1" Type="2" global_id="5" isDeclaration="false"/>
 <GlobalVariable File="11" IsConstant="false" IsThreadLocal="false" IsZeroInit="true" Line="74" Name="_ZStL8__ioinit.5" NameAsWritten="__ioinit" Size="1" Type="2" global_id="2" isDeclaration="false"/>
 <GlobalVariable File="4" IsConstant="false" IsThreadLocal="false" IsZeroInit="false" Line="1081" Name="stderr" NameAsWritten="stderr" Size="8" Type="7" global_id="4" isDeclaration="true"/>
 <function global_id="3" Name="pthread_mutex_lock" File="0" CUFile="0" arguments="1" HasArtificialBody="false" HasArtificialDeclaration="false" SIMDInstructionsPercentage="0" FullyQualifiedName="pthread_mutex_lock" isDeclaration="true">
