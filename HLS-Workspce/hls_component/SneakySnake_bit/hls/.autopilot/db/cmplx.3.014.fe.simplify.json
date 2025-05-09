@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 3,
-    "calls": "2 1",
+    "calls": "1 2",
     "file": "pipeline.cpp",
     "fileloc": 679,
     "instructions": 73,
@@ -13,15 +13,6 @@
     "total_instructions": 673
   },
   "1": {
-    "basicblocks": 3,
-    "calls": "3 3 3 3 3 3 3 3 3 3 3",
-    "file": "pipeline.cpp",
-    "fileloc": 631,
-    "instructions": 86,
-    "name": "after_neighbohood",
-    "total_instructions": 306
-  },
-  "2": {
     "basicblocks": 67,
     "calls": "",
     "file": "pipeline.cpp",
@@ -35,6 +26,15 @@
       "L": 11
     },
     "total_instructions": 294
+  },
+  "2": {
+    "basicblocks": 3,
+    "calls": "3 3 3 3 3 3 3 3 3 3 3",
+    "file": "pipeline.cpp",
+    "fileloc": 631,
+    "instructions": 86,
+    "name": "after_neighbohood",
+    "total_instructions": 306
   },
   "3": {
     "basicblocks": 10,

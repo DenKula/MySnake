@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 3,
-    "calls": "3 1",
+    "calls": "3 2",
     "file": "pipeline.cpp",
     "fileloc": 679,
     "instructions": 71,
@@ -12,8 +12,20 @@
     "total_instructions": 761
   },
   "1": {
+    "basicblocks": 10,
+    "calls": "",
+    "file": "pipeline.cpp",
+    "fileloc": 326,
+    "instructions": 21,
+    "loads": {
+      "L": 1
+    },
+    "name": "count_one_bit",
+    "total_instructions": 21
+  },
+  "2": {
     "basicblocks": 3,
-    "calls": "2 2 2 2 2 2 2 2 2 2 2",
+    "calls": "1 1 1 1 1 1 1 1 1 1 1",
     "file": "pipeline.cpp",
     "fileloc": 631,
     "instructions": 163,
@@ -25,18 +37,6 @@
       "L": 33
     },
     "total_instructions": 394
-  },
-  "2": {
-    "basicblocks": 10,
-    "calls": "",
-    "file": "pipeline.cpp",
-    "fileloc": 326,
-    "instructions": 21,
-    "loads": {
-      "L": 1
-    },
-    "name": "count_one_bit",
-    "total_instructions": 21
   },
   "3": {
     "basicblocks": 67,

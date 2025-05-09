@@ -81,13 +81,13 @@ set NewPortList {[
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "57", "59", "61", "63", "65", "67", "69", "71"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "57", "59", "61", "63", "65", "67", "69", "71", "73", "75", "77", "79"],
 		"CDFG" : "SneakySnake_bit",
 		"Protocol" : "ap_ctrl_chain",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "207", "EstimateLatencyMax" : "207",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "169", "EstimateLatencyMax" : "169",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -102,9 +102,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "EditThreshold", "Type" : "None", "Direction" : "I"},
 			{"Name" : "KmerSize", "Type" : "None", "Direction" : "I"}],
 		"Loop" : [
-			{"Name" : "VITIS_LOOP_707_1_VITIS_LOOP_640_1", "PipelineType" : "pipeline",
-				"LoopDec" : {"FSMBitwidth" : "5", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage1", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage1_subdone", "PreState" : ["ap_ST_fsm_state2"], "QuitState" : "ap_ST_fsm_pp0_stage1", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage1_subdone", "PostState" : ["ap_ST_fsm_state7"]}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206", "Parent" : "0", "Child" : ["2", "7", "12", "17", "22", "27", "32", "37", "42", "47", "52"],
+			{"Name" : "VITIS_LOOP_707_1_VITIS_LOOP_640_1", "PipelineType" : "no",
+				"LoopDec" : {"FSMBitwidth" : "4", "FirstState" : "ap_ST_fsm_state3", "LastState" : ["ap_ST_fsm_state3"], "QuitState" : ["ap_ST_fsm_state3"], "PreState" : ["ap_ST_fsm_state2"], "PostState" : ["ap_ST_fsm_state4"], "OneDepthLoop" : "1", "OneStateBlock": "ap_ST_fsm_state3_blk"}}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205", "Parent" : "0", "Child" : ["2", "7", "12", "17", "22", "27", "32", "37", "42", "47", "52"],
 		"CDFG" : "NeighborhoodMap_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -121,7 +121,7 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "DNA_read_val", "Type" : "None", "Direction" : "I"},
 			{"Name" : "DNA_ref_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158", "Parent" : "1", "Child" : ["3", "4", "5", "6"],
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158", "Parent" : "1", "Child" : ["3", "4", "5", "6"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -141,11 +141,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_380_1", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "3", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.partselect_2ns_256ns_32ns_2_1_1_U1", "Parent" : "2"},
-	{"ID" : "4", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.partselect_2ns_256ns_32ns_2_1_1_U2", "Parent" : "2"},
-	{"ID" : "5", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.partset_128ns_128ns_2ns_32ns_128_1_1_U3", "Parent" : "2"},
-	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164", "Parent" : "1", "Child" : ["8", "9", "10", "11"],
+	{"ID" : "3", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.partselect_2ns_256ns_32ns_2_1_1_U1", "Parent" : "2"},
+	{"ID" : "4", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.partselect_2ns_256ns_32ns_2_1_1_U2", "Parent" : "2"},
+	{"ID" : "5", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.partset_128ns_128ns_2ns_32ns_128_1_1_U3", "Parent" : "2"},
+	{"ID" : "6", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158.flow_control_loop_pipe_sequential_init_U", "Parent" : "2"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164", "Parent" : "1", "Child" : ["8", "9", "10", "11"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -165,11 +165,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_400_2", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.partselect_2ns_256ns_32ns_2_1_1_U8", "Parent" : "7"},
-	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.partselect_2ns_256ns_32ns_2_1_1_U9", "Parent" : "7"},
-	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.partset_128ns_128ns_2ns_32ns_128_1_1_U10", "Parent" : "7"},
-	{"ID" : "11", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.flow_control_loop_pipe_sequential_init_U", "Parent" : "7"},
-	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170", "Parent" : "1", "Child" : ["13", "14", "15", "16"],
+	{"ID" : "8", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.partselect_2ns_256ns_32ns_2_1_1_U8", "Parent" : "7"},
+	{"ID" : "9", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.partselect_2ns_256ns_32ns_2_1_1_U9", "Parent" : "7"},
+	{"ID" : "10", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.partset_128ns_128ns_2ns_32ns_128_1_1_U10", "Parent" : "7"},
+	{"ID" : "11", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164.flow_control_loop_pipe_sequential_init_U", "Parent" : "7"},
+	{"ID" : "12", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170", "Parent" : "1", "Child" : ["13", "14", "15", "16"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -189,11 +189,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_419_3", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "13", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.partselect_2ns_256ns_32ns_2_1_1_U13", "Parent" : "12"},
-	{"ID" : "14", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.partselect_2ns_256ns_32ns_2_1_1_U14", "Parent" : "12"},
-	{"ID" : "15", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.partset_128ns_128ns_2ns_32ns_128_1_1_U15", "Parent" : "12"},
-	{"ID" : "16", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.flow_control_loop_pipe_sequential_init_U", "Parent" : "12"},
-	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176", "Parent" : "1", "Child" : ["18", "19", "20", "21"],
+	{"ID" : "13", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.partselect_2ns_256ns_32ns_2_1_1_U13", "Parent" : "12"},
+	{"ID" : "14", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.partselect_2ns_256ns_32ns_2_1_1_U14", "Parent" : "12"},
+	{"ID" : "15", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.partset_128ns_128ns_2ns_32ns_128_1_1_U15", "Parent" : "12"},
+	{"ID" : "16", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170.flow_control_loop_pipe_sequential_init_U", "Parent" : "12"},
+	{"ID" : "17", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176", "Parent" : "1", "Child" : ["18", "19", "20", "21"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -213,11 +213,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_438_4", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "18", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.partselect_2ns_256ns_32ns_2_1_1_U18", "Parent" : "17"},
-	{"ID" : "19", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.partselect_2ns_256ns_32ns_2_1_1_U19", "Parent" : "17"},
-	{"ID" : "20", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.partset_128ns_128ns_2ns_32ns_128_1_1_U20", "Parent" : "17"},
-	{"ID" : "21", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.flow_control_loop_pipe_sequential_init_U", "Parent" : "17"},
-	{"ID" : "22", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182", "Parent" : "1", "Child" : ["23", "24", "25", "26"],
+	{"ID" : "18", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.partselect_2ns_256ns_32ns_2_1_1_U18", "Parent" : "17"},
+	{"ID" : "19", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.partselect_2ns_256ns_32ns_2_1_1_U19", "Parent" : "17"},
+	{"ID" : "20", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.partset_128ns_128ns_2ns_32ns_128_1_1_U20", "Parent" : "17"},
+	{"ID" : "21", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176.flow_control_loop_pipe_sequential_init_U", "Parent" : "17"},
+	{"ID" : "22", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182", "Parent" : "1", "Child" : ["23", "24", "25", "26"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -237,11 +237,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_462_5", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "23", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.partselect_2ns_256ns_32ns_2_1_1_U23", "Parent" : "22"},
-	{"ID" : "24", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.partselect_2ns_256ns_32ns_2_1_1_U24", "Parent" : "22"},
-	{"ID" : "25", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.partset_128ns_128ns_2ns_32ns_128_1_1_U25", "Parent" : "22"},
-	{"ID" : "26", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.flow_control_loop_pipe_sequential_init_U", "Parent" : "22"},
-	{"ID" : "27", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188", "Parent" : "1", "Child" : ["28", "29", "30", "31"],
+	{"ID" : "23", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.partselect_2ns_256ns_32ns_2_1_1_U23", "Parent" : "22"},
+	{"ID" : "24", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.partselect_2ns_256ns_32ns_2_1_1_U24", "Parent" : "22"},
+	{"ID" : "25", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.partset_128ns_128ns_2ns_32ns_128_1_1_U25", "Parent" : "22"},
+	{"ID" : "26", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182.flow_control_loop_pipe_sequential_init_U", "Parent" : "22"},
+	{"ID" : "27", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188", "Parent" : "1", "Child" : ["28", "29", "30", "31"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -261,11 +261,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_488_6", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "28", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.partselect_2ns_256ns_32ns_2_1_1_U28", "Parent" : "27"},
-	{"ID" : "29", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.partselect_2ns_256ns_32ns_2_1_1_U29", "Parent" : "27"},
-	{"ID" : "30", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.partset_128ns_128ns_2ns_32ns_128_1_1_U30", "Parent" : "27"},
-	{"ID" : "31", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.flow_control_loop_pipe_sequential_init_U", "Parent" : "27"},
-	{"ID" : "32", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194", "Parent" : "1", "Child" : ["33", "34", "35", "36"],
+	{"ID" : "28", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.partselect_2ns_256ns_32ns_2_1_1_U28", "Parent" : "27"},
+	{"ID" : "29", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.partselect_2ns_256ns_32ns_2_1_1_U29", "Parent" : "27"},
+	{"ID" : "30", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.partset_128ns_128ns_2ns_32ns_128_1_1_U30", "Parent" : "27"},
+	{"ID" : "31", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188.flow_control_loop_pipe_sequential_init_U", "Parent" : "27"},
+	{"ID" : "32", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194", "Parent" : "1", "Child" : ["33", "34", "35", "36"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -285,11 +285,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_516_7", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "33", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.partselect_2ns_256ns_32ns_2_1_1_U33", "Parent" : "32"},
-	{"ID" : "34", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.partselect_2ns_256ns_32ns_2_1_1_U34", "Parent" : "32"},
-	{"ID" : "35", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.partset_128ns_128ns_2ns_32ns_128_1_1_U35", "Parent" : "32"},
-	{"ID" : "36", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.flow_control_loop_pipe_sequential_init_U", "Parent" : "32"},
-	{"ID" : "37", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200", "Parent" : "1", "Child" : ["38", "39", "40", "41"],
+	{"ID" : "33", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.partselect_2ns_256ns_32ns_2_1_1_U33", "Parent" : "32"},
+	{"ID" : "34", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.partselect_2ns_256ns_32ns_2_1_1_U34", "Parent" : "32"},
+	{"ID" : "35", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.partset_128ns_128ns_2ns_32ns_128_1_1_U35", "Parent" : "32"},
+	{"ID" : "36", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194.flow_control_loop_pipe_sequential_init_U", "Parent" : "32"},
+	{"ID" : "37", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200", "Parent" : "1", "Child" : ["38", "39", "40", "41"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -309,11 +309,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_534_8", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "38", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.partselect_2ns_256ns_32ns_2_1_1_U38", "Parent" : "37"},
-	{"ID" : "39", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.partselect_2ns_256ns_32ns_2_1_1_U39", "Parent" : "37"},
-	{"ID" : "40", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.partset_128ns_128ns_2ns_32ns_128_1_1_U40", "Parent" : "37"},
-	{"ID" : "41", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.flow_control_loop_pipe_sequential_init_U", "Parent" : "37"},
-	{"ID" : "42", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206", "Parent" : "1", "Child" : ["43", "44", "45", "46"],
+	{"ID" : "38", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.partselect_2ns_256ns_32ns_2_1_1_U38", "Parent" : "37"},
+	{"ID" : "39", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.partselect_2ns_256ns_32ns_2_1_1_U39", "Parent" : "37"},
+	{"ID" : "40", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.partset_128ns_128ns_2ns_32ns_128_1_1_U40", "Parent" : "37"},
+	{"ID" : "41", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200.flow_control_loop_pipe_sequential_init_U", "Parent" : "37"},
+	{"ID" : "42", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206", "Parent" : "1", "Child" : ["43", "44", "45", "46"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -333,11 +333,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_556_9", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "43", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.partselect_2ns_256ns_32ns_2_1_1_U43", "Parent" : "42"},
-	{"ID" : "44", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.partselect_2ns_256ns_32ns_2_1_1_U44", "Parent" : "42"},
-	{"ID" : "45", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.partset_128ns_128ns_2ns_32ns_128_1_1_U45", "Parent" : "42"},
-	{"ID" : "46", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.flow_control_loop_pipe_sequential_init_U", "Parent" : "42"},
-	{"ID" : "47", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212", "Parent" : "1", "Child" : ["48", "49", "50", "51"],
+	{"ID" : "43", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.partselect_2ns_256ns_32ns_2_1_1_U43", "Parent" : "42"},
+	{"ID" : "44", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.partselect_2ns_256ns_32ns_2_1_1_U44", "Parent" : "42"},
+	{"ID" : "45", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.partset_128ns_128ns_2ns_32ns_128_1_1_U45", "Parent" : "42"},
+	{"ID" : "46", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206.flow_control_loop_pipe_sequential_init_U", "Parent" : "42"},
+	{"ID" : "47", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212", "Parent" : "1", "Child" : ["48", "49", "50", "51"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -357,11 +357,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_580_10", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "48", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.partselect_2ns_256ns_32ns_2_1_1_U48", "Parent" : "47"},
-	{"ID" : "49", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.partselect_2ns_256ns_32ns_2_1_1_U49", "Parent" : "47"},
-	{"ID" : "50", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.partset_128ns_128ns_2ns_32ns_128_1_1_U50", "Parent" : "47"},
-	{"ID" : "51", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.flow_control_loop_pipe_sequential_init_U", "Parent" : "47"},
-	{"ID" : "52", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218", "Parent" : "1", "Child" : ["53", "54", "55", "56"],
+	{"ID" : "48", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.partselect_2ns_256ns_32ns_2_1_1_U48", "Parent" : "47"},
+	{"ID" : "49", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.partselect_2ns_256ns_32ns_2_1_1_U49", "Parent" : "47"},
+	{"ID" : "50", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.partset_128ns_128ns_2ns_32ns_128_1_1_U50", "Parent" : "47"},
+	{"ID" : "51", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212.flow_control_loop_pipe_sequential_init_U", "Parent" : "47"},
+	{"ID" : "52", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218", "Parent" : "1", "Child" : ["53", "54", "55", "56"],
 		"CDFG" : "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -381,11 +381,11 @@ set RtlHierarchyInfo {[
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_607_11", "PipelineType" : "UPC",
 				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_state1", "FirstStateIter" : "", "FirstStateBlock" : "ap_ST_fsm_state1_blk", "LastState" : "ap_ST_fsm_state1", "LastStateIter" : "", "LastStateBlock" : "ap_ST_fsm_state1_blk", "QuitState" : "ap_ST_fsm_state1", "QuitStateIter" : "", "QuitStateBlock" : "ap_ST_fsm_state1_blk", "OneDepthLoop" : "1", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "53", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.partselect_2ns_256ns_32ns_2_1_1_U53", "Parent" : "52"},
-	{"ID" : "54", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.partselect_2ns_256ns_32ns_2_1_1_U54", "Parent" : "52"},
-	{"ID" : "55", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.partset_128ns_128ns_2ns_32ns_128_1_1_U55", "Parent" : "52"},
-	{"ID" : "56", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_206.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.flow_control_loop_pipe_sequential_init_U", "Parent" : "52"},
-	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_214", "Parent" : "0", "Child" : ["58"],
+	{"ID" : "53", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.partselect_2ns_256ns_32ns_2_1_1_U53", "Parent" : "52"},
+	{"ID" : "54", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.partselect_2ns_256ns_32ns_2_1_1_U54", "Parent" : "52"},
+	{"ID" : "55", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.partset_128ns_128ns_2ns_32ns_128_1_1_U55", "Parent" : "52"},
+	{"ID" : "56", "Level" : "3", "Path" : "`AUTOTB_DUT_INST.grp_NeighborhoodMap_bit_fu_205.grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218.flow_control_loop_pipe_sequential_init_U", "Parent" : "52"},
+	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_count_one_bit_fu_213", "Parent" : "0", "Child" : ["58"],
 		"CDFG" : "count_one_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
@@ -401,8 +401,8 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "58", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_214.sparsemux_17_7_4_1_1_U60", "Parent" : "57"},
-	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_219", "Parent" : "0", "Child" : ["60"],
+	{"ID" : "58", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_count_one_bit_fu_213.sparsemux_17_7_4_1_1_U60", "Parent" : "57"},
+	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tmp_8_i_count_one_bit_fu_218", "Parent" : "0", "Child" : ["60"],
 		"CDFG" : "count_one_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
@@ -418,8 +418,8 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "60", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_219.sparsemux_17_7_4_1_1_U60", "Parent" : "59"},
-	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_224", "Parent" : "0", "Child" : ["62"],
+	{"ID" : "60", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.tmp_8_i_count_one_bit_fu_218.sparsemux_17_7_4_1_1_U60", "Parent" : "59"},
+	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_2_count_one_bit_fu_223", "Parent" : "0", "Child" : ["62"],
 		"CDFG" : "count_one_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
@@ -435,8 +435,8 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "62", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_224.sparsemux_17_7_4_1_1_U60", "Parent" : "61"},
-	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_229", "Parent" : "0", "Child" : ["64"],
+	{"ID" : "62", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_2_count_one_bit_fu_223.sparsemux_17_7_4_1_1_U60", "Parent" : "61"},
+	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tmp_i_count_one_bit_fu_228", "Parent" : "0", "Child" : ["64"],
 		"CDFG" : "count_one_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
@@ -452,8 +452,8 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "64", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_count_one_bit_fu_229.sparsemux_17_7_4_1_1_U60", "Parent" : "63"},
-	{"ID" : "65", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_5_count_one_bit_fu_234", "Parent" : "0", "Child" : ["66"],
+	{"ID" : "64", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.tmp_i_count_one_bit_fu_228.sparsemux_17_7_4_1_1_U60", "Parent" : "63"},
+	{"ID" : "65", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_5_count_one_bit_fu_233", "Parent" : "0", "Child" : ["66"],
 		"CDFG" : "count_one_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
@@ -469,8 +469,8 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "66", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_5_count_one_bit_fu_234.sparsemux_17_7_4_1_1_U60", "Parent" : "65"},
-	{"ID" : "67", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tmp_1_i_count_one_bit_fu_239", "Parent" : "0", "Child" : ["68"],
+	{"ID" : "66", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_5_count_one_bit_fu_233.sparsemux_17_7_4_1_1_U60", "Parent" : "65"},
+	{"ID" : "67", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tmp_1_i_count_one_bit_fu_238", "Parent" : "0", "Child" : ["68"],
 		"CDFG" : "count_one_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
@@ -486,8 +486,8 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "68", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.tmp_1_i_count_one_bit_fu_239.sparsemux_17_7_4_1_1_U60", "Parent" : "67"},
-	{"ID" : "69", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_8_count_one_bit_fu_244", "Parent" : "0", "Child" : ["70"],
+	{"ID" : "68", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.tmp_1_i_count_one_bit_fu_238.sparsemux_17_7_4_1_1_U60", "Parent" : "67"},
+	{"ID" : "69", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_8_count_one_bit_fu_243", "Parent" : "0", "Child" : ["70"],
 		"CDFG" : "count_one_bit",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
@@ -503,8 +503,76 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "70", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_8_count_one_bit_fu_244.sparsemux_17_7_4_1_1_U60", "Parent" : "69"},
-	{"ID" : "71", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"}]}
+	{"ID" : "70", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_8_count_one_bit_fu_243.sparsemux_17_7_4_1_1_U60", "Parent" : "69"},
+	{"ID" : "71", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tmp_2_i_count_one_bit_fu_248", "Parent" : "0", "Child" : ["72"],
+		"CDFG" : "count_one_bit",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "1",
+		"VariableLatency" : "0", "ExactLatency" : "0", "EstimateLatencyMin" : "0", "EstimateLatencyMax" : "0",
+		"Combinational" : "1",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "72", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.tmp_2_i_count_one_bit_fu_248.sparsemux_17_7_4_1_1_U60", "Parent" : "71"},
+	{"ID" : "73", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_12_count_one_bit_fu_253", "Parent" : "0", "Child" : ["74"],
+		"CDFG" : "count_one_bit",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "1",
+		"VariableLatency" : "0", "ExactLatency" : "0", "EstimateLatencyMin" : "0", "EstimateLatencyMax" : "0",
+		"Combinational" : "1",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "74", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_12_count_one_bit_fu_253.sparsemux_17_7_4_1_1_U60", "Parent" : "73"},
+	{"ID" : "75", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.tmp_3_i_count_one_bit_fu_258", "Parent" : "0", "Child" : ["76"],
+		"CDFG" : "count_one_bit",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "1",
+		"VariableLatency" : "0", "ExactLatency" : "0", "EstimateLatencyMin" : "0", "EstimateLatencyMax" : "0",
+		"Combinational" : "1",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "76", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.tmp_3_i_count_one_bit_fu_258.sparsemux_17_7_4_1_1_U60", "Parent" : "75"},
+	{"ID" : "77", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.max_11_count_one_bit_fu_263", "Parent" : "0", "Child" : ["78"],
+		"CDFG" : "count_one_bit",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "1", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "1",
+		"VariableLatency" : "0", "ExactLatency" : "0", "EstimateLatencyMin" : "0", "EstimateLatencyMax" : "0",
+		"Combinational" : "1",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "78", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.max_11_count_one_bit_fu_263.sparsemux_17_7_4_1_1_U60", "Parent" : "77"},
+	{"ID" : "79", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.control_s_axi_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -563,17 +631,24 @@ set ArgLastReadFirstWriteLatency {
 	count_one_bit {
 		input_seq_val {Type I LastRead 0 FirstWrite -1}}
 	count_one_bit {
+		input_seq_val {Type I LastRead 0 FirstWrite -1}}
+	count_one_bit {
+		input_seq_val {Type I LastRead 0 FirstWrite -1}}
+	count_one_bit {
+		input_seq_val {Type I LastRead 0 FirstWrite -1}}
+	count_one_bit {
+		input_seq_val {Type I LastRead 0 FirstWrite -1}}
+	count_one_bit {
 		input_seq_val {Type I LastRead 0 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "207", "Max" : "207"}
-	, {"Name" : "Interval", "Min" : "208", "Max" : "208"}
+	{"Name" : "Latency", "Min" : "169", "Max" : "169"}
+	, {"Name" : "Interval", "Min" : "170", "Max" : "170"}
 ]}
 
 set PipelineEnableSignalInfo {[
-	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 

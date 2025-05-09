@@ -7,35 +7,35 @@
         <ProductFamily>virtexuplus</ProductFamily>
         <Part>xcvu9p-flga2104-2-i</Part>
         <TopModelName>SneakySnake_bit</TopModelName>
-        <TargetClockPeriod>8.00</TargetClockPeriod>
-        <ClockUncertainty>0.96</ClockUncertainty>
+        <TargetClockPeriod>50.00</TargetClockPeriod>
+        <ClockUncertainty>6.00</ClockUncertainty>
         <FlowTarget>vitis</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
         <PipelineType>no</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>6.388</EstimatedClockPeriod>
+            <EstimatedClockPeriod>15.877</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>207</Best-caseLatency>
-            <Average-caseLatency>207</Average-caseLatency>
-            <Worst-caseLatency>207</Worst-caseLatency>
-            <Best-caseRealTimeLatency>1.656 us</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>1.656 us</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>1.656 us</Worst-caseRealTimeLatency>
-            <Interval-min>208</Interval-min>
-            <Interval-max>208</Interval-max>
+            <Best-caseLatency>169</Best-caseLatency>
+            <Average-caseLatency>169</Average-caseLatency>
+            <Worst-caseLatency>169</Worst-caseLatency>
+            <Best-caseRealTimeLatency>8.450 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>8.450 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>8.450 us</Worst-caseRealTimeLatency>
+            <Interval-min>170</Interval-min>
+            <Interval-max>170</Interval-max>
         </SummaryOfOverallLatency>
         <SummaryOfLoopLatency>
             <VITIS_LOOP_707_1_VITIS_LOOP_640_1>
-                <Slack>7.04</Slack>
+                <Slack>44.00</Slack>
                 <TripCount>36</TripCount>
-                <Latency>73</Latency>
-                <AbsoluteTimeLatency>584</AbsoluteTimeLatency>
-                <PipelineII>2</PipelineII>
-                <PipelineDepth>4</PipelineDepth>
+                <Latency>35</Latency>
+                <AbsoluteTimeLatency>1750</AbsoluteTimeLatency>
+                <PipelineII>1</PipelineII>
+                <PipelineDepth>1</PipelineDepth>
                 <InstanceList/>
             </VITIS_LOOP_707_1_VITIS_LOOP_640_1>
         </SummaryOfLoopLatency>
@@ -46,9 +46,8 @@
             <SummaryOfLoopViolations>
                 <VITIS_LOOP_707_1_VITIS_LOOP_640_1>
                     <Name>VITIS_LOOP_707_1_VITIS_LOOP_640_1</Name>
-                    <IssueType>II Violation</IssueType>
-                    <ViolationType>Memory Dependency</ViolationType>
-                    <IterationDistance>1</IterationDistance>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
                     <SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640~/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710</SourceLocation>
                 </VITIS_LOOP_707_1_VITIS_LOOP_640_1>
             </SummaryOfLoopViolations>
@@ -57,8 +56,8 @@
     <AreaEstimates>
         <Resources>
             <BRAM_18K>0</BRAM_18K>
-            <FF>7317</FF>
-            <LUT>15711</LUT>
+            <FF>7174</FF>
+            <LUT>16024</LUT>
             <URAM>0</URAM>
             <DSP>0</DSP>
         </Resources>
@@ -297,10 +296,10 @@
             <ModuleName>SneakySnake_bit</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_NeighborhoodMap_bit_fu_206</InstName>
+                    <InstName>grp_NeighborhoodMap_bit_fu_205</InstName>
                     <ModuleName>NeighborhoodMap_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>206</ID>
+                    <ID>205</ID>
                     <InstancesList>
                         <Instance>
                             <InstName>grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158</InstName>
@@ -383,56 +382,84 @@
                     <BindInstances>DNA_1_fu_224_p2 DNA_2_fu_237_p2 DNA_3_fu_250_p2 DNA_6_fu_263_p2 DNA_7_fu_276_p2 DNA_8_fu_289_p2 DNA_4_fu_310_p2 DNA_5_fu_331_p2 DNA_9_fu_352_p2 DNA_10_fu_373_p2 DNA_11_fu_394_p2</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_count_one_bit_fu_214</InstName>
+                    <InstName>max_count_one_bit_fu_213</InstName>
                     <ModuleName>count_one_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>214</ID>
+                    <ID>213</ID>
                     <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_count_one_bit_fu_219</InstName>
+                    <InstName>tmp_8_i_count_one_bit_fu_218</InstName>
                     <ModuleName>count_one_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>219</ID>
+                    <ID>218</ID>
                     <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_count_one_bit_fu_224</InstName>
+                    <InstName>max_2_count_one_bit_fu_223</InstName>
                     <ModuleName>count_one_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>224</ID>
+                    <ID>223</ID>
                     <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>grp_count_one_bit_fu_229</InstName>
+                    <InstName>tmp_i_count_one_bit_fu_228</InstName>
                     <ModuleName>count_one_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>229</ID>
+                    <ID>228</ID>
                     <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>max_5_count_one_bit_fu_234</InstName>
+                    <InstName>max_5_count_one_bit_fu_233</InstName>
                     <ModuleName>count_one_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>234</ID>
+                    <ID>233</ID>
                     <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>tmp_1_i_count_one_bit_fu_239</InstName>
+                    <InstName>tmp_1_i_count_one_bit_fu_238</InstName>
                     <ModuleName>count_one_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>239</ID>
+                    <ID>238</ID>
                     <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
                 </Instance>
                 <Instance>
-                    <InstName>max_8_count_one_bit_fu_244</InstName>
+                    <InstName>max_8_count_one_bit_fu_243</InstName>
                     <ModuleName>count_one_bit</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>244</ID>
+                    <ID>243</ID>
+                    <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>tmp_2_i_count_one_bit_fu_248</InstName>
+                    <ModuleName>count_one_bit</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>248</ID>
+                    <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>max_12_count_one_bit_fu_253</InstName>
+                    <ModuleName>count_one_bit</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>253</ID>
+                    <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>tmp_3_i_count_one_bit_fu_258</InstName>
+                    <ModuleName>count_one_bit</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>258</ID>
+                    <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>max_11_count_one_bit_fu_263</InstName>
+                    <ModuleName>count_one_bit</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>263</ID>
                     <BindInstances>UnifiedRetVal_fu_256_p16 xor_ln333_fu_136_p2 and_ln333_fu_142_p2 or_ln333_fu_148_p2 xor_ln333_1_fu_154_p2 and_ln333_1_fu_160_p2 or_ln333_1_fu_166_p2 xor_ln333_2_fu_172_p2 and_ln333_2_fu_178_p2 or_ln333_2_fu_184_p2 xor_ln333_3_fu_190_p2 and_ln333_3_fu_196_p2 or_ln333_3_fu_202_p2 xor_ln333_4_fu_208_p2 and_ln333_4_fu_214_p2 or_ln333_4_fu_220_p2 xor_ln333_5_fu_226_p2 and_ln333_5_fu_232_p2 sparsemux_17_7_4_1_1_U60</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>or_ln706_fu_332_p2 i_2_fu_338_p3 global_count_2_fu_815_p3 icmp_ln710_fu_354_p2 xor_ln710_fu_369_p2 select_ln710_fu_375_p3 select_ln710_1_fu_382_p3 lshr_ln710_fu_394_p2 select_ln710_2_fu_404_p3 DNA_nsh_1_fu_412_p2 select_ln711_fu_427_p3 lshr_ln711_fu_434_p2 DNA_shl_one_1_fu_444_p2 select_ln711_1_fu_459_p3 lshr_ln711_1_fu_466_p2 DNA_shl_two_1_fu_476_p2 select_ln711_2_fu_491_p3 lshr_ln711_2_fu_498_p2 DNA_shl_three_1_fu_508_p2 select_ln711_3_fu_523_p3 lshr_ln711_3_fu_530_p2 DNA_shl_four_1_fu_540_p2 select_ln711_4_fu_555_p3 lshr_ln711_4_fu_562_p2 DNA_shl_five_1_fu_572_p2 select_ln712_fu_587_p3 lshr_ln712_fu_594_p2 DNA_shr_one_1_fu_604_p2 select_ln712_1_fu_619_p3 lshr_ln712_1_fu_626_p2 DNA_shr_two_1_fu_636_p2 select_ln712_2_fu_651_p3 lshr_ln712_2_fu_658_p2 DNA_shr_three_1_fu_668_p2 select_ln712_3_fu_683_p3 lshr_ln712_3_fu_690_p2 DNA_shr_four_1_fu_700_p2 select_ln712_4_fu_715_p3 lshr_ln712_4_fu_722_p2 DNA_shr_five_1_fu_732_p2 add_ln707_fu_738_p2 icmp_ln318_fu_870_p2 max_1_fu_876_p3 icmp_ln318_1_fu_884_p2 max_3_fu_890_p3 icmp_ln318_2_fu_898_p2 max_4_fu_904_p3 icmp_ln318_3_fu_912_p2 max_6_fu_918_p3 icmp_ln318_4_fu_926_p2 max_7_fu_932_p3 icmp_ln318_5_fu_994_p2 max_9_fu_998_p3 icmp_ln318_6_fu_1004_p2 max_10_fu_1010_p3 icmp_ln318_7_fu_1018_p2 max_13_fu_1024_p3 icmp_ln318_8_fu_1032_p2 max_14_fu_1038_p3 icmp_ln318_9_fu_1046_p2 max_16_fu_1052_p3 select_ln706_fu_940_p3 shl_ln663_fu_1079_p2 shl_ln664_fu_1088_p2 shl_ln665_fu_1097_p2 shl_ln666_fu_1106_p2 shl_ln667_fu_1115_p2 shl_ln668_fu_1124_p2 shl_ln669_fu_1133_p2 shl_ln670_fu_1191_p2 shl_ln671_fu_1199_p2 shl_ln672_fu_1207_p2 shl_ln673_fu_1215_p2 add_ln640_fu_948_p2 iter_fu_954_p3 global_count_fu_1138_p2 icmp_ln640_fu_962_p2 i_fu_779_p2 icmp_ln707_fu_785_p2 control_s_axi_U</BindInstances>
+            <BindInstances>or_ln706_fu_360_p2 i_2_fu_366_p3 global_count_2_fu_374_p3 icmp_ln710_fu_390_p2 xor_ln710_fu_405_p2 select_ln710_fu_411_p3 select_ln710_1_fu_418_p3 lshr_ln710_fu_430_p2 select_ln710_2_fu_440_p3 DNA_nsh_1_fu_448_p2 select_ln711_fu_463_p3 lshr_ln711_fu_470_p2 DNA_shl_one_1_fu_480_p2 select_ln711_1_fu_495_p3 lshr_ln711_1_fu_502_p2 DNA_shl_two_1_fu_512_p2 select_ln711_2_fu_527_p3 lshr_ln711_2_fu_534_p2 DNA_shl_three_1_fu_544_p2 select_ln711_3_fu_559_p3 lshr_ln711_3_fu_566_p2 DNA_shl_four_1_fu_576_p2 select_ln711_4_fu_591_p3 lshr_ln711_4_fu_598_p2 DNA_shl_five_1_fu_608_p2 select_ln712_fu_623_p3 lshr_ln712_fu_630_p2 DNA_shr_one_1_fu_640_p2 select_ln712_1_fu_655_p3 lshr_ln712_1_fu_662_p2 DNA_shr_two_1_fu_672_p2 select_ln712_2_fu_687_p3 lshr_ln712_2_fu_694_p2 DNA_shr_three_1_fu_704_p2 select_ln712_3_fu_719_p3 lshr_ln712_3_fu_726_p2 DNA_shr_four_1_fu_736_p2 select_ln712_4_fu_751_p3 lshr_ln712_4_fu_758_p2 DNA_shr_five_1_fu_768_p2 add_ln707_fu_774_p2 icmp_ln318_fu_882_p2 max_1_fu_888_p3 icmp_ln318_1_fu_896_p2 max_3_fu_902_p3 icmp_ln318_2_fu_910_p2 max_4_fu_916_p3 icmp_ln318_3_fu_924_p2 max_6_fu_930_p3 icmp_ln318_4_fu_938_p2 max_7_fu_944_p3 icmp_ln318_5_fu_952_p2 max_9_fu_958_p3 icmp_ln318_6_fu_966_p2 max_10_fu_972_p3 icmp_ln318_7_fu_980_p2 max_13_fu_986_p3 icmp_ln318_8_fu_994_p2 max_14_fu_1000_p3 icmp_ln318_9_fu_1008_p2 max_16_fu_1014_p3 select_ln706_fu_1032_p3 shl_ln663_fu_1050_p2 shl_ln664_fu_1060_p2 shl_ln665_fu_1070_p2 shl_ln666_fu_1080_p2 shl_ln667_fu_1090_p2 shl_ln668_fu_1100_p2 shl_ln669_fu_1110_p2 shl_ln670_fu_1120_p2 shl_ln671_fu_1130_p2 shl_ln672_fu_1140_p2 shl_ln673_fu_1150_p2 add_ln640_fu_1156_p2 iter_fu_1162_p3 global_count_fu_1170_p2 icmp_ln640_fu_1176_p2 i_fu_1182_p2 icmp_ln707_fu_1188_p2 control_s_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -443,27 +470,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_380_1>
                         <Name>VITIS_LOOP_380_1</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -522,27 +549,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_400_2>
                         <Name>VITIS_LOOP_400_2</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -601,27 +628,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_419_3>
                         <Name>VITIS_LOOP_419_3</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -680,27 +707,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_438_4>
                         <Name>VITIS_LOOP_438_4</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -759,27 +786,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_462_5>
                         <Name>VITIS_LOOP_462_5</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -838,27 +865,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_488_6>
                         <Name>VITIS_LOOP_488_6</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -917,27 +944,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_516_7>
                         <Name>VITIS_LOOP_516_7</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -996,27 +1023,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_534_8>
                         <Name>VITIS_LOOP_534_8</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -1075,27 +1102,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_556_9>
                         <Name>VITIS_LOOP_556_9</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -1154,27 +1181,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_580_10>
                         <Name>VITIS_LOOP_580_10</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -1233,27 +1260,27 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>129</Best-caseLatency>
                     <Average-caseLatency>129</Average-caseLatency>
                     <Worst-caseLatency>129</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.032 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.032 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.032 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.450 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>128</PipelineInitiationInterval>
                     <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_607_11>
                         <Name>VITIS_LOOP_607_11</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>127</TripCount>
                         <Latency>127</Latency>
-                        <AbsoluteTimeLatency>1.016 us</AbsoluteTimeLatency>
+                        <AbsoluteTimeLatency>6.350 us</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
                         <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
@@ -1309,17 +1336,17 @@
             <Name>NeighborhoodMap_bit</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <EstimatedClockPeriod>2.118</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>131</Best-caseLatency>
                     <Average-caseLatency>131</Average-caseLatency>
                     <Worst-caseLatency>131</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.048 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.048 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.048 us</Worst-caseRealTimeLatency>
+                    <Best-caseRealTimeLatency>6.550 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>6.550 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>6.550 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>131</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
@@ -1366,8 +1393,8 @@
             <Name>count_one_bit</Name>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
                     <TargetInitiationInterval>4294967295</TargetInitiationInterval>
                     <EstimatedClockPeriod>1.039</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
@@ -1436,38 +1463,42 @@
             </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
-                    <TargetClockPeriod>8.00</TargetClockPeriod>
-                    <ClockUncertainty>0.96</ClockUncertainty>
-                    <EstimatedClockPeriod>6.388</EstimatedClockPeriod>
+                    <TargetClockPeriod>50.00</TargetClockPeriod>
+                    <ClockUncertainty>6.00</ClockUncertainty>
+                    <EstimatedClockPeriod>15.877</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>207</Best-caseLatency>
-                    <Average-caseLatency>207</Average-caseLatency>
-                    <Worst-caseLatency>207</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>1.656 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>1.656 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>1.656 us</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>208</PipelineInitiationInterval>
+                    <Best-caseLatency>169</Best-caseLatency>
+                    <Average-caseLatency>169</Average-caseLatency>
+                    <Worst-caseLatency>169</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>8.450 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>8.450 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>8.450 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>170</PipelineInitiationInterval>
                     <PipelineType>no</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfLoopLatency>
                     <VITIS_LOOP_707_1_VITIS_LOOP_640_1>
                         <Name>VITIS_LOOP_707_1_VITIS_LOOP_640_1</Name>
-                        <Slack>7.04</Slack>
+                        <Slack>44.00</Slack>
                         <TripCount>36</TripCount>
-                        <Latency>73</Latency>
-                        <AbsoluteTimeLatency>0.584 us</AbsoluteTimeLatency>
-                        <PipelineII>2</PipelineII>
-                        <PipelineDepth>4</PipelineDepth>
+                        <Latency>35</Latency>
+                        <AbsoluteTimeLatency>1.750 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>1</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList>
-                            <Instance>grp_count_one_bit_fu_214</Instance>
-                            <Instance>grp_count_one_bit_fu_219</Instance>
-                            <Instance>grp_count_one_bit_fu_224</Instance>
-                            <Instance>grp_count_one_bit_fu_229</Instance>
-                            <Instance>max_5_count_one_bit_fu_234</Instance>
-                            <Instance>tmp_1_i_count_one_bit_fu_239</Instance>
-                            <Instance>max_8_count_one_bit_fu_244</Instance>
+                            <Instance>max_count_one_bit_fu_213</Instance>
+                            <Instance>tmp_8_i_count_one_bit_fu_218</Instance>
+                            <Instance>max_2_count_one_bit_fu_223</Instance>
+                            <Instance>tmp_i_count_one_bit_fu_228</Instance>
+                            <Instance>max_5_count_one_bit_fu_233</Instance>
+                            <Instance>tmp_1_i_count_one_bit_fu_238</Instance>
+                            <Instance>max_8_count_one_bit_fu_243</Instance>
+                            <Instance>tmp_2_i_count_one_bit_fu_248</Instance>
+                            <Instance>max_12_count_one_bit_fu_253</Instance>
+                            <Instance>tmp_3_i_count_one_bit_fu_258</Instance>
+                            <Instance>max_11_count_one_bit_fu_263</Instance>
                         </InstanceList>
                     </VITIS_LOOP_707_1_VITIS_LOOP_640_1>
                 </SummaryOfLoopLatency>
@@ -1478,9 +1509,8 @@
                     <SummaryOfLoopViolations>
                         <VITIS_LOOP_707_1_VITIS_LOOP_640_1>
                             <Name>VITIS_LOOP_707_1_VITIS_LOOP_640_1</Name>
-                            <IssueType>II Violation</IssueType>
-                            <ViolationType>Memory Dependency</ViolationType>
-                            <IterationDistance>1</IterationDistance>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
                             <SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640~/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710</SourceLocation>
                         </VITIS_LOOP_707_1_VITIS_LOOP_640_1>
                     </SummaryOfLoopViolations>
@@ -1491,10 +1521,10 @@
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>4320</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <FF>7317</FF>
+                    <FF>7174</FF>
                     <AVAIL_FF>2364480</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>15711</LUT>
+                    <LUT>16024</LUT>
                     <AVAIL_LUT>1182240</AVAIL_LUT>
                     <UTIL_LUT>1</UTIL_LUT>
                     <URAM>0</URAM>
@@ -1506,85 +1536,85 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="or" PRAGMA="" RTLNAME="or_ln706_fu_332_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln706" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="i_2_fu_338_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="i_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="global_count_2_fu_815_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="global_count_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln710_fu_354_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln710" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln710_fu_369_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln710" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln710_fu_375_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln710" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln710_1_fu_382_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln710_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln710_fu_394_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln710" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln710_2_fu_404_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln710_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_nsh_1_fu_412_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_nsh_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_fu_427_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_fu_434_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_one_1_fu_444_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_one_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_1_fu_459_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_1_fu_466_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_two_1_fu_476_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_two_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_2_fu_491_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_2_fu_498_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_three_1_fu_508_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_three_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_3_fu_523_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_3_fu_530_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_four_1_fu_540_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_four_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_4_fu_555_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_4_fu_562_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_five_1_fu_572_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_five_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_fu_587_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_fu_594_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_one_1_fu_604_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_one_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_1_fu_619_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_1_fu_626_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_two_1_fu_636_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_two_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_2_fu_651_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_2_fu_658_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_three_1_fu_668_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_three_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_3_fu_683_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_3_fu_690_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_four_1_fu_700_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_four_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_4_fu_715_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_4_fu_722_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_five_1_fu_732_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_five_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln707_fu_738_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln707" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_fu_870_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_1_fu_876_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_1_fu_884_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_1" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_3_fu_890_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_2_fu_898_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_2" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_4_fu_904_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_3_fu_912_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_3" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_6_fu_918_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_6" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_4_fu_926_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_4" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_7_fu_932_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_7" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_5_fu_994_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_5" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_9_fu_998_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_9" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_6_fu_1004_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_6" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_10_fu_1010_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_10" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_7_fu_1018_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_7" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_13_fu_1024_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_13" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_8_fu_1032_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_8" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_14_fu_1038_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_14" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_9_fu_1046_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_9" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_16_fu_1052_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_16" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln706_fu_940_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln706" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln663_fu_1079_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:663" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln663" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln664_fu_1088_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:664" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln664" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln665_fu_1097_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:665" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln665" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln666_fu_1106_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:666" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln666" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln667_fu_1115_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:667" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln667" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln668_fu_1124_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:668" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln668" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln669_fu_1133_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:669" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln669" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln670_fu_1191_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:670" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln670" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln671_fu_1199_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:671" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln671" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln672_fu_1207_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:672" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln672" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln673_fu_1215_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:673" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln673" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln640_fu_948_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln640" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="iter_fu_954_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640" STORAGESUBTYPE="" URAM="0" VARIABLE="iter" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="global_count_fu_1138_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="global_count" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln640_fu_962_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln640" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="i_fu_779_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="i" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln707_fu_785_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln707" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="or" PRAGMA="" RTLNAME="or_ln706_fu_360_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln706" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="i_2_fu_366_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="i_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="global_count_2_fu_374_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="global_count_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setne" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setne" PRAGMA="" RTLNAME="icmp_ln710_fu_390_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln710" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op xor" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="xor" PRAGMA="" RTLNAME="xor_ln710_fu_405_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="xor_ln710" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln710_fu_411_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln710" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln710_1_fu_418_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln710_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln710_fu_430_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln710" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln710_2_fu_440_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln710_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_nsh_1_fu_448_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_nsh_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_fu_463_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_fu_470_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_one_1_fu_480_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_one_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_1_fu_495_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_1_fu_502_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_two_1_fu_512_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_two_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_2_fu_527_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_2_fu_534_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_three_1_fu_544_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_three_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_3_fu_559_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_3_fu_566_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_four_1_fu_576_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_four_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln711_4_fu_591_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln711_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln711_4_fu_598_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln711_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shl_five_1_fu_608_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:711" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shl_five_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_fu_623_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_fu_630_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_one_1_fu_640_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_one_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_1_fu_655_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_1_fu_662_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_two_1_fu_672_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_two_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_2_fu_687_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_2_fu_694_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_three_1_fu_704_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_three_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_3_fu_719_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_3_fu_726_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_four_1_fu_736_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_four_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln712_4_fu_751_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln712_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_ln712_4_fu_758_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="lshr_ln712_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="and" PRAGMA="" RTLNAME="DNA_shr_five_1_fu_768_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712" STORAGESUBTYPE="" URAM="0" VARIABLE="DNA_shr_five_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln707_fu_774_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln707" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_fu_882_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_1_fu_888_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_1_fu_896_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_3_fu_902_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_2_fu_910_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_4_fu_916_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_3_fu_924_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_3" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_6_fu_930_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_4_fu_938_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_4" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_7_fu_944_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_7" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_5_fu_952_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_5" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_9_fu_958_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_9" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_6_fu_966_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_6" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_10_fu_972_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_10" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_7_fu_980_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_7" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_13_fu_986_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_13" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_8_fu_994_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_8" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_14_fu_1000_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_14" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln318_9_fu_1008_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln318_9" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="max_16_fu_1014_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:318" STORAGESUBTYPE="" URAM="0" VARIABLE="max_16" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="select_ln706_fu_1032_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln706" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln663_fu_1050_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:663" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln663" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln664_fu_1060_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:664" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln664" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln665_fu_1070_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:665" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln665" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln666_fu_1080_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:666" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln666" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln667_fu_1090_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:667" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln667" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln668_fu_1100_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:668" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln668" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln669_fu_1110_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:669" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln669" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln670_fu_1120_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:670" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln670" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln671_fu_1130_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:671" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln671" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln672_fu_1140_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:672" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln672" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln673_fu_1150_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:673" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln673" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln640_fu_1156_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln640" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="select" PRAGMA="" RTLNAME="iter_fu_1162_p3" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640" STORAGESUBTYPE="" URAM="0" VARIABLE="iter" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="global_count_fu_1170_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710" STORAGESUBTYPE="" URAM="0" VARIABLE="global_count" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln640_fu_1176_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln640" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="add" PRAGMA="" RTLNAME="i_fu_1182_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="i" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_707_1_VITIS_LOOP_640_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln707_fu_1188_p2" SOURCE="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln707" VISIBLE="false"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
             </BindNodes>
         </Module>

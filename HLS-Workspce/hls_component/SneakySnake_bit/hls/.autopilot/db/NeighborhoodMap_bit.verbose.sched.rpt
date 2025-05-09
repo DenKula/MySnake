@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'NeighborhoodMap_bit'
 ================================================================
-* Date:           Fri May  9 16:35:55 2025
+* Date:           Fri May  9 16:51:47 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+---------+----------+------------+
-    |  Clock |  Target | Estimated| Uncertainty|
-    +--------+---------+----------+------------+
-    |ap_clk  |  8.00 ns|  2.118 ns|     0.96 ns|
-    +--------+---------+----------+------------+
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  50.00 ns|  2.118 ns|     6.00 ns|
+    +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |      131|      131|  1.048 us|  1.048 us|  131|  131|       no|
+    |      131|      131|  6.550 us|  6.550 us|  131|  131|       no|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -190,7 +190,7 @@ ST_3 : Operation 107 [1/1] (0.00ns)   --->   "%ret_ln629 = ret i1408 %mrv_s" [/h
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 8.000ns, clock uncertainty: 0.960ns.
+Target clock period: 50.000ns, clock uncertainty: 6.000ns.
 
  <State 1>: 2.025ns
 The critical path consists of the following:

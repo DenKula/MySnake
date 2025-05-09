@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'NeighborhoodMap_bit'
 ================================================================
-* Date:           Fri May  9 16:35:59 2025
+* Date:           Fri May  9 16:51:49 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+---------+----------+------------+
-    |  Clock |  Target | Estimated| Uncertainty|
-    +--------+---------+----------+------------+
-    |ap_clk  |  8.00 ns|  2.118 ns|     0.96 ns|
-    +--------+---------+----------+------------+
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  50.00 ns|  2.118 ns|     6.00 ns|
+    +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |      131|      131|  1.048 us|  1.048 us|  131|  131|       no|
+    |      131|      131|  6.550 us|  6.550 us|  131|  131|       no|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -38,17 +38,17 @@
         |                                                           |                                                |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
         |                          Instance                         |                     Module                     |   min   |   max   |    min   |    max   | min | max |                      Type                      |
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9   |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212  |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10  |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
-        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218  |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11  |      129|      129|  1.032 us|  1.032 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1_fu_158   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2_fu_164   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3_fu_170   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4_fu_176   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5_fu_182   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6_fu_188   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7_fu_194   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8_fu_200   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9_fu_206   |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9   |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10_fu_212  |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10  |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        |grp_NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11_fu_218  |NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11  |      129|      129|  6.450 us|  6.450 us|  128|  128|  loop auto-rewind stp (delay=0 clock cycles(s))|
         +-----------------------------------------------------------+------------------------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
 
         * Loop: 

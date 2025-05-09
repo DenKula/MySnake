@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'count_one_bit'
 ================================================================
-* Date:           Fri May  9 16:35:55 2025
+* Date:           Fri May  9 16:51:47 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+---------+----------+------------+
-    |  Clock |  Target | Estimated| Uncertainty|
-    +--------+---------+----------+------------+
-    |ap_clk  |  8.00 ns|  1.039 ns|     0.96 ns|
-    +--------+---------+----------+------------+
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  50.00 ns|  1.039 ns|     6.00 ns|
+    +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
@@ -114,7 +114,7 @@ ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%ret_ln333 = ret i4 %UnifiedRetVal"
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 8.000ns, clock uncertainty: 0.960ns.
+Target clock period: 50.000ns, clock uncertainty: 6.000ns.
 
  <State 1>: 1.039ns
 The critical path consists of the following:
@@ -123,9 +123,8 @@ The critical path consists of the following:
 	'or' operation 1 bit ('or_ln333_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [17]  (0.122 ns)
 	'or' operation 1 bit ('or_ln333_2', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [20]  (0.122 ns)
 	'or' operation 1 bit ('or_ln333_3', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [23]  (0.122 ns)
-	'or' operation 1 bit ('or_ln333_4', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [26]  (0.000 ns)
-	'xor' operation 1 bit ('xor_ln333_5', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [27]  (0.000 ns)
-	'and' operation 1 bit ('and_ln333_5', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [28]  (0.000 ns)
+	'xor' operation 1 bit ('xor_ln333_4', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [24]  (0.000 ns)
+	'and' operation 1 bit ('and_ln333_4', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [25]  (0.000 ns)
 	'sparsemux' operation 4 bit ('UnifiedRetVal', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333) [30]  (0.551 ns)
 
 

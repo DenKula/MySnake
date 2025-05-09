@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcvu9p-flga2104-2-i</Part>
 <TopModelName>NeighborhoodMap_bit</TopModelName>
-<TargetClockPeriod>8.00</TargetClockPeriod>
-<ClockUncertainty>0.96</ClockUncertainty>
+<TargetClockPeriod>50.00</TargetClockPeriod>
+<ClockUncertainty>6.00</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
@@ -25,9 +25,9 @@
 <Best-caseLatency>131</Best-caseLatency>
 <Average-caseLatency>131</Average-caseLatency>
 <Worst-caseLatency>131</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.048 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.048 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.048 us</Worst-caseRealTimeLatency>
+<Best-caseRealTimeLatency>6.550 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>6.550 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>6.550 us</Worst-caseRealTimeLatency>
 <Interval-min>131</Interval-min>
 <Interval-max>131</Interval-max>
 </SummaryOfOverallLatency>

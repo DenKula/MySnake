@@ -1,6 +1,6 @@
 
 set TopModule "SneakySnake_bit"
-set ClockPeriod 8
+set ClockPeriod 50
 set ClockList ap_clk
 set AxiliteClockList {}
 set HasVivadoClockPeriod 0

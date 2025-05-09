@@ -9,8 +9,8 @@
 <ProductFamily>virtexuplus</ProductFamily>
 <Part>xcvu9p-flga2104-2-i</Part>
 <TopModelName>SneakySnake_bit</TopModelName>
-<TargetClockPeriod>8.00</TargetClockPeriod>
-<ClockUncertainty>0.96</ClockUncertainty>
+<TargetClockPeriod>50.00</TargetClockPeriod>
+<ClockUncertainty>6.00</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
@@ -18,27 +18,27 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>6.388</EstimatedClockPeriod>
+<EstimatedClockPeriod>15.877</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>207</Best-caseLatency>
-<Average-caseLatency>207</Average-caseLatency>
-<Worst-caseLatency>207</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.656 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.656 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.656 us</Worst-caseRealTimeLatency>
-<Interval-min>208</Interval-min>
-<Interval-max>208</Interval-max>
+<Best-caseLatency>169</Best-caseLatency>
+<Average-caseLatency>169</Average-caseLatency>
+<Worst-caseLatency>169</Worst-caseLatency>
+<Best-caseRealTimeLatency>8.450 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>8.450 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>8.450 us</Worst-caseRealTimeLatency>
+<Interval-min>170</Interval-min>
+<Interval-max>170</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_707_1_VITIS_LOOP_640_1>
-<Slack>7.04</Slack>
+<Slack>44.00</Slack>
 <TripCount>36</TripCount>
-<Latency>73</Latency>
-<AbsoluteTimeLatency>584</AbsoluteTimeLatency>
-<PipelineII>2</PipelineII>
-<PipelineDepth>4</PipelineDepth>
+<Latency>35</Latency>
+<AbsoluteTimeLatency>1750</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>1</PipelineDepth>
 <InstanceList>
 </InstanceList>
 </VITIS_LOOP_707_1_VITIS_LOOP_640_1>
@@ -50,9 +50,8 @@
 <SummaryOfLoopViolations>
 <VITIS_LOOP_707_1_VITIS_LOOP_640_1>
 <Name>VITIS_LOOP_707_1_VITIS_LOOP_640_1</Name>
-<IssueType>II Violation</IssueType>
-<ViolationType>Memory Dependency</ViolationType>
-<IterationDistance>1</IterationDistance>
+<IssueType>-</IssueType>
+<ViolationType>-</ViolationType>
 <SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640~/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710</SourceLocation>
 </VITIS_LOOP_707_1_VITIS_LOOP_640_1>
 </SummaryOfLoopViolations>
@@ -62,8 +61,8 @@
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>7317</FF>
-<LUT>15711</LUT>
+<FF>7174</FF>
+<LUT>16024</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>
