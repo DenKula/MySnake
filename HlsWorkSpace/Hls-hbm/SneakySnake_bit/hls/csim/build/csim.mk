@@ -23,7 +23,7 @@ __USE_VCXX_CLANG__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp ../../../../../../SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp ../../../../../../SneakySnake-HLS-HBM/hw/fetch_mem.cpp ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp
+HLS_SOURCES = ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp ../../../../../../SneakySnake-HLS-HBM/hw/fetch_mem.cpp ../../../../../../SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp
 
 override TARGET := csim.exe
 
@@ -85,24 +85,24 @@ all: $(TARGET)
 
 $(ObjDir)/wrapper.o: ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp $(ObjDir)/.dir csim.mk
 	$(Echo) "   Compiling ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/wrapper.d
 
-$(ObjDir)/hw_action_hbm.o: ../../../../../../SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp $(ObjDir)/.dir csim.mk
-	$(Echo) "   Compiling ../../../../../../SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/hw_action_hbm.d
-
 $(ObjDir)/fetch_mem.o: ../../../../../../SneakySnake-HLS-HBM/hw/fetch_mem.cpp $(ObjDir)/.dir csim.mk
 	$(Echo) "   Compiling ../../../../../../SneakySnake-HLS-HBM/hw/fetch_mem.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/fetch_mem.d
 
+$(ObjDir)/hw_action_hbm.o: ../../../../../../SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp $(ObjDir)/.dir csim.mk
+	$(Echo) "   Compiling ../../../../../../SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/hw_action_hbm.d
+
 $(ObjDir)/pipeline.o: ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp $(ObjDir)/.dir csim.mk
 	$(Echo) "   Compiling ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(CXX) -std=gnu++14 ${CCFLAG} -c -MMD -I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/pipeline.d

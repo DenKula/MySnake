@@ -1,0 +1,90 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include  -I/home/deniz/oc-accel/software/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/Datasets' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/Datasets' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include  -I/home/deniz/oc-accel/software/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvu9p-flga2104-2-i' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=1' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(15)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(5)
+INFO: [SIM 211-200] Executing Code Analyzer instead of classic HLS C simulation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as hardware code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp as hardware code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp as hardware code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp as test bench code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp as test bench code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp as test bench code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as test bench code with instrumentation
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:8:17: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+    #pragma HLS INLINE OFF
+                ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:21:13: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+#pragma HLS INLINE OFF
+            ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:71:18: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+     #pragma HLS INLINE OFF
+                 ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:247:17: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+    #pragma HLS INLINE OFF
+                ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:258:37: warning: expression is not an integral constant expression [-Wignored-hls-pragmas]
+     #pragma HLS LOOP_TRIPCOUNT max=lines
+                                    ^~~~~
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:258:37: note: read of non-const variable 'lines' is not allowed in a constant expression
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:248:7: note: declared here
+  int lines=HBM_MAX_NB_OF_LINES_READ/MANY_ACC;
+      ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:258:6: warning: because option is invalid, the pragma LOOP_TRIPCOUNT is ignored [-Wignored-hls-pragmas]
+     #pragma HLS LOOP_TRIPCOUNT max=lines
+     ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:258:37: error: The option 'max' in pragma 'tripcount' must be an integral constant expression
+     #pragma HLS LOOP_TRIPCOUNT max=lines
+                                    ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:304:17: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+    #pragma HLS INLINE OFF
+                ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp:359:17: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
+    #pragma HLS INLINE OFF
+                ^
+/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot/etc/ap_common.h:138:23: note: expanded from macro 'INLINE'
+#define INLINE inline __attribute__((always_inline))
+                      ^
+8 warnings and 1 error generated.
+slxcmd:0:0: warning: Non-zero exit code: 1 returned by 'INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp as hardware code with instrumentation'
+ERROR: [SIM 211-200] Code Analyzer execution failed. Consider running the classic C simulation instead by disabling the hls.csim.code_analyzer option in the config file.
+ERROR: Problem running csim: child process exited abnormally
+INFO: [HLS 200-112] Total CPU user time: 13.84 seconds. Total CPU system time: 4.38 seconds. Total elapsed time: 21.31 seconds; peak allocated memory: 658.758 MB.

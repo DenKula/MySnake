@@ -1,0 +1,31 @@
+{
+    "rules": {
+        "['/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/fetch_mem.cpp.0.bc', '/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/fetch_mem.cpp.0.bc.d']": {
+            "command": [
+                "/tools/Xilinx/Vitis/2024.2/vcxx/libexec/clang",
+                "-c",
+                "-emit-llvm",
+                "-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw",
+                "-I/home/deniz/oc-accel/actions/include",
+                "-I/home/deniz/oc-accel/software/include",
+                "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include",
+                "-MD",
+                "-MF",
+                "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/fetch_mem.cpp.0.bc.d",
+                "-fhls",
+                "-hls-syn-headers-dir=/tools/Xilinx/Vitis/2024.2/vcxx/data/autopilot",
+                "-vitis-hls=/tools/Xilinx/Vitis/2024.2",
+                "--gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0",
+                "-hls-clock-period=10.0",
+                "-fslxtrace",
+                "-fslx-compile-mode",
+                "-fhlstoplevel=SneakySnake_bit",
+                "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp",
+                "-o",
+                "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/hls/csim/code_analyzer/.internal/build/fetch_mem.cpp.0.bc"
+            ],
+            "exectime": 5.078927516937256,
+            "cwd": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm"
+        }
+    }
+}

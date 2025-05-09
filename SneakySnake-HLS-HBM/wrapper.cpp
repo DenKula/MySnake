@@ -1,4 +1,6 @@
-#include "hw/pipeline.h"
+#include "hls_stream.h"      
+#include "hw/pipeline.h"     
+                            
 #include <fstream>
 #include <string>
 

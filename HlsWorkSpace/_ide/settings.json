@@ -9,6 +9,12 @@
         "-I/home/deniz/oc-accel",
         "-I/home/deniz/oc-accel/actions",
         "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include",
-        "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h"
+        "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h",
+        "-I/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/V",
+        "-I/home/deniz/oc-accel/software/include/osnap_types.h",
+        "-I/home/deniz/oc-accel/software/include",
+        "-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw",
+        "-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw",
+        "-I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw"
     ]
 }

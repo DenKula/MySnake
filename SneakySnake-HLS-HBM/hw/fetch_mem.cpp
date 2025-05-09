@@ -249,13 +249,14 @@ void hbm_stream_splitter (
   for (unsigned p = 0; p < MANY_ACC; p++)
   {
     #pragma HLS PIPELINE II=1
+    static const unsigned k_max_lines = 1024;   // <-- put the real bound here
     printf("stream_splitter::ACCELERATOR:::%d\n",p);
     for (unsigned i = 0+p*lines; i < lines+p*lines; i++)
     {
        //#pragma HLS LOOP_TRIPCOUNT avg=lines/2
        // #pragma HLS LOOP_TRIPCOUNT max=lines
       printf("stream_splitter:::::%d\n",i);
-     #pragma HLS LOOP_TRIPCOUNT max=lines
+     #pragma HLS LOOP_TRIPCOUNT max=k_max_lines
     #pragma HLS PIPELINE II=1
     snap_membus_256_t temp = bus_input.read();
     output[p].write(temp);

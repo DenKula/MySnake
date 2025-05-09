@@ -1,0 +1,95 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw  -I/home/deniz/oc-accel/actions/include -I/home/deniz/oc-accel/software/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include  -I/home/deniz/oc-accel/software/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvu9p-flga2104-2-i' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp in debug mode
+In file included from ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp:3:
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:11:24: error: unknown type name 'd_bit_out_tiny_type'
+unsigned count_one_bit(d_bit_out_tiny_type &input_seq, unsigned seq_length);
+                       ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:12:17: error: unknown type name 'd_out_type'
+int largest_bit(d_out_type arr, int n) ;
+                ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:14:5: error: unknown type name 'd_bit_in_type'
+    d_bit_in_type & DNA_read, d_bit_in_type & DNA_ref, 
+    ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:14:31: error: unknown type name 'd_bit_in_type'
+    d_bit_in_type & DNA_read, d_bit_in_type & DNA_ref, 
+                              ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:15:5: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_nsh,
+    ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:16:5: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five, 
+    ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:16:34: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five, 
+                                 ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:16:63: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five, 
+                                                              ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:16:94: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five, 
+                                                                                             ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:16:124: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five, 
+                                                                                                                           ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:17:5: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five);
+    ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:17:34: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five);
+                                 ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:17:63: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five);
+                                                              ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:17:94: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five);
+                                                                                             ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:17:124: error: unknown type name 'd_bit_out_type'
+    d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five);
+                                                                                                                           ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:18:28: error: unknown type name 'd_bit_out_tiny_type'
+unsigned after_neighbohood(d_bit_out_tiny_type  DNA_nsh,
+                           ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:19:5: error: unknown type name 'd_bit_out_tiny_type'
+    d_bit_out_tiny_type  DNA_shl_one,d_bit_out_tiny_type  DNA_shl_two,d_bit_out_tiny_type  DNA_shl_three,d_bit_out_tiny_type DNA_shl_four,d_bit_out_tiny_type DNA_shl_five, 
+    ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:19:38: error: unknown type name 'd_bit_out_tiny_type'
+    d_bit_out_tiny_type  DNA_shl_one,d_bit_out_tiny_type  DNA_shl_two,d_bit_out_tiny_type  DNA_shl_three,d_bit_out_tiny_type DNA_shl_four,d_bit_out_tiny_type DNA_shl_five, 
+                                     ^
+../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:19:71: error: unknown type name 'd_bit_out_tiny_type'
+    d_bit_out_tiny_type  DNA_shl_one,d_bit_out_tiny_type  DNA_shl_two,d_bit_out_tiny_type  DNA_shl_three,d_bit_out_tiny_type DNA_shl_four,d_bit_out_tiny_type DNA_shl_five, 
+                                                                      ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make: *** [csim.mk:88: obj/wrapper.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 8.33 seconds. Total CPU system time: 2.76 seconds. Total elapsed time: 11.33 seconds; peak allocated memory: 659.312 MB.

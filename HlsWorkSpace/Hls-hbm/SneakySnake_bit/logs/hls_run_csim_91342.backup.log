@@ -8,10 +8,10 @@ INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/Sne
 INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp' to the project
 INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(10)
 INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'syn.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw  -I/home/deniz/oc-accel/actions/include  -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying ini 'syn.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw  -I/home/deniz/oc-accel/actions/include -I/home/deniz/oc-accel/software/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(12)
 INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(11)
 INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/wrapper.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'tb.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include   -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'tb.cflags=-I/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw -I/home/deniz/oc-accel/actions/include  -I/home/deniz/oc-accel/software/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include -I/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(13)
 INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(7)
 INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg(4)
 INFO: [HLS 200-1505] Using flow_target 'vitis'
@@ -28,14 +28,25 @@ INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
    Compiling ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp in debug mode
-In file included from ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp:2:
-In file included from ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:8:
-/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h:35:10: fatal error: 'osnap_types.h' file not found
-#include "osnap_types.h"
-         ^~~~~~~~~~~~~~~
-1 error generated.
+In file included from ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp:3:
+In file included from ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:9:
+/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw/hw_action_hbm_memcopy_1024.H:28:9: warning: 'MAX_NB_OF_BYTES_READ' macro redefined [-Wmacro-redefined]
+#define MAX_NB_OF_BYTES_READ    (128 * 1024)
+        ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.H:31:9: note: previous definition is here
+#define MAX_NB_OF_BYTES_READ    (TOTAL_READS*256*2/8)
+        ^
+In file included from ../../../../../../SneakySnake-HLS-HBM/wrapper.cpp:3:
+In file included from ../../../../../../SneakySnake-HLS-HBM/hw/pipeline.h:9:
+/home/deniz/oc-accel/actions/hls_hbm_memcopy_1024/hw/hw_action_hbm_memcopy_1024.H:39:3: error: typedef redefinition with different types ('struct action_reg' vs 'struct action_reg')
+} action_reg;
+  ^
+/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.H:59:3: note: previous definition is here
+} action_reg;
+  ^
+1 warning and 1 error generated.
 make: *** [csim.mk:88: obj/wrapper.o] Error 1
 ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
 INFO: [SIM 211-3] *************** CSIM finish ***************
 ERROR: 4
-INFO: [HLS 200-112] Total CPU user time: 9.48 seconds. Total CPU system time: 1.64 seconds. Total elapsed time: 11.36 seconds; peak allocated memory: 659.168 MB.
+INFO: [HLS 200-112] Total CPU user time: 6.57 seconds. Total CPU system time: 2.85 seconds. Total elapsed time: 9.68 seconds; peak allocated memory: 659.113 MB.

@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Thu May  8 18:30:50 2025",
- "timestampMillis": "1746721850002",
+ "dateTimestamp": "Fri May  9 00:39:05 2025",
+ "timestampMillis": "1746743945564",
  "buildStep": {
-  "cmdId": "9910cdfd-2532-443e-8a7b-9a7c2c3e2419",
+  "cmdId": "d69d4d42-8f50-453b-8129-eac9eb15076b",
   "name": "vitis-run",
   "logFile": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/logs/SneakySnake_bit.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2024.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --csim --config /home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/hls_config.cfg --work_dir SneakySnake_bit ",
@@ -33,10 +33,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu May  8 18:30:50 2025",
- "timestampMillis": "1746721850003",
+ "dateTimestamp": "Fri May  9 00:39:05 2025",
+ "timestampMillis": "1746743945564",
  "status": {
-  "cmdId": "9910cdfd-2532-443e-8a7b-9a7c2c3e2419",
+  "cmdId": "d69d4d42-8f50-453b-8129-eac9eb15076b",
   "state": "CS_RUNNING"
  }
 }
@@ -44,8 +44,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Thu May  8 18:30:58 2025",
- "timestampMillis": "1746721858547",
+ "dateTimestamp": "Fri May  9 00:39:14 2025",
+ "timestampMillis": "1746743954294",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -65,12 +65,8 @@
     },
     "sources": [
      "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp",
-     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp",
      "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.cpp",
-     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.h",
-     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/hw_action_hbm.H",
-     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.h",
-     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/include/action_memcopy.h"
+     "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/fetch_mem.cpp"
     ],
     "psSources": [],
     "cuNames": [],
@@ -86,10 +82,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Thu May  8 18:30:58 2025",
- "timestampMillis": "1746721858549",
+ "dateTimestamp": "Fri May  9 00:39:14 2025",
+ "timestampMillis": "1746743954297",
  "buildStep": {
-  "cmdId": "39b1f8b5-dc34-426d-884b-f85c58b5d654",
+  "cmdId": "842b4aeb-0734-475f-804c-374dd8afed1f",
   "name": "",
   "logFile": "/home/deniz/Projects/SneakySnake/HlsWorkSpace/Hls-hbm/SneakySnake_bit/hls/hls.log",
   "commandLine": "",
@@ -102,10 +98,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu May  8 18:30:58 2025",
- "timestampMillis": "1746721858549",
+ "dateTimestamp": "Fri May  9 00:39:14 2025",
+ "timestampMillis": "1746743954298",
  "status": {
-  "cmdId": "39b1f8b5-dc34-426d-884b-f85c58b5d654",
+  "cmdId": "842b4aeb-0734-475f-804c-374dd8afed1f",
   "state": "CS_RUNNING"
  }
 }
@@ -113,10 +109,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu May  8 18:31:03 2025",
- "timestampMillis": "1746721863631",
+ "dateTimestamp": "Fri May  9 00:39:18 2025",
+ "timestampMillis": "1746743958797",
  "status": {
-  "cmdId": "39b1f8b5-dc34-426d-884b-f85c58b5d654",
+  "cmdId": "842b4aeb-0734-475f-804c-374dd8afed1f",
   "state": "CS_PASSED"
  }
 }
@@ -124,10 +120,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Thu May  8 18:31:04 2025",
- "timestampMillis": "1746721864261",
+ "dateTimestamp": "Fri May  9 00:39:19 2025",
+ "timestampMillis": "1746743959398",
  "status": {
-  "cmdId": "9910cdfd-2532-443e-8a7b-9a7c2c3e2419",
+  "cmdId": "d69d4d42-8f50-453b-8129-eac9eb15076b",
   "state": "CS_FAILED"
  }
 }
@@ -135,8 +131,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu May  8 18:31:04 2025",
- "timestampMillis": "1746721864286",
+ "dateTimestamp": "Fri May  9 00:39:19 2025",
+ "timestampMillis": "1746743959399",
  "report": {
   "path": "",
   "name": "",
@@ -149,8 +145,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Thu May  8 18:31:04 2025",
- "timestampMillis": "1746721864288",
+ "dateTimestamp": "Fri May  9 00:39:19 2025",
+ "timestampMillis": "1746743959400",
  "report": {
   "path": "",
   "name": "",
