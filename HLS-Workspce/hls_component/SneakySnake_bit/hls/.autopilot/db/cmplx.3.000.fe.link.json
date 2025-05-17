@@ -1,9 +1,9 @@
 {
   "0": {
     "basicblocks": 7,
-    "calls": "2 3",
+    "calls": "2 4",
     "file": "pipeline.cpp",
-    "fileloc": 679,
+    "fileloc": 681,
     "instructions": 210,
     "name": "SneakySnake_bit",
     "total_instructions": 7209
@@ -36,10 +36,19 @@
     "total_instructions": 4936
   },
   "3": {
-    "basicblocks": 10,
-    "calls": "4 4 4 4 4 4 4 4 4 4 4 1",
+    "basicblocks": 8,
+    "calls": "",
     "file": "pipeline.cpp",
-    "fileloc": 631,
+    "fileloc": 326,
+    "instructions": 21,
+    "name": "count_one_bit",
+    "total_instructions": 86
+  },
+  "4": {
+    "basicblocks": 10,
+    "calls": "3 3 3 3 3 3 3 3 3 3 3 1",
+    "file": "pipeline.cpp",
+    "fileloc": 632,
     "instructions": 166,
     "loads": {
       "L": 11
@@ -49,14 +58,5 @@
       "L": 22
     },
     "total_instructions": 1562
-  },
-  "4": {
-    "basicblocks": 8,
-    "calls": "",
-    "file": "pipeline.cpp",
-    "fileloc": 326,
-    "instructions": 21,
-    "name": "count_one_bit",
-    "total_instructions": 86
   }
 }

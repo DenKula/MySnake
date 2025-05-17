@@ -2,41 +2,41 @@
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">, 7209, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">,  7209, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll,   972, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,   750, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline,   761, user inline pragmas are applied</column>
-            <column name="">(4) simplification,   717, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll, 16972, user unroll pragmas are applied</column>
+            <column name="">(2) simplification, 16531, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline, 16544, user inline pragmas are applied</column>
+            <column name="">(4) simplification, 16544, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
             <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(1) array partition,   717, user array partition pragmas are applied</column>
-            <column name="">(2) simplification,   717, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
-            <column name="">(3) aggregate/disaggregate ,   717, user struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(4) array reshape,   717, apply array reshape pragmas</column>
-            <column name="">(5) access patterns,   730, array access pattern optmizations</column>
+            <column name="">(1) array partition, 16537, user array partition pragmas are applied</column>
+            <column name="">(2) simplification, 16537, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate , 16537, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape, 16537, apply array reshape pragmas</column>
+            <column name="">(5) access patterns, 16538, array access pattern optmizations</column>
             <column name="">, , </column>
             <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
-            <column name="">(1) loop simplification,   697, loop and instruction simplification</column>
-            <column name="">(2) parallelization,   673, loops are unrolled or pipelined to meet performance targets</column>
-            <column name="">(3) array partition,   673, arrays are partitioned to meet performance targets</column>
-            <column name="">(4) simplification,   673, simplification of design after performance transformations</column>
+            <column name="">(1) loop simplification, 16461, loop and instruction simplification</column>
+            <column name="">(2) parallelization, 16460, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition, 16426, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification, 16426, simplification of design after performance transformations</column>
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
-            <column name="">(1) lowering,   677, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations,   737, high level synthesis optimizations</column>
+            <column name="">(1) lowering, 16430, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations, 16438, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="SneakySnake_bit" col1="pipeline.cpp:679" col2="7209" col3="717" col4="730" col5="673" col6="737">
-                    <row id="2" col0="NeighborhoodMap_bit" col1="pipeline.cpp:359" col2="4936" col3="296" col4="307" col5="294" col6="338"/>
-                    <row id="3" col0="after_neighbohood" col1="pipeline.cpp:631" col2="1562" col3="350" col4="351" col5="306" col6="">
-                        <row id="4" col0="count_one_bit" col1="pipeline.cpp:326" col2="946" col2_disp=" 946 (11 calls)" col3="231" col3_disp="231 (11 calls)" col4="231" col4_disp="231 (11 calls)" col5="220" col5_disp="220 (11 calls)" col6=""/>
-                        <row id="1" col0="largest" col1="pipeline.cpp:307" col2="22" col3="" col4="" col5="" col6=""/>
+                <row id="0" col0="SneakySnake_bit" col1="pipeline.cpp:681" col2="7209" col3="16544" col4="16538" col5="16426" col6="16438">
+                    <row id="2" col0="NeighborhoodMap_bit" col1="pipeline.cpp:359" col2="4936" col3="15453" col4="15443" col5="15441" col6="15442"/>
+                    <row id="4" col0="after_neighbohood" col1="pipeline.cpp:632" col2="1562" col3="1020" col4="1023" col5="912" col6="913">
+                        <row id="3" col0="count_one_bit" col1="pipeline.cpp:326" col2="946" col2_disp=" 946 (11 calls)" col3="693" col3_disp="  693 (33 calls)" col4="693" col4_disp="  693 (33 calls)" col5="660" col5_disp="  660 (33 calls)" col6="660" col6_disp="  660 (33 calls)"/>
+                        <row id="1" col0="largest" col1="pipeline.cpp:307" col2="22" col3="126" col3_disp="  126 (3 calls)" col4="129" col4_disp="  129 (3 calls)" col5="96" col5_disp="   96 (3 calls)" col6="96" col6_disp="   96 (3 calls)"/>
                     </row>
                 </row>
             </rows>

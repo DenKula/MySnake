@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'SneakySnake_bit'
 ================================================================
-* Date:           Fri May  9 17:46:10 2025
+* Date:           Sat May 17 18:24:23 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -20,24 +20,29 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  11.00 ns|  8.806 ns|     1.32 ns|
+    |ap_clk  |  11.00 ns|  9.511 ns|     1.32 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+----------+----------+-----+-----+----------+
-    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
-    |   min   |   max   |    min   |    max   | min | max |   Type   |
-    +---------+---------+----------+----------+-----+-----+----------+
-    |      172|      172|  1.892 us|  1.892 us|  132|  132|  dataflow|
-    +---------+---------+----------+----------+-----+-----+----------+
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |       18|       18|  0.198 us|  0.198 us|   17|   17|  loop auto-rewind stp (delay=5 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
 
     + Detail: 
         * Instance: 
         N/A
 
         * Loop: 
-        N/A
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_709_1  |       16|       16|         6|          1|          1|    12|       yes|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -52,7 +57,7 @@ ResetActiveHigh: 1
 IsCombinational: 2
 IsDatapathOnly: 0
 HasWiredReturn: 1
-HasMFsm: 0
+HasMFsm: 2
 HasVarLatency: 1
 IsPipeline: 0
 IsRtlPipelined: 0
@@ -61,65 +66,157 @@ IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 6
+
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 3
-* Pipeline : 0
-* Dataflow Pipeline: 1
-  DF-Pipeline-0: Size = 3, States = { 1 2 3 }
+* Number of FSM states : 6
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 6, States = { 1 2 3 4 5 6 }
+* Dataflow Pipeline: 0
 
 * FSM state transitions: 
 1 --> 2 
 2 --> 3 
-3 --> 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 2.02>
-ST_1 : Operation 4 [2/2] (2.02ns)   --->   "%call_ret = call i1408 @NeighborhoodMap_bit, i256 %ReadSeq, i256 %RefSeq" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 4 'call' 'call_ret' <Predicate = true> <Delay = 2.02> <CoreType = "Generic">   --->   Generic Core
+State 1 <SV = 0> <Delay = 2.80>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i1 = alloca i32 1"   --->   Operation 9 'alloca' 'i1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%global_count2 = alloca i32 1"   --->   Operation 10 'alloca' 'global_count2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%spectopmodule_ln681 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_9" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681]   --->   Operation 12 'spectopmodule' 'spectopmodule_ln681' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln681 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_10, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681]   --->   Operation 13 'specinterface' 'specinterface_ln681' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %ReadLength"   --->   Operation 14 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ReadLength, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ReadLength, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i256 %ReadSeq"   --->   Operation 17 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ReadSeq, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_4, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 18 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ReadSeq, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i256 %RefSeq"   --->   Operation 20 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %RefSeq, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_5, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %RefSeq, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 22 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %EditThreshold"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %EditThreshold, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_6, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %EditThreshold, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %KmerSize"   --->   Operation 26 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %KmerSize, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_7, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %KmerSize, void @empty_3, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 28 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_8, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (1.00ns)   --->   "%ReadSeq_read = read i256 @_ssdm_op_Read.ap_none.i256P0A, i256 %ReadSeq"   --->   Operation 30 'read' 'ReadSeq_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 31 [1/1] (1.00ns)   --->   "%RefSeq_read = read i256 @_ssdm_op_Read.ap_none.i256P0A, i256 %RefSeq"   --->   Operation 31 'read' 'RefSeq_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 120 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%trunc_ln703 = trunc i256 %RefSeq_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 32 'trunc' 'trunc_ln703' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (1.00ns)   --->   "%call_ret = call i1408 @NeighborhoodMap_bit, i256 %ReadSeq_read, i255 %trunc_ln703" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 33 'call' 'call_ret' <Predicate = true> <Delay = 1.00> <CoreType = "Generic">   --->   Generic Core
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%DNA_nsh = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 34 'extractvalue' 'DNA_nsh' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%DNA_shl_one = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 35 'extractvalue' 'DNA_shl_one' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%DNA_shl_two = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 36 'extractvalue' 'DNA_shl_two' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%DNA_shl_three = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 37 'extractvalue' 'DNA_shl_three' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%DNA_shl_four = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 38 'extractvalue' 'DNA_shl_four' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%DNA_shl_five = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 39 'extractvalue' 'DNA_shl_five' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%DNA_shr_one = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 40 'extractvalue' 'DNA_shr_one' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%DNA_shr_two = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 41 'extractvalue' 'DNA_shr_two' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%DNA_shr_three = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 42 'extractvalue' 'DNA_shr_three' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%DNA_shr_four = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 43 'extractvalue' 'DNA_shr_four' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%DNA_shr_five = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703]   --->   Operation 44 'extractvalue' 'DNA_shr_five' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.38ns)   --->   "%store_ln0 = store i2 0, i2 %global_count2"   --->   Operation 45 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 46 [1/1] (0.38ns)   --->   "%store_ln0 = store i4 0, i4 %i1"   --->   Operation 46 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln709 = br void %for.inc.split" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709]   --->   Operation 47 'br' 'br_ln709' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%i1_load = load i4 %i1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709]   --->   Operation 48 'load' 'i1_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%shl_ln = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i4.i3, i4 %i1_load, i3 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 49 'bitconcatenate' 'shl_ln' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.70ns)   --->   "%icmp_ln712 = icmp_ne  i7 %shl_ln, i7 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 50 'icmp' 'icmp_ln712' <Predicate = true> <Delay = 0.70> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln712)   --->   "%tmp = partselect i128 @llvm.part.select.i128, i128 %DNA_nsh, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 51 'partselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node select_ln712_1)   --->   "%xor_ln712 = xor i7 %shl_ln, i7 127" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 52 'xor' 'xor_ln712' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln712)   --->   "%select_ln712 = select i1 %icmp_ln712, i128 %tmp, i128 %DNA_nsh" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 53 'select' 'select_ln712' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (0.30ns) (out node of the LUT)   --->   "%select_ln712_1 = select i1 %icmp_ln712, i7 %xor_ln712, i7 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 54 'select' 'select_ln712_1' <Predicate = true> <Delay = 0.30> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.30> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%zext_ln712 = zext i7 %select_ln712_1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 55 'zext' 'zext_ln712' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln712 = lshr i128 %select_ln712, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 56 'lshr' 'lshr_ln712' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%trunc_ln712 = trunc i128 %lshr_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 57 'trunc' 'trunc_ln712' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.27ns)   --->   "%select_ln712_2 = select i1 %icmp_ln712, i8 3, i8 255" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 58 'select' 'select_ln712_2' <Predicate = true> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 59 [1/1] (0.22ns)   --->   "%and_ln712 = and i8 %trunc_ln712, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 59 'and' 'and_ln712' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 60 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713)   --->   "%tmp_7 = partselect i128 @llvm.part.select.i128, i128 %DNA_shl_one, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 60 'partselect' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713)   --->   "%select_ln713 = select i1 %icmp_ln712, i128 %tmp_7, i128 %DNA_shl_one" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 61 'select' 'select_ln713' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 62 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln713 = lshr i128 %select_ln713, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 62 'lshr' 'lshr_ln713' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%trunc_ln713 = trunc i128 %lshr_ln713" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 63 'trunc' 'trunc_ln713' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.22ns)   --->   "%and_ln713 = and i8 %trunc_ln713, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 64 'and' 'and_ln713' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_1)   --->   "%tmp_8 = partselect i128 @llvm.part.select.i128, i128 %DNA_shl_two, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 65 'partselect' 'tmp_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_1)   --->   "%select_ln713_1 = select i1 %icmp_ln712, i128 %tmp_8, i128 %DNA_shl_two" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 66 'select' 'select_ln713_1' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 67 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln713_1 = lshr i128 %select_ln713_1, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 67 'lshr' 'lshr_ln713_1' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%trunc_ln713_1 = trunc i128 %lshr_ln713_1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 68 'trunc' 'trunc_ln713_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.22ns)   --->   "%and_ln713_1 = and i8 %trunc_ln713_1, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 69 'and' 'and_ln713_1' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 70 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_2)   --->   "%tmp_9 = partselect i128 @llvm.part.select.i128, i128 %DNA_shl_three, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 70 'partselect' 'tmp_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_2)   --->   "%select_ln713_2 = select i1 %icmp_ln712, i128 %tmp_9, i128 %DNA_shl_three" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 71 'select' 'select_ln713_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 72 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln713_2 = lshr i128 %select_ln713_2, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 72 'lshr' 'lshr_ln713_2' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%trunc_ln713_2 = trunc i128 %lshr_ln713_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 73 'trunc' 'trunc_ln713_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.22ns)   --->   "%and_ln713_2 = and i8 %trunc_ln713_2, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 74 'and' 'and_ln713_2' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 75 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_3)   --->   "%tmp_10 = partselect i128 @llvm.part.select.i128, i128 %DNA_shl_four, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 75 'partselect' 'tmp_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_3)   --->   "%select_ln713_3 = select i1 %icmp_ln712, i128 %tmp_10, i128 %DNA_shl_four" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 76 'select' 'select_ln713_3' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 77 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln713_3 = lshr i128 %select_ln713_3, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 77 'lshr' 'lshr_ln713_3' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%trunc_ln713_3 = trunc i128 %lshr_ln713_3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 78 'trunc' 'trunc_ln713_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.22ns)   --->   "%and_ln713_3 = and i8 %trunc_ln713_3, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 79 'and' 'and_ln713_3' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 80 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_4)   --->   "%tmp_11 = partselect i128 @llvm.part.select.i128, i128 %DNA_shl_five, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 80 'partselect' 'tmp_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln713_4)   --->   "%select_ln713_4 = select i1 %icmp_ln712, i128 %tmp_11, i128 %DNA_shl_five" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 81 'select' 'select_ln713_4' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 82 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln713_4 = lshr i128 %select_ln713_4, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 82 'lshr' 'lshr_ln713_4' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%trunc_ln713_4 = trunc i128 %lshr_ln713_4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 83 'trunc' 'trunc_ln713_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.22ns)   --->   "%and_ln713_4 = and i8 %trunc_ln713_4, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:713]   --->   Operation 84 'and' 'and_ln713_4' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 85 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714)   --->   "%tmp_12 = partselect i128 @llvm.part.select.i128, i128 %DNA_shr_one, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 85 'partselect' 'tmp_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714)   --->   "%select_ln714 = select i1 %icmp_ln712, i128 %tmp_12, i128 %DNA_shr_one" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 86 'select' 'select_ln714' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 87 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln714 = lshr i128 %select_ln714, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 87 'lshr' 'lshr_ln714' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%trunc_ln714 = trunc i128 %lshr_ln714" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 88 'trunc' 'trunc_ln714' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.22ns)   --->   "%and_ln714 = and i8 %trunc_ln714, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 89 'and' 'and_ln714' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 90 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_1)   --->   "%tmp_13 = partselect i128 @llvm.part.select.i128, i128 %DNA_shr_two, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 90 'partselect' 'tmp_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_1)   --->   "%select_ln714_1 = select i1 %icmp_ln712, i128 %tmp_13, i128 %DNA_shr_two" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 91 'select' 'select_ln714_1' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 92 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln714_1 = lshr i128 %select_ln714_1, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 92 'lshr' 'lshr_ln714_1' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%trunc_ln714_1 = trunc i128 %lshr_ln714_1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 93 'trunc' 'trunc_ln714_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.22ns)   --->   "%and_ln714_1 = and i8 %trunc_ln714_1, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 94 'and' 'and_ln714_1' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 95 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_2)   --->   "%tmp_14 = partselect i128 @llvm.part.select.i128, i128 %DNA_shr_three, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 95 'partselect' 'tmp_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_2)   --->   "%select_ln714_2 = select i1 %icmp_ln712, i128 %tmp_14, i128 %DNA_shr_three" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 96 'select' 'select_ln714_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 97 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln714_2 = lshr i128 %select_ln714_2, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 97 'lshr' 'lshr_ln714_2' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%trunc_ln714_2 = trunc i128 %lshr_ln714_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 98 'trunc' 'trunc_ln714_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.22ns)   --->   "%and_ln714_2 = and i8 %trunc_ln714_2, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 99 'and' 'and_ln714_2' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_3)   --->   "%tmp_15 = partselect i128 @llvm.part.select.i128, i128 %DNA_shr_four, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 100 'partselect' 'tmp_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_3)   --->   "%select_ln714_3 = select i1 %icmp_ln712, i128 %tmp_15, i128 %DNA_shr_four" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 101 'select' 'select_ln714_3' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 102 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln714_3 = lshr i128 %select_ln714_3, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 102 'lshr' 'lshr_ln714_3' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%trunc_ln714_3 = trunc i128 %lshr_ln714_3" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 103 'trunc' 'trunc_ln714_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.22ns)   --->   "%and_ln714_3 = and i8 %trunc_ln714_3, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 104 'and' 'and_ln714_3' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 105 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_4)   --->   "%tmp_16 = partselect i128 @llvm.part.select.i128, i128 %DNA_shr_five, i32 127, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 105 'partselect' 'tmp_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 106 [1/1] (0.00ns) (grouped into LUT with out node lshr_ln714_4)   --->   "%select_ln714_4 = select i1 %icmp_ln712, i128 %tmp_16, i128 %DNA_shr_five" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 106 'select' 'select_ln714_4' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.34> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 107 [1/1] (1.17ns) (out node of the LUT)   --->   "%lshr_ln714_4 = lshr i128 %select_ln714_4, i128 %zext_ln712" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 107 'lshr' 'lshr_ln714_4' <Predicate = true> <Delay = 1.17> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.17> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%trunc_ln714_4 = trunc i128 %lshr_ln714_4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 108 'trunc' 'trunc_ln714_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.22ns)   --->   "%and_ln714_4 = and i8 %trunc_ln714_4, i8 %select_ln712_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:714]   --->   Operation 109 'and' 'and_ln714_4' <Predicate = true> <Delay = 0.22> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 110 [1/1] (0.70ns)   --->   "%i = add i4 %i1_load, i4 1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709]   --->   Operation 110 'add' 'i' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 111 [1/1] (0.70ns)   --->   "%icmp_ln709 = icmp_eq  i4 %i1_load, i4 11" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709]   --->   Operation 111 'icmp' 'icmp_ln709' <Predicate = true> <Delay = 0.70> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 112 [1/1] (0.38ns)   --->   "%store_ln709 = store i4 %i, i4 %i1" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709]   --->   Operation 112 'store' 'store_ln709' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%br_ln709 = br i1 %icmp_ln709, void %for.inc.split, void %for.end" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709]   --->   Operation 113 'br' 'br_ln709' <Predicate = true> <Delay = 0.00>
 
-State 2 <SV = 1> <Delay = 2.83>
-ST_2 : Operation 5 [1/2] (0.00ns)   --->   "%call_ret = call i1408 @NeighborhoodMap_bit, i256 %ReadSeq, i256 %RefSeq" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 5 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
-ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%DNA_nsh = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 6 'extractvalue' 'DNA_nsh' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%DNA_shl_one = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 7 'extractvalue' 'DNA_shl_one' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%DNA_shl_two = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 8 'extractvalue' 'DNA_shl_two' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%DNA_shl_three = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 9 'extractvalue' 'DNA_shl_three' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%DNA_shl_four = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 10 'extractvalue' 'DNA_shl_four' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%DNA_shl_five = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 11 'extractvalue' 'DNA_shl_five' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%DNA_shr_one = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 12 'extractvalue' 'DNA_shr_one' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%DNA_shr_two = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 13 'extractvalue' 'DNA_shr_two' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%DNA_shr_three = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 14 'extractvalue' 'DNA_shr_three' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%DNA_shr_four = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 15 'extractvalue' 'DNA_shr_four' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%DNA_shr_five = extractvalue i1408 %call_ret" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701]   --->   Operation 16 'extractvalue' 'DNA_shr_five' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.40> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 128> <Depth = 2> <FIFO>
-ST_2 : Operation 17 [2/2] (2.83ns)   --->   "%add_i_i2_loc_channel = call i2 @Loop_VITIS_LOOP_707_1_proc, i128 %DNA_nsh, i128 %DNA_shl_one, i128 %DNA_shl_two, i128 %DNA_shl_three, i128 %DNA_shl_four, i128 %DNA_shl_five, i128 %DNA_shr_one, i128 %DNA_shr_two, i128 %DNA_shr_three, i128 %DNA_shr_four, i128 %DNA_shr_five" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706]   --->   Operation 17 'call' 'add_i_i2_loc_channel' <Predicate = true> <Delay = 2.83> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 2> <Depth = 2> <FIFO>
+State 2 <SV = 1> <Delay = 9.51>
+ST_2 : Operation 114 [5/5] (9.51ns)   --->   "%trunc_ln712_1 = call i2 @after_neighbohood, i8 %and_ln712, i8 %and_ln713, i8 %and_ln713_1, i8 %and_ln713_2, i8 %and_ln713_3, i8 %and_ln713_4, i8 %and_ln714, i8 %and_ln714_1, i8 %and_ln714_2, i8 %and_ln714_3, i8 %and_ln714_4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 114 'call' 'trunc_ln712_1' <Predicate = true> <Delay = 9.51> <CoreType = "Generic">   --->   Generic Core
 
-State 3 <SV = 2> <Delay = 5.15>
-ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln694 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694]   --->   Operation 18 'specdataflowpipeline' 'specdataflowpipeline_ln694' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 0"   --->   Operation 19 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%spectopmodule_ln679 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_17" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679]   --->   Operation 20 'spectopmodule' 'spectopmodule_ln679' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln679 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_19, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679]   --->   Operation 21 'specinterface' 'specinterface_ln679' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %ReadLength"   --->   Operation 22 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ReadLength, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_4, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %ReadLength, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 25 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i256 %ReadSeq"   --->   Operation 25 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ReadSeq, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_6, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 26 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %ReadSeq, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i256 %RefSeq"   --->   Operation 28 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %RefSeq, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_8, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i256 %RefSeq, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 30 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %EditThreshold"   --->   Operation 31 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %EditThreshold, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_14, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 32 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %EditThreshold, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %KmerSize"   --->   Operation 34 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %KmerSize, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty_9, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %KmerSize, void @empty_5, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_2, void @empty_2, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 36 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_1, i32 0, i32 0, void @empty_2, i32 0, i32 0, void @empty_3, void @empty, void @empty_2, i32 0, i32 0, i32 0, i32 0, void @empty_2, void @empty_2, i32 4294967295, i32 0, i32 0"   --->   Operation 37 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 38 [1/2] (5.15ns)   --->   "%add_i_i2_loc_channel = call i2 @Loop_VITIS_LOOP_707_1_proc, i128 %DNA_nsh, i128 %DNA_shl_one, i128 %DNA_shl_two, i128 %DNA_shl_three, i128 %DNA_shl_four, i128 %DNA_shl_five, i128 %DNA_shr_one, i128 %DNA_shr_two, i128 %DNA_shr_three, i128 %DNA_shr_four, i128 %DNA_shr_five" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706]   --->   Operation 38 'call' 'add_i_i2_loc_channel' <Predicate = true> <Delay = 5.15> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 2> <Depth = 2> <FIFO>
-ST_3 : Operation 39 [1/1] (1.42ns)   --->   "%tmp = call i2 @Block_entry_proc_proc, i2 %add_i_i2_loc_channel" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 39 'call' 'tmp' <Predicate = true> <Delay = 1.42> <CoreType = "Generic">   --->   Generic Core
-ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln717 = zext i2 %tmp" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 40 'zext' 'zext_ln717' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%ret_ln717 = ret i32 %zext_ln717" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 41 'ret' 'ret_ln717' <Predicate = true> <Delay = 0.00>
+State 3 <SV = 2> <Delay = 9.51>
+ST_3 : Operation 115 [4/5] (9.51ns)   --->   "%trunc_ln712_1 = call i2 @after_neighbohood, i8 %and_ln712, i8 %and_ln713, i8 %and_ln713_1, i8 %and_ln713_2, i8 %and_ln713_3, i8 %and_ln713_4, i8 %and_ln714, i8 %and_ln714_1, i8 %and_ln714_2, i8 %and_ln714_3, i8 %and_ln714_4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 115 'call' 'trunc_ln712_1' <Predicate = true> <Delay = 9.51> <CoreType = "Generic">   --->   Generic Core
+
+State 4 <SV = 3> <Delay = 9.51>
+ST_4 : Operation 116 [3/5] (9.51ns)   --->   "%trunc_ln712_1 = call i2 @after_neighbohood, i8 %and_ln712, i8 %and_ln713, i8 %and_ln713_1, i8 %and_ln713_2, i8 %and_ln713_3, i8 %and_ln713_4, i8 %and_ln714, i8 %and_ln714_1, i8 %and_ln714_2, i8 %and_ln714_3, i8 %and_ln714_4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 116 'call' 'trunc_ln712_1' <Predicate = true> <Delay = 9.51> <CoreType = "Generic">   --->   Generic Core
+
+State 5 <SV = 4> <Delay = 9.51>
+ST_5 : Operation 117 [2/5] (9.51ns)   --->   "%trunc_ln712_1 = call i2 @after_neighbohood, i8 %and_ln712, i8 %and_ln713, i8 %and_ln713_1, i8 %and_ln713_2, i8 %and_ln713_3, i8 %and_ln713_4, i8 %and_ln714, i8 %and_ln714_1, i8 %and_ln714_2, i8 %and_ln714_3, i8 %and_ln714_4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 117 'call' 'trunc_ln712_1' <Predicate = true> <Delay = 9.51> <CoreType = "Generic">   --->   Generic Core
+
+State 6 <SV = 5> <Delay = 9.36>
+ST_6 : Operation 118 [1/1] (0.00ns)   --->   "%global_count2_load = load i2 %global_count2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 118 'load' 'global_count2_load' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 119 [1/1] (0.00ns)   --->   "%specpipeline_ln708 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:708]   --->   Operation 119 'specpipeline' 'specpipeline_ln708' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 120 [1/1] (0.00ns)   --->   "%speclooptripcount_ln708 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 12, i64 12, i64 12" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:708]   --->   Operation 120 'speclooptripcount' 'speclooptripcount_ln708' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 121 [1/1] (0.00ns)   --->   "%specloopname_ln709 = specloopname void @_ssdm_op_SpecLoopName, void @empty_11" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709]   --->   Operation 121 'specloopname' 'specloopname_ln709' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 122 [1/5] (8.54ns)   --->   "%trunc_ln712_1 = call i2 @after_neighbohood, i8 %and_ln712, i8 %and_ln713, i8 %and_ln713_1, i8 %and_ln713_2, i8 %and_ln713_3, i8 %and_ln713_4, i8 %and_ln714, i8 %and_ln714_1, i8 %and_ln714_2, i8 %and_ln714_3, i8 %and_ln714_4" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 122 'call' 'trunc_ln712_1' <Predicate = true> <Delay = 8.54> <CoreType = "Generic">   --->   Generic Core
+ST_6 : Operation 123 [1/1] (0.43ns)   --->   "%global_count = add i2 %trunc_ln712_1, i2 %global_count2_load" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 123 'add' 'global_count' <Predicate = true> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 124 [1/1] (0.38ns)   --->   "%store_ln712 = store i2 %global_count, i2 %global_count2" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712]   --->   Operation 124 'store' 'store_ln712' <Predicate = true> <Delay = 0.38>
+ST_6 : Operation 125 [1/1] (0.00ns)   --->   "%zext_ln719 = zext i2 %global_count" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:719]   --->   Operation 125 'zext' 'zext_ln719' <Predicate = (icmp_ln709)> <Delay = 0.00>
+ST_6 : Operation 126 [1/1] (0.38ns)   --->   "%ret_ln719 = ret i32 %zext_ln719" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:719]   --->   Operation 126 'ret' 'ret_ln719' <Predicate = (icmp_ln709)> <Delay = 0.38>
 
 
 ============================================================
@@ -127,18 +224,36 @@ ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%ret_ln717 = ret i32 %zext_ln717" [
 ============================================================
 Target clock period: 11.000ns, clock uncertainty: 1.320ns.
 
- <State 1>: 2.025ns
+ <State 1>: 2.804ns
 The critical path consists of the following:
-	'call' operation 1408 bit ('call_ret', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701) to 'NeighborhoodMap_bit' [26]  (2.025 ns)
+	'store' operation 0 bit ('store_ln0') of constant 0 on local variable 'i1' [43]  (0.387 ns)
+	'load' operation 4 bit ('i1_load', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709) on local variable 'i1' [46]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln712', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) [52]  (0.706 ns)
+	'select' operation 7 bit ('select_ln712_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) [56]  (0.308 ns)
+	'lshr' operation 128 bit ('lshr_ln712', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) [58]  (1.175 ns)
+	'and' operation 8 bit ('and_ln712', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) [61]  (0.228 ns)
 
- <State 2>: 2.832ns
+ <State 2>: 9.511ns
 The critical path consists of the following:
-	'call' operation 1408 bit ('call_ret', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701) to 'NeighborhoodMap_bit' [26]  (0.000 ns)
-	'call' operation 2 bit ('add_i_i2_loc_channel', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706) to 'Loop_VITIS_LOOP_707_1_proc' [38]  (2.832 ns)
+	'call' operation 2 bit ('trunc_ln712_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) to 'after_neighbohood' [112]  (9.511 ns)
 
- <State 3>: 5.151ns
+ <State 3>: 9.511ns
 The critical path consists of the following:
-	'call' operation 2 bit ('add_i_i2_loc_channel', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:706) to 'Loop_VITIS_LOOP_707_1_proc' [38]  (5.151 ns)
+	'call' operation 2 bit ('trunc_ln712_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) to 'after_neighbohood' [112]  (9.511 ns)
+
+ <State 4>: 9.511ns
+The critical path consists of the following:
+	'call' operation 2 bit ('trunc_ln712_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) to 'after_neighbohood' [112]  (9.511 ns)
+
+ <State 5>: 9.511ns
+The critical path consists of the following:
+	'call' operation 2 bit ('trunc_ln712_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) to 'after_neighbohood' [112]  (9.511 ns)
+
+ <State 6>: 9.367ns
+The critical path consists of the following:
+	'call' operation 2 bit ('trunc_ln712_1', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) to 'after_neighbohood' [112]  (8.544 ns)
+	'add' operation 2 bit ('global_count', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) [113]  (0.436 ns)
+	'store' operation 0 bit ('store_ln712', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) of variable 'global_count', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712 on local variable 'global_count2' [116]  (0.387 ns)
 
 
 ============================================================
@@ -152,6 +267,9 @@ N/A
 	State 1
 	State 2
 	State 3
+	State 4
+	State 5
+	State 6
 
 
 ============================================================

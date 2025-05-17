@@ -1,41 +1,35 @@
 {
   "0": {
-    "basicblocks": 1,
-    "calls": "3 4",
+    "basicblocks": 4,
+    "calls": "2 3",
     "file": "pipeline.cpp",
-    "fileloc": 679,
-    "instructions": 50,
+    "fileloc": 681,
+    "instructions": 83,
     "loads": {
-      "L": 12,
+      "L": 11,
       "T": 2
     },
     "name": "SneakySnake_bit",
-    "total_instructions": 737
+    "total_instructions": 16438
   },
   "1": {
-    "basicblocks": 4,
-    "calls": "2 2 2 2 2 2 2 2 2 2 2",
-    "file": "pipeline.cpp",
-    "fileloc": 631,
-    "instructions": 90,
-    "name": "after_neighbohood",
-    "total_instructions": 310
-  },
-  "2": {
-    "basicblocks": 10,
+    "basicblocks": 1,
     "calls": "",
     "file": "pipeline.cpp",
-    "fileloc": 326,
-    "instructions": 20,
-    "name": "count_one_bit",
-    "total_instructions": 20
+    "fileloc": 307,
+    "instructions": 32,
+    "loads": {
+      "L": 11
+    },
+    "name": "largest",
+    "total_instructions": 32
   },
-  "3": {
-    "basicblocks": 78,
+  "2": {
+    "basicblocks": 5589,
     "calls": "",
     "file": "pipeline.cpp",
     "fileloc": 359,
-    "instructions": 338,
+    "instructions": 15442,
     "loads": {
       "L": 11
     },
@@ -43,18 +37,27 @@
     "stores": {
       "L": 11
     },
-    "total_instructions": 338
+    "total_instructions": 15442
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "4 4 4 4 4 4 4 4 4 4 4 1 4 4 4 4 4 4 4 4 4 4 4 1 4 4 4 4 4 4 4 4 4 4 4 1",
+    "file": "pipeline.cpp",
+    "fileloc": 632,
+    "instructions": 157,
+    "name": "after_neighbohood",
+    "stores": {
+      "L": 33
+    },
+    "total_instructions": 913
   },
   "4": {
-    "basicblocks": 4,
-    "calls": "1",
+    "basicblocks": 10,
+    "calls": "",
     "file": "pipeline.cpp",
-    "fileloc": 0,
-    "instructions": 39,
-    "name": "_Z15SneakySnake_bitiR7ap_uintILi256EES1_ii_for.inc",
-    "stores": {
-      "L": 1
-    },
-    "total_instructions": 349
+    "fileloc": 326,
+    "instructions": 20,
+    "name": "count_one_bit",
+    "total_instructions": 20
   }
 }

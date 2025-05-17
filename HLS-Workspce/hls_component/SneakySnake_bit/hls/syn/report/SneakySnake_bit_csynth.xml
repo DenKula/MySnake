@@ -15,35 +15,54 @@
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>dataflow</PipelineType>
+<PipelineType>loop auto-rewind stp (delay=5 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.806</EstimatedClockPeriod>
+<EstimatedClockPeriod>9.511</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>172</Best-caseLatency>
-<Average-caseLatency>172</Average-caseLatency>
-<Worst-caseLatency>172</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.892 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.892 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.892 us</Worst-caseRealTimeLatency>
-<DataflowPipelineThroughput>132</DataflowPipelineThroughput>
-<Interval-min>132</Interval-min>
-<Interval-max>132</Interval-max>
+<Best-caseLatency>18</Best-caseLatency>
+<Average-caseLatency>18</Average-caseLatency>
+<Worst-caseLatency>18</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.198 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.198 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.198 us</Worst-caseRealTimeLatency>
+<Interval-min>17</Interval-min>
+<Interval-max>17</Interval-max>
 </SummaryOfOverallLatency>
+<SummaryOfLoopLatency>
+<VITIS_LOOP_709_1>
+<Slack>9.68</Slack>
+<TripCount>12</TripCount>
+<Latency>16</Latency>
+<AbsoluteTimeLatency>176</AbsoluteTimeLatency>
+<PipelineII>1</PipelineII>
+<PipelineDepth>6</PipelineDepth>
+<InstanceList>
+</InstanceList>
+</VITIS_LOOP_709_1>
+</SummaryOfLoopLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694</SourceLocation>
+<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681</SourceLocation>
+<SummaryOfLoopViolations>
+<VITIS_LOOP_709_1>
+<Name>VITIS_LOOP_709_1</Name>
+<IssueType>-</IssueType>
+<ViolationType>-</ViolationType>
+<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709</SourceLocation>
+</VITIS_LOOP_709_1>
+</SummaryOfLoopViolations>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>8289</FF>
-<LUT>17583</LUT>
+<FF>1147</FF>
+<LUT>34232</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>

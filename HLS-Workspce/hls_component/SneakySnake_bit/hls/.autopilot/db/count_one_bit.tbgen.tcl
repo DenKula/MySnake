@@ -13,7 +13,7 @@ set hasInterrupt 0
 set DLRegFirstOffset 0
 set DLRegItemOffset 0
 set svuvm_can_support 1
-set cdfgNum 18
+set cdfgNum 5
 set C_modelName {count_one_bit}
 set C_modelType { int 4 }
 set ap_memory_interface_dict [dict create]
@@ -57,7 +57,7 @@ set RtlHierarchyInfo {[
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "input_seq_val", "Type" : "None", "Direction" : "I"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sparsemux_15_6_3_1_1_U60", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.sparsemux_17_7_4_1_1_U3", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {

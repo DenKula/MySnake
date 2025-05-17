@@ -10,30 +10,30 @@ if {${::AESL::PGuard_autoexp_gen}} {
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 58 \
-    name ReadSeq \
+    id 1 \
+    name DNA_read_val \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_ReadSeq \
+    corename dc_DNA_read_val \
     op interface \
-    ports { ReadSeq { I 256 vector } } \
+    ports { DNA_read_val { I 256 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 59 \
-    name RefSeq \
+    id 2 \
+    name DNA_ref_val \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_RefSeq \
+    corename dc_DNA_ref_val \
     op interface \
-    ports { RefSeq { I 256 vector } } \
+    ports { DNA_ref_val { I 255 vector } } \
 } "
 }
 
@@ -47,7 +47,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename ap_ctrl \
     op interface \
-    ports { ap_start { I 1 bit } ap_ready { O 1 bit } ap_done { O 1 bit } ap_idle { O 1 bit } ap_continue { I 1 bit } } \
+    ports { ap_ready { O 1 bit } } \
 } "
 }
 
@@ -67,32 +67,12 @@ eval "cg_default_interface_gen_dc { \
 
 
 # Adapter definition:
-set PortName ap_clk
-set DataWd 1 
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_clock"} {
-eval "cg_default_interface_gen_clock { \
-    id -3 \
-    name ${PortName} \
-    reset_level 1 \
-    sync_rst true \
-    corename apif_ap_clk \
-    data_wd ${DataWd} \
-    op interface \
-}"
-} else {
-puts "@W \[IMPL-113\] Cannot find bus interface model in the library. Ignored generation of bus interface for '${PortName}'"
-}
-}
-
-
-# Adapter definition:
 set PortName ap_rst
 set DataWd 1 
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
-    id -4 \
+    id -3 \
     name ${PortName} \
     reset_level 1 \
     sync_rst true \

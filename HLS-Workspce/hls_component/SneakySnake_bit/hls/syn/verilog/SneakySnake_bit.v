@@ -6,9 +6,11 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="SneakySnake_bit_SneakySnake_bit,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvu9p-flga2104-2-i,HLS_INPUT_CLOCK=11.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=8.806429,HLS_SYN_LAT=172,HLS_SYN_TPT=132,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=8289,HLS_SYN_LUT=17583,HLS_VERSION=2024_2}" *)
+(* CORE_GENERATION_INFO="SneakySnake_bit_SneakySnake_bit,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvu9p-flga2104-2-i,HLS_INPUT_CLOCK=11.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=9.511286,HLS_SYN_LAT=18,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=1147,HLS_SYN_LUT=34232,HLS_VERSION=2024_2}" *)
 
 module SneakySnake_bit (
+        ap_clk,
+        ap_rst_n,
         s_axi_control_AWVALID,
         s_axi_control_AWREADY,
         s_axi_control_AWADDR,
@@ -26,11 +28,10 @@ module SneakySnake_bit (
         s_axi_control_BVALID,
         s_axi_control_BREADY,
         s_axi_control_BRESP,
-        ap_clk,
-        ap_rst_n,
         interrupt
 );
 
+parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
 parameter    C_S_AXI_CONTROL_DATA_WIDTH = 32;
 parameter    C_S_AXI_CONTROL_ADDR_WIDTH = 7;
 parameter    C_S_AXI_DATA_WIDTH = 32;
@@ -38,6 +39,8 @@ parameter    C_S_AXI_DATA_WIDTH = 32;
 parameter C_S_AXI_CONTROL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
 
+input   ap_clk;
+input   ap_rst_n;
 input   s_axi_control_AWVALID;
 output   s_axi_control_AWREADY;
 input  [C_S_AXI_CONTROL_ADDR_WIDTH - 1:0] s_axi_control_AWADDR;
@@ -55,115 +58,159 @@ output  [1:0] s_axi_control_RRESP;
 output   s_axi_control_BVALID;
 input   s_axi_control_BREADY;
 output  [1:0] s_axi_control_BRESP;
-input   ap_clk;
-input   ap_rst_n;
 output   interrupt;
 
 (* shreg_extract = "no" *) reg    ap_rst_reg_2;
 (* shreg_extract = "no" *) reg    ap_rst_reg_1;
 (* shreg_extract = "no" *) reg    ap_rst_n_inv;
 wire    ap_start;
-wire    ap_ready;
 wire    ap_done;
 wire    ap_continue;
-wire    ap_idle;
-wire   [31:0] ap_return;
+reg    ap_idle;
+(* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
+wire    ap_CS_fsm_pp0_stage0;
+wire    ap_enable_reg_pp0_iter0;
+reg    ap_enable_reg_pp0_iter1;
+reg    ap_enable_reg_pp0_iter2;
+reg    ap_enable_reg_pp0_iter3;
+reg    ap_enable_reg_pp0_iter4;
+reg    ap_enable_reg_pp0_iter5;
+reg    ap_idle_pp0;
+wire    ap_ready;
+reg    ap_done_reg;
+reg    ap_block_state1_pp0_stage0_iter0;
+reg    ap_block_pp0_stage0_subdone;
+wire   [0:0] icmp_ln709_fu_610_p2;
+reg    ap_condition_exit_pp0_iter0_stage0;
+wire    ap_loop_exit_ready;
+reg    ap_ready_int;
+reg    ap_condition_exit_pp0_iter0_stage0_pp0_iter1_reg;
+reg    ap_block_pp0_stage0_11001;
+reg    ap_condition_exit_pp0_iter0_stage0_pp0_iter2_reg;
+reg    ap_condition_exit_pp0_iter0_stage0_pp0_iter3_reg;
+reg    ap_condition_exit_pp0_iter0_stage0_pp0_iter4_reg;
+reg    ap_condition_exit_pp0_iter0_stage0_pp0_iter5_reg;
+reg    ap_loop_exit_ready_delayed;
 wire   [31:0] ReadLength;
 wire   [255:0] ReadSeq;
 wire   [255:0] RefSeq;
 wire   [31:0] EditThreshold;
 wire   [31:0] KmerSize;
-wire    NeighborhoodMap_bit_U0_ap_start;
-wire    NeighborhoodMap_bit_U0_ap_done;
-wire    NeighborhoodMap_bit_U0_ap_continue;
-wire    NeighborhoodMap_bit_U0_ap_idle;
-wire    NeighborhoodMap_bit_U0_ap_ready;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_0;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_1;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_2;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_3;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_4;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_5;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_6;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_7;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_8;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_9;
-wire   [127:0] NeighborhoodMap_bit_U0_ap_return_10;
-wire    ap_channel_done_DNA_shr_five;
-wire    DNA_shr_five_full_n;
-reg    ap_sync_reg_channel_write_DNA_shr_five;
-wire    ap_sync_channel_write_DNA_shr_five;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_start;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_done;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_continue;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_idle;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_ready;
-wire   [1:0] Loop_VITIS_LOOP_707_1_proc_U0_ap_return;
-wire    add_i_i2_loc_channel_full_n;
-wire    Block_entry_proc_proc_U0_ap_start;
-wire    Block_entry_proc_proc_U0_ap_done;
-wire    Block_entry_proc_proc_U0_ap_continue;
-wire    Block_entry_proc_proc_U0_ap_idle;
-wire    Block_entry_proc_proc_U0_ap_ready;
-wire   [1:0] Block_entry_proc_proc_U0_ap_return;
-wire    DNA_nsh_full_n;
-wire   [127:0] DNA_nsh_dout;
-wire    DNA_nsh_empty_n;
-wire   [2:0] DNA_nsh_num_data_valid;
-wire   [2:0] DNA_nsh_fifo_cap;
-wire    DNA_shl_one_full_n;
-wire   [127:0] DNA_shl_one_dout;
-wire    DNA_shl_one_empty_n;
-wire   [2:0] DNA_shl_one_num_data_valid;
-wire   [2:0] DNA_shl_one_fifo_cap;
-wire    DNA_shl_two_full_n;
-wire   [127:0] DNA_shl_two_dout;
-wire    DNA_shl_two_empty_n;
-wire   [2:0] DNA_shl_two_num_data_valid;
-wire   [2:0] DNA_shl_two_fifo_cap;
-wire    DNA_shl_three_full_n;
-wire   [127:0] DNA_shl_three_dout;
-wire    DNA_shl_three_empty_n;
-wire   [2:0] DNA_shl_three_num_data_valid;
-wire   [2:0] DNA_shl_three_fifo_cap;
-wire    DNA_shl_four_full_n;
-wire   [127:0] DNA_shl_four_dout;
-wire    DNA_shl_four_empty_n;
-wire   [2:0] DNA_shl_four_num_data_valid;
-wire   [2:0] DNA_shl_four_fifo_cap;
-wire    DNA_shl_five_full_n;
-wire   [127:0] DNA_shl_five_dout;
-wire    DNA_shl_five_empty_n;
-wire   [2:0] DNA_shl_five_num_data_valid;
-wire   [2:0] DNA_shl_five_fifo_cap;
-wire    DNA_shr_one_full_n;
-wire   [127:0] DNA_shr_one_dout;
-wire    DNA_shr_one_empty_n;
-wire   [2:0] DNA_shr_one_num_data_valid;
-wire   [2:0] DNA_shr_one_fifo_cap;
-wire    DNA_shr_two_full_n;
-wire   [127:0] DNA_shr_two_dout;
-wire    DNA_shr_two_empty_n;
-wire   [2:0] DNA_shr_two_num_data_valid;
-wire   [2:0] DNA_shr_two_fifo_cap;
-wire    DNA_shr_three_full_n;
-wire   [127:0] DNA_shr_three_dout;
-wire    DNA_shr_three_empty_n;
-wire   [2:0] DNA_shr_three_num_data_valid;
-wire   [2:0] DNA_shr_three_fifo_cap;
-wire    DNA_shr_four_full_n;
-wire   [127:0] DNA_shr_four_dout;
-wire    DNA_shr_four_empty_n;
-wire   [2:0] DNA_shr_four_num_data_valid;
-wire   [2:0] DNA_shr_four_fifo_cap;
-wire   [127:0] DNA_shr_five_dout;
-wire    DNA_shr_five_empty_n;
-wire   [2:0] DNA_shr_five_num_data_valid;
-wire   [2:0] DNA_shr_five_fifo_cap;
-wire   [1:0] add_i_i2_loc_channel_dout;
-wire    add_i_i2_loc_channel_empty_n;
-wire   [2:0] add_i_i2_loc_channel_num_data_valid;
-wire   [2:0] add_i_i2_loc_channel_fifo_cap;
+reg   [31:0] ap_return;
+wire   [7:0] and_ln712_fu_258_p2;
+reg   [7:0] and_ln712_reg_653;
+wire   [7:0] and_ln713_fu_292_p2;
+reg   [7:0] and_ln713_reg_658;
+wire   [7:0] and_ln713_1_fu_326_p2;
+reg   [7:0] and_ln713_1_reg_663;
+wire   [7:0] and_ln713_2_fu_360_p2;
+reg   [7:0] and_ln713_2_reg_668;
+wire   [7:0] and_ln713_3_fu_394_p2;
+reg   [7:0] and_ln713_3_reg_673;
+wire   [7:0] and_ln713_4_fu_428_p2;
+reg   [7:0] and_ln713_4_reg_678;
+wire   [7:0] and_ln714_fu_462_p2;
+reg   [7:0] and_ln714_reg_683;
+wire   [7:0] and_ln714_1_fu_496_p2;
+reg   [7:0] and_ln714_1_reg_688;
+wire   [7:0] and_ln714_2_fu_530_p2;
+reg   [7:0] and_ln714_2_reg_693;
+wire   [7:0] and_ln714_3_fu_564_p2;
+reg   [7:0] and_ln714_3_reg_698;
+wire   [7:0] and_ln714_4_fu_598_p2;
+reg   [7:0] and_ln714_4_reg_703;
+wire    call_ret_NeighborhoodMap_bit_fu_106_ap_ready;
+wire   [254:0] call_ret_NeighborhoodMap_bit_fu_106_DNA_ref_val;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_0;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_1;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_2;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_3;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_4;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_5;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_6;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_7;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_8;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_9;
+wire   [127:0] call_ret_NeighborhoodMap_bit_fu_106_ap_return_10;
+wire   [1:0] grp_after_neighbohood_fu_113_ap_return;
+reg    grp_after_neighbohood_fu_113_ap_ce;
+reg    ap_block_state1_pp0_stage0_iter0_ignore_call66;
+reg    ap_block_pp0_stage0_11001_ignoreCallOp114;
+wire    ap_block_pp0_stage0_ignoreCallOp33;
+wire    ap_block_pp0_stage0_ignoreCallOp114;
+reg   [3:0] i1_fu_86;
+wire   [3:0] i_fu_604_p2;
+wire    ap_loop_init;
+reg   [3:0] ap_sig_allocacmp_i1_load;
+wire    ap_block_pp0_stage0;
+reg   [1:0] global_count2_fu_90;
+wire   [1:0] global_count_fu_624_p2;
+wire   [6:0] shl_ln_fu_190_p3;
+wire   [0:0] icmp_ln712_fu_198_p2;
+reg   [127:0] tmp_fu_204_p4;
+wire   [6:0] xor_ln712_fu_214_p2;
+wire   [6:0] select_ln712_1_fu_228_p3;
+wire   [127:0] select_ln712_fu_220_p3;
+wire   [127:0] zext_ln712_fu_236_p1;
+wire   [127:0] lshr_ln712_fu_240_p2;
+wire   [7:0] trunc_ln712_fu_246_p1;
+wire   [7:0] select_ln712_2_fu_250_p3;
+reg   [127:0] tmp_7_fu_264_p4;
+wire   [127:0] select_ln713_fu_274_p3;
+wire   [127:0] lshr_ln713_fu_282_p2;
+wire   [7:0] trunc_ln713_fu_288_p1;
+reg   [127:0] tmp_8_fu_298_p4;
+wire   [127:0] select_ln713_1_fu_308_p3;
+wire   [127:0] lshr_ln713_1_fu_316_p2;
+wire   [7:0] trunc_ln713_1_fu_322_p1;
+reg   [127:0] tmp_9_fu_332_p4;
+wire   [127:0] select_ln713_2_fu_342_p3;
+wire   [127:0] lshr_ln713_2_fu_350_p2;
+wire   [7:0] trunc_ln713_2_fu_356_p1;
+reg   [127:0] tmp_10_fu_366_p4;
+wire   [127:0] select_ln713_3_fu_376_p3;
+wire   [127:0] lshr_ln713_3_fu_384_p2;
+wire   [7:0] trunc_ln713_3_fu_390_p1;
+reg   [127:0] tmp_11_fu_400_p4;
+wire   [127:0] select_ln713_4_fu_410_p3;
+wire   [127:0] lshr_ln713_4_fu_418_p2;
+wire   [7:0] trunc_ln713_4_fu_424_p1;
+reg   [127:0] tmp_12_fu_434_p4;
+wire   [127:0] select_ln714_fu_444_p3;
+wire   [127:0] lshr_ln714_fu_452_p2;
+wire   [7:0] trunc_ln714_fu_458_p1;
+reg   [127:0] tmp_13_fu_468_p4;
+wire   [127:0] select_ln714_1_fu_478_p3;
+wire   [127:0] lshr_ln714_1_fu_486_p2;
+wire   [7:0] trunc_ln714_1_fu_492_p1;
+reg   [127:0] tmp_14_fu_502_p4;
+wire   [127:0] select_ln714_2_fu_512_p3;
+wire   [127:0] lshr_ln714_2_fu_520_p2;
+wire   [7:0] trunc_ln714_2_fu_526_p1;
+reg   [127:0] tmp_15_fu_536_p4;
+wire   [127:0] select_ln714_3_fu_546_p3;
+wire   [127:0] lshr_ln714_3_fu_554_p2;
+wire   [7:0] trunc_ln714_3_fu_560_p1;
+reg   [127:0] tmp_16_fu_570_p4;
+wire   [127:0] select_ln714_4_fu_580_p3;
+wire   [127:0] lshr_ln714_4_fu_588_p2;
+wire   [7:0] trunc_ln714_4_fu_594_p1;
+wire   [31:0] zext_ln719_fu_635_p1;
+reg   [31:0] ap_return_preg;
+reg    ap_loop_exit_ready_pp0_iter1_reg;
+reg    ap_loop_exit_ready_pp0_iter2_reg;
+reg    ap_loop_exit_ready_pp0_iter3_reg;
+reg    ap_loop_exit_ready_pp0_iter4_reg;
+reg    ap_loop_exit_ready_pp0_iter5_reg;
+wire    ap_continue_int;
+reg    ap_done_int;
+reg   [0:0] ap_NS_fsm;
+wire    ap_enable_pp0;
+wire    ap_start_int;
+wire    ap_ready_sig;
+wire    ap_done_sig;
+reg    ap_condition_267;
+reg    ap_condition_268;
 wire    ap_ce_reg;
 
 // power-on initialization
@@ -171,8 +218,53 @@ initial begin
 #0 ap_rst_reg_2 = 1'b1;
 #0 ap_rst_reg_1 = 1'b1;
 #0 ap_rst_n_inv = 1'b1;
-#0 ap_sync_reg_channel_write_DNA_shr_five = 1'b0;
+#0 ap_CS_fsm = 1'd1;
+#0 ap_enable_reg_pp0_iter1 = 1'b0;
+#0 ap_enable_reg_pp0_iter2 = 1'b0;
+#0 ap_enable_reg_pp0_iter3 = 1'b0;
+#0 ap_enable_reg_pp0_iter4 = 1'b0;
+#0 ap_enable_reg_pp0_iter5 = 1'b0;
+#0 ap_done_reg = 1'b0;
+#0 i1_fu_86 = 4'd0;
+#0 global_count2_fu_90 = 2'd0;
+#0 ap_return_preg = 32'd0;
 end
+
+SneakySnake_bit_NeighborhoodMap_bit call_ret_NeighborhoodMap_bit_fu_106(
+    .ap_ready(call_ret_NeighborhoodMap_bit_fu_106_ap_ready),
+    .DNA_read_val(ReadSeq),
+    .DNA_ref_val(call_ret_NeighborhoodMap_bit_fu_106_DNA_ref_val),
+    .ap_return_0(call_ret_NeighborhoodMap_bit_fu_106_ap_return_0),
+    .ap_return_1(call_ret_NeighborhoodMap_bit_fu_106_ap_return_1),
+    .ap_return_2(call_ret_NeighborhoodMap_bit_fu_106_ap_return_2),
+    .ap_return_3(call_ret_NeighborhoodMap_bit_fu_106_ap_return_3),
+    .ap_return_4(call_ret_NeighborhoodMap_bit_fu_106_ap_return_4),
+    .ap_return_5(call_ret_NeighborhoodMap_bit_fu_106_ap_return_5),
+    .ap_return_6(call_ret_NeighborhoodMap_bit_fu_106_ap_return_6),
+    .ap_return_7(call_ret_NeighborhoodMap_bit_fu_106_ap_return_7),
+    .ap_return_8(call_ret_NeighborhoodMap_bit_fu_106_ap_return_8),
+    .ap_return_9(call_ret_NeighborhoodMap_bit_fu_106_ap_return_9),
+    .ap_return_10(call_ret_NeighborhoodMap_bit_fu_106_ap_return_10),
+    .ap_rst(ap_rst_n_inv)
+);
+
+SneakySnake_bit_after_neighbohood grp_after_neighbohood_fu_113(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .DNA_nsh(and_ln712_reg_653),
+    .DNA_shl_one(and_ln713_reg_658),
+    .DNA_shl_two(and_ln713_1_reg_663),
+    .DNA_shl_three(and_ln713_2_reg_668),
+    .DNA_shl_four(and_ln713_3_reg_673),
+    .DNA_shl_five(and_ln713_4_reg_678),
+    .DNA_shr_one(and_ln714_reg_683),
+    .DNA_shr_two(and_ln714_1_reg_688),
+    .DNA_shr_three(and_ln714_2_reg_693),
+    .DNA_shr_four(and_ln714_3_reg_698),
+    .DNA_shr_five(and_ln714_4_reg_703),
+    .ap_return(grp_after_neighbohood_fu_113_ap_return),
+    .ap_ce(grp_after_neighbohood_fu_113_ap_ce)
+);
 
 SneakySnake_bit_control_s_axi #(
     .C_S_AXI_ADDR_WIDTH( C_S_AXI_CONTROL_ADDR_WIDTH ),
@@ -212,252 +304,109 @@ control_s_axi_U(
     .KmerSize(KmerSize)
 );
 
-SneakySnake_bit_NeighborhoodMap_bit NeighborhoodMap_bit_U0(
+SneakySnake_bit_flow_control_loop_delay_pipe flow_control_loop_delay_pipe_U(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(NeighborhoodMap_bit_U0_ap_start),
-    .ap_done(NeighborhoodMap_bit_U0_ap_done),
-    .ap_continue(NeighborhoodMap_bit_U0_ap_continue),
-    .ap_idle(NeighborhoodMap_bit_U0_ap_idle),
-    .ap_ready(NeighborhoodMap_bit_U0_ap_ready),
-    .ReadSeq(ReadSeq),
-    .RefSeq(RefSeq),
-    .ap_return_0(NeighborhoodMap_bit_U0_ap_return_0),
-    .ap_return_1(NeighborhoodMap_bit_U0_ap_return_1),
-    .ap_return_2(NeighborhoodMap_bit_U0_ap_return_2),
-    .ap_return_3(NeighborhoodMap_bit_U0_ap_return_3),
-    .ap_return_4(NeighborhoodMap_bit_U0_ap_return_4),
-    .ap_return_5(NeighborhoodMap_bit_U0_ap_return_5),
-    .ap_return_6(NeighborhoodMap_bit_U0_ap_return_6),
-    .ap_return_7(NeighborhoodMap_bit_U0_ap_return_7),
-    .ap_return_8(NeighborhoodMap_bit_U0_ap_return_8),
-    .ap_return_9(NeighborhoodMap_bit_U0_ap_return_9),
-    .ap_return_10(NeighborhoodMap_bit_U0_ap_return_10)
-);
-
-SneakySnake_bit_Loop_VITIS_LOOP_707_1_proc Loop_VITIS_LOOP_707_1_proc_U0(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(Loop_VITIS_LOOP_707_1_proc_U0_ap_start),
-    .ap_done(Loop_VITIS_LOOP_707_1_proc_U0_ap_done),
-    .ap_continue(Loop_VITIS_LOOP_707_1_proc_U0_ap_continue),
-    .ap_idle(Loop_VITIS_LOOP_707_1_proc_U0_ap_idle),
-    .ap_ready(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .p_read(DNA_nsh_dout),
-    .p_read1(DNA_shl_one_dout),
-    .p_read2(DNA_shl_two_dout),
-    .p_read3(DNA_shl_three_dout),
-    .p_read4(DNA_shl_four_dout),
-    .p_read5(DNA_shl_five_dout),
-    .p_read6(DNA_shr_one_dout),
-    .p_read7(DNA_shr_two_dout),
-    .p_read8(DNA_shr_three_dout),
-    .p_read9(DNA_shr_four_dout),
-    .p_read10(DNA_shr_five_dout),
-    .ap_return(Loop_VITIS_LOOP_707_1_proc_U0_ap_return)
-);
-
-SneakySnake_bit_Block_entry_proc_proc Block_entry_proc_proc_U0(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(Block_entry_proc_proc_U0_ap_start),
-    .ap_done(Block_entry_proc_proc_U0_ap_done),
-    .ap_continue(Block_entry_proc_proc_U0_ap_continue),
-    .ap_idle(Block_entry_proc_proc_U0_ap_idle),
-    .ap_ready(Block_entry_proc_proc_U0_ap_ready),
-    .p_read(add_i_i2_loc_channel_dout),
-    .ap_return(Block_entry_proc_proc_U0_ap_return)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_nsh_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_0),
-    .if_full_n(DNA_nsh_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_nsh_dout),
-    .if_empty_n(DNA_nsh_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_nsh_num_data_valid),
-    .if_fifo_cap(DNA_nsh_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shl_one_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_1),
-    .if_full_n(DNA_shl_one_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shl_one_dout),
-    .if_empty_n(DNA_shl_one_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shl_one_num_data_valid),
-    .if_fifo_cap(DNA_shl_one_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shl_two_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_2),
-    .if_full_n(DNA_shl_two_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shl_two_dout),
-    .if_empty_n(DNA_shl_two_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shl_two_num_data_valid),
-    .if_fifo_cap(DNA_shl_two_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shl_three_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_3),
-    .if_full_n(DNA_shl_three_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shl_three_dout),
-    .if_empty_n(DNA_shl_three_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shl_three_num_data_valid),
-    .if_fifo_cap(DNA_shl_three_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shl_four_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_4),
-    .if_full_n(DNA_shl_four_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shl_four_dout),
-    .if_empty_n(DNA_shl_four_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shl_four_num_data_valid),
-    .if_fifo_cap(DNA_shl_four_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shl_five_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_5),
-    .if_full_n(DNA_shl_five_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shl_five_dout),
-    .if_empty_n(DNA_shl_five_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shl_five_num_data_valid),
-    .if_fifo_cap(DNA_shl_five_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shr_one_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_6),
-    .if_full_n(DNA_shr_one_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shr_one_dout),
-    .if_empty_n(DNA_shr_one_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shr_one_num_data_valid),
-    .if_fifo_cap(DNA_shr_one_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shr_two_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_7),
-    .if_full_n(DNA_shr_two_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shr_two_dout),
-    .if_empty_n(DNA_shr_two_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shr_two_num_data_valid),
-    .if_fifo_cap(DNA_shr_two_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shr_three_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_8),
-    .if_full_n(DNA_shr_three_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shr_three_dout),
-    .if_empty_n(DNA_shr_three_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shr_three_num_data_valid),
-    .if_fifo_cap(DNA_shr_three_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shr_four_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_9),
-    .if_full_n(DNA_shr_four_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shr_four_dout),
-    .if_empty_n(DNA_shr_four_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shr_four_num_data_valid),
-    .if_fifo_cap(DNA_shr_four_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w128_d2_S DNA_shr_five_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(NeighborhoodMap_bit_U0_ap_return_10),
-    .if_full_n(DNA_shr_five_full_n),
-    .if_write(ap_channel_done_DNA_shr_five),
-    .if_dout(DNA_shr_five_dout),
-    .if_empty_n(DNA_shr_five_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
-    .if_num_data_valid(DNA_shr_five_num_data_valid),
-    .if_fifo_cap(DNA_shr_five_fifo_cap)
-);
-
-SneakySnake_bit_fifo_w2_d2_S add_i_i2_loc_channel_U(
-    .clk(ap_clk),
-    .reset(ap_rst_n_inv),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(Loop_VITIS_LOOP_707_1_proc_U0_ap_return),
-    .if_full_n(add_i_i2_loc_channel_full_n),
-    .if_write(Loop_VITIS_LOOP_707_1_proc_U0_ap_done),
-    .if_dout(add_i_i2_loc_channel_dout),
-    .if_empty_n(add_i_i2_loc_channel_empty_n),
-    .if_read(Block_entry_proc_proc_U0_ap_ready),
-    .if_num_data_valid(add_i_i2_loc_channel_num_data_valid),
-    .if_fifo_cap(add_i_i2_loc_channel_fifo_cap)
+    .ap_start(ap_start),
+    .ap_ready(ap_ready_sig),
+    .ap_done(ap_done_sig),
+    .ap_start_int(ap_start_int),
+    .ap_loop_init(ap_loop_init),
+    .ap_ready_int(ap_ready_int),
+    .ap_loop_exit_ready(ap_condition_exit_pp0_iter0_stage0),
+    .ap_loop_exit_done(ap_done_int),
+    .ap_continue_int(ap_continue_int),
+    .ap_done_int(ap_done_int),
+    .ap_continue(ap_continue),
+    .ap_loop_exit_ready_delayed(ap_loop_exit_ready_delayed)
 );
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_sync_reg_channel_write_DNA_shr_five <= 1'b0;
+        ap_CS_fsm <= ap_ST_fsm_pp0_stage0;
     end else begin
-        if (((NeighborhoodMap_bit_U0_ap_done & NeighborhoodMap_bit_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_DNA_shr_five <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_DNA_shr_five <= ap_sync_channel_write_DNA_shr_five;
+        ap_CS_fsm <= ap_NS_fsm;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_done_reg <= 1'b0;
+    end else begin
+        if ((ap_continue_int == 1'b1)) begin
+            ap_done_reg <= 1'b0;
+        end else if (((ap_loop_exit_ready_pp0_iter5_reg == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+            ap_done_reg <= 1'b1;
         end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_enable_reg_pp0_iter1 <= 1'b0;
+    end else begin
+        if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+            ap_enable_reg_pp0_iter1 <= ap_start_int;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_enable_reg_pp0_iter2 <= 1'b0;
+    end else begin
+        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+            ap_enable_reg_pp0_iter2 <= ap_enable_reg_pp0_iter1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_enable_reg_pp0_iter3 <= 1'b0;
+    end else begin
+        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+            ap_enable_reg_pp0_iter3 <= ap_enable_reg_pp0_iter2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_enable_reg_pp0_iter4 <= 1'b0;
+    end else begin
+        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+            ap_enable_reg_pp0_iter4 <= ap_enable_reg_pp0_iter3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+        ap_enable_reg_pp0_iter5 <= 1'b0;
+    end else begin
+        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+            ap_enable_reg_pp0_iter5 <= ap_enable_reg_pp0_iter4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst_n_inv == 1'b1) begin
+                ap_return_preg[0] <= 1'b0;
+        ap_return_preg[1] <= 1'b0;
+    end else begin
+        if (((ap_loop_exit_ready_pp0_iter5_reg == 1'b1) & (1'b0 == ap_block_pp0_stage0_11001))) begin
+                        ap_return_preg[1 : 0] <= zext_ln719_fu_635_p1[1 : 0];
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((ap_loop_exit_ready_pp0_iter4_reg == 1'b0) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+        ap_loop_exit_ready_pp0_iter5_reg <= 1'b0;
+    end else if ((1'b0 == ap_block_pp0_stage0_11001)) begin
+        ap_loop_exit_ready_pp0_iter5_reg <= ap_loop_exit_ready_pp0_iter4_reg;
     end
 end
 
@@ -473,28 +422,425 @@ always @ (posedge ap_clk) begin
     ap_rst_reg_2 <= ~ap_rst_n;
 end
 
-assign Block_entry_proc_proc_U0_ap_continue = ap_continue;
+always @ (posedge ap_clk) begin
+    if ((1'b0 == ap_block_pp0_stage0_11001)) begin
+        if ((1'b1 == ap_condition_267)) begin
+            global_count2_fu_90 <= 2'd0;
+        end else if ((ap_enable_reg_pp0_iter5 == 1'b1)) begin
+            global_count2_fu_90 <= global_count_fu_624_p2;
+        end
+    end
+end
 
-assign Block_entry_proc_proc_U0_ap_start = add_i_i2_loc_channel_empty_n;
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_condition_268)) begin
+        i1_fu_86 <= i_fu_604_p2;
+    end
+end
 
-assign Loop_VITIS_LOOP_707_1_proc_U0_ap_continue = add_i_i2_loc_channel_full_n;
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        and_ln712_reg_653 <= and_ln712_fu_258_p2;
+        and_ln713_1_reg_663 <= and_ln713_1_fu_326_p2;
+        and_ln713_2_reg_668 <= and_ln713_2_fu_360_p2;
+        and_ln713_3_reg_673 <= and_ln713_3_fu_394_p2;
+        and_ln713_4_reg_678 <= and_ln713_4_fu_428_p2;
+        and_ln713_reg_658 <= and_ln713_fu_292_p2;
+        and_ln714_1_reg_688 <= and_ln714_1_fu_496_p2;
+        and_ln714_2_reg_693 <= and_ln714_2_fu_530_p2;
+        and_ln714_3_reg_698 <= and_ln714_3_fu_564_p2;
+        and_ln714_4_reg_703 <= and_ln714_4_fu_598_p2;
+        and_ln714_reg_683 <= and_ln714_fu_462_p2;
+        ap_condition_exit_pp0_iter0_stage0_pp0_iter1_reg <= ap_condition_exit_pp0_iter0_stage0;
+        ap_condition_exit_pp0_iter0_stage0_pp0_iter2_reg <= ap_condition_exit_pp0_iter0_stage0_pp0_iter1_reg;
+        ap_loop_exit_ready_pp0_iter1_reg <= ap_loop_exit_ready;
+        ap_loop_exit_ready_pp0_iter2_reg <= ap_loop_exit_ready_pp0_iter1_reg;
+    end
+end
 
-assign Loop_VITIS_LOOP_707_1_proc_U0_ap_start = DNA_nsh_empty_n;
+always @ (posedge ap_clk) begin
+    if ((1'b0 == ap_block_pp0_stage0_11001)) begin
+        ap_condition_exit_pp0_iter0_stage0_pp0_iter3_reg <= ap_condition_exit_pp0_iter0_stage0_pp0_iter2_reg;
+        ap_condition_exit_pp0_iter0_stage0_pp0_iter4_reg <= ap_condition_exit_pp0_iter0_stage0_pp0_iter3_reg;
+        ap_condition_exit_pp0_iter0_stage0_pp0_iter5_reg <= ap_condition_exit_pp0_iter0_stage0_pp0_iter4_reg;
+        ap_loop_exit_ready_pp0_iter3_reg <= ap_loop_exit_ready_pp0_iter2_reg;
+        ap_loop_exit_ready_pp0_iter4_reg <= ap_loop_exit_ready_pp0_iter3_reg;
+    end
+end
 
-assign NeighborhoodMap_bit_U0_ap_continue = ap_sync_channel_write_DNA_shr_five;
+always @ (*) begin
+    if (((icmp_ln709_fu_610_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ap_condition_exit_pp0_iter0_stage0 = 1'b1;
+    end else begin
+        ap_condition_exit_pp0_iter0_stage0 = 1'b0;
+    end
+end
 
-assign NeighborhoodMap_bit_U0_ap_start = ap_start;
+always @ (*) begin
+    if (((ap_loop_exit_ready_pp0_iter5_reg == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone))) begin
+        ap_done_int = 1'b1;
+    end else begin
+        ap_done_int = ap_done_reg;
+    end
+end
 
-assign ap_channel_done_DNA_shr_five = ((ap_sync_reg_channel_write_DNA_shr_five ^ 1'b1) & NeighborhoodMap_bit_U0_ap_done);
+always @ (*) begin
+    if (((ap_start_int == 1'b0) & (ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ap_idle = 1'b1;
+    end else begin
+        ap_idle = 1'b0;
+    end
+end
 
-assign ap_done = Block_entry_proc_proc_U0_ap_done;
+always @ (*) begin
+    if (((ap_enable_reg_pp0_iter5 == 1'b0) & (ap_enable_reg_pp0_iter4 == 1'b0) & (ap_enable_reg_pp0_iter3 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
+        ap_idle_pp0 = 1'b1;
+    end else begin
+        ap_idle_pp0 = 1'b0;
+    end
+end
 
-assign ap_idle = ((1'b1 ^ add_i_i2_loc_channel_empty_n) & (1'b1 ^ DNA_nsh_empty_n) & NeighborhoodMap_bit_U0_ap_idle & Loop_VITIS_LOOP_707_1_proc_U0_ap_idle & Block_entry_proc_proc_U0_ap_idle);
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_condition_exit_pp0_iter0_stage0_pp0_iter5_reg))) begin
+        ap_loop_exit_ready_delayed = 1'b1;
+    end else begin
+        ap_loop_exit_ready_delayed = 1'b0;
+    end
+end
 
-assign ap_ready = NeighborhoodMap_bit_U0_ap_ready;
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ap_ready_int = 1'b1;
+    end else begin
+        ap_ready_int = 1'b0;
+    end
+end
 
-assign ap_return = Block_entry_proc_proc_U0_ap_return;
+always @ (*) begin
+    if (((ap_loop_exit_ready_pp0_iter5_reg == 1'b1) & (1'b0 == ap_block_pp0_stage0_11001))) begin
+        ap_return = zext_ln719_fu_635_p1;
+    end else begin
+        ap_return = ap_return_preg;
+    end
+end
 
-assign ap_sync_channel_write_DNA_shr_five = ((ap_channel_done_DNA_shr_five & DNA_shr_five_full_n) | ap_sync_reg_channel_write_DNA_shr_five);
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0) & (ap_loop_init == 1'b1) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ap_sig_allocacmp_i1_load = 4'd0;
+    end else begin
+        ap_sig_allocacmp_i1_load = i1_fu_86;
+    end
+end
+
+always @ (*) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001_ignoreCallOp114) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        grp_after_neighbohood_fu_113_ap_ce = 1'b1;
+    end else begin
+        grp_after_neighbohood_fu_113_ap_ce = 1'b0;
+    end
+end
+
+always @ (*) begin
+    case (ap_CS_fsm)
+        ap_ST_fsm_pp0_stage0 : begin
+            ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+        end
+        default : begin
+            ap_NS_fsm = 'bx;
+        end
+    endcase
+end
+
+assign and_ln712_fu_258_p2 = (trunc_ln712_fu_246_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln713_1_fu_326_p2 = (trunc_ln713_1_fu_322_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln713_2_fu_360_p2 = (trunc_ln713_2_fu_356_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln713_3_fu_394_p2 = (trunc_ln713_3_fu_390_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln713_4_fu_428_p2 = (trunc_ln713_4_fu_424_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln713_fu_292_p2 = (trunc_ln713_fu_288_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln714_1_fu_496_p2 = (trunc_ln714_1_fu_492_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln714_2_fu_530_p2 = (trunc_ln714_2_fu_526_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln714_3_fu_564_p2 = (trunc_ln714_3_fu_560_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln714_4_fu_598_p2 = (trunc_ln714_4_fu_594_p1 & select_ln712_2_fu_250_p3);
+
+assign and_ln714_fu_462_p2 = (trunc_ln714_fu_458_p1 & select_ln712_2_fu_250_p3);
+
+assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
+
+assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
+
+always @ (*) begin
+    ap_block_pp0_stage0_11001 = ((ap_done_reg == 1'b1) | ((ap_start_int == 1'b1) & (1'b1 == ap_block_state1_pp0_stage0_iter0)));
+end
+
+always @ (*) begin
+    ap_block_pp0_stage0_11001_ignoreCallOp114 = ((ap_done_reg == 1'b1) | ((ap_start_int == 1'b1) & (1'b1 == ap_block_state1_pp0_stage0_iter0_ignore_call66)));
+end
+
+assign ap_block_pp0_stage0_ignoreCallOp114 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage0_ignoreCallOp33 = ~(1'b1 == 1'b1);
+
+always @ (*) begin
+    ap_block_pp0_stage0_subdone = ((ap_done_reg == 1'b1) | ((ap_start_int == 1'b1) & (1'b1 == ap_block_state1_pp0_stage0_iter0)));
+end
+
+always @ (*) begin
+    ap_block_state1_pp0_stage0_iter0 = (ap_done_reg == 1'b1);
+end
+
+always @ (*) begin
+    ap_block_state1_pp0_stage0_iter0_ignore_call66 = (ap_done_reg == 1'b1);
+end
+
+always @ (*) begin
+    ap_condition_267 = ((ap_loop_init == 1'b1) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
+end
+
+always @ (*) begin
+    ap_condition_268 = ((1'b0 == ap_block_pp0_stage0_11001) & (ap_start_int == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
+end
+
+assign ap_done = ap_done_sig;
+
+assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
+
+assign ap_enable_reg_pp0_iter0 = ap_start_int;
+
+assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
+
+assign ap_ready = ap_ready_sig;
+
+assign call_ret_NeighborhoodMap_bit_fu_106_DNA_ref_val = RefSeq[254:0];
+
+assign global_count_fu_624_p2 = (grp_after_neighbohood_fu_113_ap_return + global_count2_fu_90);
+
+assign i_fu_604_p2 = (ap_sig_allocacmp_i1_load + 4'd1);
+
+assign icmp_ln709_fu_610_p2 = ((ap_sig_allocacmp_i1_load == 4'd11) ? 1'b1 : 1'b0);
+
+assign icmp_ln712_fu_198_p2 = ((shl_ln_fu_190_p3 != 7'd0) ? 1'b1 : 1'b0);
+
+assign lshr_ln712_fu_240_p2 = select_ln712_fu_220_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln713_1_fu_316_p2 = select_ln713_1_fu_308_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln713_2_fu_350_p2 = select_ln713_2_fu_342_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln713_3_fu_384_p2 = select_ln713_3_fu_376_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln713_4_fu_418_p2 = select_ln713_4_fu_410_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln713_fu_282_p2 = select_ln713_fu_274_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln714_1_fu_486_p2 = select_ln714_1_fu_478_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln714_2_fu_520_p2 = select_ln714_2_fu_512_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln714_3_fu_554_p2 = select_ln714_3_fu_546_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln714_4_fu_588_p2 = select_ln714_4_fu_580_p3 >> zext_ln712_fu_236_p1;
+
+assign lshr_ln714_fu_452_p2 = select_ln714_fu_444_p3 >> zext_ln712_fu_236_p1;
+
+assign select_ln712_1_fu_228_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? xor_ln712_fu_214_p2 : 7'd0);
+
+assign select_ln712_2_fu_250_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? 8'd3 : 8'd255);
+
+assign select_ln712_fu_220_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_fu_204_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_0);
+
+assign select_ln713_1_fu_308_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_8_fu_298_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_2);
+
+assign select_ln713_2_fu_342_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_9_fu_332_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_3);
+
+assign select_ln713_3_fu_376_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_10_fu_366_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_4);
+
+assign select_ln713_4_fu_410_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_11_fu_400_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_5);
+
+assign select_ln713_fu_274_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_7_fu_264_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_1);
+
+assign select_ln714_1_fu_478_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_13_fu_468_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_7);
+
+assign select_ln714_2_fu_512_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_14_fu_502_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_8);
+
+assign select_ln714_3_fu_546_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_15_fu_536_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_9);
+
+assign select_ln714_4_fu_580_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_16_fu_570_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_10);
+
+assign select_ln714_fu_444_p3 = ((icmp_ln712_fu_198_p2[0:0] == 1'b1) ? tmp_12_fu_434_p4 : call_ret_NeighborhoodMap_bit_fu_106_ap_return_6);
+
+assign shl_ln_fu_190_p3 = {{ap_sig_allocacmp_i1_load}, {3'd0}};
+
+integer ap_tvar_int_0;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_4) begin
+    for (ap_tvar_int_0 = 128 - 1; ap_tvar_int_0 >= 0; ap_tvar_int_0 = ap_tvar_int_0 - 1) begin
+        if (ap_tvar_int_0 > 127 - 0) begin
+            tmp_10_fu_366_p4[ap_tvar_int_0] = 1'b0;
+        end else begin
+            tmp_10_fu_366_p4[ap_tvar_int_0] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_4[127 - ap_tvar_int_0];
+        end
+    end
+end
+
+integer ap_tvar_int_1;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_5) begin
+    for (ap_tvar_int_1 = 128 - 1; ap_tvar_int_1 >= 0; ap_tvar_int_1 = ap_tvar_int_1 - 1) begin
+        if (ap_tvar_int_1 > 127 - 0) begin
+            tmp_11_fu_400_p4[ap_tvar_int_1] = 1'b0;
+        end else begin
+            tmp_11_fu_400_p4[ap_tvar_int_1] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_5[127 - ap_tvar_int_1];
+        end
+    end
+end
+
+integer ap_tvar_int_2;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_6) begin
+    for (ap_tvar_int_2 = 128 - 1; ap_tvar_int_2 >= 0; ap_tvar_int_2 = ap_tvar_int_2 - 1) begin
+        if (ap_tvar_int_2 > 127 - 0) begin
+            tmp_12_fu_434_p4[ap_tvar_int_2] = 1'b0;
+        end else begin
+            tmp_12_fu_434_p4[ap_tvar_int_2] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_6[127 - ap_tvar_int_2];
+        end
+    end
+end
+
+integer ap_tvar_int_3;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_7) begin
+    for (ap_tvar_int_3 = 128 - 1; ap_tvar_int_3 >= 0; ap_tvar_int_3 = ap_tvar_int_3 - 1) begin
+        if (ap_tvar_int_3 > 127 - 0) begin
+            tmp_13_fu_468_p4[ap_tvar_int_3] = 1'b0;
+        end else begin
+            tmp_13_fu_468_p4[ap_tvar_int_3] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_7[127 - ap_tvar_int_3];
+        end
+    end
+end
+
+integer ap_tvar_int_4;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_8) begin
+    for (ap_tvar_int_4 = 128 - 1; ap_tvar_int_4 >= 0; ap_tvar_int_4 = ap_tvar_int_4 - 1) begin
+        if (ap_tvar_int_4 > 127 - 0) begin
+            tmp_14_fu_502_p4[ap_tvar_int_4] = 1'b0;
+        end else begin
+            tmp_14_fu_502_p4[ap_tvar_int_4] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_8[127 - ap_tvar_int_4];
+        end
+    end
+end
+
+integer ap_tvar_int_5;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_9) begin
+    for (ap_tvar_int_5 = 128 - 1; ap_tvar_int_5 >= 0; ap_tvar_int_5 = ap_tvar_int_5 - 1) begin
+        if (ap_tvar_int_5 > 127 - 0) begin
+            tmp_15_fu_536_p4[ap_tvar_int_5] = 1'b0;
+        end else begin
+            tmp_15_fu_536_p4[ap_tvar_int_5] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_9[127 - ap_tvar_int_5];
+        end
+    end
+end
+
+integer ap_tvar_int_6;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_10) begin
+    for (ap_tvar_int_6 = 128 - 1; ap_tvar_int_6 >= 0; ap_tvar_int_6 = ap_tvar_int_6 - 1) begin
+        if (ap_tvar_int_6 > 127 - 0) begin
+            tmp_16_fu_570_p4[ap_tvar_int_6] = 1'b0;
+        end else begin
+            tmp_16_fu_570_p4[ap_tvar_int_6] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_10[127 - ap_tvar_int_6];
+        end
+    end
+end
+
+integer ap_tvar_int_7;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_1) begin
+    for (ap_tvar_int_7 = 128 - 1; ap_tvar_int_7 >= 0; ap_tvar_int_7 = ap_tvar_int_7 - 1) begin
+        if (ap_tvar_int_7 > 127 - 0) begin
+            tmp_7_fu_264_p4[ap_tvar_int_7] = 1'b0;
+        end else begin
+            tmp_7_fu_264_p4[ap_tvar_int_7] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_1[127 - ap_tvar_int_7];
+        end
+    end
+end
+
+integer ap_tvar_int_8;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_2) begin
+    for (ap_tvar_int_8 = 128 - 1; ap_tvar_int_8 >= 0; ap_tvar_int_8 = ap_tvar_int_8 - 1) begin
+        if (ap_tvar_int_8 > 127 - 0) begin
+            tmp_8_fu_298_p4[ap_tvar_int_8] = 1'b0;
+        end else begin
+            tmp_8_fu_298_p4[ap_tvar_int_8] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_2[127 - ap_tvar_int_8];
+        end
+    end
+end
+
+integer ap_tvar_int_9;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_3) begin
+    for (ap_tvar_int_9 = 128 - 1; ap_tvar_int_9 >= 0; ap_tvar_int_9 = ap_tvar_int_9 - 1) begin
+        if (ap_tvar_int_9 > 127 - 0) begin
+            tmp_9_fu_332_p4[ap_tvar_int_9] = 1'b0;
+        end else begin
+            tmp_9_fu_332_p4[ap_tvar_int_9] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_3[127 - ap_tvar_int_9];
+        end
+    end
+end
+
+integer ap_tvar_int_10;
+
+always @ (call_ret_NeighborhoodMap_bit_fu_106_ap_return_0) begin
+    for (ap_tvar_int_10 = 128 - 1; ap_tvar_int_10 >= 0; ap_tvar_int_10 = ap_tvar_int_10 - 1) begin
+        if (ap_tvar_int_10 > 127 - 0) begin
+            tmp_fu_204_p4[ap_tvar_int_10] = 1'b0;
+        end else begin
+            tmp_fu_204_p4[ap_tvar_int_10] = call_ret_NeighborhoodMap_bit_fu_106_ap_return_0[127 - ap_tvar_int_10];
+        end
+    end
+end
+
+assign trunc_ln712_fu_246_p1 = lshr_ln712_fu_240_p2[7:0];
+
+assign trunc_ln713_1_fu_322_p1 = lshr_ln713_1_fu_316_p2[7:0];
+
+assign trunc_ln713_2_fu_356_p1 = lshr_ln713_2_fu_350_p2[7:0];
+
+assign trunc_ln713_3_fu_390_p1 = lshr_ln713_3_fu_384_p2[7:0];
+
+assign trunc_ln713_4_fu_424_p1 = lshr_ln713_4_fu_418_p2[7:0];
+
+assign trunc_ln713_fu_288_p1 = lshr_ln713_fu_282_p2[7:0];
+
+assign trunc_ln714_1_fu_492_p1 = lshr_ln714_1_fu_486_p2[7:0];
+
+assign trunc_ln714_2_fu_526_p1 = lshr_ln714_2_fu_520_p2[7:0];
+
+assign trunc_ln714_3_fu_560_p1 = lshr_ln714_3_fu_554_p2[7:0];
+
+assign trunc_ln714_4_fu_594_p1 = lshr_ln714_4_fu_588_p2[7:0];
+
+assign trunc_ln714_fu_458_p1 = lshr_ln714_fu_452_p2[7:0];
+
+assign xor_ln712_fu_214_p2 = (shl_ln_fu_190_p3 ^ 7'd127);
+
+assign zext_ln712_fu_236_p1 = select_ln712_1_fu_228_p3;
+
+assign zext_ln719_fu_635_p1 = global_count_fu_624_p2;
+
+always @ (posedge ap_clk) begin
+    ap_return_preg[31:2] <= 30'b000000000000000000000000000000;
+end
 
 endmodule //SneakySnake_bit

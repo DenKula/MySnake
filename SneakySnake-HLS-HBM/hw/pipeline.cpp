@@ -305,7 +305,7 @@ int SneakySnake(int ReadLength, d_out_type &RefSeq, d_out_type & ReadSeq, int Ed
 */
 
 unsigned largest(unsigned arr[], unsigned n) 
-{ 
+{
     unsigned i; 
       
     // Initialize maximum element 
@@ -362,6 +362,7 @@ void NeighborhoodMap_bit(int read_length,
     d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five, 
     d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five)
 {
+#pragma HLS PIPELINE
     printf("NeighborhoodMap\n" );
     d_bit_in_type DNA_1, DNA_2, DNA_3, DNA_4, DNA_5, DNA_6,
      DNA_7, DNA_8, DNA_9, DNA_10, DNA_11;
@@ -632,6 +633,7 @@ unsigned after_neighbohood(d_bit_out_tiny_type  DNA_nsh,
     d_bit_out_tiny_type  DNA_shl_one,d_bit_out_tiny_type  DNA_shl_two,d_bit_out_tiny_type  DNA_shl_three,d_bit_out_tiny_type DNA_shl_four,d_bit_out_tiny_type DNA_shl_five, 
     d_bit_out_tiny_type  DNA_shr_one,d_bit_out_tiny_type  DNA_shr_two,d_bit_out_tiny_type  DNA_shr_three,d_bit_out_tiny_type DNA_shr_four,d_bit_out_tiny_type  DNA_shr_five)
 {
+#pragma HLS PIPELINE
     d_final_out_type global_count=0;
     unsigned counter_A[11];
 
@@ -678,6 +680,7 @@ unsigned after_neighbohood(d_bit_out_tiny_type  DNA_nsh,
 
 int SneakySnake_bit(int ReadLength, d_bit_in_type &ReadSeq, d_bit_in_type &RefSeq, int EditThreshold, int KmerSize)
 {
+
     // int Accepted=1;
     // int n;
     // int e;
@@ -691,7 +694,6 @@ int SneakySnake_bit(int ReadLength, d_bit_in_type &ReadSeq, d_bit_in_type &RefSe
     // int KmerEnd=0;
     
     // int roundsNo=0;
-    #pragma HLS dataflow
     #pragma HLS INLINE OFF
     d_bit_out_type DNA_nsh, DNA_shl_one, DNA_shl_two, DNA_shl_three, DNA_shl_four, DNA_shl_five,
     DNA_shr_one, DNA_shr_two, DNA_shr_three, DNA_shr_four, DNA_shr_five;
@@ -706,7 +708,7 @@ int SneakySnake_bit(int ReadLength, d_bit_in_type &ReadSeq, d_bit_in_type &RefSe
     d_final_out_type global_count=0;
         for(unsigned i=0; i<12;i++)
         {
-
+        
         global_count+= after_neighbohood(DNA_nsh.range(8*i-1,8*i),
         DNA_shl_one.range(8*i-1,8*i), DNA_shl_two.range(8*i-1,8*i), DNA_shl_three.range(8*i-1,8*i), DNA_shl_four.range(8*i-1,8*i), DNA_shl_five.range(8*i-1,8*i), 
         DNA_shr_one.range(8*i-1,8*i), DNA_shr_two.range(8*i-1,8*i), DNA_shr_three.range(8*i-1,8*i), DNA_shr_four.range(8*i-1,8*i), DNA_shr_five.range(8*i-1,8*i));

@@ -1,0 +1,199 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.cflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'syn.csimflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.cflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(17)
+INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvu9p-flga2104-2-i' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1465] Applying ini 'clock=11ns' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(15)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 11ns.
+INFO: [HLS 200-1465] Applying ini 'clock_uncertainty=12%' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(16)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.32ns.
+INFO: [HLS 200-1465] Applying ini 'csim.argv=0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=1' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(5)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 4.96 seconds. CPU system time: 2.11 seconds. Elapsed time: 7.7 seconds; current allocated memory: 658.980 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' ... 
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:375:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:400:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:412:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:419:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:430:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:431:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:438:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:449:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:450:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:451:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:462:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:473:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:474:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:475:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:476:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:488:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:499:9)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:500:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:501:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:502:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:503:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:516:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:527:9)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:534:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:545:7)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:546:8)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:556:12)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:567:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:568:8)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:569:8)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:580:13)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:592:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:593:8)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:594:8)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:595:10)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:607:13)
+Resolution: For help on HLS 214-113 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-113.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:619:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:620:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:621:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:622:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-112] Functions with a return value cannot be used inside a dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:623:5)
+Resolution: For help on HLS 214-112 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-112.html
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:366:9)
+Resolution: For help on HLS 214-114 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-114.html
+WARNING: [HLS 214-169] There are a total of 22 such instances of non-canonical statements in the dataflow region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:366:9)
+Resolution: For help on HLS 214-169 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-169.html
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:683:9)
+Resolution: For help on HLS 214-114 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-114.html
+WARNING: [HLS 200-471] Dataflow form checks found 44 issue(s) in file /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp
+Resolution: For help on HLS 200-471 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-471.html
+WARNING: [HLS 207-5292] unused parameter 'n' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:307:43)
+WARNING: [HLS 207-5292] unused parameter 'seq_length' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:326:65)
+WARNING: [HLS 207-5292] unused parameter 'read_length' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:359:30)
+WARNING: [HLS 207-5292] unused parameter 'EditThreshold' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:138)
+WARNING: [HLS 207-5292] unused parameter 'KmerSize' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:157)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.2 seconds. CPU system time: 2.02 seconds. Elapsed time: 7.08 seconds; current allocated memory: 662.004 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-1995] There were 7,209 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,121 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,907 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,918 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,874 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,864 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,864 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,864 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,864 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,866 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,833 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,820 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,820 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,820 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 15,824 instructions in the design after the 'HW Transforms' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 29,894 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_317_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_330_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_609_11' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:609:29)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_582_10' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:582:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_558_9' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:558:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_536_8' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:536:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_518_7' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:518:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_490_6' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:490:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_464_5' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:464:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_440_4' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:440:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_421_3' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:421:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_402_2' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:402:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_382_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:382:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_317_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23) in function 'largest' completely with a factor of 10 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:308:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_330_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23) in function 'count_one_bit' completely with a factor of 8 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:327:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_330_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23) in function 'count_one_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:327:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_609_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:609:29) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_609_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:609:29) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_582_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:582:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_582_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:582:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_558_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:558:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_558_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:558:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_536_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:536:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_536_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:536:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_518_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:518:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_518_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:518:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_490_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:490:27) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_490_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:490:27) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_464_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:464:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_464_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:464:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_440_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:440:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_440_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:440:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_421_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:421:23) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_421_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:421:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_402_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:402:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_402_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:402:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_382_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:382:23) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_382_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:382:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-178] Inlining function 'largest(unsigned int*, unsigned int)' into 'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:636:0)
+INFO: [HLS 214-455] Changing loop 'Loop_VITIS_LOOP_709_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27) to a process function for dataflow in function 'SneakySnake_bit' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 154.61 seconds. CPU system time: 7.74 seconds. Elapsed time: 167.77 seconds; current allocated memory: 683.906 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 683.906 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 3.74 seconds. CPU system time: 0.24 seconds. Elapsed time: 4.01 seconds; current allocated memory: 705.934 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'after_neighbohood' into 'Loop_VITIS_LOOP_709_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712) automatically.
+WARNING: [SYNCHK 200-23] /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 7.94 seconds. CPU system time: 0.05 seconds. Elapsed time: 8.03 seconds; current allocated memory: 733.996 MB.
+ERROR: [XFORM 203-313] Conflicting pipeline and dataflow directives found in function 'NeighborhoodMap_bit'
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+ERROR: [HLS 200-70] Pre-synthesis failed.
+ERROR: 
+INFO: [HLS 200-112] Total CPU user time: 176.05 seconds. Total CPU system time: 12.2 seconds. Total elapsed time: 195.25 seconds; peak allocated memory: 733.996 MB.

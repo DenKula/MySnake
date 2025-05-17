@@ -1,0 +1,210 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.cflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'syn.csimflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(14)
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(9)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(10)
+INFO: [HLS 200-10] Adding test bench file '/home/deniz/Projects/SneakySnake/SneakySnake/kthread.c' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.cflags=-I/home/deniz/oc-accel/actions/include' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(17)
+INFO: [HLS 200-1465] Applying ini 'syn.top=SneakySnake_bit' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvu9p-flga2104-2-i' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvu9p-flga2104-2-i'
+INFO: [HLS 200-1465] Applying ini 'clock=11ns' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(15)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 11ns.
+INFO: [HLS 200-1465] Applying ini 'clock_uncertainty=12%' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(16)
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.32ns.
+INFO: [HLS 200-1465] Applying ini 'csim.argv=0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(11)
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=1' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(12)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(5)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 6.13 seconds. CPU system time: 2.27 seconds. Elapsed time: 8.67 seconds; current allocated memory: 658.855 MB.
+INFO: [HLS 200-10] Analyzing design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' ... 
+WARNING: [HLS 207-5292] unused parameter 'n' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:307:43)
+WARNING: [HLS 207-5292] unused parameter 'seq_length' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:326:65)
+WARNING: [HLS 207-5292] unused parameter 'read_length' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:359:30)
+WARNING: [HLS 207-5292] unused parameter 'EditThreshold' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:138)
+WARNING: [HLS 207-5292] unused parameter 'KmerSize' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:157)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 6.68 seconds. CPU system time: 3.22 seconds. Elapsed time: 10.64 seconds; current allocated memory: 661.605 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-1995] There were 7,209 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,972 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,531 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,544 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,544 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,538 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,461 instructions in the design after the 'Performance' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,460 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,426 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,426 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,430 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,438 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_642_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_317_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_330_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_608_11' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_581_10' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_557_9' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_535_8' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_517_7' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_489_6' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_463_5' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_439_4' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_420_3' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_401_2' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_381_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_642_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24) in function 'after_neighbohood' completely with a factor of 3 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:635:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_642_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24) in function 'after_neighbohood' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:635:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_317_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23) in function 'largest' completely with a factor of 10 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:308:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_330_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23) in function 'count_one_bit' completely with a factor of 8 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:327:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_330_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23) in function 'count_one_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:327:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_608_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_608_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_581_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_581_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_557_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_557_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_535_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_535_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_517_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_517_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_489_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_489_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_463_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_463_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_439_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_439_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_420_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_420_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_401_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_401_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_381_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_381_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_709_1> at /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27 
+INFO: [HLS 214-449] Automatically partitioning array 'counter_A' dimension 1 completely based on constant index. (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'counter_A' due to pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14)
+INFO: [HLS 214-248] Applying array_partition to 'counter_A': Complete partitioning on dimension 1. (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 12.1 seconds. CPU system time: 2.75 seconds. Elapsed time: 16.11 seconds; current allocated memory: 663.668 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 663.668 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1.03 seconds. CPU system time: 0 seconds. Elapsed time: 1.08 seconds; current allocated memory: 680.645 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'largest' into 'after_neighbohood' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:659) automatically.
+WARNING: [SYNCHK 200-23] /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.86 seconds. CPU system time: 0 seconds. Elapsed time: 0.88 seconds; current allocated memory: 699.180 MB.
+INFO: [XFORM 203-602] Inlining function 'largest' into 'after_neighbohood' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:659) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333:41) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333:5) in function 'count_one_bit'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:361:22) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:630:1) in function 'NeighborhoodMap_bit'... converting 5589 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 8.91 seconds. CPU system time: 0.48 seconds. Elapsed time: 9.5 seconds; current allocated memory: 805.902 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 4.19 seconds. CPU system time: 0.85 seconds. Elapsed time: 5.03 seconds; current allocated memory: 799.777 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'SneakySnake_bit' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'NeighborhoodMap_bit'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'NeighborhoodMap_bit'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 3.61 seconds. CPU system time: 0.12 seconds. Elapsed time: 3.72 seconds; current allocated memory: 856.746 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.93 seconds. CPU system time: 1.33 seconds. Elapsed time: 2.27 seconds; current allocated memory: 856.746 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'count_one_bit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'count_one_bit'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'count_one_bit'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0.85 seconds. Elapsed time: 1.01 seconds; current allocated memory: 856.746 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.05 seconds; current allocated memory: 856.746 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'after_neighbohood' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'after_neighbohood'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, function 'after_neighbohood'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.16 seconds; current allocated memory: 856.746 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.07 seconds; current allocated memory: 856.746 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'SneakySnake_bit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_709_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 6, loop 'VITIS_LOOP_709_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.15 seconds; current allocated memory: 856.746 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 856.746 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.63 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.69 seconds; current allocated memory: 907.953 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'count_one_bit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_17_7_4_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'count_one_bit'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.07 seconds. CPU system time: 2.69 seconds. Elapsed time: 5.93 seconds; current allocated memory: 1.013 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'after_neighbohood' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'after_neighbohood'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.14 seconds. Elapsed time: 0.25 seconds; current allocated memory: 1.017 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'SneakySnake_bit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SneakySnake_bit/ReadLength' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SneakySnake_bit/ReadSeq' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SneakySnake_bit/RefSeq' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SneakySnake_bit/EditThreshold' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'SneakySnake_bit/KmerSize' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'SneakySnake_bit' to 's_axilite & ap_ctrl_chain'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'SneakySnake_bit' pipeline 'VITIS_LOOP_709_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Bundling port 'return', 'ReadLength', 'ReadSeq', 'RefSeq' and 'KmerSize' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'SneakySnake_bit'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0.17 seconds. Elapsed time: 0.49 seconds; current allocated memory: 1.043 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.43 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.53 seconds; current allocated memory: 1.050 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2.37 seconds. CPU system time: 0.1 seconds. Elapsed time: 2.67 seconds; current allocated memory: 1.107 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for SneakySnake_bit.
+INFO: [VLOG 209-307] Generating Verilog RTL for SneakySnake_bit.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 105.14 MHz
+INFO: [HLS 200-112] Total CPU user time: 54.21 seconds. Total CPU system time: 15.48 seconds. Total elapsed time: 72.94 seconds; peak allocated memory: 1.107 GB.
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 17s
