@@ -34,10 +34,10 @@ entry:0 %p_read_12 = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %p_read
 
 <Node id="3" bw="0" op_0_bw="2">
 <![CDATA[
-entry:1 %ret_ln717 = ret i2 %p_read_12
+entry:1 %ret_ln719 = ret i2 %p_read_12
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln717"/></StgValue>
+<StgValue><ssdm name="ret_ln719"/></StgValue>
 </operation>
 </state>
 </state_list>
@@ -55,7 +55,7 @@ entry:1 %ret_ln717 = ret i2 %p_read_12
 </dataflow>
 <dataflow id="7" from="p_read" to="p_read_12" fromId="4" toId="2">
 </dataflow>
-<dataflow id="8" from="p_read_12" to="ret_ln717" fromId="2" toId="3">
+<dataflow id="8" from="p_read_12" to="ret_ln719" fromId="2" toId="3">
 </dataflow>
 </dataflows>
 

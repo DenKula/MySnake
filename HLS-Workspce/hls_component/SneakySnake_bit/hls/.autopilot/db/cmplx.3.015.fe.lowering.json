@@ -1,27 +1,45 @@
 {
   "0": {
     "basicblocks": 3,
-    "calls": "3 1",
+    "calls": "1 4",
     "file": "pipeline.cpp",
-    "fileloc": 679,
+    "fileloc": 681,
     "instructions": 77,
     "loads": {
       "L": 11,
       "T": 2
     },
     "name": "SneakySnake_bit",
-    "total_instructions": 677
+    "total_instructions": 16430
   },
   "1": {
-    "basicblocks": 3,
-    "calls": "2 2 2 2 2 2 2 2 2 2 2",
+    "basicblocks": 5589,
+    "calls": "",
     "file": "pipeline.cpp",
-    "fileloc": 631,
-    "instructions": 86,
-    "name": "after_neighbohood",
-    "total_instructions": 306
+    "fileloc": 359,
+    "instructions": 15441,
+    "loads": {
+      "L": 11
+    },
+    "name": "NeighborhoodMap_bit",
+    "stores": {
+      "L": 11
+    },
+    "total_instructions": 15441
   },
   "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "pipeline.cpp",
+    "fileloc": 307,
+    "instructions": 32,
+    "loads": {
+      "L": 11
+    },
+    "name": "largest",
+    "total_instructions": 32
+  },
+  "3": {
     "basicblocks": 10,
     "calls": "",
     "file": "pipeline.cpp",
@@ -30,19 +48,16 @@
     "name": "count_one_bit",
     "total_instructions": 20
   },
-  "3": {
-    "basicblocks": 67,
-    "calls": "",
+  "4": {
+    "basicblocks": 1,
+    "calls": "3 3 3 3 3 3 3 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 2 3 3 3 3 3 3 3 3 3 3 3 2",
     "file": "pipeline.cpp",
-    "fileloc": 359,
-    "instructions": 294,
-    "loads": {
-      "L": 11
-    },
-    "name": "NeighborhoodMap_bit",
+    "fileloc": 632,
+    "instructions": 156,
+    "name": "after_neighbohood",
     "stores": {
-      "L": 11
+      "L": 33
     },
-    "total_instructions": 294
+    "total_instructions": 912
   }
 }

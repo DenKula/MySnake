@@ -1,0 +1,78 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'after_neighbohood'" level="0">
+<item name = "Date">Sat May 17 16:08:27 2025
+</item>
+<item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
+<item name = "Project">SneakySnake_bit</item>
+<item name = "Solution">hls (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu9p-flga2104-2-i</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">11.00 ns, 9.478 ns, 1.32 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">3, 3, 33.000 ns, 33.000 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="counter_A_count_one_bit_fu_108">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_1_count_one_bit_fu_114">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_30_count_one_bit_fu_120">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_3_count_one_bit_fu_126">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_31_count_one_bit_fu_132">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_5_count_one_bit_fu_138">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_32_count_one_bit_fu_144">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_7_count_one_bit_fu_150">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_33_count_one_bit_fu_156">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_9_count_one_bit_fu_162">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_34_count_one_bit_fu_168">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_35_count_one_bit_fu_173">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_2_count_one_bit_fu_178">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_36_count_one_bit_fu_183">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_6_count_one_bit_fu_188">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_37_count_one_bit_fu_193">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_10_count_one_bit_fu_198">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_38_count_one_bit_fu_203">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_12_count_one_bit_fu_208">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_39_count_one_bit_fu_213">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_14_count_one_bit_fu_218">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_40_count_one_bit_fu_223">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_41_count_one_bit_fu_228">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_16_count_one_bit_fu_233">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_42_count_one_bit_fu_238">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_18_count_one_bit_fu_243">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_43_count_one_bit_fu_248">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_20_count_one_bit_fu_253">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_44_count_one_bit_fu_258">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_22_count_one_bit_fu_263">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_45_count_one_bit_fu_268">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_24_count_one_bit_fu_273">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="counter_A_46_count_one_bit_fu_278">count_one_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

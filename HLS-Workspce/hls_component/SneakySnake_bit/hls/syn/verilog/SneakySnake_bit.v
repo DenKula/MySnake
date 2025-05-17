@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="SneakySnake_bit_SneakySnake_bit,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvu9p-flga2104-2-i,HLS_INPUT_CLOCK=11.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=8.806429,HLS_SYN_LAT=172,HLS_SYN_TPT=132,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=8289,HLS_SYN_LUT=17583,HLS_VERSION=2024_2}" *)
+(* CORE_GENERATION_INFO="SneakySnake_bit_SneakySnake_bit,hls_ip_2024_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xcvu9p-flga2104-2-i,HLS_INPUT_CLOCK=11.000000,HLS_INPUT_ARCH=dataflow,HLS_SYN_CLOCK=9.478429,HLS_SYN_LAT=20,HLS_SYN_TPT=12,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=5430,HLS_SYN_LUT=35740,HLS_VERSION=2024_2}" *)
 
 module SneakySnake_bit (
         s_axi_control_AWVALID,
@@ -93,12 +93,12 @@ wire    ap_channel_done_DNA_shr_five;
 wire    DNA_shr_five_full_n;
 reg    ap_sync_reg_channel_write_DNA_shr_five;
 wire    ap_sync_channel_write_DNA_shr_five;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_start;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_done;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_continue;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_idle;
-wire    Loop_VITIS_LOOP_707_1_proc_U0_ap_ready;
-wire   [1:0] Loop_VITIS_LOOP_707_1_proc_U0_ap_return;
+wire    Loop_VITIS_LOOP_709_1_proc_U0_ap_continue;
+wire    Loop_VITIS_LOOP_709_1_proc_U0_ap_start;
+wire    Loop_VITIS_LOOP_709_1_proc_U0_ap_done;
+wire    Loop_VITIS_LOOP_709_1_proc_U0_ap_idle;
+wire    Loop_VITIS_LOOP_709_1_proc_U0_ap_ready;
+wire   [1:0] Loop_VITIS_LOOP_709_1_proc_U0_ap_return;
 wire    add_i_i2_loc_channel_full_n;
 wire    Block_entry_proc_proc_U0_ap_start;
 wire    Block_entry_proc_proc_U0_ap_done;
@@ -218,6 +218,7 @@ SneakySnake_bit_NeighborhoodMap_bit NeighborhoodMap_bit_U0(
     .ap_start(NeighborhoodMap_bit_U0_ap_start),
     .ap_done(NeighborhoodMap_bit_U0_ap_done),
     .ap_continue(NeighborhoodMap_bit_U0_ap_continue),
+    .ap_ce(1'b1),
     .ap_idle(NeighborhoodMap_bit_U0_ap_idle),
     .ap_ready(NeighborhoodMap_bit_U0_ap_ready),
     .ReadSeq(ReadSeq),
@@ -235,14 +236,14 @@ SneakySnake_bit_NeighborhoodMap_bit NeighborhoodMap_bit_U0(
     .ap_return_10(NeighborhoodMap_bit_U0_ap_return_10)
 );
 
-SneakySnake_bit_Loop_VITIS_LOOP_707_1_proc Loop_VITIS_LOOP_707_1_proc_U0(
+SneakySnake_bit_Loop_VITIS_LOOP_709_1_proc Loop_VITIS_LOOP_709_1_proc_U0(
+    .ap_continue(Loop_VITIS_LOOP_709_1_proc_U0_ap_continue),
     .ap_clk(ap_clk),
     .ap_rst(ap_rst_n_inv),
-    .ap_start(Loop_VITIS_LOOP_707_1_proc_U0_ap_start),
-    .ap_done(Loop_VITIS_LOOP_707_1_proc_U0_ap_done),
-    .ap_continue(Loop_VITIS_LOOP_707_1_proc_U0_ap_continue),
-    .ap_idle(Loop_VITIS_LOOP_707_1_proc_U0_ap_idle),
-    .ap_ready(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .ap_start(Loop_VITIS_LOOP_709_1_proc_U0_ap_start),
+    .ap_done(Loop_VITIS_LOOP_709_1_proc_U0_ap_done),
+    .ap_idle(Loop_VITIS_LOOP_709_1_proc_U0_ap_idle),
+    .ap_ready(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .p_read(DNA_nsh_dout),
     .p_read1(DNA_shl_one_dout),
     .p_read2(DNA_shl_two_dout),
@@ -254,7 +255,7 @@ SneakySnake_bit_Loop_VITIS_LOOP_707_1_proc Loop_VITIS_LOOP_707_1_proc_U0(
     .p_read8(DNA_shr_three_dout),
     .p_read9(DNA_shr_four_dout),
     .p_read10(DNA_shr_five_dout),
-    .ap_return(Loop_VITIS_LOOP_707_1_proc_U0_ap_return)
+    .ap_return(Loop_VITIS_LOOP_709_1_proc_U0_ap_return)
 );
 
 SneakySnake_bit_Block_entry_proc_proc Block_entry_proc_proc_U0(
@@ -279,7 +280,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_nsh_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_nsh_dout),
     .if_empty_n(DNA_nsh_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_nsh_num_data_valid),
     .if_fifo_cap(DNA_nsh_fifo_cap)
 );
@@ -294,7 +295,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shl_one_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shl_one_dout),
     .if_empty_n(DNA_shl_one_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shl_one_num_data_valid),
     .if_fifo_cap(DNA_shl_one_fifo_cap)
 );
@@ -309,7 +310,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shl_two_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shl_two_dout),
     .if_empty_n(DNA_shl_two_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shl_two_num_data_valid),
     .if_fifo_cap(DNA_shl_two_fifo_cap)
 );
@@ -324,7 +325,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shl_three_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shl_three_dout),
     .if_empty_n(DNA_shl_three_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shl_three_num_data_valid),
     .if_fifo_cap(DNA_shl_three_fifo_cap)
 );
@@ -339,7 +340,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shl_four_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shl_four_dout),
     .if_empty_n(DNA_shl_four_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shl_four_num_data_valid),
     .if_fifo_cap(DNA_shl_four_fifo_cap)
 );
@@ -354,7 +355,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shl_five_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shl_five_dout),
     .if_empty_n(DNA_shl_five_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shl_five_num_data_valid),
     .if_fifo_cap(DNA_shl_five_fifo_cap)
 );
@@ -369,7 +370,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shr_one_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shr_one_dout),
     .if_empty_n(DNA_shr_one_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shr_one_num_data_valid),
     .if_fifo_cap(DNA_shr_one_fifo_cap)
 );
@@ -384,7 +385,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shr_two_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shr_two_dout),
     .if_empty_n(DNA_shr_two_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shr_two_num_data_valid),
     .if_fifo_cap(DNA_shr_two_fifo_cap)
 );
@@ -399,7 +400,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shr_three_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shr_three_dout),
     .if_empty_n(DNA_shr_three_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shr_three_num_data_valid),
     .if_fifo_cap(DNA_shr_three_fifo_cap)
 );
@@ -414,7 +415,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shr_four_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shr_four_dout),
     .if_empty_n(DNA_shr_four_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shr_four_num_data_valid),
     .if_fifo_cap(DNA_shr_four_fifo_cap)
 );
@@ -429,7 +430,7 @@ SneakySnake_bit_fifo_w128_d2_S DNA_shr_five_U(
     .if_write(ap_channel_done_DNA_shr_five),
     .if_dout(DNA_shr_five_dout),
     .if_empty_n(DNA_shr_five_empty_n),
-    .if_read(Loop_VITIS_LOOP_707_1_proc_U0_ap_ready),
+    .if_read(Loop_VITIS_LOOP_709_1_proc_U0_ap_ready),
     .if_num_data_valid(DNA_shr_five_num_data_valid),
     .if_fifo_cap(DNA_shr_five_fifo_cap)
 );
@@ -439,9 +440,9 @@ SneakySnake_bit_fifo_w2_d2_S add_i_i2_loc_channel_U(
     .reset(ap_rst_n_inv),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(Loop_VITIS_LOOP_707_1_proc_U0_ap_return),
+    .if_din(Loop_VITIS_LOOP_709_1_proc_U0_ap_return),
     .if_full_n(add_i_i2_loc_channel_full_n),
-    .if_write(Loop_VITIS_LOOP_707_1_proc_U0_ap_done),
+    .if_write(Loop_VITIS_LOOP_709_1_proc_U0_ap_done),
     .if_dout(add_i_i2_loc_channel_dout),
     .if_empty_n(add_i_i2_loc_channel_empty_n),
     .if_read(Block_entry_proc_proc_U0_ap_ready),
@@ -477,9 +478,9 @@ assign Block_entry_proc_proc_U0_ap_continue = ap_continue;
 
 assign Block_entry_proc_proc_U0_ap_start = add_i_i2_loc_channel_empty_n;
 
-assign Loop_VITIS_LOOP_707_1_proc_U0_ap_continue = add_i_i2_loc_channel_full_n;
+assign Loop_VITIS_LOOP_709_1_proc_U0_ap_continue = add_i_i2_loc_channel_full_n;
 
-assign Loop_VITIS_LOOP_707_1_proc_U0_ap_start = DNA_nsh_empty_n;
+assign Loop_VITIS_LOOP_709_1_proc_U0_ap_start = DNA_nsh_empty_n;
 
 assign NeighborhoodMap_bit_U0_ap_continue = ap_sync_channel_write_DNA_shr_five;
 
@@ -489,7 +490,7 @@ assign ap_channel_done_DNA_shr_five = ((ap_sync_reg_channel_write_DNA_shr_five ^
 
 assign ap_done = Block_entry_proc_proc_U0_ap_done;
 
-assign ap_idle = ((1'b1 ^ add_i_i2_loc_channel_empty_n) & (1'b1 ^ DNA_nsh_empty_n) & NeighborhoodMap_bit_U0_ap_idle & Loop_VITIS_LOOP_707_1_proc_U0_ap_idle & Block_entry_proc_proc_U0_ap_idle);
+assign ap_idle = ((1'b1 ^ add_i_i2_loc_channel_empty_n) & (1'b1 ^ DNA_nsh_empty_n) & NeighborhoodMap_bit_U0_ap_idle & Loop_VITIS_LOOP_709_1_proc_U0_ap_idle & Block_entry_proc_proc_U0_ap_idle);
 
 assign ap_ready = NeighborhoodMap_bit_U0_ap_ready;
 

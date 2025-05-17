@@ -114,7 +114,7 @@ attribute shreg_extract : string;
 
 
 begin
-    sparsemux_15_6_3_1_1_U60 : component SneakySnake_bit_sparsemux_15_6_3_1_1
+    sparsemux_15_6_3_1_1_U3 : component SneakySnake_bit_sparsemux_15_6_3_1_1
     generic map (
         ID => 1,
         NUM_STAGE => 1,

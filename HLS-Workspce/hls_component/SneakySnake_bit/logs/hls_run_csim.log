@@ -1,3 +1,4 @@
+  **** HLS Build v2024.2 5238294
 INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit 
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
@@ -29,6 +30,7 @@ INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=1' from /home/deniz/Projec
 INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(5)
 INFO: [SIM 211-200] Executing Code Analyzer instead of classic HLS C simulation
 INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as hardware code with instrumentation
+INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/tb_wrapper.cpp as test bench code with instrumentation
 INFO: [HLS 211-200] Compiling source code /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp as test bench code with instrumentation
 /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:695:17: warning: unexpected pragma argument '__attribute__', expects identifier [-Winvalid-hls-pragmas]
     #pragma HLS INLINE OFF
@@ -47,5 +49,5 @@ INFO: [SIM 211-200] Analyzing trace data
 INFO: [SIM 211-208] Running Code Analyzer
 WARNING: [HLS 211-200] /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:332:9: Ignoring pragma 'pipeline' because it conflicts with pragma 'pipeline' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:643:9). Reason: Inner loop cannot be pipelined because at least one outer loop has been pipelined
 INFO: [SIM 211-210] Code Analyzer finished
-INFO: [HLS 200-112] Total CPU user time: 246.26 seconds. Total CPU system time: 36.79 seconds. Total elapsed time: 286.51 seconds; peak allocated memory: 658.887 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 4m 51s
+INFO: [HLS 200-112] Total CPU user time: 458.56 seconds. Total CPU system time: 35.21 seconds. Total elapsed time: 490.24 seconds; peak allocated memory: 658.883 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 8m 15s

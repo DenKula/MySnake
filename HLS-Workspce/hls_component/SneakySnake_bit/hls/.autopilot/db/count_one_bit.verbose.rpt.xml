@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'count_one_bit'" level="0">
-<item name = "Date">Fri May  9 17:46:16 2025
+<item name = "Date">Sat May 17 16:08:36 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">SneakySnake_bit</item>
@@ -63,7 +63,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="sparsemux_15_6_3_1_1_U60">sparsemux_15_6_3_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_15_6_3_1_1_U3">sparsemux_15_6_3_1_1, 0, 0, 0, 31, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">

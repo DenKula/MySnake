@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'SneakySnake_bit'" level="0">
-<item name = "Date">Fri May  9 17:46:10 2025
+<item name = "Date">Sat May 17 16:08:27 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">SneakySnake_bit</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">11.00 ns, 8.806 ns, 1.32 ns</column>
+<column name="ap_clk">11.00 ns, 9.478 ns, 1.32 ns</column>
 </table>
 </item>
 </section>
@@ -24,15 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">172, 172, 1.892 us, 1.892 us, 132, 132, dataflow</column>
+<column name="">20, 20, 0.220 us, 0.220 us, 12, 12, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_NeighborhoodMap_bit_fu_52">NeighborhoodMap_bit, 131, 131, 1.441 us, 1.441 us, 131, 131, no</column>
-<column name="grp_Loop_VITIS_LOOP_707_1_proc_fu_60">Loop_VITIS_LOOP_707_1_proc, 39, 39, 0.429 us, 0.429 us, 38, 38, loop auto-rewind stp (delay=2 clock cycles(s))</column>
+<column name="call_ret_NeighborhoodMap_bit_fu_52">NeighborhoodMap_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="grp_Loop_VITIS_LOOP_709_1_proc_fu_60">Loop_VITIS_LOOP_709_1_proc, 18, 18, 0.198 us, 0.198 us, 17, 17, loop auto-rewind stp (delay=5 clock cycles(s))</column>
 <column name="tmp_Block_entry_proc_proc_fu_75">Block_entry_proc_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 </table>
 </item>

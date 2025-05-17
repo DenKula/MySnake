@@ -6615,7 +6615,8 @@ void NeighborhoodMap_bit(int read_length,
     d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five,
     d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five)
 {
-                                ;
+#pragma HLS PIPELINE
+ ;
     d_bit_in_type DNA_1, DNA_2, DNA_3, DNA_4, DNA_5, DNA_6,
      DNA_7, DNA_8, DNA_9, DNA_10, DNA_11;
 
@@ -6630,7 +6631,7 @@ void NeighborhoodMap_bit(int read_length,
 
 
 
-    VITIS_LOOP_380_1: for (i = 0; i < 256 -2; i = i + 2)
+    VITIS_LOOP_381_1: for (i = 0; i < 256 -2; i = i + 2)
     {
 
 
@@ -6650,7 +6651,7 @@ void NeighborhoodMap_bit(int read_length,
 
     DNA_2= DNA_ref ^ (DNA_read<<2);
     index=0;
-      VITIS_LOOP_400_2: for (i = 0; i < 256 -2; i = i + 2)
+      VITIS_LOOP_401_2: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_2((i+1),i) || DNA_2((i+2),(i+1)))
@@ -6669,7 +6670,7 @@ void NeighborhoodMap_bit(int read_length,
 
     DNA_3= DNA_ref ^ (DNA_read<<4);
     index=0;
-    VITIS_LOOP_419_3: for (i = 0; i < 256 -2; i = i + 2)
+    VITIS_LOOP_420_3: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_3((i+1),i) || DNA_3((i+2),(i+1)))
@@ -6688,7 +6689,7 @@ void NeighborhoodMap_bit(int read_length,
 
     DNA_6= DNA_ref ^ (DNA_read<<6);
     index=0;
-      VITIS_LOOP_438_4: for (i = 0; i < 256 -2; i = i + 2)
+      VITIS_LOOP_439_4: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_6((i+1),i) || DNA_6((i+2),(i+1)))
@@ -6700,10 +6701,10 @@ void NeighborhoodMap_bit(int read_length,
     DNA_shl_three((256/2)-1,(256/2)-2) =1;
     DNA_shl_three((256/2)-3,(256/2)-4) =1;
     DNA_shl_three((256/2)-5,(256/2)-6) =1;
-# 460 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 461 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
     DNA_7= DNA_ref ^ (DNA_read<<8);
     index=0;
-      VITIS_LOOP_462_5: for (i = 0; i < 256 -2; i = i + 2)
+      VITIS_LOOP_463_5: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_7((i+1),i) || DNA_7((i+2),(i+1)))
@@ -6716,10 +6717,10 @@ void NeighborhoodMap_bit(int read_length,
     DNA_shl_four((256/2)-3,(256/2)-4) =1;
     DNA_shl_four((256/2)-5,(256/2)-6) =1;
     DNA_shl_four((256/2)-7,(256/2)-8) =1;
-# 486 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 487 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
     DNA_8= DNA_ref ^ (DNA_read<<10);
     index=0;
-        VITIS_LOOP_488_6: for (i = 0; i < 256 -2; i = i + 2)
+        VITIS_LOOP_489_6: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_8((i+1),i) || DNA_8((i+2),(i+1)))
@@ -6733,10 +6734,10 @@ void NeighborhoodMap_bit(int read_length,
     DNA_shl_five((256/2)-5,(256/2)-6) =1;
     DNA_shl_five((256/2)-7,(256/2)-8) =1;
     DNA_shl_five((256/2)-9,(256/2)-10) =1;
-# 514 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 515 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
     DNA_4= DNA_ref ^ (DNA_read>>2);
     index=0;
-         VITIS_LOOP_516_7: for (i = 0; i < 256 -2; i = i + 2)
+         VITIS_LOOP_517_7: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_4((i+1),i) || DNA_4((i+2),(i+1)))
@@ -6754,7 +6755,7 @@ void NeighborhoodMap_bit(int read_length,
 
     DNA_5= DNA_ref ^ (DNA_read>>4);
     index=0;
-         VITIS_LOOP_534_8: for (i = 0; i < 256 -2; i = i + 2)
+         VITIS_LOOP_535_8: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_5((i+1),i) || DNA_5((i+2),(i+1)))
@@ -6765,10 +6766,10 @@ void NeighborhoodMap_bit(int read_length,
      }
       DNA_shr_two(1,0) =1;
        DNA_shr_two(2,1) =1;
-# 554 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 555 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
     DNA_9= DNA_ref ^ (DNA_read>>6);
     index=0;
-         VITIS_LOOP_556_9: for (i = 0; i < 256 -2; i = i + 2)
+         VITIS_LOOP_557_9: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_9((i+1),i) || DNA_9((i+2),(i+1)))
@@ -6780,10 +6781,10 @@ void NeighborhoodMap_bit(int read_length,
     DNA_shr_three(1,0) =1;
        DNA_shr_three(2,1) =1;
        DNA_shr_three(3,2) =1;
-# 578 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 579 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
     DNA_10= DNA_ref ^ (DNA_read>>8);
     index=0;
-        VITIS_LOOP_580_10: for (i = 0; i < 256 -2; i = i + 2)
+        VITIS_LOOP_581_10: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_10((i+1),i) || DNA_10((i+2),(i+1)))
@@ -6797,10 +6798,10 @@ void NeighborhoodMap_bit(int read_length,
        DNA_shr_four(2,1) =1;
        DNA_shr_four(3,2) =1;
          DNA_shr_four(4,3) =1;
-# 605 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 606 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
     DNA_11= DNA_ref ^ (DNA_read>>10);
     index=0;
-         VITIS_LOOP_607_11: for (i = 0; i < 256 -2; i = i + 2)
+         VITIS_LOOP_608_11: for (i = 0; i < 256 -2; i = i + 2)
     {
 #pragma HLS PIPELINE
  if(DNA_11((i+1),i) || DNA_11((i+2),(i+1)))
@@ -6828,12 +6829,13 @@ unsigned after_neighbohood(d_bit_out_tiny_type DNA_nsh,
     d_bit_out_tiny_type DNA_shl_one,d_bit_out_tiny_type DNA_shl_two,d_bit_out_tiny_type DNA_shl_three,d_bit_out_tiny_type DNA_shl_four,d_bit_out_tiny_type DNA_shl_five,
     d_bit_out_tiny_type DNA_shr_one,d_bit_out_tiny_type DNA_shr_two,d_bit_out_tiny_type DNA_shr_three,d_bit_out_tiny_type DNA_shr_four,d_bit_out_tiny_type DNA_shr_five)
 {
-    d_final_out_type global_count=0;
+#pragma HLS PIPELINE
+ d_final_out_type global_count=0;
     unsigned counter_A[11];
 
     unsigned large_count=0;
 
-     VITIS_LOOP_640_1: for (int iter=0;iter<3;iter++)
+     VITIS_LOOP_642_1: for (int iter=0;iter<3;iter++)
     {
 
 #pragma HLS PIPELINE
@@ -6876,9 +6878,9 @@ __attribute__((sdx_kernel("SneakySnake_bit", 0))) int SneakySnake_bit(int ReadLe
 {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=SneakySnake_bit
-# 680 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 682 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
 
-# 694 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
+# 696 "/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp"
 #pragma HLS dataflow
 #pragma HLS INLINE OFF
  d_bit_out_type DNA_nsh, DNA_shl_one, DNA_shl_two, DNA_shl_three, DNA_shl_four, DNA_shl_five,
@@ -6892,7 +6894,7 @@ __attribute__((sdx_kernel("SneakySnake_bit", 0))) int SneakySnake_bit(int ReadLe
         DNA_shl_one, DNA_shl_two, DNA_shl_three, DNA_shl_four, DNA_shl_five,
         DNA_shr_one, DNA_shr_two, DNA_shr_three, DNA_shr_four, DNA_shr_five);
     d_final_out_type global_count=0;
-        VITIS_LOOP_707_1: for(unsigned i=0; i<12;i++)
+        VITIS_LOOP_709_1: for(unsigned i=0; i<12;i++)
         {
 
         global_count+= after_neighbohood(DNA_nsh.range(8*i-1,8*i),

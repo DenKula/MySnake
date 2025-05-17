@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'SneakySnake_bit'" level="0">
-<item name = "Date">Fri May  9 17:46:17 2025
+<item name = "Date">Sat May 17 16:08:37 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">SneakySnake_bit</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">11.00 ns, 8.806 ns, 1.32 ns</column>
+<column name="ap_clk">11.00 ns, 9.478 ns, 1.32 ns</column>
 </table>
 </item>
 </section>
@@ -24,15 +24,15 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">172, 172, 1.892 us, 1.892 us, 132, 132, dataflow</column>
+<column name="">20, 20, 0.220 us, 0.220 us, 12, 12, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="NeighborhoodMap_bit_U0">NeighborhoodMap_bit, 131, 131, 1.441 us, 1.441 us, 131, 131, no</column>
-<column name="Loop_VITIS_LOOP_707_1_proc_U0">Loop_VITIS_LOOP_707_1_proc, 39, 39, 0.429 us, 0.429 us, 38, 38, loop auto-rewind stp (delay=2 clock cycles(s))</column>
+<column name="NeighborhoodMap_bit_U0">NeighborhoodMap_bit, 0, 0, 0 ns, 0 ns, 1, 1, yes</column>
+<column name="Loop_VITIS_LOOP_709_1_proc_U0">Loop_VITIS_LOOP_709_1_proc, 18, 18, 0.198 us, 0.198 us, 17, 17, loop auto-rewind stp (delay=5 clock cycles(s))</column>
 <column name="Block_entry_proc_proc_U0">Block_entry_proc_proc, 0, 0, 0 ns, 0 ns, 0, 0, no</column>
 </table>
 </item>
@@ -52,14 +52,14 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 6, -</column>
 <column name="FIFO">-, -, 2868, 1495, -</column>
-<column name="Instance">0, -, 5417, 16073, 0</column>
+<column name="Instance">0, -, 2558, 34230, 0</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 9, -</column>
 <column name="Register">-, -, 4, -, -</column>
 <specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
-<specialColumn name="Utilization SLR (%)">0, 0, 1, 4, 0</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 0, ~0, 9, 0</specialColumn>
 <specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, ~0, 1, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 3, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -67,8 +67,8 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="Block_entry_proc_proc_U0">Block_entry_proc_proc, 0, 0, 4, 20, 0</column>
-<column name="Loop_VITIS_LOOP_707_1_proc_U0">Loop_VITIS_LOOP_707_1_proc, 0, 0, 281, 7693, 0</column>
-<column name="NeighborhoodMap_bit_U0">NeighborhoodMap_bit, 0, 0, 4426, 7040, 0</column>
+<column name="Loop_VITIS_LOOP_709_1_proc_U0">Loop_VITIS_LOOP_709_1_proc, 0, 0, 438, 9456, 0</column>
+<column name="NeighborhoodMap_bit_U0">NeighborhoodMap_bit, 0, 0, 1410, 23434, 0</column>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 706, 1320, 0</column>
 </table>
 </item>

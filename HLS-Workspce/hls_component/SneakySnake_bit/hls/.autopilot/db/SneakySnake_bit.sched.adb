@@ -203,7 +203,7 @@
 						<name>call_ret</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -219,7 +219,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -249,7 +249,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>2.02</m_delay>
+				<m_delay>1.00</m_delay>
 				<m_topoIndex>1</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -261,7 +261,7 @@
 						<name>DNA_nsh</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -277,7 +277,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -317,7 +317,7 @@
 						<name>DNA_shl_one</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -333,7 +333,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -373,7 +373,7 @@
 						<name>DNA_shl_two</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -389,7 +389,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -429,7 +429,7 @@
 						<name>DNA_shl_three</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -445,7 +445,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -485,7 +485,7 @@
 						<name>DNA_shl_four</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -501,7 +501,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -541,7 +541,7 @@
 						<name>DNA_shl_five</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -557,7 +557,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -597,7 +597,7 @@
 						<name>DNA_shr_one</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -613,7 +613,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -653,7 +653,7 @@
 						<name>DNA_shr_two</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -669,7 +669,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -709,7 +709,7 @@
 						<name>DNA_shr_three</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -725,7 +725,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -765,7 +765,7 @@
 						<name>DNA_shr_four</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -781,7 +781,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -821,7 +821,7 @@
 						<name>DNA_shr_five</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>701</lineNumber>
+						<lineNumber>703</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -837,7 +837,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>701</second>
+										<second>703</second>
 									</item>
 								</second>
 							</item>
@@ -877,7 +877,7 @@
 						<name>add_i_i2_loc_channel</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>706</lineNumber>
+						<lineNumber>708</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -893,7 +893,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>706</second>
+										<second>708</second>
 									</item>
 								</second>
 							</item>
@@ -944,7 +944,7 @@
 						<name>tmp</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>717</lineNumber>
+						<lineNumber>719</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -960,7 +960,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>717</second>
+										<second>719</second>
 									</item>
 								</second>
 							</item>
@@ -998,10 +998,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>zext_ln717</name>
+						<name>zext_ln719</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>717</lineNumber>
+						<lineNumber>719</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1017,7 +1017,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>717</second>
+										<second>719</second>
 									</item>
 								</second>
 							</item>
@@ -1054,10 +1054,10 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>_ln717</name>
+						<name>_ln719</name>
 						<fileName>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</fileName>
 						<fileDirectory>/home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component</fileDirectory>
-						<lineNumber>717</lineNumber>
+						<lineNumber>719</lineNumber>
 						<contextFuncName>SneakySnake_bit</contextFuncName>
 						<contextNormFuncName>SneakySnake_bit</contextNormFuncName>
 						<inlineStackInfo>
@@ -1073,7 +1073,7 @@
 											<first>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp</first>
 											<second>SneakySnake_bit</second>
 										</first>
-										<second>717</second>
+										<second>719</second>
 									</item>
 								</second>
 							</item>
@@ -1145,7 +1145,7 @@
 					<Obj>
 						<type>2</type>
 						<id>58</id>
-						<name>Loop_VITIS_LOOP_707_1_proc</name>
+						<name>Loop_VITIS_LOOP_709_1_proc</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1169,7 +1169,7 @@
 					<bitwidth>2</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:Loop_VITIS_LOOP_707_1_proc&gt;</content>
+				<content>&lt;constant:Loop_VITIS_LOOP_709_1_proc&gt;</content>
 			</item>
 			<item class_id_reference="16" object_id="_24">
 				<Value>
@@ -1489,8 +1489,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>172</mMinLatency>
-			<mMaxLatency>172</mMaxLatency>
+			<mMinLatency>20</mMinLatency>
+			<mMaxLatency>20</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
 			<mDfPipe class_id="23" tracking_level="1" version="0" object_id="_57">
 				<port_list class_id="24" tracking_level="0" version="0">
@@ -1588,7 +1588,7 @@
 					</item>
 					<item class_id_reference="28" object_id="_70">
 						<type>0</type>
-						<name>Loop_VITIS_LOOP_707_1_proc_U0</name>
+						<name>Loop_VITIS_LOOP_709_1_proc_U0</name>
 						<ssdmobj_id>38</ssdmobj_id>
 						<pins>
 							<count>0</count>
@@ -1667,7 +1667,7 @@
 								</port>
 								<inst class_id_reference="31" object_id="_80">
 									<type>0</type>
-									<name>Loop_VITIS_LOOP_707_1_proc_U0</name>
+									<name>Loop_VITIS_LOOP_709_1_proc_U0</name>
 									<ssdmobj_id>38</ssdmobj_id>
 								</inst>
 							</item>
@@ -2166,90 +2166,90 @@
 			<first>26</first>
 			<second class_id="38" tracking_level="0" version="0">
 				<first>0</first>
-				<second>1</second>
+				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>27</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>28</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>29</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>30</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>31</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>32</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>33</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>34</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>35</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>36</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>37</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>0</second>
 			</second>
 		</item>
 		<item>
 			<first>38</first>
 			<second>
-				<first>1</first>
+				<first>0</first>
 				<second>1</second>
 			</second>
 		</item>

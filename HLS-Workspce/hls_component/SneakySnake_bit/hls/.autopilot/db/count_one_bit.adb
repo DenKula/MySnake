@@ -1402,7 +1402,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>sparsemux_15_6_3_1_1_U60</rtlName>
+              <rtlName>sparsemux_15_6_3_1_1_U3</rtlName>
               <control>auto</control>
               <opType>sparsemux</opType>
               <implIndex>onehotencoding_realdef</implIndex>
@@ -3444,7 +3444,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="32" tracking_level="0" version="0">
-          <first>sparsemux_15_6_3_1_1_U60 (sparsemux_15_6_3_1_1)</first>
+          <first>sparsemux_15_6_3_1_1_U3 (sparsemux_15_6_3_1_1)</first>
           <second class_id="33" tracking_level="0" version="0">
             <count>2</count>
             <item_version>0</item_version>
@@ -3905,7 +3905,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item>
-          <first>sparsemux_15_6_3_1_1_U60</first>
+          <first>sparsemux_15_6_3_1_1_U3</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -3916,7 +3916,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>sparsemux_15_6_3_1_1_U60 (sparsemux_15_6_3_1_1)</first>
+          <first>sparsemux_15_6_3_1_1_U3 (sparsemux_15_6_3_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>

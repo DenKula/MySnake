@@ -11,37 +11,40 @@
 <TopModelName>NeighborhoodMap_bit</TopModelName>
 <TargetClockPeriod>11.00</TargetClockPeriod>
 <ClockUncertainty>1.32</ClockUncertainty>
+<TargetInitiationInterval>4294967295</TargetInitiationInterval>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>no</PipelineType>
+<PipelineType>yes</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>2.118</EstimatedClockPeriod>
+<EstimatedClockPeriod>1.008</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>131</Best-caseLatency>
-<Average-caseLatency>131</Average-caseLatency>
-<Worst-caseLatency>131</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.441 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.441 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.441 us</Worst-caseRealTimeLatency>
-<Interval-min>131</Interval-min>
-<Interval-max>131</Interval-max>
+<Best-caseLatency>0</Best-caseLatency>
+<Average-caseLatency>0</Average-caseLatency>
+<Worst-caseLatency>0</Worst-caseLatency>
+<Best-caseRealTimeLatency>0 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0 ns</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0 ns</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>1</PipelineInitiationInterval>
+<PipelineDepth>1</PipelineDepth>
+<Interval-min>1</Interval-min>
+<Interval-max>1</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:373~/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:701</SourceLocation>
+<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:361~/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<FF>4426</FF>
-<LUT>7040</LUT>
+<FF>1410</FF>
+<LUT>23434</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP>0</DSP>
 <URAM>0</URAM>
@@ -102,6 +105,17 @@
 </RtlPorts>
 <RtlPorts>
 <name>ap_continue</name>
+<Object>NeighborhoodMap_bit</Object>
+<Type>return value</Type>
+<Scope></Scope>
+<IOProtocol>ap_ctrl_hs</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ap_ce</name>
 <Object>NeighborhoodMap_bit</Object>
 <Type>return value</Type>
 <Scope></Scope>

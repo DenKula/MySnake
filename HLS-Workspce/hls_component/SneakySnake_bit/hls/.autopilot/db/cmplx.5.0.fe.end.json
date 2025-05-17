@@ -1,89 +1,41 @@
 {
-    "0": {
-        "name": "SneakySnake_bit",
-        "file": "pipeline.cpp",
-        "fileloc": "679",
-        "instructions": "36",
-        "total_instructions": "1077",
-        "calls": "1 12 3",
-        "basicblocks": "1"
-    },
     "1": {
-        "name": "NeighborhoodMap_bit",
+        "name": "Loop_VITIS_LOOP_709_1_proc",
         "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "93",
-        "total_instructions": "478",
-        "calls": "13 7 4 5 10 14 15 8 9 11 2",
-        "basicblocks": "1",
+        "fileloc": "708",
+        "instructions": "90",
+        "total_instructions": "1274",
+        "calls": "2",
+        "basicblocks": "3",
         "loads": {
-            "L": "11"
-        }
-    },
-    "2": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
+            "L": "2"
         },
         "stores": {
-            "L": "5"
+            "L": "4"
         },
         "loops": {
             "L": "1"
         }
     },
+    "2": {
+        "name": "after_neighbohood",
+        "file": "pipeline.cpp",
+        "fileloc": "632",
+        "instructions": "161",
+        "total_instructions": "1184",
+        "calls": "4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4",
+        "basicblocks": "1"
+    },
     "3": {
         "name": "Block_entry_proc_proc",
         "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "717",
+        "fileloc": "719",
         "instructions": "2",
         "total_instructions": "2",
         "calls": "",
         "basicblocks": "1"
     },
     "4": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "5": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "6": {
         "name": "count_one_bit",
         "file": "pipeline.cpp",
         "fileloc": "326",
@@ -92,166 +44,22 @@
         "calls": "",
         "basicblocks": "1"
     },
-    "7": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
+    "0": {
+        "name": "SneakySnake_bit",
+        "file": "pipeline.cpp",
+        "fileloc": "681",
+        "instructions": "36",
+        "total_instructions": "9617",
+        "calls": "5 1 3",
+        "basicblocks": "1"
     },
-    "8": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8",
+    "5": {
+        "name": "NeighborhoodMap_bit",
         "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
+        "fileloc": "703",
+        "instructions": "8305",
+        "total_instructions": "8305",
         "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "9": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "10": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "11": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "12": {
-        "name": "Loop_VITIS_LOOP_707_1_proc",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "706",
-        "instructions": "220",
-        "total_instructions": "561",
-        "calls": "6 6 6 6 6 6 6 6 6 6 6",
-        "basicblocks": "5",
-        "loads": {
-            "L": "18"
-        },
-        "stores": {
-            "L": "35"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "13": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "14": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
-    },
-    "15": {
-        "name": "NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7",
-        "file": "\/home\/deniz\/Projects\/SneakySnake\/SneakySnake-HLS-HBM\/hw\/pipeline.cpp",
-        "fileloc": "701",
-        "instructions": "35",
-        "total_instructions": "35",
-        "calls": "",
-        "basicblocks": "4",
-        "loads": {
-            "L": "4"
-        },
-        "stores": {
-            "L": "5"
-        },
-        "loops": {
-            "L": "1"
-        }
+        "basicblocks": "1"
     }
 }

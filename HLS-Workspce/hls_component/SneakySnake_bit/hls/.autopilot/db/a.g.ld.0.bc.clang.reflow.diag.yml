@@ -2,7 +2,7 @@
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 657, Column: 21 }
+                   Line: 659, Column: 21 }
 Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
 Args:            
   - Callee:          'largest(unsigned int*, unsigned int)'
@@ -11,14 +11,14 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 644, Column: 15 }
+                   Line: 646, Column: 15 }
 Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
 Args:            
   - Callee:          'count_one_bit(ap_uint<8>&, unsigned int)'
@@ -27,14 +27,14 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 701, Column: 5 }
+                   Line: 703, Column: 5 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
   - Callee:          'NeighborhoodMap_bit(int, ap_uint<256>&, ap_uint<256>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&)'
@@ -43,24 +43,35 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 680, Column: 0 }
+                       Line: 682, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 710, Column: 24 }
+                   Line: 712, Column: 24 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
   - Callee:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 680, Column: 0 }
+                       Line: 682, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 642, Column: 24 }
+Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_642_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
@@ -83,6 +94,160 @@ Args:
   - String:          'Loop '''
   - LoopName:        VITIS_LOOP_330_1
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 608, Column: 29 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_608_11
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 581, Column: 28 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_581_10
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 557, Column: 28 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_557_9
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 535, Column: 28 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_535_8
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 517, Column: 28 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_517_7
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 489, Column: 27 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_489_6
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 463, Column: 25 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_463_5
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 439, Column: 25 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_439_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 420, Column: 23 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_420_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 401, Column: 25 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_401_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 381, Column: 23 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_381_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 635, Column: 0 }
+Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_642_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          after_neighbohood
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 635, Column: 0 }
+Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_642_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          after_neighbohood
+  - String:          ''' has been removed because the loop is unrolled completely'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
@@ -134,11 +299,374 @@ Args:
   - String:          count_one_bit
   - String:          ''' has been removed because the loop is unrolled completely'
 ...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_608_11
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_608_11
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_581_10
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_581_10
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_557_9
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_557_9
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_535_8
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_535_8
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_517_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_517_7
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_489_6
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_489_6
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_463_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_463_5
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_439_4
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_439_4
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_420_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_420_3
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_401_2
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_401_2
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_381_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' completely with a factor of '
+  - Factor:          '127'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 364, Column: 0 }
+Function:        _Z19NeighborhoodMap_bitiR7ap_uintILi256EES1_RS_ILi128EES3_S3_S3_S3_S3_S3_S3_S3_S3_S3_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_381_1
+  - String:          ''' ('
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          NeighborhoodMap_bit
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 644, Column: 15 }
+                   Line: 646, Column: 15 }
 Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
 Args:            
   - Callee:          'count_one_bit(ap_uint<8>&, unsigned int)'
@@ -147,14 +675,14 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 657, Column: 21 }
+                   Line: 659, Column: 21 }
 Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
 Args:            
   - Callee:          'largest(unsigned int*, unsigned int)'
@@ -163,14 +691,14 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 701, Column: 5 }
+                   Line: 703, Column: 5 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
   - Callee:          'NeighborhoodMap_bit(int, ap_uint<256>&, ap_uint<256>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&)'
@@ -179,23 +707,23 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 680, Column: 0 }
+                       Line: 682, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 710, Column: 24 }
+                   Line: 712, Column: 24 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
   - Callee:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 680, Column: 0 }
+                       Line: 682, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
@@ -205,39 +733,104 @@ Function:        apatb_SneakySnake_bit_ir
 Args:            
   - Callee:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 680, Column: 0 }
+                       Line: 682, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          apatb_SneakySnake_bit_ir
   - String:          ' because it should never be inlined (cost=never)'
 ...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_709_1
+  - String:          '> at '
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27'
+  - String:          ' '
+...
 --- !Passed
-Pass:            reflow-inliner
-Name:            Inline
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayPromotion
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 634, Column: 0 }
+                   Line: 638, Column: 14 }
 Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
 Args:            
-  - String:          'Inlining function '''
-  - Callee:          'largest(unsigned int*, unsigned int)'
-    DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 308, Column: 0 }
-  - String:          ''' into '''
-  - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
-    DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+  - String:          'Automatically partitioning array '''
+  - Value:           counter_A
+  - String:          ''' dimension '
+  - Dim:             '1'
+  - String:          ' completely based on constant index.'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 638, Column: 14 }
+Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=counter_A'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  after_neighbohood
+  - String:          ' '
+  - varLoc:          '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14'
+  - String:          ' '
+  - VarName:         counter_A
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 638, Column: 14 }
+Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            counter_A
   - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 638, Column: 14 }
+Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          counter_A
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
 ...
 --- !Passed
 Pass:            reflow-extract-cfg-in-dataflow
 Name:            LoopExtractionForDataflow
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 707, Column: 27 }
+                   Line: 709, Column: 27 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
   - String:          'Changing loop '''
-  - LoopName:        Loop_VITIS_LOOP_707_1_proc
+  - LoopName:        Loop_VITIS_LOOP_709_1_proc
   - String:          ''' ('
-  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27'
+  - LoopLoc:         '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27'
   - String:          ') to a process function for dataflow in function '''
   - Name:            SneakySnake_bit
   - String:          ''''
@@ -246,7 +839,7 @@ Args:
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 644, Column: 15 }
+                   Line: 646, Column: 15 }
 Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
 Args:            
   - Callee:          'count_one_bit(ap_uint<8>&, unsigned int)'
@@ -255,21 +848,37 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 710, Column: 24 }
-Function:        Loop_VITIS_LOOP_707_1_proc
+                   Line: 659, Column: 21 }
+Function:        _Z17after_neighbohood7ap_uintILi8EES0_S0_S0_S0_S0_S0_S0_S0_S0_S0_
+Args:            
+  - Callee:          'largest(unsigned int*, unsigned int)'
+    DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                       Line: 308, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
+    DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                       Line: 635, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
+                   Line: 712, Column: 24 }
+Function:        Loop_VITIS_LOOP_709_1_proc
 Args:            
   - Callee:          'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 634, Column: 0 }
+                       Line: 635, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          Loop_VITIS_LOOP_707_1_proc
+  - Caller:          Loop_VITIS_LOOP_709_1_proc
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
                        Line: 0, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
@@ -278,7 +887,7 @@ Args:
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 701, Column: 5 }
+                   Line: 703, Column: 5 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
   - Callee:          'NeighborhoodMap_bit(int, ap_uint<256>&, ap_uint<256>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&, ap_uint<128>&)'
@@ -287,22 +896,22 @@ Args:
   - String:          ' not inlined into '
   - Caller:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 680, Column: 0 }
+                       Line: 682, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                   Line: 706, Column: 22 }
+                   Line: 708, Column: 22 }
 Function:        _Z15SneakySnake_bitiR7ap_uintILi256EES1_ii
 Args:            
-  - Callee:          Loop_VITIS_LOOP_707_1_proc
+  - Callee:          Loop_VITIS_LOOP_709_1_proc
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
                        Line: 0, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'SneakySnake_bit(int, ap_uint<256>&, ap_uint<256>&, int, int)'
     DebugLoc:        { File: /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp, 
-                       Line: 680, Column: 0 }
+                       Line: 682, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...

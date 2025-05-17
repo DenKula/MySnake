@@ -76,7 +76,7 @@ wire   [5:0] zext_ln333_cast_fu_218_p13;
     .def_WIDTH( 3 ),
     .sel_WIDTH( 6 ),
     .dout_WIDTH( 3 ))
-sparsemux_15_6_3_1_1_U60(
+sparsemux_15_6_3_1_1_U3(
     .din0(3'd0),
     .din1(3'd1),
     .din2(3'd2),

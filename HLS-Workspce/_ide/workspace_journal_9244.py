@@ -1,0 +1,27 @@
+# 2025-05-17T15:16:44.433901
+import vitis
+
+client = vitis.create_client()
+client.set_workspace(path="HLS-Workspce")
+
+comp = client.get_component(name="hls_component")
+comp.run(operation="C_SIMULATION")
+
+comp.run(operation="SYNTHESIS")
+
+comp.run(operation="SYNTHESIS")
+
+comp.run(operation="SYNTHESIS")
+
+comp.run(operation="SYNTHESIS")
+
+comp.run(operation="SYNTHESIS")
+
+comp.run(operation="SYNTHESIS")
+
+comp.run(operation="SYNTHESIS")
+
+comp.run(operation="SYNTHESIS")
+
+vitis.dispose()
+

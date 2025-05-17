@@ -1,5 +1,5 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:696:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
     <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:307:43" msg_body="unused parameter 'n'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
@@ -9,65 +9,113 @@
     <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:359:30" msg_body="unused parameter 'read_length'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
-    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679:138" msg_body="unused parameter 'EditThreshold'">
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:138" msg_body="unused parameter 'EditThreshold'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
-    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679:157" msg_body="unused parameter 'KmerSize'">
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:157" msg_body="unused parameter 'KmerSize'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:332:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="count_one_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:384:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:365:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:402:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:421:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:403:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:440:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:422:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:464:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:441:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:490:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:465:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:518:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:491:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:536:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:519:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:558:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:537:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:582:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:559:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:609:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:583:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:643:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:610:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="NeighborhoodMap_bit" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:636:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="after_neighbohood" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:645:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="after_neighbohood" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="SneakySnake_bit" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=SneakySnake_bit" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:696:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="SneakySnake_bit" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:695:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:697:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="SneakySnake_bit" ARG_PragmaIsValid="1" ARG_PragmaOptions="OFF" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24" msg_body="Loop 'VITIS_LOOP_642_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_642_1"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23" msg_body="Loop 'VITIS_LOOP_317_1' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="VITIS_LOOP_317_1"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23" msg_body="Loop 'VITIS_LOOP_330_1' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="VITIS_LOOP_330_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29" msg_body="Loop 'VITIS_LOOP_608_11' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_608_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28" msg_body="Loop 'VITIS_LOOP_581_10' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_581_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28" msg_body="Loop 'VITIS_LOOP_557_9' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_557_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28" msg_body="Loop 'VITIS_LOOP_535_8' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_535_8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28" msg_body="Loop 'VITIS_LOOP_517_7' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_517_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27" msg_body="Loop 'VITIS_LOOP_489_6' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_489_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25" msg_body="Loop 'VITIS_LOOP_463_5' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_463_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25" msg_body="Loop 'VITIS_LOOP_439_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_439_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23" msg_body="Loop 'VITIS_LOOP_420_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_420_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25" msg_body="Loop 'VITIS_LOOP_401_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_401_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23" msg_body="Loop 'VITIS_LOOP_381_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_381_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:635:0" msg_body="Unrolling loop 'VITIS_LOOP_642_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24) in function 'after_neighbohood' completely with a factor of 3">
+        <args Factor="3" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24" LoopName="VITIS_LOOP_642_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:635:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_642_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24) in function 'after_neighbohood' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24" LoopName="VITIS_LOOP_642_1"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:308:0" msg_body="Unrolling loop 'VITIS_LOOP_317_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23) in function 'largest' completely with a factor of 10">
         <args Factor="10" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23" LoopName="VITIS_LOOP_317_1"/>
@@ -78,11 +126,86 @@
     <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:327:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_330_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23) in function 'count_one_bit' has been removed because the loop is unrolled completely">
         <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23" LoopName="VITIS_LOOP_330_1"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:634:0" msg_body="Inlining function 'largest(unsigned int*, unsigned int)' into 'after_neighbohood(ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;)'">
-        <args Callee="largest(unsigned int*, unsigned int)" Callee-DebugLoc="File /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp Line 308 Column 0" Caller="after_neighbohood(ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;, ap_uint&lt;8&gt;)" Caller-DebugLoc="File /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp Line 634 Column 0"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_608_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29" LoopName="VITIS_LOOP_608_11"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-455" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27" msg_body="Changing loop 'Loop_VITIS_LOOP_707_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27) to a process function for dataflow in function 'SneakySnake_bit'">
-        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27" LoopName="Loop_VITIS_LOOP_707_1_proc" Name="SneakySnake_bit"/>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_608_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29" LoopName="VITIS_LOOP_608_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_581_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28" LoopName="VITIS_LOOP_581_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_581_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28" LoopName="VITIS_LOOP_581_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_557_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28" LoopName="VITIS_LOOP_557_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_557_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28" LoopName="VITIS_LOOP_557_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_535_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28" LoopName="VITIS_LOOP_535_8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_535_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28" LoopName="VITIS_LOOP_535_8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_517_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28" LoopName="VITIS_LOOP_517_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_517_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28" LoopName="VITIS_LOOP_517_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_489_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27" LoopName="VITIS_LOOP_489_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_489_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27" LoopName="VITIS_LOOP_489_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_463_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25" LoopName="VITIS_LOOP_463_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_463_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25" LoopName="VITIS_LOOP_463_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_439_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25" LoopName="VITIS_LOOP_439_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_439_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25" LoopName="VITIS_LOOP_439_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_420_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23" LoopName="VITIS_LOOP_420_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_420_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23" LoopName="VITIS_LOOP_420_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_401_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25" LoopName="VITIS_LOOP_401_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_401_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25" LoopName="VITIS_LOOP_401_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Unrolling loop 'VITIS_LOOP_381_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23) in function 'NeighborhoodMap_bit' completely with a factor of 127">
+        <args Factor="127" LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23" LoopName="VITIS_LOOP_381_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_PIPELINE" msg_id="214-189" msg_severity="WARNING" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0" msg_body="Pipeline directive for loop 'VITIS_LOOP_381_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23" LoopName="VITIS_LOOP_381_1"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-449" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14" msg_body="Automatically partitioning array 'counter_A' dimension 1 completely based on constant index.">
+        <args Dim="1" Value="counter_A"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14" msg_body="array_partition dim=1 type=complete  variable=counter_A 1 after_neighbohood /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14 counter_A">
+        <args PragmaFunction="after_neighbohood" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=counter_A" PragmaType="array_partition" VarName="counter_A" varLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'counter_A' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="counter_A" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14" msg_body="Applying array_partition to 'counter_A': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="counter_A"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-455" msg_severity="INFO" msg_loc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27" msg_body="Changing loop 'Loop_VITIS_LOOP_709_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27) to a process function for dataflow in function 'SneakySnake_bit'">
+        <args LoopLoc="/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27" LoopName="Loop_VITIS_LOOP_709_1_proc" Name="SneakySnake_bit"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

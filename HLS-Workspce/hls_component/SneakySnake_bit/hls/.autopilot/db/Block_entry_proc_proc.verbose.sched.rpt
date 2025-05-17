@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'Block_entry_proc_proc'
 ================================================================
-* Date:           Fri May  9 17:46:10 2025
+* Date:           Sat May 17 16:08:27 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        SneakySnake_bit
@@ -75,8 +75,8 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.42>
-ST_1 : Operation 2 [1/1] (1.42ns)   --->   "%p_read_12 = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %p_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 2 'read' 'p_read_12' <Predicate = true> <Delay = 1.42> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%ret_ln717 = ret i2 %p_read_12" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717]   --->   Operation 3 'ret' 'ret_ln717' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 2 [1/1] (1.42ns)   --->   "%p_read_12 = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %p_read" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:719]   --->   Operation 2 'read' 'p_read_12' <Predicate = true> <Delay = 1.42> <CoreInst = "FIFO_SRL">   --->   Core 80 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.42> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = -1> <Depth = -1> <FIFO>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%ret_ln719 = ret i2 %p_read_12" [/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:719]   --->   Operation 3 'ret' 'ret_ln719' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -86,7 +86,7 @@ Target clock period: 11.000ns, clock uncertainty: 1.320ns.
 
  <State 1>: 1.429ns
 The critical path consists of the following:
-	wire read operation ('p_read_12', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717) on port 'p_read' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:717) [2]  (1.429 ns)
+	wire read operation ('p_read_12', /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:719) on port 'p_read' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:719) [2]  (1.429 ns)
 
 
 ============================================================

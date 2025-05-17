@@ -34,10 +34,10 @@ entry:0 %p_read_12 = read i2 @_ssdm_op_Read.ap_auto.i2, i2 %p_read
 
 <Node id="3" bw="0" op_0_bw="2">
 <![CDATA[
-entry:1 %ret_ln717 = ret i2 %p_read_12
+entry:1 %ret_ln719 = ret i2 %p_read_12
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln717"/></StgValue>
+<StgValue><ssdm name="ret_ln719"/></StgValue>
 </operation>
 </state>
 </state_list>

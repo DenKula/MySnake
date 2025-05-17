@@ -1,3 +1,4 @@
+  **** HLS Build v2024.2 5238294
 INFO: [HLS 200-2005] Using work_dir /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit 
 INFO: [HLS 200-1505] Using default flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
@@ -27,241 +28,115 @@ INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 1.32ns.
 INFO: [HLS 200-1465] Applying ini 'csim.argv=0 100 100 100 /home/deniz/Projects/SneakySnake/Datasets/ERR240727_1_E2_30000Pairs.txt 30000 1 10' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(11)
 INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=1' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(12)
 INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/hls_config.cfg(5)
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 4.69 seconds. CPU system time: 1.85 seconds. Elapsed time: 6.42 seconds; current allocated memory: 658.922 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 7.52 seconds. CPU system time: 1.12 seconds. Elapsed time: 8.49 seconds; current allocated memory: 658.855 MB.
 INFO: [HLS 200-10] Analyzing design file '/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp' ... 
-WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694:9)
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:696:9)
 Resolution: For help on HLS 214-114 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-114.html
 WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp
 Resolution: For help on HLS 200-471 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-471.html
 WARNING: [HLS 207-5292] unused parameter 'n' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:307:43)
 WARNING: [HLS 207-5292] unused parameter 'seq_length' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:326:65)
 WARNING: [HLS 207-5292] unused parameter 'read_length' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:359:30)
-WARNING: [HLS 207-5292] unused parameter 'EditThreshold' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679:138)
-WARNING: [HLS 207-5292] unused parameter 'KmerSize' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679:157)
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 4.45 seconds. CPU system time: 1.73 seconds. Elapsed time: 6.49 seconds; current allocated memory: 661.617 MB.
+WARNING: [HLS 207-5292] unused parameter 'EditThreshold' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:138)
+WARNING: [HLS 207-5292] unused parameter 'KmerSize' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:157)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 5.08 seconds. CPU system time: 1.82 seconds. Elapsed time: 7.15 seconds; current allocated memory: 661.574 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
 INFO: [HLS 200-1995] There were 7,209 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 972 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 750 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 761 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 717 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 717 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 717 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 717 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 717 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 730 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 697 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 673 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 673 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 673 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 677 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 737 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,972 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,531 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,544 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,544 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,537 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,538 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,461 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,460 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,426 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,426 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,430 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 16,445 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/deniz/Projects/SneakySnake/HLS-Workspce/hls_component/SneakySnake_bit/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_642_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24)
 INFO: [HLS 214-291] Loop 'VITIS_LOOP_317_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23)
 INFO: [HLS 214-291] Loop 'VITIS_LOOP_330_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_608_11' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_581_10' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_557_9' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_535_8' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_517_7' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_489_6' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_463_5' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_439_4' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_420_3' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_401_2' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_381_1' is marked as complete unroll implied by the pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_642_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24) in function 'after_neighbohood' completely with a factor of 3 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:635:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_642_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:642:24) in function 'after_neighbohood' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:635:0)
 INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_317_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:317:23) in function 'largest' completely with a factor of 10 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:308:0)
 INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_330_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23) in function 'count_one_bit' completely with a factor of 8 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:327:0)
 WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_330_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:330:23) in function 'count_one_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:327:0)
-INFO: [HLS 214-178] Inlining function 'largest(unsigned int*, unsigned int)' into 'after_neighbohood(ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>, ap_uint<8>)' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:634:0)
-INFO: [HLS 214-455] Changing loop 'Loop_VITIS_LOOP_707_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27) to a process function for dataflow in function 'SneakySnake_bit' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.76 seconds. CPU system time: 2.1 seconds. Elapsed time: 10.08 seconds; current allocated memory: 663.324 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 663.324 MB.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_608_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_608_11' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:608:29) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_581_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_581_10' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:581:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_557_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_557_9' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:557:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_535_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_535_8' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:535:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_517_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_517_7' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:517:28) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_489_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_489_6' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:489:27) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_463_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_463_5' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:463:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_439_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_439_4' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:439:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_420_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_420_3' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:420:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_401_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_401_2' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:401:25) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_381_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23) in function 'NeighborhoodMap_bit' completely with a factor of 127 (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_381_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:381:23) in function 'NeighborhoodMap_bit' has been removed because the loop is unrolled completely (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:364:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_709_1> at /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27 
+INFO: [HLS 214-449] Automatically partitioning array 'counter_A' dimension 1 completely based on constant index. (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'counter_A' due to pipeline pragma (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14)
+INFO: [HLS 214-248] Applying array_partition to 'counter_A': Complete partitioning on dimension 1. (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:638:14)
+INFO: [HLS 214-455] Changing loop 'Loop_VITIS_LOOP_709_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27) to a process function for dataflow in function 'SneakySnake_bit' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:709:27)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 7.6 seconds. CPU system time: 3.4 seconds. Elapsed time: 15.56 seconds; current allocated memory: 663.715 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 663.715 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.29 seconds; current allocated memory: 663.805 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.95 seconds. CPU system time: 0.08 seconds. Elapsed time: 1.09 seconds; current allocated memory: 680.340 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [XFORM 203-602] Inlining function 'after_neighbohood' into 'Loop_VITIS_LOOP_707_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710) automatically.
-WARNING: [SYNCHK 200-23] /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:385: variable-indexed range selection may cause suboptimal QoR.
+INFO: [XFORM 203-602] Inlining function 'largest' into 'after_neighbohood' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:659) automatically.
+WARNING: [SYNCHK 200-23] /home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:712: variable-indexed range selection may cause suboptimal QoR.
 INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.08 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.18 seconds; current allocated memory: 664.676 MB.
-WARNING: [XFORM 203-561] Updating loop lower bound from 0 to 3 for loop 'VITIS_LOOP_640_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:635:22) in function 'after_neighbohood'.
-INFO: [XFORM 203-602] Inlining function 'after_neighbohood' into 'Loop_VITIS_LOOP_707_1_proc' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:710) automatically.
-INFO: [XFORM 203-712] Applying dataflow to function 'SneakySnake_bit' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:679:5), detected/extracted 3 process function(s): 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.7 seconds. CPU system time: 0.12 seconds. Elapsed time: 0.83 seconds; current allocated memory: 687.184 MB.
+INFO: [XFORM 203-602] Inlining function 'largest' into 'after_neighbohood' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:659) automatically.
+INFO: [XFORM 203-712] Applying dataflow to function 'SneakySnake_bit' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:681:5), detected/extracted 3 process function(s): 
 	 'NeighborhoodMap_bit'
-	 'Loop_VITIS_LOOP_707_1_proc'
+	 'Loop_VITIS_LOOP_709_1_proc'
 	 'Block_entry_proc_proc'.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333:41) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:333:5) in function 'count_one_bit'... converting 10 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:384:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:380:23) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:402:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:400:25) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:421:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:419:23) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:440:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:438:25) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:464:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:462:25) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:490:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:488:27) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:518:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:516:28) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:536:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:534:28) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:558:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:556:28) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:582:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:580:28) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:609:9) to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:607:29) in function 'NeighborhoodMap_bit'... converting 5 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.34 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.63 seconds; current allocated memory: 687.473 MB.
-INFO: [HLS 200-2061] Successfully converted nested loops 'VITIS_LOOP_707_1'(/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27) and 'VITIS_LOOP_640_1'(/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:640:24) in function 'Loop_VITIS_LOOP_707_1_proc' into perfectly nested loops.
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_707_1' (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:707:27) in function 'Loop_VITIS_LOOP_707_1_proc'.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.4 seconds. CPU system time: 0.19 seconds. Elapsed time: 0.67 seconds; current allocated memory: 822.480 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:703:5) in function 'NeighborhoodMap_bit'... converting 5589 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 9.04 seconds. CPU system time: 1.41 seconds. Elapsed time: 10.48 seconds; current allocated memory: 737.734 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 5.6 seconds. CPU system time: 0.95 seconds. Elapsed time: 6.55 seconds; current allocated memory: 779.020 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'SneakySnake_bit' ...
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_380_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_380_1'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.09 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.32 seconds; current allocated memory: 823.539 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.09 seconds; current allocated memory: 823.539 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_400_2'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_400_2'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.15 seconds; current allocated memory: 823.715 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 823.715 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_419_3'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_419_3'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.19 seconds; current allocated memory: 824.082 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.1 seconds; current allocated memory: 824.082 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_438_4'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_438_4'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.13 seconds; current allocated memory: 824.426 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.12 seconds; current allocated memory: 824.426 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_462_5'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_462_5'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.18 seconds; current allocated memory: 824.816 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.13 seconds; current allocated memory: 824.816 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_488_6'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_488_6'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.2 seconds; current allocated memory: 825.129 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.09 seconds; current allocated memory: 825.129 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_516_7'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_516_7'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.23 seconds; current allocated memory: 825.508 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.1 seconds; current allocated memory: 825.508 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_534_8'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_534_8'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.23 seconds; current allocated memory: 825.895 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 825.895 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_556_9'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_556_9'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.18 seconds; current allocated memory: 826.277 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.11 seconds; current allocated memory: 826.277 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_580_10'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_580_10'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.21 seconds; current allocated memory: 826.641 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.12 seconds; current allocated memory: 826.641 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_607_11'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, loop 'VITIS_LOOP_607_11'
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.27 seconds; current allocated memory: 826.977 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.12 seconds; current allocated memory: 826.977 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'NeighborhoodMap_bit' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'NeighborhoodMap_bit'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'NeighborhoodMap_bit'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.18 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.21 seconds; current allocated memory: 827.523 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 5.64 seconds. CPU system time: 0.07 seconds. Elapsed time: 5.84 seconds; current allocated memory: 871.172 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 827.523 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 3.63 seconds. CPU system time: 0 seconds. Elapsed time: 3.73 seconds; current allocated memory: 871.172 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'count_one_bit' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -269,150 +144,92 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'count_one_bit'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'count_one_bit'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.18 seconds; current allocated memory: 827.531 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.86 seconds. CPU system time: 0 seconds. Elapsed time: 0.89 seconds; current allocated memory: 871.172 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 827.688 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 871.172 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_707_1_proc' 
+INFO: [HLS 200-42] -- Implementing module 'after_neighbohood' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_707_1_VITIS_LOOP_640_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, loop 'VITIS_LOOP_707_1_VITIS_LOOP_640_1'
+INFO: [SCHED 204-61] Pipelining function 'after_neighbohood'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, function 'after_neighbohood'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.5 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.58 seconds; current allocated memory: 832.500 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.22 seconds; current allocated memory: 871.172 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.15 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.21 seconds; current allocated memory: 832.500 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 871.172 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_VITIS_LOOP_709_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_709_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 6, loop 'VITIS_LOOP_709_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.13 seconds; current allocated memory: 871.172 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 871.172 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'Block_entry_proc_proc' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.17 seconds; current allocated memory: 832.500 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 871.172 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 832.500 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 871.172 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'SneakySnake_bit' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 832.500 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 871.172 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.11 seconds; current allocated memory: 832.500 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_380_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.22 seconds; current allocated memory: 832.500 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_400_2'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.24 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.5 seconds; current allocated memory: 832.500 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_419_3'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.13 seconds. Elapsed time: 0.51 seconds; current allocated memory: 832.500 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_438_4'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.2 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.39 seconds; current allocated memory: 833.359 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_462_5'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.65 seconds; current allocated memory: 834.363 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_488_6'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.09 seconds. Elapsed time: 0.39 seconds; current allocated memory: 835.402 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_516_7'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.36 seconds; current allocated memory: 836.469 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_534_8'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.35 seconds; current allocated memory: 837.531 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_556_9'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.46 seconds; current allocated memory: 838.520 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_580_10'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.59 seconds; current allocated memory: 839.559 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'partselect_2ns_256ns_32ns_2_1_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'partset_128ns_128ns_2ns_32ns_128_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit_Pipeline_VITIS_LOOP_607_11'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.2 seconds; current allocated memory: 840.578 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 871.172 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'NeighborhoodMap_bit' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'NeighborhoodMap_bit'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.24 seconds; current allocated memory: 842.617 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.25 seconds. CPU system time: 0 seconds. Elapsed time: 3.28 seconds; current allocated memory: 923.098 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'count_one_bit' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Generating core module 'sparsemux_15_6_3_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'count_one_bit'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.2 seconds; current allocated memory: 844.609 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3.11 seconds. CPU system time: 2.16 seconds. Elapsed time: 5.38 seconds; current allocated memory: 1.032 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_707_1_proc' 
+INFO: [HLS 200-10] -- Generating RTL for module 'after_neighbohood' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_707_1_proc' pipeline 'VITIS_LOOP_707_1_VITIS_LOOP_640_1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_707_1_proc'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.08 seconds. Elapsed time: 0.22 seconds; current allocated memory: 846.809 MB.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'after_neighbohood'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.21 seconds. Elapsed time: 0.35 seconds; current allocated memory: 1.061 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_VITIS_LOOP_709_1_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'Loop_VITIS_LOOP_709_1_proc' pipeline 'VITIS_LOOP_709_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_VITIS_LOOP_709_1_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.21 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.4 seconds; current allocated memory: 1.064 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'Block_entry_proc_proc' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_entry_proc_proc'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.21 seconds. CPU system time: 0.06 seconds. Elapsed time: 0.32 seconds; current allocated memory: 850.957 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.11 seconds. Elapsed time: 0.31 seconds; current allocated memory: 1.068 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'SneakySnake_bit' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -437,12 +254,12 @@ INFO: [RTMG 210-285] Implementing FIFO 'DNA_shr_three_U(SneakySnake_bit_fifo_w12
 INFO: [RTMG 210-285] Implementing FIFO 'DNA_shr_four_U(SneakySnake_bit_fifo_w128_d2_S)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'DNA_shr_five_U(SneakySnake_bit_fifo_w128_d2_S)' using Shift Registers.
 INFO: [RTMG 210-285] Implementing FIFO 'add_i_i2_loc_channel_U(SneakySnake_bit_fifo_w2_d2_S)' using Shift Registers.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.22 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.37 seconds; current allocated memory: 851.855 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.62 seconds. CPU system time: 0.1 seconds. Elapsed time: 0.89 seconds; current allocated memory: 854.590 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1.02 seconds. CPU system time: 0.31 seconds. Elapsed time: 1.69 seconds; current allocated memory: 865.375 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.22 seconds. Elapsed time: 0.38 seconds; current allocated memory: 1.070 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.25 seconds. CPU system time: 0.13 seconds. Elapsed time: 1.48 seconds; current allocated memory: 1.071 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 2.13 seconds. CPU system time: 0.32 seconds. Elapsed time: 2.52 seconds; current allocated memory: 1.124 GB.
 INFO: [VHDL 208-304] Generating VHDL RTL for SneakySnake_bit.
 INFO: [VLOG 209-307] Generating Verilog RTL for SneakySnake_bit.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 113.55 MHz
-INFO: [HLS 200-112] Total CPU user time: 22.01 seconds. Total CPU system time: 8.97 seconds. Total elapsed time: 39.42 seconds; peak allocated memory: 865.805 MB.
-INFO: [v++ 60-791] Total elapsed time: 0h 0m 44s
+INFO: [HLS 200-789] **** Estimated Fmax: 105.50 MHz
+INFO: [HLS 200-112] Total CPU user time: 58.11 seconds. Total CPU system time: 12.6 seconds. Total elapsed time: 76.66 seconds; peak allocated memory: 1.124 GB.
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 21s

@@ -340,7 +340,7 @@ unsigned count_one_bit(d_bit_out_tiny_type &input_seq, unsigned seq_length)
 
 
 int largest_bit(d_out_type arr, int n) 
-{ 
+{
     int i; 
       
     // Initialize maximum element 
@@ -362,6 +362,7 @@ void NeighborhoodMap_bit(int read_length,
     d_bit_out_type & DNA_shl_one,d_bit_out_type & DNA_shl_two,d_bit_out_type & DNA_shl_three,d_bit_out_type & DNA_shl_four,d_bit_out_type & DNA_shl_five, 
     d_bit_out_type & DNA_shr_one,d_bit_out_type & DNA_shr_two,d_bit_out_type & DNA_shr_three,d_bit_out_type & DNA_shr_four,d_bit_out_type & DNA_shr_five)
 {
+#pragma HLS PIPELINE
     printf("NeighborhoodMap\n" );
     d_bit_in_type DNA_1, DNA_2, DNA_3, DNA_4, DNA_5, DNA_6,
      DNA_7, DNA_8, DNA_9, DNA_10, DNA_11;
@@ -632,6 +633,7 @@ unsigned after_neighbohood(d_bit_out_tiny_type  DNA_nsh,
     d_bit_out_tiny_type  DNA_shl_one,d_bit_out_tiny_type  DNA_shl_two,d_bit_out_tiny_type  DNA_shl_three,d_bit_out_tiny_type DNA_shl_four,d_bit_out_tiny_type DNA_shl_five, 
     d_bit_out_tiny_type  DNA_shr_one,d_bit_out_tiny_type  DNA_shr_two,d_bit_out_tiny_type  DNA_shr_three,d_bit_out_tiny_type DNA_shr_four,d_bit_out_tiny_type  DNA_shr_five)
 {
+#pragma HLS PIPELINE
     d_final_out_type global_count=0;
     unsigned counter_A[11];
 

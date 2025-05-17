@@ -18,32 +18,32 @@
 <PipelineType>dataflow</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.806</EstimatedClockPeriod>
+<EstimatedClockPeriod>9.478</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>172</Best-caseLatency>
-<Average-caseLatency>172</Average-caseLatency>
-<Worst-caseLatency>172</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.892 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>1.892 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>1.892 us</Worst-caseRealTimeLatency>
-<DataflowPipelineThroughput>132</DataflowPipelineThroughput>
-<Interval-min>132</Interval-min>
-<Interval-max>132</Interval-max>
+<Best-caseLatency>20</Best-caseLatency>
+<Average-caseLatency>20</Average-caseLatency>
+<Worst-caseLatency>20</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.220 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.220 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.220 us</Worst-caseRealTimeLatency>
+<DataflowPipelineThroughput>12</DataflowPipelineThroughput>
+<Interval-min>12</Interval-min>
+<Interval-max>12</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
-<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:694</SourceLocation>
+<SourceLocation>/home/deniz/Projects/SneakySnake/SneakySnake-HLS-HBM/hw/pipeline.cpp:696</SourceLocation>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <BRAM_18K>0</BRAM_18K>
-<FF>8289</FF>
-<LUT>17583</LUT>
+<FF>5430</FF>
+<LUT>35740</LUT>
 <URAM>0</URAM>
 <DSP>0</DSP>
 </Resources>
